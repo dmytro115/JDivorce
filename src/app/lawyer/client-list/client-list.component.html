@@ -1,0 +1,89 @@
+<div class="card">
+  <div class="contact-page-aside">
+    <div class="left-aside bg-light-part">
+      <ul class="list-style-none clients-list">
+        <li class="box-label clients-list__item" [ngClass]="{ active: 'All Clients' === selectedFilter }">
+          <a href="javascript:void(0)" (click)="filterClients(lawyer.lawyers_clients, 'All Clients')"
+            >All Clients<span>{{ lawyer?.total_clients }}</span></a
+          >
+        </li>
+        <li class="divider"></li>
+        <li class="clients-list__item" *ngFor="let filter of lawyer?.filters" [ngClass]="{ active: filter['name'] === selectedFilter }">
+          <a href="javascript:void(0)" (click)="filterClients(filter.data, filter['name'])"
+            >{{ filter['name'] }} <span>{{ filter['count'] }}</span></a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="right-aside">
+      <div class="d-flex justify-content-between">
+        <div class="d-flex">
+          <div class="align-self-center">
+            <h2 class="card-title m-t-10"><span>Your Clients</span></h2>
+            <h4 class="card-subtitle"><span>You can see a summary of all the clients you are working with here.</span></h4>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex m-b-10">
+        <div class="button-group" fxLayout="row" fxLayoutGap="8px">
+          <button mat-flat-button color="primary" (click)="inviteClient()">Invite Client</button>
+          <button mat-flat-button color="primary" (click)="createApplication()">Create Client Application</button>
+        </div>
+      </div>
+      <div class="bg-light p-20">
+        <div class="d-flex">
+          <div class="align-self-center"></div>
+          <div class="ml-auto align-self-center"></div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-hover earning-box" data-sorted="true" data-page-size="100">
+          <thead>
+            <tr>
+              <th><span translate="personalinfo.email"></span></th>
+              <th><span translate="DASHBOARD.INDEX.STATUS"></span></th>
+              <th><span translate="DASHBOARD.lawyer_dashboard.paid"></span></th>
+              <th data-sort-ignore="true"><span translate="DASHBOARD.INDEX.ACTION"></span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let client of clients" [ngClass]="{ 'table-info': client?.client_id === selectedClientId }">
+              <td>
+                <h4 class="d-inline"><i class="fa fa-user p-r-10"></i>{{ client.client_email }}</h4>
+              </td>
+              <td>
+                <span translate="{{ client.accept_status }}" class="label" [ngClass]="getAcceptStatusClass(client)"></span>
+              </td>
+              <td translate="{{ client.paid_status }}"></td>
+              <td class="clients-list__actions">
+                <a
+                  (click)="viewClient(client.client_id, client.client_email)"
+                  class="btn btn-secondary waves-effect waves-light btn-sm"
+                  *ngIf="showViewClientBtn(client)"
+                >
+                  <span translate="DASHBOARD.lawyer_dashboard.view_client"></span>
+                </a>
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-secondary waves-effect waves-light btn-sm"
+                  *ngIf="showNotifyInviteClientBtn(client)"
+                  (click)="notifyClient(client)"
+                >
+                  <span translate="DASHBOARD.lawyer_dashboard.notify_invite_client"></span>
+                </a>
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-secondary waves-effect waves-light btn-sm"
+                  *ngIf="showCreateApplicationBtn(client)"
+                  (click)="cloneClient(client)"
+                >
+                  <span translate="DASHBOARD.lawyer_dashboard.clone_application.button"></span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

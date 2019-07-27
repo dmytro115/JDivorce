@@ -1,0 +1,140 @@
+<div class="row" *ngIf="orders?.length === 0">
+  <div class="col-12">
+    <div class="card card-body">
+      <h2>You have no orders!</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngFor="let item of orders | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPageNum, totalItems: orderCount }">
+  <div class="col-md-12">
+    <div class="card card-body printableArea">
+      <h3><b>ORDER: </b><span>#{{item.id}}</span><span class="pull-right">{{changeDateFormat(item.created_at)}}</span></h3>
+      <hr>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="bg-light p-20">
+                <div *ngIf="item.type === 'LawyerOrder'">
+                  <div class="row">
+                    <div class="col-6">
+                      <h3 class="m-b-0">Plan</h3><small></small>
+                    </div>
+                    <div class="col-6">
+                      <h4 class="text-success" *ngIf="item.plan">{{item.plan.name}}</h4>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <h3 class="m-b-0">Plan Description</h3><small></small>
+                    </div>
+                    <div class="col-6">
+                      <h4 class="text-success" *ngIf="item.plan">{{item.plan.description || 'N/A'}}</h4>
+                    </div>
+                  </div>
+                  <div class="row" *ngIf="isClient">
+                    <div class="col-6">
+                      <h3 class="m-b-0">Attorney</h3><small></small>
+                    </div>
+                    <div class="col-6">
+                      <h4 class="text-success"><a href="/h/lawyer/{{item.lawyer_slug}}" target="_blank">{{item.lawyer_name}}</a></h4>
+                    </div>
+                  </div>
+                  <div class="row" *ngIf="isClient && isAdminClient && item.client_name">
+                    <div class="col-6">
+                      <h3 class="m-b-0">Client Name</h3><small></small>
+                    </div>
+                    <div class="col-6">
+                      <h4 class="text-success">{{item.client_name}}</h4>
+                    </div>
+                  </div>
+                  <div class="row" *ngIf="isClient && isAdminClient && item.client_email">
+                    <div class="col-6">
+                      <h3 class="m-b-0">Client Email</h3><small></small>
+                    </div>
+                    <div class="col-6">
+                      <h4 class="text-success">{{item.client_email}}</h4>
+                    </div>
+                  </div>
+                  <div class="row" *ngIf="!isClient">
+                    <div class="col-6">
+                      <h3 class="m-b-0">Client</h3><small></small>
+                    </div>
+                    <div class="col-6">
+                      <h4 class="text-success">{{item.client_name}}</h4>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <h3 class="m-b-0">Appointment Date</h3><small></small>
+                    </div>
+                    <div class="col-6">
+                      <h4 class="text-success">{{changeDateFormat(item.appointment_start_at)}}</h4>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <h3 class="m-b-0">Payment Type</h3><small></small>
+                    </div>
+                    <div class="col-6">
+                      <h4 class="text-success">{{item.payment_type}}</h4>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="item.type !== 'LawyerOrder'">
+                  <div class="row">
+                    <div class="col-6">
+                      <h3 class="m-b-0">Description</h3><small></small>
+                    </div>
+                    <div class="col-6">
+                      <ul class="package-offerings" *ngIf="item.plan && item.plan.package_offering.length">
+                        <li class="text-success" *ngFor="let offering of item.plan.package_offering;">✓ {{offering}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <h3 class="m-b-0">Payment Type</h3><small></small>
+                    </div>
+                    <div class="col-6">
+                      <h4 class="text-success">{{item.payment_type}}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="m-t-30 pull-right">
+                <hr>
+                <h3 *ngIf="item.plan && item.type === 'LawyerOrder'"><b>Amount:</b> ${{ ConvertString(item.plan.cost) }}</h3>
+                <h3 *ngIf="item.amount"><b>Amount:</b> ${{ ConvertString(item.amount / 100) }}</h3>
+                <hr>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body order-state">
+              <ul class="p-0">
+                <li [ngClass]="state.complete ? 'complete' : 'in-progress'" *ngFor="let state of item.states">
+                  <span class="checker">✓</span>
+                  <span>
+                    <h3>{{ state.title }}</h3>
+                    <p>{{ state.complete ? state.after : state.before }}</p>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pagination-controls *ngIf="orders.length" (pageChange)="getPage($event)" class="orders-pagination" previousLabel="Prev"></pagination-controls>

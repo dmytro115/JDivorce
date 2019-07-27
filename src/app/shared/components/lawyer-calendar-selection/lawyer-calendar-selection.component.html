@@ -1,0 +1,19 @@
+<div [style.text-align]="'center'" class="mb-3">
+  <mat-icon class="navigate mx-2" inline="true" (click)="dateBack()">chevron_left</mat-icon>
+  <h3 [style.display]="'inline'">
+    <strong>{{ appointmentDate.format('dddd, MMM Do') }}</strong>
+  </h3>
+  <mat-icon class="navigate mx-2" inline="true" (click)="dateForward()">chevron_right</mat-icon>
+</div>
+
+<ngx-slick *ngIf="slots.length > 0" class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+  <mat-chip-list>
+    <mat-chip selected="{{ isSlotSelected(slot) }}" ngxSlickItem *ngFor="let slot of slots" class="slide mr-1" (click)="onSlotClick(slot)">{{
+      slot.start_time | date: 'shortTime'
+    }}</mat-chip>
+  </mat-chip-list>
+</ngx-slick>
+
+<div *ngIf="slots.length === 0">
+  Unfortunately, there are no calendar spots left for this day!
+</div>

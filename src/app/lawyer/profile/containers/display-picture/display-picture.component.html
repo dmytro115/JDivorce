@@ -1,0 +1,30 @@
+<section>
+  <mat-card [ngClass]="{ 'top-accent-primary' : true }">
+    <mat-card-header>
+      <div mat-card-avatar *ngIf="!showPicture()" [style.background-image]="'url(assets/images/icons/female-user-icon.svg)'"></div>
+      <div mat-card-avatar *ngIf="showPicture()" [style.background-image]="'url(' + pictureUrl() + ')'"></div>
+      <mat-card-title translate="PROFILE.DISPLAY_PICTURE"></mat-card-title>
+      <mat-card-subtitle>Please upload your favorite selfie!</mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content class="m-t-20">
+      <div fxLayout="row" fxLayoutGap="15px" fxLayout.lt-md="column">
+        <div fxFlex>
+          <h4 translate="COMMON.IMAGE_UPLOAD"></h4>
+          <form [formGroup]="imageForm" class="form-group">
+            <div class="drag-and-drop">
+              <input #Input type="file" name="file" formControlName="image" (change)="onImageSelect($event)" accept="image/*">
+              <img *ngIf="base64 != null" [src]="base64" alt="">
+              <p *ngIf="base64 == null">Drag and drop a file here or click</p>
+              <div *ngIf="base64 != null" (click)="Input.click()" class="drag-and-drop-overly">
+                <p>Drag and drop a file here or click</p>
+                <button mat-flat-button color="warn" (click)="onDelete()">Delete</button>
+              </div>
+            </div>
+          </form>
+          <button (click)="uploadFeaturedImage()" mat-flat-button color="primary" [disabled]="!isValid()">Upload</button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>

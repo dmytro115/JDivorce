@@ -1,0 +1,76 @@
+<div fxLayout="column" fxLayoutGap="16px">
+  <div fxFlex *ngIf="showActions" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="24px" class="my-7">
+
+    <div fxFlex class="lawyers-block-header-text">
+      <h2>Select a licensed lawyer (or professional) from our network</h2>
+      <span>We recommend choosing a lawyer that is relatively close to you, in case you and your lawyer need to meet up in person. We have calculated the distance based on your zip code.</span>
+    </div>
+
+    <div fxFlex fxLayoutAlign="end start" fxLayoutAlign.lt-md="center center">
+      <form *ngIf="profileControlForm" [formGroup]="profileControlForm" fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="8px" ngClass.gt-md="max-width-400" fxFlex>
+
+        <mat-form-field>
+          <mat-label>Sorting by</mat-label>
+          <mat-select formControlName="sort">
+            <mat-option *ngFor="let option of sortOptions" [value]="option.value">
+              {{option.label}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="showPlanFilters">
+          <mat-label>Filter by</mat-label>
+          <mat-select formControlName="plan" (selectionChange)="onPlanSelectionChange($event)">
+            <mat-option *ngFor="let option of planOptions" [value]="option.value">
+              {{option.label}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </form>
+    </div>
+  </div>
+  <app-progress-spinner fxFlex [condition]="!profiles"></app-progress-spinner>
+  <!-- column -->
+  <div
+    class="lawyer-profiles"
+    *ngIf="profiles && profiles.length > 0"
+    [@fadeIn]>
+    <!-- Card -->
+    <div class="lawyer-profile-card" *ngFor="let profile of profiles | plansFilter : planFilterOptions">
+      <div>
+        <mat-card class="soft">
+          <mat-card-header>
+            <mat-card-title>{{profile.info.name}}</mat-card-title>
+            <mat-card-subtitle *ngIf="lawyerLocation(profile)">{{ lawyerLocation(profile) }}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src={{profileImage(profile)}} >
+          <mat-card-content>
+            <div fxLayout="column" fxLayoutGap="16px">
+              <div fxFlex fxLayout="row" fxLayoutGap="16px" class="location" *ngIf="profile.distance !== null && profile.distance != 0">
+                <mat-icon fxFlex="none" class="text-primary">location_on</mat-icon>
+                <span class="mat-h3 m-b-0"><span class="text-primary"><strong>{{ profile.distance | length:'m':'mi' }} miles</strong></span>&nbsp;from you</span>
+              </div>
+              <div fxFlex fxLayout="row" fxLayoutGap="16px" class="plan">
+                <mat-icon fxFlex="none" class="text-primary">star</mat-icon>
+                <span class="mat-h3 m-b-0">{{blockPlanDisplayLabel(profile)}}&nbsp;<span class="text-primary"><strong>${{ blockPlanDisplayCost(profile) }}.</strong></span></span>
+              </div>
+              <div fxFlex fxLayout="row" fxLayoutGap="16px" class="appointment" *ngIf="isConnectedToCalendar(profile)">
+                <mat-icon fxFlex="none" class="text-primary">calendar_today</mat-icon>
+                <span class="mat-h3 m-b-0">Available <span class="text-primary"><strong>appointments</strong></span><button mat-icon-button matTooltip="{{appointmentTooltip(profile)}}" matTooltipPosition="right" color="accent" class="calendar-info-icon"><mat-icon>info_outline</mat-icon></button></span>
+              </div>
+              <div class="adjust-margin" *ngIf="isConnectedToCalendar(profile)">
+                <app-lawyer-calendar-selection [profile]="profile"></app-lawyer-calendar-selection>
+              </div>
+            </div>
+          </mat-card-content>
+          <mat-card-actions fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="8px">
+            <a mat-flat-button color="basic" class="btn-soft" (click)="navigateToProfile('/lawyer/' + profile.slug)">View Details</a>
+            <a *ngIf="showSelect" fxFlex mat-flat-button color="primary" class="btn-soft" (click)="onSelect(profile)"><span>Select</span><mat-icon>chevron_right</mat-icon></a>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+    <!-- Card -->
+  </div>
+</div>

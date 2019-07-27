@@ -1,0 +1,2 @@
+<input #main type="text" (blur)="onBlur($event)" (keydown)="onKeyDown($event)" (click)="onMouseClick($event)" class="jd-questionnaire__date" [ngClass]="style">
+<p class="jd-questionnaire__date-error" *ngIf="hasError">{{error}}</p>

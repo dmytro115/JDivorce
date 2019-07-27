@@ -1,0 +1,23 @@
+.mat-list > .mat-list-item:nth-of-type(odd) {
+  background-color: var(--background-dark);
+}
+
+.mat-list .mat-list-item {
+  &:first-child {
+    justify-content: space-between;
+  }
+
+  .align-left {
+    justify-content: flex-start;
+  }
+
+  .align-right {
+    justify-content: flex-end;
+  }
+
+  .ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

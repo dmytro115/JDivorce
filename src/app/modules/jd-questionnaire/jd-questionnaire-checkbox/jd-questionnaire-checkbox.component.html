@@ -1,0 +1,14 @@
+<ul class="jd-questionnaire__checkbox">
+  <li [ngClass]="{ selected: value.includes(option.value) }" (click)="onSelect(option);" *ngFor="let option of options;let index = index"
+    class="jd-questionnaire__checkbox-item" (clickOutside)="option.canEdit ? onBlurOtherInput(option) : null">
+    <div *ngIf="!option.canEdit">
+    	<span class="jd-questionnaire__checkbox-item-index">{{ index + 1 }}</span>
+      <span class="jd-questionnaire__checkbox-item-label">{{ option.label ? option.label : option.value }}</span>
+    </div>
+    <div *ngIf="option.canEdit" class="jd-questionnaire__checkbox-item-input">
+      <textarea #other rows="{{countRowsInText(option.inputValue)}}" [(ngModel)]="option.inputValue"></textarea>
+    </div>
+  </li>
+</ul>
+
+<p class="jd-questionnaire__checkbox-error" *ngIf="hasError">{{error}}</p>

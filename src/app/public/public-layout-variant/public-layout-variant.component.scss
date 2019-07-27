@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "cheltenham";
+  src: url("/assets/new-variant/fonts/nyt-cheltenham-200-normal.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("/assets/new-variant/fonts/LibreFranklin-Regular.woff")
+    format("woff");
+}
+
+.nav {
+  position: absolute;
+  width: 100%;
+  padding: 0 20px;
+  top: 0;
+  left: 0;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: auto;
+  }
+  &__brand {
+    display: block;
+    img {
+      width: 140px;
+      @media (max-width: 768px) {
+        width: 120px;
+      }
+    }
+  }
+  &__buttons {
+    list-style-type: none;
+    a {
+      font-family: "Libre Franklin", sans-serif;
+      color: #000;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  padding: 0 30px 30px;
+  background: #f5f5f5;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  a {
+    font-family: "franklin", "helvetica neue", arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+    padding: 0 0.8%;
+    text-decoration: underline;
+    &:not(:first-child) {
+      border-left: 1px solid #000;
+    }
+    margin: 0 0 7px;
+  }
+}

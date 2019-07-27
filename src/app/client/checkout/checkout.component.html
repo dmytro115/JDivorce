@@ -1,0 +1,52 @@
+<div fxLayout="column" fxLayoutGap="32px" class="m-4">
+  <section>
+    <aw-wizard
+      [ngClass]="{ wizardDone: wizardDone }"
+      #checkoutWizard
+      [defaultStepIndex]="defaultStepIndex"
+      [navBarLayout]="'large-filled-symbols'"
+      class="custom-css checkout-wizard-steps"
+    >
+      <aw-wizard-step
+        [canEnter]="canEnter('lawyers')"
+        (stepEnter)="onEnterStep('lawyers')"
+        awOptionalStep
+        stepTitle="{{ 'CHECKOUT.step_2' | translate }}"
+        [navigationSymbol]="{ symbol: '1' }"
+        (stepEnter)="onEnterStep('lawyers')"
+      >
+        <app-lawyers-block showSelect="true" (selectProfile)="onSelectProfile($event)"></app-lawyers-block>
+      </aw-wizard-step>
+      <aw-wizard-step
+        [canEnter]="canEnter('review')"
+        (stepEnter)="onEnterStep('review')"
+        awOptionalStep
+        stepTitle="{{ 'CHECKOUT.step_3' | translate }}"
+        [navigationSymbol]="{ symbol: '2' }"
+      >
+        <app-checkout-review></app-checkout-review>
+      </aw-wizard-step>
+      <aw-wizard-step
+        (stepEnter)="onEnterStep('confirmation')"
+        awOptionalStep
+        stepTitle="{{ 'CHECKOUT.step_4' | translate }}"
+        [navigationSymbol]="{ symbol: '3' }"
+      >
+        <app-checkout-confirmation></app-checkout-confirmation>
+      </aw-wizard-step>
+    </aw-wizard>
+  </section>
+
+  <mat-divider></mat-divider>
+
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let i of [1, 2, 3, 4, 5, 6]">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h3 translate="CHECKOUT.faq.q{{ i }}.title"></h3>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <span translate="CHECKOUT.faq.q{{ i }}.content"></span>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

@@ -1,0 +1,113 @@
+.upload-button {
+  position: absolute;
+  top: 35px;
+  left: 20px;
+  z-index: 19;
+}
+
+mat-card-header {
+  height: 70px !important;
+  background-color: var(--primary);
+}
+
+table {
+  width: 100%;
+}
+
+.mat-row {
+  &:hover {
+    background-color: var(--primary-contrast);
+  }
+}
+
+// https://github.com/angular/components/issues/8494#issuecomment-473940145
+@media screen and (max-width: 600px) {
+  .mat-elevation-z8 {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .mat-header-row {
+    display: none;
+  }
+
+  tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .mat-table {
+    background: transparent;
+    * {
+      box-sizing: border-box;
+    }
+
+    .mat-row {
+      display: block;
+      overflow: hidden;
+      height: auto;
+      position: relative;
+      clear: both;
+      box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+      background-color: #fff;
+      border-radius: 3px;
+      + .mat-row {
+        margin-top: 12px;
+      }
+    }
+
+    .mat-cell {
+      display: block;
+      width: 100%;
+      padding: 0 16px;
+      margin: 16px 0;
+      border: 0 none;
+
+      text-overflow: ellipsis;
+      max-width: 300px;
+      overflow: hidden;
+      white-space: nowrap;
+
+      &:first-child {
+        padding: 0 16px 0 16px;
+        span {
+          font-size: 20px;
+          // font-weight: 400;
+          color: inherit;
+        }
+        &:before {
+          display: none;
+        }
+      }
+      &.m-card-sub-title {
+        margin-top: -12px;
+        padding: 0 16px 0 16px;
+        color: rgba(0, 0, 0, 0.54);
+      }
+    }
+
+    .has-label-on-mobile {
+      &:before {
+        content: attr(data-label);
+        display: inline;
+        font-weight: normal;
+      }
+    }
+
+    .mat-column-star {
+      width: auto;
+      padding: 8px 0 0 !important;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .mat-paginator {
+    margin-top: 24px;
+  }
+}

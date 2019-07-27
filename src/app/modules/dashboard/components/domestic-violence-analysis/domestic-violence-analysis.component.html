@@ -1,0 +1,79 @@
+<div *ngIf="dvRecommendations" class="mt-4" fxLayout="column" fxLayoutGap="12px">
+  <mat-divider></mat-divider>
+  <h2 class="text-primary-contrast pt-4">
+    You are
+    <span><strong>{{ eligibleHeader() }}</strong></span>
+    to apply for the <strong>Domestic Violence Protection Order</strong>.
+  </h2>
+  <mat-list>
+    <mat-list-item class="text-primary-contrast mb-2">
+      <mat-icon class="icon-contrast mr-2" inline="true">{{ protections() }}</mat-icon>
+      <span>
+        There is physical harm, bodily injury, assault, including sexual assault, stalking, OR the infliction of fear of
+        imminent physical harm, bodily injury
+        or assault.
+      </span>
+    </mat-list-item>
+    <mat-list-item class="text-primary-contrast mb-2">
+      <mat-icon class="icon-contrast mr-2" inline="true">{{ respondentStatus() }}</mat-icon>
+      <span>The offender is a family member, a household member or someone you're dating.</span>
+    </mat-list-item>
+    <mat-list-item class="text-primary-contrast mb-2">
+      <mat-icon class="icon-contrast mr-2" inline="true">{{ onGoingCase() }}</mat-icon>
+      <span>You do not have an on-going family law case with the offender.</span>
+    </mat-list-item>
+  </mat-list>
+  <div *ngIf="isContactLawyerEligible()">
+    <h3 class="text-primary-contrast">
+      We recommend that you also find a domestic violence attorney because you have other on-going cases against the
+      same person.
+    </h3>
+    <a routerLink="/a/c/checkout" mat-flat-button color="basic" class="btn-soft">Find an attorney</a>
+  </div>
+  <div *ngIf="isCreateApplication()">
+    <button mat-flat-button color="basic" fxhide.lt-sm (click)="proceedWithoutLawyer()" class="btn-soft">Continue to
+      your application</button>
+  </div>
+  <button mat-flat-button color="basic" fxhide fxshow.lt-sm (click)="proceedWithoutLawyer()" class="btn-soft">Continue
+    to your<br> application</button>
+</div>
+<div *ngIf="isContactLawyer()">
+  <h3 class="text-primary-contrast">
+    We recommend an attorney. You can make an appointment right now.
+  </h3>
+  <a routerLink="/a/c/checkout" mat-flat-button color="basic" class="btn-soft">Find an attorney</a>
+</div>
+<div *ngIf="isDivorceAndRestraining()">
+  <h3 class="text-primary-contrast">
+    You can create a <strong>divorce application</strong> and create a <span><strong>Restraining Order</strong></span>
+    as part of that application.
+  </h3>
+  <a routerLink="/a/c/divorce" mat-flat-button color="basic" class="btn-soft">Create a divorce application</a>
+</div>
+<div *ngIf="isAntiharrassment()">
+  <p class="text-primary-contrast">
+    If the conduct is unlawful or harassing and that seriously alarms, annoys or causes emotional distress and that
+    serves no lawful purpose, then you can
+    apply for
+    <span><strong>Anti-harrassment Protection Order</strong></span>.
+  </p>
+</div>
+<div *ngIf="isAntiharrassmentContact()">
+  <p class="text-primary-contrast">
+    Contact your county court for
+    <span><strong>Anti-harrassment Protection Order</strong></span>.
+  </p>
+</div>
+<div *ngIf="isSexualAssault()">
+  <p class="text-primary-contrast">
+    Contact your county court for
+    <span> <strong>Sexual Assault Protection Order</strong> </span>.
+  </p>
+</div>
+<div *ngIf="isStalking()">
+  <p class="text-primary-contrast">
+    Contact your county court for
+    <span> <strong>Stalking Protection Order</strong> </span>.
+  </p>
+</div>
+</div>

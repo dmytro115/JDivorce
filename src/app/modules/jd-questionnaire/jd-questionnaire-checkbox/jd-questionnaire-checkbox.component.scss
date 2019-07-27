@@ -1,0 +1,93 @@
+.jd-questionnaire{
+  &__checkbox{
+    list-style-type: none;
+    padding:0;
+    margin-top:25px;
+    &-error{
+      padding: 5px 8px;
+      border-radius: 2px;
+      background-color: #990000;
+      margin-top: 10px;
+      color:#fff;
+      display: inline-block;
+      position: relative;
+      font-size: 14px;
+      &:before{
+        content:'';
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid #990000;
+        position: absolute;
+        top: -5px;
+        left: 10px;
+      }
+    }
+     &-item{
+       display: flex;
+       align-items: center;
+       cursor: pointer;
+       border-radius: 3px;
+       border:1px dashed #646363;
+       color:#646363;
+       margin-top:10px;
+       padding:8px;
+       transition: all 0.4s ease-in-out;
+       background: #fafafa;
+       &:hover{
+        background: #f0f0f0;
+       }
+       * {
+        pointer-events: none;
+       }
+       &-label{
+         flex: 1;
+         @media (max-width:768px){
+          font-size: 0.9em;
+          line-height: 1.5;
+         }
+       }
+       &-index{
+        transition: all 0.4s ease-in-out;
+         display: inline-flex;
+         justify-content: center;
+         align-items: center;
+         width: 23px;
+         height: 23px;
+        border-radius: 50px;
+        line-height: 1;
+        font-size: 0.8em;
+        font-weight: bold;
+        border:1px solid #646363;
+        margin-right: 10px;
+        @media (max-width:768px){
+          line-height: 1.2;
+          font-size: 0.7em;
+        }
+       }
+       &.selected{
+         border-style: solid;
+         box-shadow: 0 0 0px 1px #646363;
+         .jd-questionnaire__checkbox-item-index{
+           background: #646363;
+           color: #ffffff;
+         }
+       }
+       &-input{
+        width: 100%;
+        textarea {
+          pointer-events: auto;
+          display: block;
+          width: 100%;
+          outline: none;
+          border: none;;
+          background-color: transparent;
+          padding: 0;
+          margin: 0;
+          line-height: 25px;
+        }
+       }
+     }
+  }
+}

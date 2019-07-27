@@ -1,0 +1,17 @@
+<div class="help-sidebar">
+  <div class="help-header background-primary p-4" fxLayout="row" fxLayoutAlign="space-between center">
+    <h2 class="text-primary-contrast mb-0">Help</h2>
+    <button mat-icon-button color="accent" (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="help-content p-4" *ngIf="question">
+    <h4>
+      <strong>{{ question.questionNumber }}. {{ question.title }}</strong>
+    </h4>
+    <mat-divider></mat-divider>
+    <div class="pt-4" *ngIf="question.description" [innerHTML]="question.description"></div>
+    <jd-questionnaire-iframe *ngIf="question.video" [url]="getVideoEmbedUrl(question.video)"></jd-questionnaire-iframe>
+    <jd-questionnaire-blog-posts *ngIf="question.categories && question.categories.length > 0" [categories]="question.categories"></jd-questionnaire-blog-posts>
+  </div>
+</div>

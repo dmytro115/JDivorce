@@ -1,0 +1,123 @@
+<section>
+  <mat-card [ngClass]="{ 'top-accent-primary' : true }">
+    <mat-card-header>
+      <div mat-card-avatar [style.background-image]="'url(assets/images/icons/google-calendar.svg)'"></div>
+      <mat-card-title translate="PROFILE.CALENDAR"></mat-card-title>
+      <mat-card-subtitle>By connecting your <a href="https://www.google.com/calendar" target="_blank">Google Calendar</a> with us, you'll allow potential clients to sign up directly for your available appointment slots and we will create events for you directly in your calendar.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content class="p-20">
+      <app-progress-spinner [condition]="isConnected === null"></app-progress-spinner>
+      <google-signin *ngIf="isConnected === false" (isConnected)="connect($event)"></google-signin>
+      <form *ngIf="isConnected" [formGroup]="formGroup()" fxLayout="column" fxLayoutGap="30px" class="p-t-10">
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="30px">
+          <mat-form-field fxFlex>
+            <mat-label>Appointments opening hour</mat-label>
+            <mat-select formControlName="earliest_start_time" required (selectionChange)="onFieldChange($event)">
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let option of earliestStartTimes" [value]="option.value">
+                {{option.label}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="isFieldError('earliest_start_time')">The opening hour are required.</mat-error>
+            <mat-hint>The hour that you start taking appointments.</mat-hint>
+          </mat-form-field>
+          <mat-form-field fxFlex>
+            <mat-label>Appointments closing hour</mat-label>
+            <mat-select formControlName="latest_end_time" required (selectionChange)="onFieldChange($event)">
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let option of latestEndTimes" [value]="option.value">
+                {{option.label}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="isFieldError('latest_end_time')">The closing hour is required.</mat-error>
+            <mat-hint>The hour that you stop taking appointments.</mat-hint>
+          </mat-form-field>
+          <mat-form-field fxFlex>
+            <mat-label>Appointment duration</mat-label>
+            <mat-select formControlName="appointment_duration" required (selectionChange)="onFieldChange($event)">
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let option of appointmentDurations" [value]="option.value">
+                {{option.label}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="isFieldError('appointment_duration')">The duration is required.</mat-error>
+            <mat-hint>The length of each of your appointments.</mat-hint>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="30px">
+          <mat-form-field fxFlex>
+            <mat-label>Scheduling notice</mat-label>
+            <mat-select formControlName="minimum_scheduling_notice" required (selectionChange)="onFieldChange($event)">
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let option of schedulingNotices" [value]="option.value">
+                {{option.label}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="isFieldError('minimum_scheduling_notice')">The scheduling notice is required.</mat-error>
+            <mat-hint>How much heads up do you need for appointments? For example, a client can only make an appointment with you at least 2 days in advance.</mat-hint>
+          </mat-form-field>
+          <div formGroupName="appointment_buffer" fxFlex>
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="30px">
+              <mat-form-field fxFlex>
+                <mat-label>Pre-appointment buffer</mat-label>
+                <mat-select formControlName="before" required (selectionChange)="onFieldChange($event)">
+                  <mat-option>--</mat-option>
+                  <mat-option *ngFor="let option of appointmentBuffers" [value]="option.value">
+                    {{option.label}}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="isFieldError('before', 'appointment_buffer')">The appointment buffer is required.</mat-error>
+                <mat-hint>The amount of time that you need to prepare for an appointment.</mat-hint>
+              </mat-form-field>
+              <mat-form-field fxFlex>
+                <mat-label>Post-appointment buffer</mat-label>
+                <mat-select formControlName="after" required (selectionChange)="onFieldChange($event)">
+                  <mat-option>--</mat-option>
+                  <mat-option *ngFor="let option of appointmentBuffers" [value]="option.value">
+                    {{option.label}}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="isFieldError('after', 'appointment_buffer')">The appointment buffer is required.</mat-error>
+                <mat-hint>The amount of time that you need to review and summarize after an appointment.</mat-hint>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="30px">
+          <mat-form-field fxFlex>
+            <mat-label>What days of the week are you available for appointments?</mat-label>
+            <mat-select formControlName="days_of_week" required multiple (selectionChange)="onFieldChange($event)">
+              <mat-option *ngFor="let option of daysOfWeek" [value]="option.value">
+                {{option.label}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="isFieldError('days_of_week')">You need to select the days that you are available.</mat-error>
+            <mat-hint>You can select multiple days and your business hours will apply for the days you selected.</mat-hint>
+          </mat-form-field>
+          <div formGroupName="range" fxFlex>
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="30px">
+              <mat-form-field fxFlex>
+                <mat-label>How far ahead can appointments be scheduled?</mat-label>
+                <mat-select formControlName="type" required (selectionChange)="onFieldChange($event)">
+                  <mat-option>--</mat-option>
+                  <mat-option *ngFor="let option of rangeTypes" [value]="option.value">
+                    {{option.label}}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="isFieldError('type', 'range')">The appointment range is required.</mat-error>
+                <mat-hint>{{appointmentTypeHint()}}</mat-hint>
+              </mat-form-field>
+              <mat-form-field fxFlex *ngIf="isRangeTypeRolling()">
+                <input matInput number min="0" placeholder="The number of rolling days" formControlName="value" required (keyup)="onFieldChange($event)">
+                <mat-error *ngIf="isFieldError('value', 'range')">The number of rolling days is required.</mat-error>
+                <mat-hint>Pick a number greater than 0. For example, clients will be able to schedule appointments with you up to 30 days in advance.</mat-hint>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-footer></mat-card-footer>
+  </mat-card>
+</section>

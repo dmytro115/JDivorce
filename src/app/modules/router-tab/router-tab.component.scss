@@ -1,0 +1,21 @@
+@import '~@angular/material/theming';
+
+.hide-tab-wrapper .mat-tab-body-wrapper {
+  display: none !important;
+}
+
+.router-tab-link {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.mat-tab-label.mat-tab-label-active {
+  color: var(--accent);
+  background-color: var(--white);
+  @include mat-elevation(8);
+}
+
+.mat-tab-label.mat-tab-disabled {
+  opacity: 0.4;
+}

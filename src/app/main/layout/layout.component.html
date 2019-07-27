@@ -1,0 +1,39 @@
+<div id="main-wrapper">
+  <app-header></app-header>
+  <ng-sidebar-container class="sidebar-container">
+    <!-- A sidebar -->
+    <ng-sidebar
+      [sidebarClass]="'menu-sidebar'"
+      [(opened)]="opened"
+      [mode]="mode"
+      [dock]="dock"
+      [dockedSize]="'70px'"
+      [showBackdrop]="false"
+      [closeOnClickBackdrop]="closeOnClickBackdrop"
+      [closeOnClickOutside]="closeOnClickOutside"
+      (openedChange)="onSidebarOpenedChange($event)"
+      (onClosed)="_onClosed()"
+    >
+      <mat-divider></mat-divider>
+      <app-sidenav class="menu-app-sidenav"></app-sidenav>
+    </ng-sidebar>
+
+    <!-- Page content -->
+    <div ng-sidebar-content>
+      <div class="page-wrapper">
+        <app-page-title></app-page-title>
+        <div class="container-fluid main-container">
+          <router-outlet> </router-outlet>
+          <div class="d-flex align-items-center justify-content-center flex-column" [style.height]="'100px'" *ngIf="spinnerInfo?.isLoading">
+            <mat-spinner class="m-2" *ngIf="spinnerInfo?.isLoading" [diameter]="30"></mat-spinner>
+            <span *ngIf="spinnerInfo?.isLoading">
+              <h3>{{ spinnerInfo?.isLoadingText }}</h3>
+            </span>
+          </div>
+        </div>
+
+        <app-footer></app-footer>
+      </div>
+    </div>
+  </ng-sidebar-container>
+</div>

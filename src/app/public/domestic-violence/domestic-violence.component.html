@@ -1,0 +1,523 @@
+<section class="evie-section--container">
+    <!-- Hero unit -->
+    <div class="hero">
+      <div class="hero__overlay hero__overlay--gradient"></div>
+      <div class="hero__mask"></div>
+      <div class="hero__inner">
+        <div class="container">
+          <div class="hero__content">
+            <div class="hero__content__inner" id='navConverter'>
+              <div class="item-wrapper">
+                <h1 class="hero__title">Free Application for Domestic Violence Protection</h1>
+                <p class="hero__text">Use JDivorce to prepare the official Washington application for Domestic Violence Protection Order. It's free. Step through a series of questions in plain language. Then download your documents to print and file at your local Washington court. You also have the option to hire a licensed lawyer</p>
+              </div>
+            </div>
+            <div class="hero__tab">
+                <div class="hero__tab-head" *ngIf="showQuestionTab">
+                    <button (click)="changeTab(1)" [ngClass]="{'active':activeTab == 1}">Start Application</button>
+                    <button (click)="changeTab(2)" [ngClass]="{'active':activeTab == 2}">Ask a Lawyer</button>
+                </div>
+              <div class="hero__tab-content">
+                <div class="precheck-form hero__tab-pane" *ngIf="activeTab == 1 && showQuestionTab == true">
+                  <div class="item-wrapper">
+                    <div class="group-item">
+                      <p class="text-with-info">
+                        Take this Diagnostic to see if you're eligible   
+                        <span class="info">
+                          ?
+                          <div>
+                            <span>The process for getting a 'Domestic Violence Protection Order (DVPO)' depends on</span>
+                            <ul>
+                              <li>Your situation</li>
+                              <li>Your county</li>
+                            </ul>
+                            <span>JDivorce relies on the most recent</span>
+                            <ul>
+                              <li>Court handbooks from your county</li>
+                              <li>WA Laws</li>
+                              <li>WA Court Rules</li>
+                            </ul>
+                          </div>
+                        </span>
+                      </p>
+                    </div>
+                    <div class="group-item">
+                      <input (keyup)="onZipChange($event)" type="text" placeholder="Zip" class="form-control">
+                    </div>
+                    <!--
+                   <div class="group-item">
+                      <input (change)="onCheckboxChange($event)" type="checkbox" name="first" id="first">
+                      <label for="first">There's no on-going divorce or family law case against the accuser? </label>
+                    </div> -->
+                  <!--
+                    <div class="group-item">
+                      <input (change)="onCheckboxChange($event)" type="checkbox" name="second" id="second">
+                      <label for="second">Protection is needed from a family member</label>
+                    </div> -->
+                    <!--
+                    <div class="group-item">
+                      <input (change)="onCheckboxChange($event)" type="checkbox" name="third" id="third">
+                      <label for="third">We agree on child custody</label>
+                    </div> -->
+                    <div class="group-item">
+                      <a href="javascript:void(0)" (click)="beginApplicationAction()"
+                        class="button button__accent button--no-horizontal-margin"><b>Start</b></a>
+                        <p style="color:#bababa;">By clicking 'Start', you agree to the <a href="https://www.jdivorce.com/terms-of-use">JDivorce Terms of Use </a> and have read and acknowledge our <a href="https://www.jdivorce.com/privacy">Privacy Policy</a> </p>
+
+                    </div>
+                  </div>
+                </div>
+  
+  
+                <div class="hero__contact" *ngIf="activeTab == 2">
+                  <div class="group-item">
+                    <p class="text-with-info">
+                      Ask a question from a lawyer.
+                      <span class="info">
+                        i
+                        <div>
+                          <span>JDivorce will forward your question to 1-2 lawyers in our network who will reply via
+                            e-mail within 3 hours</span>
+                        </div>
+                      </span>
+                    </p>
+                  </div>
+                  <div class="hero__contact-body">
+                    <p *ngIf="isSuccess">
+                      <ngb-alert [dismissible]="false">
+                        <span [innerHTML]="'contact.success_message' | translate"></span>
+                      </ngb-alert>
+                    </p>
+                    <form [formGroup]="contactForm" validate (ngSubmit)="contact()" class="m-t-10">
+                      <div *ngIf="alertText" class="alert alert-danger">
+                        {{alertText}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span
+                            aria-hidden="true">×</span>
+                        </button>
+                      </div>
+                      <div class="group-item" ngClass="{ 'has-danger': contactForm.email.invalid }">
+                        <input [placeholder]="'contact.email' | translate" required id="email" class="form-control"
+                          autocomplete="on" type="email" name="email" email formControlName="email">
+                        <div class="form-control-feedback text-danger"><span
+                            *ngIf="contactForm.controls['email'].errors?.required && !contactForm.controls['email'].pristine">Email
+                            is required.</span>
+                        </div>
+                      </div>
+                      <div class="group-item">
+                        <input [placeholder]="'contact.name' | translate" required id="name" class="form-control"
+                          autocomplete="on" type="text" name="name" name formControlName="name">
+                        <div class="form-control-feedback text-danger"><span
+                            *ngIf="contactForm.controls['name'].errors?.required && !contactForm.controls['name'].pristine">Name
+                            is required.</span>
+                        </div>
+                      </div>
+                      <div class="group-item">
+                        <input [placeholder]="'contact.phone' | translate" type="text" class="form-control" id="phone"
+                          name="phone" phone formControlName="phone">
+                        <span class="tel"></span>
+                      </div>
+                      <div class="group-item" ngClass="{ 'has-danger': contactForm.feedback.invalid }">
+                        <textarea placeholder="Question" class="form-control" rows="4" id="feedback" required
+                          name="feedback" feedback formControlName="feedback"></textarea>
+                        <div class="form-control-feedback text-danger"><span
+                            *ngIf="contactForm.controls['feedback'].errors?.required && !contactForm.controls['feedback'].pristine">Question
+                            is required.</span>
+                        </div>
+                      </div>
+  
+                      <button type="submit" class="button button--sm button__primary button--no-margin button--margin-top"
+                        [disabled]="!contactForm?.valid || isRequestInProgress">{{ 'contact.submit' | translate}}
+                      </button>
+  
+                    </form>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="hero__sub">
+      <span id="scrollToNext" class="scroll">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          class='hero__sub__down' fill="currentColor" width="512px" height="512px" viewBox="0 0 512 512"
+          style="enable-background:new 0 0 512 512;" xml:space="preserve">
+          <path
+            d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3z" />
+          </svg>
+      </span>
+    </div>
+  
+    <div class="video-section">
+      <div class="container">
+        <div class="video-section__popup" *ngIf="isVideoVisible">
+          <button class="video-section__close-btn fa fa-times" (click)="onVideoClose()"></button>
+          <div class="video-section__iframe">
+            <iframe src="https://www.youtube.com/embed/UnIFhUZCuE0?ecver=1&autoplay=1" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="video-section__columns">
+          <div class="video-section__column">
+            <div class="video-section__screenshot" (click)="onVideoOpen()">
+              <button class="video-section__play-btn fa fa-play"></button>
+              <img src="assets/evie/images/testimonial.jpg" width="100%">
+            </div>
+          </div>
+          <div class="video-section__column video-section__text">
+            <h2>Ariel Anderson</h2>
+            <ul>
+              <li>Lakewood, Washington</li>
+              <li>JDivorce Customer</li>
+  
+              <li><b>Filing Location:</b> Pierce County Superior Court</li>
+              <li><b>Filing Status:</b> Divorce is finalized. Filed around May 2018.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Steps -->
+    <div class="steps landing__section">
+     <!-- <h2 class="heading">Our Plans</h2>
+      <div class="lawyers-block-wrap">
+        <div class="col-lg-6 col-sm-12 service-overview" [style.padding]="'0'" [style.margin-bottom]="'20px'"
+          [style.margin-right]="'20px'">
+          <app-pricing-block (ctaClick)="onCtaClick($event)" [ctaButtonOptions]="pricingBlockCtaButtonOptions"
+            [plansFilter]="plansFilter"></app-pricing-block>
+        </div>
+  
+        <div class="col-lg-6 col-sm-12" [style.padding]="'0'">
+          <mat-card class="blurry-elevation" [style.padding-top]="'50px'" [style.padding-bottom]="'30px'">
+            <mat-card-title class="m-t-30">
+              <h1 [style.line-height]="'50px'" [style.font-size]="'50px'" [style.color]="'#455a64'">$350 - $1000</h1>
+            </mat-card-title>
+            <mat-card-subtitle [style.max-width]="'400px'" [style.margin-top]="'30px'" [style.margin-bottom]="'0'"
+              [style.margin-left]="'auto'" [style.margin-right]="'auto'">
+              <h3 [style.color]="'#455a64'"><strong>Take this <b>Diagnositc</b> to view eligible plans</strong></h3>
+            </mat-card-subtitle>
+            <mat-card-content [style.display]="'flex'" [style.place-content]="'center'">
+              <mini-diagnostic [style.margin-top]="'30px'" [style.max-width]="'400px'" [style.width]="'100%'"
+                [showQuestionsTab]="false" (diagnosticData)="onDiagnosticData($event)"></mini-diagnostic>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div> -->
+  
+      <div class="container">
+        <h2 class="heading">How It Works</h2>
+        <p>From the moment you decided to file for divorce, it takes anywhere between 3.5 to 12 months to finalize a
+          divorce.</p>
+      </div>
+  
+      <div class="container">
+        <div class="steps__inner">
+          <div class="step">
+            <div class="step__media">
+              <!--<img src="../../../assets/evie/images/undraw_designer.svg" class="step__image">-->
+            </div>
+            <h4 class="step-heading"> <span class="step-sub-title"> 1 </span>Take Diagnostic (free!)</h4>
+            <p class="step__text process-desc">
+              Test if you qualify for Domestic Violence Protection Order <br />
+              &#10004;&nbsp;Answers questions in simple language. No difficult legal terms<br />
+              &#10004;&nbsp;View help content and videos prepared by lawyers in Washington<br />
+              &#10004;&nbsp;Get a 'YES' or 'NO' answer within 1 minute <br />
+            </p>
+          </div>
+  
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/undraw_responsive.svg" class="step__image">
+            </div>
+            <h4 class="step-heading"><span class="step-sub-title"> 2 </span>View Process, Q&A (free!)</h4>
+            <p class="step__text process-desc">
+              Download the petition and the supporting forms<br />
+              &#10004;&nbsp;Petition for Order for Protection<br />
+              &#10004;&nbsp;Law Enforcement Information Sheet (LEIS)<br />
+              &#10004;&nbsp;All applicable forms as listed on <a href="https://www.courts.wa.gov/forms/?fa=forms.contribute&formID=16">Washington Courts</a><br />
+              <!-- &#10004;&nbsp;Child support calculator<br />
+              &#10004;&nbsp;Assets and debts division calculator<br /> -->
+            </p>
+          </div>
+        </div>
+        <div class="steps__inner">
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/undraw_creation.svg" class="step__image">
+            </div>
+            <h4 class="step-heading"><span class="step-sub-title"> 3 </span>Prepare Application</h4>
+            <p class="step__text process-desc">
+              Answer 3-4 questionnaires to prepare these WA court forms<br />              
+              &#10004;&nbsp;Petition for Order for Protection<br />
+              &#10004;&nbsp;Law Enforcement Information Sheet (LEIS)<br />
+              &#10004;&nbsp;Confidential Information<br />
+              &#10004;&nbsp;All applicable forms as listed on <a href="https://www.courts.wa.gov/forms/?fa=forms.contribute&formID=16">Washington Courts</a><br />
+            </p>
+          </div>
+          <div class="step">
+            <div class="step__media">
+              <!--<img src="../../../assets/evie/images/undraw_browser.svg" class="step__image">-->
+            </div>
+            <h4 class="step-heading"><span class="step-sub-title"> 4 </span>File at Court (free!)</h4>
+            <p class="step__text process-desc">
+              Visit the county court <br />
+              &#10004;&nbsp;File the appication to begin the process<br />
+              &#10004;&nbsp;Judge will either issue an emergency order there, or at a hearing within 14 days of filing<br />
+            
+            </p>
+          </div>
+        </div>
+  
+  
+  
+  
+      </div>
+    </div>
+  
+    <!-- Steps -->
+    <div class="steps landing__section">
+      <div class="container">
+        <h2 class="heading">JDivorce Advisory Board</h2>
+        <p>JDivorce is advised by industry lawyers & professors who are passionate about bringing access to justice for
+          everybody</p>
+      </div>
+      <div class="container advisory">
+        <div class="steps__inner">
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/dan_round.png" class="step__image">
+            </div>
+            <h4>Dan Lear</h4>
+            <p class="step__text text-center">
+              Lawyer, and CEO at Right Brain Law, former Director of Industry Relations for Avvo
+            </p>
+          </div>
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/deirdre_round.png" class="step__image">
+            </div>
+            <h4>Deirdre Bowen</h4>
+            <p class="step__text text-center">
+              Lawyer and Associate Professor, Seattle University School of Law, Director & Founder of the Madrid Study
+              Abroad Program in Law & Policy
+            </p>
+          </div>
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/aurora_round.png" class="step__image">
+            </div>
+            <h4>Aurora Martin</h4>
+            <p class="step__text text-center">
+              Lawyer, Instructor at UW School of Law, former Executive Director at Columbia Legal Services, Founder of <a
+                href="https://popupjustice.org">popUPjustice</a>
+            </p>
+          </div>
+        </div>
+  
+        <!-- row 2 -->
+        <div class="steps__inner">
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/jody_round.png" class="step__image">
+            </div>
+            <h4>Jody Cloutier</h4>
+            <p class="step__text text-center">
+              Managing Attorney at Family Law Solutions, PLLC, member of the Washington State Bar Association Court Rules
+              Committee
+            </p>
+          </div>
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/jennifer_round.png" class="step__image">
+            </div>
+            <h4>Jennifer Ortega</h4>
+            <p class="step__text text-center">
+              Co-founder and partner at Legal Technician Division, PLLC
+            </p>
+          </div>
+        </div>
+        <!-- End row 2 -->
+      </div>
+    </div>
+  
+    <!-- Clients -->
+    <!-- Steps -->
+    <div class="steps landing__section client-testimonials">
+      <div class="container">
+        <h2 class="heading">Our Users</h2>
+        <p>We are seeing great response owing to our unique offering</p>
+      </div>
+      <div class="container">
+        <div class="steps__inner">
+          <div class="step">
+            <h2 style="font-size: 500%">9</h2>
+            <p class="step__text">Applications Daily</p>
+          </div>
+          <div class="step">
+            <h2 style="font-size: 500%">20</h2>
+            <p class="step__text">Applications Daily</p>
+          </div>
+          <div class="step">
+            <h2 style="font-size: 500%">4.5</h2>
+            <p class="step__text">Average rating out of 5</p>
+          </div>
+        </div>
+  
+        <!-- row 2 -->
+        <div class="steps__inner">
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/manbust.png" class="step__image">
+            </div>
+            <h4>Olympia WA, Hanna D, Jan 2019 </h4>
+            <p class="step__text"> &#11088;&#11088;&#11088;&#11088;&#11088;<br />
+              <i>"JDivorce helped me in securing protection orders at a very difficult time in my life."</i>
+            </p>
+          </div>
+  
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/womanBlueProfile.jpg" class="step__image">
+            </div>
+            <h4>Spokane WA: Ocana J, Nov 2018</h4>
+            <p class="step__text">
+              &#11088;&#11088;&#11088;&#11088;&#11088;<br /><i>"We were able to file domestic violence application in two
+                hours, thanks to the well organized paperwork produced"</i>
+            </p> 
+          </div>
+  
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/womanBlueProfile.jpg" class="step__image">
+            </div>
+            <h4>Port Orchard WA: Denny K Dec 2018</h4>
+            <p class="step__text">
+              &#11088;&#11088;&#11088;&#11088;<br /><i>"JDivorce made the paperwork simpler during a very difficult
+                period in my life."</i>
+            </p>
+          </div>
+        </div>
+  
+        <!-- row 2 -->
+        <div class="steps__inner">
+  
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/womanBlueProfile.jpg" class="step__image">
+            </div>
+            <h4>Spokane WA, Sarah A, Dec 2018</h4>
+            <p class="step__text">&#11088;&#11088;&#11088;&#11088;<br /><i>"JDivorce helped me understand the process every step of the way"</i></p>
+          </div>
+  
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/manbust.png" class="step__image">
+            </div>
+            <h4>Seattle WA: Tara H, Feb 2019</h4>
+            <p class="step__text">
+              &#11088;&#11088;&#11088;&#11088;&#11088;<br /><i>"I wanted to keep my case private and complete the process with minimum number of trips to the court. This website helped me hit that ideal."</i>
+            </p>
+          </div>
+  
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/manbust.png" class="step__image">
+            </div>
+            <h4>Bellevue WA: Debbie A March 2019</h4>
+            <p class="step__text">
+              &#11088;&#11088;&#11088;&#11088;<br /><i>"JDivorce was very helpful in creating my domestice violenace application and getting a protection order" </i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  
+  
+    <!-- <div class="steps landing__section">
+      <div class="container">
+        <h2 class="heading">Security and Privacy</h2>
+        <p>Data security is of utmost importance to JDivorce. We invest heavily in securing our infrastructure in close partnership with world-class security experts. We comply with security standards set by US Federal Governmen and the European Union.</p>
+  
+   <p>&#10004;&nbsp;You can delete your personal info after you download the forms </p>  
+  
+  <p>&#10004;&nbsp;Don't disclose your personal data (dates of births, driver license number, or social security number) online but instead directly fill it on downloaded application. This feature provides added peace of mind.</p>
+  
+      </div>
+      <div class="container">
+        <div class="steps__inner">
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/etrust.png" class="step__image">
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/badge2.png" class="step__image">
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/blog.png" class="step__image">
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/mcafee.png" class="step__image">
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div> -->
+    <!-- end container -->
+  
+    <!-- <div class="steps landing__section">
+      <div class="container">
+        <h2 class="heading">Awards</h2>
+        <p>In under 24 months, our quality has been broadly recognized</p>
+      </div>
+      <div class="container">
+        <div class="steps__inner">
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/awards1.png" class="step__image">
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/awards2.png" class="step__image">
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/awards3.png" class="step__image">
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/awards4.png" class="step__image">
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/awards5.png" class="step__image">
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__media">
+              <img src="../../../assets/evie/images/awards7.png" class="step__image">
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div> -->
+    <!-- end container -->
+
+  <ngx-spinner bdOpacity="0.3" size="default" color="#fff" type="ball-spin"></ngx-spinner>
+  </section>

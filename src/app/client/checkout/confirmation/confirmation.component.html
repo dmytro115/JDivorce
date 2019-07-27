@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="text-center fa-icon-color">
+          <i class="mdi mdi-checkbox-marked-circle-outline text-center"></i>
+        </h1>
+        <h3 class="card-title text-center" translate='CHECKOUT.confirmation.success_text'></h3>
+        <p class="card-text text-center" translate='CHECKOUT.confirmation.confirmation_text'></p>
+        <h2 class="font-weight-bold text-themecolor text-center m-t-40">
+          <i class="fa fa-list-alt"></i>
+          <span translate='CHECKOUT.confirmation.summary_title'></span>
+        </h2>
+        <hr>
+        <div class="row">
+          <h3 class="font-medium col-sm-5 col-md-6 text-sm-right text-md-right font-quick-sum" translate='CHECKOUT.confirmation.lawyer_name'></h3>
+          <h3 class="text-muted col-sm-7 col-md-6 font-quick-sum">{{order?.lawyer_name}}</h3>
+          <h3 class="font-medium col-sm-5 col-md-6 text-sm-right text-md-right font-quick-sum" translate='CHECKOUT.confirmation.lawyer_email'></h3>
+          <h3 class="text-muted col-sm-7 col-md-6 font-quick-sum">{{order?.lawyer_email}}</h3>
+          <h3 *ngIf="order?.appointment_start_at" class="font-medium col-sm-5 col-md-6 text-sm-right text-md-right font-quick-sum" translate='CHECKOUT.confirmation.appointment_time'></h3>
+          <h3 *ngIf="order?.appointment_start_at" class="text-muted col-sm-7 col-md-6 font-quick-sum">{{appointmentDate}}</h3>
+          <h3 class="font-medium col-sm-5 col-md-6 text-sm-right text-md-right font-quick-sum" translate='CHECKOUT.confirmation.total_cost'></h3>
+          <h3 class="text-muted col-sm-7 col-md-6 font-quick-sum">${{order?.cost}}</h3>
+        </div>
+        <button *ngIf="buttonInfo === 'dashboard'" mat-flat-button color="primary" class="btn-soft float-right mt-40" routerLink="/a/c/dashboard">{{ 'CHECKOUT.confirmation.return_to_application' | translate }}</button>
+        <button *ngIf="buttonInfo === 'diagnostics'" mat-flat-button color="primary" class="btn-soft float-right mt-40" routerLink="/a/c/divorce/diagnostics">{{ 'CHECKOUT.confirmation.continue_to_diagnostics' | translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>

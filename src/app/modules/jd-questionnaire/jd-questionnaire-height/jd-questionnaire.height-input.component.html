@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-12 col-md-6 d-flex align-items-center">
+    <input
+      #feet
+      type="number"
+      (input)="onInput($event.target.value)"
+      class="jd-questionnaire__input"
+      [placeholder]="placeholder"
+      [value]="handleUndefined(value?.feet)"
+      [ngClass]="style"
+    />
+    <strong>FEET</strong>
+  </div>
+  <div class="col-12 col-md-6 d-flex align-items-center">
+    <input
+      #inches
+      type="number"
+      (input)="onInput($event.target.value)"
+      class="jd-questionnaire__input"
+      [placeholder]="placeholder"
+      [value]="handleUndefined(value?.inches)"
+      [ngClass]="style"
+    />
+    <strong>INCHES</strong>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <p class="jd-questionnaire__input-error" *ngIf="hasError">{{ error }}</p>
+  </div>
+</div>

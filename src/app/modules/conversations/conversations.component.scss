@@ -1,0 +1,48 @@
+.chat-left-inner {
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+
+  .ng-select {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.chat-list li.reverse .box:after {
+  border-left-color: #cfecfe;
+  border-top-color: #cfecfe;
+}
+
+.chat-main-header {
+  .b-b {
+    margin-left: 0;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+
+    &.no-padding {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .box-title {
+      margin-bottom: 0;
+    }
+  }
+
+  .select-client {
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.chat-rbox {
+  margin-bottom: 2rem;
+
+  .chat-list li .chat-img img {
+    height: 45px;
+    object-fit: cover;
+  }
+}

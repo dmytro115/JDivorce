@@ -1,0 +1,108 @@
+$bg-color: rgba(255, 255, 255, 0.8);
+
+.mini-diagnostic {
+  width: 100%;
+  color: #000;
+  background: $bg-color;
+
+  @media screen and (max-width: 400px) {
+    width: 300px;
+  }
+
+  &-head {
+    display: flex;
+  }
+
+  button.tab-btn {
+    flex: 1;
+    background: $bg-color;
+    outline: none;
+    cursor: pointer;
+    color: #000;
+    border: 0;
+    padding: 15px;
+    transition: all 0.4s ease-in-out;
+
+    &.active,
+    &:hover {
+      background: #000;
+      color: #fff;
+    }
+  }
+
+  &-content {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+
+    /* overwrite AP theme */
+    .tooltip-content5 {
+      text-align: left;
+
+      .tooltip-inner2 {
+        padding: 20px;
+      }
+    }
+  }
+}
+
+.landing-style {
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid white;
+
+  button.tab-btn {
+    background: transparent;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+
+    &.active,
+    &:hover {
+      background: #6c63ff;
+      color: #89fab6;
+      font-weight: 600;
+    }
+  }
+
+  .form-control {
+    border: 1px solid #fff;
+  }
+
+  p,
+  h4 {
+    color: #fff;
+  }
+
+  input,
+  textarea {
+    color: #fff;
+    padding: 10px;
+  }
+
+  ::placeholder {
+    color: #fff;
+  }
+
+  .btn-style {
+    background-color: #21b95e;
+    color: #fff;
+  }
+
+  .btn-style:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield; /* Firefox */
+  }
+}

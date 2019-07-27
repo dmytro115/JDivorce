@@ -1,0 +1,32 @@
+<mat-card [style.box-shadow]="'none'" class="max-width-400">
+  <mat-card-header [style.justify-content]="'center'" class="mb-4 text-center">
+    <mat-card-title class="uppercase text-center">Email verification</mat-card-title>
+    <mat-card-subtitle>
+      <div *ngIf="alertText" class="text-warn">{{ alertText }}</div>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="text-center">
+    <div *ngIf="isVerifying">
+      <mat-progress-spinner mode="indeterminate" diameter="40" [style.margin]="'0 auto'"></mat-progress-spinner>
+    </div>
+
+    <form [formGroup]="verificationForm" fxLayout="column" fxLayoutGap="16px" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email" />
+        <mat-error *ngIf="emailControl.hasError('email') && !emailControl.hasError('required')">
+          Email is not valid.
+        </mat-error>
+        <mat-error *ngIf="emailControl.hasError('required')">
+          Email is required.
+        </mat-error>
+      </mat-form-field>
+      <button [disabled]="!verificationForm.valid" type="submit" mat-flat-button class="uppercase btn-soft" color="accent">Resend verification email</button>
+    </form>
+    <div class="mt-5" fxLayoutGap="8px">
+      <span>Don't have an account?</span>
+      <a routerLink="/auth/register">
+        <strong>Register</strong>
+      </a>
+    </div>
+  </mat-card-content>
+</mat-card>

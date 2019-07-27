@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Add your recent cases</h1>
+<div mat-dialog-content>
+  <form [formGroup]="form()" fxLayout="column" fxLayoutGap="20px" class="p-t-10">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="20px">
+      <mat-form-field class="example-full-width">
+        <textarea rows="5" fxFlex formControlName="title" required (keyup)="onFieldChange($event)" matInput placeholder="Description"></textarea>
+        <mat-error *ngIf="isFieldError('title')">The description is required.</mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="5px">
+  <button fxFlex mat-flat-button (click)="onNoClick()">Cancel</button>
+  <button *ngIf="!data.isEdit" fxFlex mat-flat-button color="primary" [mat-dialog-close]="{ isEdit: false, element: form().value, index: -1 }" [disabled]="!form().valid">Add</button>
+  <button  *ngIf="data.isEdit" fxFlex mat-flat-button color="primary" [mat-dialog-close]="{ isEdit: true, element: form().value, index: data.index }" [disabled]="!form().valid">Save</button>
+</div>

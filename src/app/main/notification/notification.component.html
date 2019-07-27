@@ -1,0 +1,36 @@
+<div class="message-center dropdown-item" *ngFor="let notification of notifications" [ngClass]="{ unread: !notification?.is_read }">
+  <!-- Message -->
+  <div (click)="!notification?.is_read && readInvite(notification)" class="d-flex align-items-center">
+    <div class="btn btn-primary btn-circle py-2 px-3"><i class="fa fa-user"></i></div>
+    <div class="mail-contnet" style="margin-left: 5px;">
+      <h5 class="mb-0">Invite</h5>
+      <span class="mail-desc text-truncate d-inline-block" style="width: 205px" (click)="getInviterDetails(notification)">{{ notification?.message }}</span>
+      <span class="time d-block">{{ notification?.created_at | date: 'hh:mm MM/dd' }}</span>
+      <div class="d-flex">
+        <button
+          *ngIf="showInviteAcceptReject(notification)"
+          (click)="rejectInvite(notification)"
+          type="button"
+          class="btn waves-effect waves-light btn-xs btn-danger m-r-5 my-3"
+          translate="reject"
+        ></button>
+        <button
+          *ngIf="showInviteAcceptReject(notification)"
+          (click)="acceptInvite(notification)"
+          type="button"
+          class="btn waves-effect waves-light btn-xs btn-success my-3"
+          translate="accept"
+        ></button>
+      </div>
+      <span *ngIf="!showInviteAcceptReject(notification)" class="mail-desc">
+        <h6 class="font-weight-bold" translate="{{ notification?.invite_status }}"></h6>
+      </span>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <a *ngIf="notifications.length === 0">
+    <div class="main-contnet">
+      <span class="center" class="mail-desc">You have no notifications.</span>
+    </div>
+  </a>
+</div>

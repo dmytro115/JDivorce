@@ -1,0 +1,9 @@
+<div class="close-container">
+  <span (click)="close()">X</span>
+</div>
+<app-signin
+  [isDialog]="true"
+  (triggerRegister)="onTriggerSignup()"
+  (triggerForgetPassword)="onTriggerForgetPassword()"
+  (signInSuccess)="onSigninSuccess()"
+></app-signin>

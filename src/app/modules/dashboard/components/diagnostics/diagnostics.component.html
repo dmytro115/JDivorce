@@ -1,0 +1,4 @@
+<div fxLayout="column" fxLayoutGap="16px">
+  <app-questionnaire-list [questionnaires]="questionnaires"></app-questionnaire-list>
+  <button [style.max-width]="'200px'" *ngIf="showPreambleButton()" mat-raised-button color="basic" (click)="showPreamble()">Protection Order Preamble</button>
+</div>

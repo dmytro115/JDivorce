@@ -1,0 +1,16 @@
+{
+  "rulesDirectory": [
+    "node_modules/codelyzer"
+  ],
+  "extends": ["angular-tslint-rules"],
+  "rules": {
+    "max-line-length": [
+      true,
+      160
+    ],
+    "newline-per-chained-call": false,
+    "no-empty": [true, "allow-empty-functions"],
+    "no-floating-promises": false,
+    "prefer-conditional-expression": false
+  }
+}

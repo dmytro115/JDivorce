@@ -1,0 +1,34 @@
+<ul *ngIf="!hasImage" [ngClass]="{ 'jd-questionnaire__radio--boolean': isBoolean }" class="jd-questionnaire__radio">
+  <li
+    [ngClass]="{ selected: isSelected(option.value) }"
+    (click)="onSelect(option)"
+    *ngFor="let option of options; let index = index"
+    class="jd-questionnaire__radio-item"
+    (clickOutside)="option.canEdit ? onBlurOtherInput(option) : null"
+  >
+    <div *ngIf="!option.canEdit">
+      <span class="jd-questionnaire__radio-item-index">{{ index + 1 }}</span>
+      <span class="jd-questionnaire__radio-item-label">{{ option.label ? option.label : option.value }}</span>
+    </div>
+    <div *ngIf="option.canEdit" class="jd-questionnaire__radio-item-input">
+      <textarea #other rows="{{ countRowsInText(option.inputValue) }}" [(ngModel)]="option.inputValue"></textarea>
+    </div>
+  </li>
+</ul>
+
+<ul *ngIf="hasImage" class="jd-questionnaire__radio jd-questionnaire__radio--with-image">
+  <li
+    [ngClass]="{ selected: isSelected(option.value) }"
+    (click)="onAnswer.emit(option.value)"
+    *ngFor="let option of options; let index = index"
+    class="jd-questionnaire__radio-item"
+  >
+    <img [src]="option.image" [alt]="option.label" />
+    <span class="jd-questionnaire__radio-item-label-wrapper">
+      <span class="jd-questionnaire__radio-item-index">{{ index + 1 }}</span>
+      <span class="jd-questionnaire__radio-item-label">{{ option.label ? option.label : option.value }}</span>
+    </span>
+  </li>
+</ul>
+
+<p class="jd-questionnaire__radio-error" *ngIf="hasError">{{ error }}</p>

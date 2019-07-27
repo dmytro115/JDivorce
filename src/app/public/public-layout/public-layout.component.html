@@ -1,0 +1,154 @@
+<div class="main-header" id="main-wrapper">
+  <!-- ============================================================== -->
+  <!-- Topbar header - style you can find in pages.scss -->
+  <!-- ============================================================== -->
+  <header id="mainHeader" class="topheader scroll" [ngClass]="{'default-header': changeHeader}">
+    <div class="fix-width background-white-in-small-screen-size" [ngClass]="{'custome_width' : !changeHeader, 'white-header-mobile' : !changeHeader}">
+      <nav class="navbar navbar-expand-md navbar-light p-l-0" [ngClass]="{'no-top-nav': hideTopNav == true}">
+        <!-- Logo will be here -->
+        <a class="navbar-brand" routerLink="/">
+          <img class="logo-icon d-none" [src]="changeHeader ? 'assets/logo-white.png?v=1' : 'assets/logo.png?v=1'"/>
+          <img class="logo-text" [src]="changeHeader ? 'assets/logo-text-white.png?v=1' : 'assets/logo-text.png?v=1' "/>
+        </a>
+        <div class="language-dropdown" *ngIf="!changeHeader">
+          <a class="nav-link text-muted waves-effect waves-dark pl-1" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="flag-icon {{langIcon}}"></i>
+            </a>
+          <div class="dropdown-menu dropdown-menu-right scale-up">
+            <a class="dropdown-item" href="javascript:void(0)" (click)="updateLanguage('en')"><i class="flag-icon flag-icon-us"></i>
+                <span>{{"MENU.ENGLISH" | translate}}</span>
+              </a>
+            <a class="dropdown-item" href="javascript:void(0)" (click)="updateLanguage('es-MX')"><i class="flag-icon flag-icon-mx"></i>
+                <span>{{"MENU.SPANISH" || translate}}</span>
+              </a>
+          </div>
+        </div>
+        <a class="btn btn-success mobile-begin-button d-none bg-dark-green" href="javascript:void(0)" (click)="beginApplication()">{{"home.menu.begin" | translate}}</a>
+        <button class="white-background navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="language-dropdown" *ngIf="changeHeader">
+          <a class="nav-link text-muted waves-effect waves-dark pl-1" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="flag-icon {{langIcon}}"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right scale-up">
+            <a class="dropdown-item" href="javascript:void(0)" (click)="updateLanguage('en')"><i class="flag-icon flag-icon-us"></i>
+              <span>{{"MENU.ENGLISH" | translate}}</span>
+            </a>
+            <a class="dropdown-item" href="javascript:void(0)" (click)="updateLanguage('es-MX')"><i class="flag-icon flag-icon-mx"></i>
+              <span>{{"MENU.SPANISH" || translate}}</span>
+            </a>
+          </div>
+        </div>
+        <!-- This is the navigation menu -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown" *ngIf="hideTopNav == false">
+          <ul class="navbar-nav ml-auto stylish-nav" [ngClass]="{'white-header-ul': !changeHeader}">
+            <li class="nav-item dropdown ml-3">
+              <a class="nav-link text-muted waves-effect waves-dark pl-1" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="flag-icon {{langIcon}}"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right scale-up">
+                <a class="dropdown-item" href="javascript:void(0)" (click)="updateLanguage('en')"><i class="flag-icon flag-icon-us"></i>
+                  <span>{{"MENU.ENGLISH" | translate}}</span>
+                </a>
+                <a class="dropdown-item" href="javascript:void(0)" (click)="updateLanguage('es-MX')"><i class="flag-icon flag-icon-mx"></i>
+                  <span>{{"MENU.SPANISH" | translate}}</span>
+                </a>
+              </div>
+            </li>
+            <li class="nav-item"> <a class="nav-link" routerLink="/" target="_self">Divorce</a> </li>
+            <li class="nav-item"> <a class="nav-link" routerLink="/domestic-violence" target="_self">Domestic Violence</a> </li>
+            <li class="nav-item"> <a class="nav-link" routerLink="/lawyers-home" target="_self">For Professionals</a> </li>
+            <li class="nav-item"> <a class="nav-link" routerLink="/white-label" target="_self">White Label</a> </li>
+             <li class="nav-item"> <a class="nav-link" routerLink="/contact" target="_self">Contact Us</a> </li>
+   
+              <ng-container *showAuthed="false">
+                  <li class="nav-item"> <a class="nav-link" (click)="triggerSignin()"><i class="locks fa fa-lock" *ngIf="changeHeader"></i>{{"home.menu.sign_in" | translate}}</a> </li>
+                  <li class="nav-item"> <a class="nav-link" (click)="triggerSignup()"><i class="fa fa-user-plus" *ngIf="changeHeader"></i>{{"home.menu.register" | translate}}</a> </li>      
+              </ng-container> 
+              <li *showAuthed="true" class="nav-item"> <a class="nav-link" (click)="triggerSignout()"><i class="locks fa fa-lock"></i>Signout</a> </li>
+
+            <li class="nav-item"> <span class="m-t-5 btn btn-success" [ngClass]="{'bg-dark-green': changeHeader, 'bg-dark-blue': !changeHeader}" href="javascript:void(0)" (click)="beginApplication()">{{"home.menu.begin_application" | translate}}</span> </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- ============================================================== -->
+  <!-- Page wrapper  -->
+  <!-- ============================================================== -->
+  <div class="page-wrapper" id="top">
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+      <!-- ============================================================== -->
+      <!-- Start Page Content -->
+      <!-- ============================================================== -->
+      <router-outlet></router-outlet>
+      <!-- ============================================================== -->
+      <!-- End Page Content -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- footer -->
+      <!-- ============================================================== -->
+      <a class="bt-top btn btn-circle btn-lg btn-info" href="#top"><i class="fa fa-arrow-up"></i></a>
+      <footer class="footer public-footer ">
+        <div [ngClass]="{'fix-width': changeHeader, 'footer-container': !changeHeader}">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <ul class="footer-link list-icons">
+                <li><a routerLink="/">{{"footer.jdivorce" | translate}}</a></li>
+                <li><a routerLink="/privacy">{{"footer.privacy_and_terms" | translate}}</a></li>
+                <li><a routerLink="/about">{{"footer.about_us" | translate}}</a></li>
+                <li><a routerLink="/lawyers">{{"footer.lawyers" | translate}}</a></li>
+                <li><a routerLink="/lawyers-home">{{"footer.for_lawyers" | translate}}</a></li>
+                <li><a routerLink="/white-label">{{"footer.white_label" | translate}}</a></li>
+                <li><a routerLink="https://www.facebook.com/jdivorcepage">Facebook</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <ul class="footer-link list-icons">
+                <li>
+                  <h6><a class="color-focus">{{"footer.info_family_law" | translate}}</a></h6></li>
+                <li><a routerLink="/faqs">{{"footer.faq" | translate}}</a></li>
+                <li><a href="http://blog.jdivorce.com/">{{"footer.detailed_topics" | translate}}</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <ul class="footer-link list-icons">
+                <li>
+                  <h6><a class="color-focus">{{"footer.resources" | translate}}</a></h6></li>
+                <li><a href="https://www.courts.wa.gov/forms/?fa=forms.contribute&formID=13" target="_blank">{{"footer.wa_courtes" | translate}}</a></li>
+                <li><a href="https://www.washingtonlawhelp.org/">{{"footer.wa_law_help" | translate}}</a></li>
+                <li><a href="https://www.kcba.org/">King County Bar Association</a></li>
+                <li><a href="https://nwjustice.org/">NW Justice Project</a></li>
+                <li><a href="http://www.allianceforequaljustice.org/">Alliance for Equal Justice</a></li>
+                <li><a href="http://ocla.wa.gov/">Office of Civic and Legal Aid</a></li>
+                <li><a href="https://www.wsba.org/">Washington State Bar Association</a></li>
+                <li><a href="https://www.mckinleyirvin.com/">McKinley Irvin Family Law Firm</a></li>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-12 sub-footer">
+              <span>Disclaimer: JDivorce is not a law firm or a substitute for a law firm.  JDivorce does not provide legal advice. Everything on JDivorce website or any communciation is legal information. We keep everything private as detailed in our privacy policy. But communication between you and JDivorce does not enjoy the attorney-client privilege. Using our website means you agree to our Terms of Use.</span>
+              <span>{{"footer.copyright" | translate}}<a class="text-white" href="/" target="_blank">{{"footer.jdivorce_inc" | translate}}</a></span>
+
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- ============================================================== -->
+      <!-- End footer -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Page wrapper  -->
+  <!-- ============================================================== -->
+</div>
+<ngx-spinner bdOpacity="0.3" size="default" color="#fff" type="ball-spin"></ngx-spinner>
+<!-- <app-sign-in-form *ngIf="hideTopNav == false" #signInForm></app-sign-in-form>
+<app-sign-up-form *ngIf="hideTopNav == false" #signUpForm></app-sign-up-form>
+<app-forgot-password-form *ngIf="hideTopNav == false" #forgotPasswordForm></app-forgot-password-form> -->

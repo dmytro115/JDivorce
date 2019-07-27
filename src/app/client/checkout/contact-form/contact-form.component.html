@@ -1,0 +1,41 @@
+<form class="checkout-contact-form" [formGroup]="contactInfoForm" validate fxLayout="column">
+  <div fxLayout="row" fxLayoutGap="8px">
+    <div class="form-group" [ngClass]="{ 'has-danger': isFormError(contactInfoForm, 'firstName') }">
+      <div class="field">
+        <label>First Name <span class="text-danger">*</span></label>
+        <input required type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'form-control-danger': isFormError(contactInfoForm, 'firstName') }" />
+        <div *ngIf="isFormError(contactInfoForm, 'firstName')">
+          <div class="form-control-feedback" *ngIf="firstName.errors && firstName.errors.required">Your first name is required.</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" [ngClass]="{ 'has-danger': isFormError(contactInfoForm, 'lastName') }">
+      <div class="field">
+        <label>Last Name <span class="text-danger">*</span></label>
+        <input required type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'form-control-danger': isFormError(contactInfoForm, 'lastName') }" />
+        <div *ngIf="isFormError(contactInfoForm, 'lastName')">
+          <div class="form-control-feedback" *ngIf="lastName.errors && lastName.errors.required">Your last name is required.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" [ngClass]="{ 'has-danger': isFormError(contactInfoForm, 'email') }">
+    <div class="field">
+      <label>Email <span class="text-danger">*</span></label>
+      <input required type="text" formControlName="email" name="email" class="form-control" [ngClass]="{ 'form-control-danger': isFormError(contactInfoForm, 'email') }" />
+      <div *ngIf="isFormError(contactInfoForm, 'email')">
+        <div class="form-control-feedback" *ngIf="email.errors && email.errors.required">Your email is required.</div>
+        <div class="form-control-feedback" *ngIf="email.errors && email.errors.email">Your email must be a valid email address.</div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" [ngClass]="{ 'has-danger': isFormError(contactInfoForm, 'cell') }">
+    <div class="field">
+      <label>Cell</label>
+      <input type="text" formControlName="cell" class="form-control" [ngClass]="{ 'form-control-danger': isFormError(contactInfoForm, 'cell') }" />
+      <div *ngIf="isFormError(contactInfoForm, 'cell')">
+        <div class="form-control-feedback" *ngIf="cell.errors && cell.errors.required">Your cell number format is incorrect.</div>
+      </div>
+    </div>
+  </div>
+</form>

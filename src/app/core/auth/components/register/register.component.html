@@ -1,0 +1,92 @@
+<mat-card [style.box-shadow]="'none'">
+  <mat-card-header [style.justify-content]="'center'" class="mb-4 text-center">
+    <mat-card-title class="uppercase">Register your account</mat-card-title>
+    <mat-card-subtitle *ngIf="infoMessage" class="text-center my-5">
+      <div class="text-primary">
+        <strong>{{ infoMessage }}</strong>
+      </div>
+    </mat-card-subtitle>
+    <mat-card-subtitle class="text-center">
+      <div *ngIf="alertText" class="text-warn">{{ alertText }}</div>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()" class="form-material" fxLayout="column" fxLayoutGap="8px"
+      fxLayoutAlign="start stretch">
+      <mat-form-field *ngIf="form.isLawyer.value">
+        <input matInput required spellcheck="true" autocomplete="on" placeholder="First Name"
+          formControlName="firstName" />
+        <mat-error *ngIf="form.firstName.hasError('required')">
+          {{ 'authentication.signup.first_name_is_required' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="form.isLawyer.value">
+        <input matInput required spellcheck="true" autocomplete="on" placeholder="Last Name"
+          formControlName="lastName" />
+        <mat-error *ngIf="form.lastName.hasError('required')">
+          {{ 'authentication.signup.last_name_is_required' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput required placeholder="Email" autocomplete="on" placeholder="Email" type="email" name="email"
+          formControlName="email" />
+        <mat-error *ngIf="form.email.hasError('email') && !form.email.hasError('required')">
+          {{ 'authentication.signup.email_is_invalid' | translate }}
+        </mat-error>
+        <mat-error *ngIf="form.email.hasError('required')">
+          {{ 'authentication.signup.email_is_required' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput required placeholder="Password" type="password" name="password" formControlName="password" />
+        <mat-error *ngIf="form.password.hasError('required')">
+          {{ 'authentication.signup.password_is_required' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput required placeholder="Confirm Password" type="password" formControlName="confirmPassword" />
+        <mat-error *ngIf="form.confirmPassword.hasError('required')">
+          {{ 'authentication.signup.cnfrm_pwd_is_required' | translate }}
+        </mat-error>
+        <mat-error *ngIf="form.confirmPassword.hasError('match') && !form.confirmPassword.hasError('required')">
+          {{ 'authentication.signup.password_not_match' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <div *ngIf="!hideLawyerSignup" class="mt-4 check-box-label-control">
+        <div class="check-box">
+          <mat-checkbox formControlName="isLawyer">
+          </mat-checkbox>
+        </div>
+        <div class="check-box-label">{{ 'authentication.signup.lawyer_or_legal_service_provider' | translate }}</div>
+      </div>
+
+      <div>
+        <mat-checkbox value="single" required formControlName="terms">
+          {{ 'authentication.signup.i_agree_to_all' | translate }}
+          <mat-label for="checkbox-signup">
+            <a href="/terms-of-use" target="_blank">{{'authentication.signup.terms' | translate}}</a>
+          </mat-label>
+        </mat-checkbox>
+      </div>
+
+      <div class="mt-4" fxLayout fxLayoutAlign="center">
+        <button mat-flat-button color="accent" class="uppercase btn-soft"
+          [disabled]="!signUpForm?.valid">Register</button>
+      </div>
+
+      <div class="mt-2 mb-0" *ngIf="!hideLogin" fxLayout fxLayoutAlign="center">
+        <div>
+          Already have an account?
+          <a routerLink="/auth/login" class="ml-1">
+            <span (click)="signIn($event)"><strong>Login</strong></span>
+          </a>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

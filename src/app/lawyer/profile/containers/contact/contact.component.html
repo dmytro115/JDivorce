@@ -1,0 +1,38 @@
+<section>
+  <mat-card [ngClass]="{ 'top-accent-primary' : true }">
+    <mat-card-header>
+      <div mat-card-avatar [style.background-image]="'url(assets/images/icons/contact-info.svg)'"></div>
+      <mat-card-title translate="PROFILE.CONTACT.HEADING"></mat-card-title>
+      <mat-card-subtitle>You should put in your business information so that clients can get in touch with you.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content class="m-t-20">
+      <app-progress-spinner [condition]="!isLoaded"></app-progress-spinner>
+      <form *ngIf="isLoaded" [formGroup]="contactForm" fxLayout="column" fxLayoutGap="30px" class="p-t-10">
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="30px">
+          <mat-form-field fxFlex>
+            <input matInput placeholder="Enter your first name" formControlName="first_name" required (keyup)="onFieldChange($event)">
+            <mat-error *ngIf="isFieldError('first_name')">Your first name is required.</mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex>
+            <input matInput placeholder="Enter your last name" formControlName="last_name" required (keyup)="onFieldChange($event)">
+            <mat-error *ngIf="isFieldError('last_name')">Your last name is required.</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="30px">
+          <mat-form-field fxFlex>
+            <input matInput placeholder="Enter your email" formControlName="email" email required (keyup)="onFieldChange($event)">
+            <mat-error *ngIf="isFieldError('email') && contactForm.controls['email'].errors.required">Your email is required.</mat-error>
+            <mat-error *ngIf="isFieldError('email') && contactForm.controls['email'].errors.email">Please enter a valid email.</mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex>
+            <input matInput placeholder="Enter your phone number (XXX-XXX-XXXX)" tell formControlName="phone" required (keyup)="onFieldChange($event)">
+            <mat-error *ngIf="isFieldError('phone') && contactForm.controls['phone'].errors.required">Your phone number is required.</mat-error>
+            <mat-error *ngIf="isFieldError('phone') && contactForm.controls['phone'].errors.pattern">Please enter a valid Phone Number.</mat-error>
+          </mat-form-field>
+        </div>
+        <app-google-address-input *ngIf="isLoaded" [address]="address" placeholder="Your business address" (addressData)="onAddressData($event)"></app-google-address-input>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>

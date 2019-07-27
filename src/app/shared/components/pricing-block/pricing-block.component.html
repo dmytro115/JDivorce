@@ -1,0 +1,68 @@
+<app-progress-spinner [condition]="!defaultPlans.length"></app-progress-spinner>
+<div fxLayout="row wrap"  fxLayout.lt-md="column" class="pricing-plans" fxLayoutGap="20px">
+  <mat-card fxFlex *ngFor="let plan of defaultPlans" [ngClass]="highlightPlan(plan) ? 'blurry-elevation' : 'flat'" class="pb-7 soft price-card">
+    <mat-card-title
+      class="background-primary-contrast p-4 text-center"
+      [style.border-top-left-radius]="'1em'"
+      [style.border-top-right-radius]="'1em'">
+      <h3 class="mb-0 uppercase"><strong>{{ plan.short_name }}</strong></h3>
+    </mat-card-title>
+    <mat-card-title class="my-6 text-center mat-display-3">
+      ${{ plan.cost }}
+    </mat-card-title>
+    <mat-card-subtitle class="mb-6 px-4 text-center">
+      <h3>
+        <strong>{{ plan.name }}&nbsp;<mat-icon (click)="openOptionInfo(plan.description)" class="small-info-icon">info_outline</mat-icon></strong>
+      </h3>
+    </mat-card-subtitle>
+    <mat-card-content class="pb-6">
+      <mat-list dense>
+        <mat-list-item
+          *ngFor="let option of plan.options"
+          [style.display]="'flex'"
+          [style.justify-content]="'center'">
+          <mat-icon class="mr-2 text-accent">check_circle</mat-icon>
+          <h4 class="mb-0"> {{ option.title }} </h4>&nbsp;
+          <mat-icon (click)="openOptionInfo(option.description)" class="small-info-icon">info_outline</mat-icon>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions *ngIf="ctaButtonOptions.enabled" class="text-center d-flex justify-content-center action-ipad-mobile">
+      <button (click)="openDetails()" mat-flat-button color="accent" class="mr-2 btn-soft">More Details</button>
+      <button *ngIf="!highlightPlan(plan)" mat-flat-button (click)="ctaOnClick(plan)" class="light-blue-elevated-button">{{ ctaButtonOptions.text }}</button>
+      <button *ngIf="highlightPlan(plan)" mat-flat-button (click)="ctaOnClick(plan)" color="primary" class="btn-soft">{{ ctaButtonOptions.text }}</button>
+    </mat-card-actions>
+
+    <div #detailsModal hidden>
+      <h1>{{ plan.name }}</h1>
+      <h2>Starting from ${{ plan.cost }}</h2>
+      <h2>Works for…</h2>
+      <p>{{ plan.description }}</p>
+      <h2>What you get…</h2>
+      <ol>
+        <li *ngFor="let opt of plan.options">
+          <strong>{{ opt.title }}:</strong>
+          {{ opt.description }}
+        </li>
+      </ol>
+      <h2>How it works</h2>
+      <ul class="feature-icons">
+        <li *ngFor="let step of plan.steps; index as i">
+          <div class="header">
+            <h4>
+              <img src="../../../assets/evie/images/{{ planStepPictures[i] }}.svg" class="step__image"  width="15%">
+             {{ step.title }}
+            </h4>
+          </div>
+          <p>
+            {{ step.description }}<br />
+            <span *ngFor="let opt of step.options">
+              &#10004;&nbsp;{{ opt }}<br />
+            </span>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </mat-card>
+</div>
+

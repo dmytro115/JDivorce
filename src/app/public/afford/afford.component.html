@@ -1,0 +1,1454 @@
+<header class="topheader scroll" [ngClass]="{ 'default-header': changeHeader }">
+  <div
+    class="fix-width background-white-in-small-screen-size"
+    [ngClass]="{
+      custome_width: !changeHeader,
+      'white-header-mobile': !changeHeader
+    }"
+  >
+    <nav
+      class="navbar navbar-expand-md navbar-light p-l-0"
+      [ngClass]="{ 'no-top-nav': hideTopNav == true }"
+    >
+      <!-- Logo will be here -->
+      <a class="navbar-brand" routerLink="/afforable">
+        <img
+          class="logo-icon d-none"
+          [src]="
+            changeHeader ? 'assets/logo-white.png?v=1' : 'assets/logo.png?v=1'
+          "
+        />
+        <img
+          class="logo-text"
+          [src]="
+            changeHeader
+              ? 'assets/logo-text-white.png?v=1'
+              : 'assets/logo-text.png?v=1'
+          "
+        />
+      </a>
+      <!-- <div class="language-dropdown" *ngIf="!changeHeader">
+       <a
+          class="nav-link text-muted waves-effect waves-dark pl-1"
+          href=""
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <i class="flag-icon {{ langIcon }}"></i>
+        </a> 
+        <div class="dropdown-menu dropdown-menu-right scale-up">
+          <a
+            class="dropdown-item"
+            href="javascript:void(0)"
+            (click)="updateLanguage('en')"
+            ><i class="flag-icon flag-icon-us"></i>
+            <span>{{ "MENU.ENGLISH" | translate }}</span>
+          </a>
+          <a
+            class="dropdown-item"
+            href="javascript:void(0)"
+            (click)="updateLanguage('es-MX')"
+            ><i class="flag-icon flag-icon-mx"></i>
+            <span>{{ "MENU.SPANISH" | translate }}</span>
+          </a>
+        </div>
+      </div> -->
+      <a
+        class="btn btn-success mobile-begin-button d-none bg-dark-green"
+        href="javascript:void(0)"
+        (click)="beginApplication()"
+        >{{ "home.menu.begin" | translate }}</a
+      >
+      <button
+        class="white-background navbar-toggler navbar-toggler-right"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="language-dropdown" *ngIf="changeHeader">
+        <a
+          class="nav-link text-muted waves-effect waves-dark pl-1"
+          href=""
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <i class="flag-icon {{ langIcon }}"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right scale-up">
+          <a
+            class="dropdown-item"
+            href="javascript:void(0)"
+            (click)="updateLanguage('en')"
+            ><i class="flag-icon flag-icon-us"></i>
+            <span>{{ "MENU.ENGLISH" | translate }}</span>
+          </a>
+          <a
+            class="dropdown-item"
+            href="javascript:void(0)"
+            (click)="updateLanguage('es-MX')"
+            ><i class="flag-icon flag-icon-mx"></i>
+            <span>{{ "MENU.SPANISH" || translate }}</span>
+          </a>
+        </div>
+      </div>
+      <!-- This is the navigation menu -->
+      <div
+        class="collapse navbar-collapse"
+        id="navbarNavDropdown"
+        *ngIf="hideTopNav == false"
+      >
+        <ul
+          class="navbar-nav ml-auto stylish-nav"
+          [ngClass]="{ 'white-header-ul': !changeHeader }"
+        >
+          <!--<li class="nav-item dropdown ml-3">
+            <a
+              class="nav-link text-muted waves-effect waves-dark pl-1"
+              href=""
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="flag-icon {{ langIcon }}"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right scale-up">
+              <a
+                class="dropdown-item"
+                href="javascript:void(0)"
+                (click)="updateLanguage('en')"
+                ><i class="flag-icon flag-icon-us"></i>
+                <span>{{ "MENU.ENGLISH" | translate }}</span>
+              </a>
+              <a
+                class="dropdown-item"
+                href="javascript:void(0)"
+                (click)="updateLanguage('es-MX')"
+                ><i class="flag-icon flag-icon-mx"></i>
+                <span>{{ "MENU.SPANISH" | translate }}</span>
+              </a>
+            </div>
+          </li>-->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact" target="_self">{{
+              "home.menu.support" | translate
+            }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/faqs" target="_self">{{
+              "home.menu.faq" | translate
+            }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/lawyers" target="_self">{{
+              "home.menu.lawyer_and_home" | translate
+            }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="triggerSignin()"
+              ><i class="locks fa fa-lock" *ngIf="changeHeader"></i
+              >{{ "home.menu.sign_in" | translate }}</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="triggerSignup()"
+              ><i class="fa fa-user-plus" *ngIf="changeHeader"></i
+              >{{ "home.menu.register" | translate }}</a
+            >
+          </li>
+          <!--<li class="nav-item">
+            <span
+              class="m-t-5 btn btn-success"
+              [ngClass]="{
+                'bg-dark-green': changeHeader,
+                'bg-dark-blue': !changeHeader
+              }"
+              href="javascript:void(0)"
+              (click)="beginApplication()"
+              >{{ "home.menu.begin_application" | translate }}</span
+            >
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+<div id="wrapper">
+  <!-- Intro -->
+  <section class="intro">
+    <header>
+      <!--<p
+        style="text-align: left;  padding-left: 2%;  padding-top: 2%; font-size: 180%;"
+      >
+        JDivorce
+      </p> -->
+
+      <h1>Affordable flat-rate divorce lawyer</h1>
+      <p>
+       JDivorce lets folks like you going through a divorce to hire lawyers anywhere in Washington state at affordable and flat rate plans.  
+       The first step is to figure out the best plan for you. Start by taking the diagnostic test or select from a plan below. 
+
+      </p>
+    
+      <ul class="actions">
+        <li>
+          <a (click)="scrollDown()" class="arrow scrolly"
+            ><span class="label">Next</span></a
+          >
+        </li>
+      </ul>
+    </header>
+    <div class="content">
+      <div class="image fill mini-diagnostics-wrapper">
+        <mini-diagnostic
+          (diagnosticData)="onDiagnosticData($event)"
+        ></mini-diagnostic>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="jdivorce-working">
+    <!-- Section : Features -->
+    <header>
+      <h2>How JDivorce Works</h2>
+      <h3></h3>
+    </header>
+    <div class="content">
+      <p>
+        JDivorce uses advanced software to make the process more personal, transparent and economical for you. Key steps are:
+      </p>
+      
+      <!--  <a href="#" class="button large">Details</a> -->
+      <ul class="feature-icons">
+        <li class="icon fa-mobile mytooltip">
+        <p>
+        <a>1. Select your JDivorce plan
+         <!-- <span class='fa fa-question-circle-o'></span> -->
+          <span class="tooltip-content5">
+            <span class="tooltip-text3">
+              <span class="tooltip-inner2">
+                <div>
+                  <span>You can select one of the four plans below. Or if you unsure, just take our diagnostic test. Click begin to complete the friendly questionnaire. JDivorce's web based questionnaires can be accessed from any device: mobile, tablet, laptop. There is no need to download or install any app.</span>
+                </div>
+              </span>
+            </span>
+          </span>
+        </a>
+      </p>
+        </li>
+        <li class="icon fa-commenting-o mytooltip">
+          <p>
+        <a>2. Complete diagnostic 
+         <!-- <span class='fa fa-question-circle-o'></span> -->
+          <span class="tooltip-content5">
+            <span class="tooltip-text3">
+              <span class="tooltip-inner2">
+                <div>
+                  <span>After selecting your plan, you must still complete the diagnostic. JDivorce uses no complicated legal words. The questionnaire is in very simple language aimed at every day folks and not lawyers</span>
+                </div>
+              </span>
+            </span>
+          </span>
+        </a>
+      </p>
+          
+        </li>
+    <li class="icon fa-crosshairs mytooltip">
+          <p>
+        <a>3. Get precise legal info
+         <!-- <span class='fa fa-question-circle-o'></span> -->
+          <span class="tooltip-content5">
+            <span class="tooltip-text3">
+              <span class="tooltip-inner2">
+                <div>
+                  <span>As you fill your divorce application, JDivorce's online questionnaires provides you with the precise information related to your case. Info (text, videos) on JDivorce is directly provide by a few different lawyers. We aim to provide the same experience to you as visiting a few different lawyers. </span>
+                </div>
+              </span>
+            </span>
+          </span>
+        </a>
+      </p>
+          
+  </li>
+  <li class="icon fa-list mytooltip">
+          <p>
+        <a>4. View your divorce process 
+         <!-- <span class='fa fa-question-circle-o'></span> -->
+          <span class="tooltip-content5">
+            <span class="tooltip-text3">
+              <span class="tooltip-inner2">
+                <div>
+                  <span>After the initial diagnostic, and even before you purchase a legal plan, you can view the detailed process. Our software takes into account the county you want to file (each county in Washington can have a slightly different set of requirements)</span>
+                </div>
+              </span>
+            </span>
+          </span>
+        </a>
+      </p>
+    </li>
+    
+        
+    <li class="icon fa-tag mytooltip">
+     <p>
+        <a> 5. Select your lawyer
+         <!-- <span class='fa fa-question-circle-o'></span> -->
+          <span class="tooltip-content5">
+            <span class="tooltip-text3">
+              <span class="tooltip-inner2">
+                <div>
+                  <span> Lawyers on JDivorce are qualified attorneys licensed to practice in Washingtons state. You select the lawyer from a list of available lawyers, their first availability, language preference, and their locations. View the total price you will have to pay upfront. There's no hidden fees. You book an appointment with your lawyer as part of the purchase. You can pay via credit card or PayPal </span>
+                </div>
+              </span>
+            </span>
+          </span>
+        </a>
+      </p>
+
+   </li>
+   <li class="icon fa-comments mytooltip">
+          <p>
+        <a>6. Fill your divorce application
+         <!-- <span class='fa fa-question-circle-o'></span> -->
+          <span class="tooltip-content5">
+            <span class="tooltip-text3">
+              <span class="tooltip-inner2">
+                <div>
+                  <span>Complete your divorce application online at JDivorce.  As you visit different questions, you will see that there's lots of details which will affect your future life. So next to any question or section which is unclear, you can leave questions/comments for your lawyer. Your lawyer may answer them before your meeting (and you will receive notifications via e-mail or text, you can select). Or when you connect with a lawyer, your answers can answered efficiently.</span>
+                </div>
+              </span>
+            </span>
+          </span>
+        </a>
+      </p>
+          
+  </li>
+  <li class="icon fa-calendar-o mytooltip">
+     <p>
+        <a>7. Meet your lawyer
+         <!-- <span class='fa fa-question-circle-o'></span> -->
+          <span class="tooltip-content5">
+            <span class="tooltip-text3">
+              <span class="tooltip-inner2">
+                <div>
+                  <span>You can meet your attorney in person or online. You will begin with a review of case strategy.</span>
+                </div>
+              </span>
+            </span>
+          </span>
+        </a>
+      </p>
+         
+  </li>
+
+  <li class="icon fa-calendar-o mytooltip">
+     <p>
+        <a>8. (The rest of the process depends on your case)
+         <!-- <span class='fa fa-question-circle-o'></span> -->
+          <span class="tooltip-content5">
+            <span class="tooltip-text3">
+              <span class="tooltip-inner2">
+                <div>
+                  <span>A divorce where both spouses agree on the terms can end in about three months and cost just the government fees. Whereas in case the spouses disagree, the process can extend to 1-2 years</span>
+                </div>
+              </span>
+            </span>
+          </span>
+        </a>
+      </p>
+         
+  </li>
+        
+       
+      </ul>
+    </div>
+  </section>
+  <!-- Section : Features -->
+
+  <!-- Section Plan 1-->
+  <section id="first" #howItWorks>
+    <header>
+      <h1>Plans</h1>
+      <br /><br />
+      <h2>The (Mostly) Stress-free Split Plan</h2>
+      <h3>Price: $250</h3>
+      <h3>For couples who have</h3>
+      <div class="data-collect">
+        <div class="data-collect__item">
+          <span class="data-collect__item-icon"></span>
+          <p>
+            <img src="assets/afford/paradigm-shift/icons/parents-white.png" alt="No children" width="25px" />
+            &nbsp;No children <br />
+            <img src="assets/afford/paradigm-shift/icons/jointly-white.png" alt="Device Content Image" width="25px" />
+            &nbsp;Agreement on filing for divorce<br />
+            <img src="assets/afford/paradigm-shift/icons/agreement-white.png" alt="Assets Agreement" width="25px" />
+            &nbsp;Agreement on assets distribution
+          </p>
+        </div>
+        <!--<div class="rating-box">&#11088;&#11088;&#11088;&#11088;&#11088;</div> -->
+        <div class="data-collect__item">
+          <span class="data-collect__item-icon"> </span>
+          <div>
+            <h3></h3>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <span class="image main"
+        ><img src="assets/afford/img/plan1.jpg" alt=""
+      /></span>
+      <p>
+        This plan is aimed at couples who have
+        <strong>mutually agreed to terminate their marriage</strong>. Under this
+        plan, a lawyer will hold a consultation session during which he/she will
+        tell you how to approach your divorce so your rights are protected.
+        Later the lawyer will review your court documents for correctness
+      </p>
+      <ul class="actions">
+        <li>
+          <a
+            (click)="
+              openModal(
+                '<h1>The Mostly Stress-free Plan</h1>
+               <h2>Price: $250</h2>
+
+                <p>Price is $250 or higher depending on the specific lawyer you select</p>
+
+                <h2>Works for</h2>
+<p>For couples who have mutually agreed to terminate their marriage, agree on how to distribute their marital assets and debts or who have minimal assets and debts, and most importantly have no children from their partnership.</p>
+
+<h2>What you get…</h2>
+
+<ul class=\'feature-icons\'>
+
+        <li>
+          <div class=\'header\'>
+            <i class=\'icon fa fa-laptop\'></i><h4>Diagnostics</h4>
+          </div>
+          <p>Answer a series of diagnostic questions to determine whether this package is the appropriate approach for ending your marriage
+          </p>
+        </li>
+
+        <li>
+          <div class=\'header\'>
+            <i class=\'icon fa fa-laptop\'></i><h4>Process</h4>
+          </div>
+          <p>
+            JDivorce provides an easy to understand view of the divorce process in an infographic. The process is outlined step-by-step so everyone understands what to expect at every stage.
+          </p>
+        </li>
+        <li>
+          <div class=\'header\'>
+             <i class=\'icon fa fa-bolt\'></i><h4>Strategy Consultation</h4>
+           </div>
+           <p>Lawyer reviews the details of your case and provides legal advice on how to approach each step. Lawyer identifies considerations for you to ensure your financial interests are addressed post-dissolution.
+           </p>
+        </li>
+        <li>
+          <div class=\'header\'>
+            <i class=\'icon fa fa-signal\'></i><h4>Document Review</h4>
+          </div>
+            <p>After a client completes diagnostics on JDivorce.com, an lawyer will review and update the paperwork after discussing the proposed settlement with you. Clients have the option of filing the final set of documents themselves or for an additional fee, lawyer can file on behalf of the client</p>
+        </li>
+       </ul>
+
+
+<h2>How it works</h2>
+
+<ul class=\'feature-icons\'>
+
+        <li>
+           <div class=\'header\'>
+            <h4>
+               <img src=\'../../../assets/evie/images/undraw_designer.svg\' class=\'step__image\'  width=\'15%\'>
+                1 Select your plan (Free to begin)
+            </h4>
+           </div>
+           <p>You can begin and take diagnostics for free<br/>
+            Pay when you make an appointment with lawyer<br/>
+            &#10004;&nbsp;No credit card needed to begin<br />
+          </p>
+        </li>
+
+
+        <li>
+          <div class=\'header\'>
+            <h4>
+               <img src=\'../../../assets/evie/images/undraw_responsive.svg\' class=\'step__image\' width=\'15%\'>
+               2 Complete the Diagnostic survey
+            </h4>
+          </div>
+          <p>View the complete divorce process broken into simple steps. For each step:<br />
+            &#10004;&nbsp;Who is responsible for what<br/>
+            &#10004;&nbsp;Important dates and $fees<br/>
+            &#10004;&nbsp;Government forms required
+          </p>
+        </li>
+        <li>
+          <div class=\'header\'>
+            <h4>
+              <img src=\'../../../assets/evie/images/undraw_browser.svg\' class=\'step__image\' width=\'10%\'>
+              3 Select your lawyer and appointment time
+            </h4>
+          </div>
+          <p>
+            Select from the lawyers who have partnered with us <br/>
+            &#10004;&nbsp;Licensed to practice in Washington <br/>
+            &#10004;&nbsp;Select a lawyer based on language preference<br/>
+          </p>
+         </li>
+
+
+         <li>
+          <div class=\'header\'>
+            <h4>
+              <img src=\'../../../assets/evie/images/undraw_designer.svg\' class=\'step__image\' width=\'15%\'>
+              4 Pay for the package
+            </h4>
+          </div>
+          <p>
+            At this point you have to pay for the lawyer to setup an appointment <br/>
+            Paying online allows us to secure discounted prices with local lawyers. <br/>
+            The lawyers may not offer this price if you contact them directly.  <br/>
+            Pay via credit card or Paypal or pay directly to the lawyer\'s office
+          </p>
+         </li>
+
+         <li>
+          <div class=\'header\'>
+            <h4><img src=\'../../../assets/evie/images/undraw_creation.svg\' class=\'step__image\' width=\'12%\'>
+              5 Have a session with lawyer.
+            </h4>
+            </div>
+            <p> Lawyer will provide detailed strategy info and outline the rest of the steps
+            </p>
+         </li>
+
+
+</ul>
+
+       '
+              )
+            "
+            class="button large"
+            >Details</a
+          >
+        </li>
+        <li>
+          <button
+            (click)="getStartedViaPlan(1)"
+            class="button primary large"
+          >
+            Get Started
+          </button>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- Section Plan 2 -->
+  <section>
+    <header>
+      <h2>The (Mostly) Stress-free Split with Kids Plan</h2>
+      <h3>Price: $350</h3>
+      <h3>For couples who have</h3>
+      <div class="data-collect">
+        <div class="data-collect__item">
+          <span class="data-collect__item-icon"></span>
+          <p>
+            <img src="assets/afford/paradigm-shift/icons/parents-white.png" alt="No children" width="25px" />&nbsp;Children<br />
+            <img src="assets/afford/paradigm-shift/icons/jointly-white.png" alt="Device Content Image" width="25px" />
+            &nbsp;Have disagreements<br />
+            <img src="assets/afford/paradigm-shift/icons/agreement-white.png" alt="Assets Agreement" width="25px" />
+            &nbsp;Feel comfortable talking to each other
+          </p>
+        </div>
+        <!--<div class="rating-box">&#11088;&#11088;&#11088;&#11088;&#11088;</div>-->
+        <div class="data-collect__item">
+          <span class="data-collect__item-icon"> </span>
+          <div>
+            <h3></h3>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <span class="image main"
+        ><img src="assets/afford/img/plan2.png" alt=""
+      /></span>
+      <p>
+        For couples who are trying to avoid conflict, but
+        <strong>realize that may need help</strong> on child custody or child
+        support or in reaching agreement on financials
+      </p>
+      <ul class="actions">
+        <li>
+          <a
+            (click)="
+              openModal(
+                '<h1>The (Mostly) Stress-free Split with Kids Plan</h1>
+
+
+
+ <h2>Starting from $350</h2>
+
+
+
+
+                <h2>Works for…</h2>
+<p>Couples who have mutually agreed to terminate their marriage, agree on how to distribute their marital assets and debts or who have minimal assets and debts, and who most importantly, agree on a plan on how to co-parent their kids.</p>
+
+<h2>What you get…</h2>
+
+<ol>
+<li> <strong>Diagnostics:</strong>  Answer a series of diagnostic questions to determine whether this package is the appropriate approach for ending your marriage, resolving the custody of your children, and sorting out child support.
+ </li>
+ <li> <strong>The Process:</strong>  JDivorce provides an easy to understand view of the divorce process in an infographic. The process is outlined step-by-step so you understand what to expect at each stage.
+ </li>
+
+
+<li>
+  <strong>Strategy Consultation:</strong>
+Lawyer reviews the details of your case and provides legal advice on how to approach each step. Lawyer identifies factors for you to consider in order to ensure your financial interests are addressed post-dissolution, the parenting plan makes sense, and you understand how child support will work. </li>
+<li> <strong>Document Review:</strong>
+After you completes diagnostics on JDivorce, an lawyer will review and update the paperwork after discussing the proposed settlement with you. Clients have the option of filing the final set of documents themselves or for an additional fee, lawyer can file on behalf of the client.
+</li>
+</ol>
+
+<h2>How it works</h2>
+
+<ul class=\'feature-icons\'>
+
+        <li>
+           <div class=\'header\'>
+            <h4>
+               <img src=\'../../../assets/evie/images/undraw_designer.svg\' class=\'step__image\'  width=\'15%\'>
+                1 Select your plan (Free to begin)
+            </h4>
+           </div>
+           <p>You can begin and take diagnostics for free<br/>
+            Pay when you make an appointment with Lawyer<br/>
+            &#10004;&nbsp;No credit card needed to begin<br />
+          </p>
+        </li>
+
+
+        <li>
+          <div class=\'header\'>
+            <h4>
+               <img src=\'../../../assets/evie/images/undraw_responsive.svg\' class=\'step__image\' width=\'15%\'>
+               2 Complete the Diagnostic survey
+            </h4>
+          </div>
+          <p>View the complete divorce process broken into simple steps. For each step:<br />
+            &#10004;&nbsp;Who is responsible for what<br/>
+            &#10004;&nbsp;Important dates and $fees<br/>
+            &#10004;&nbsp;Government forms required
+          </p>
+        </li>
+        <li>
+          <div class=\'header\'>
+            <h4>
+              <img src=\'../../../assets/evie/images/undraw_browser.svg\' class=\'step__image\' width=\'10%\'>
+              3 Select your lawyer and appointment time
+            </h4>
+          </div>
+          <p>
+            Select from the lawyers who have partnered with us <br/>
+            &#10004;&nbsp;Licensed to practice in Washington <br/>
+            &#10004;&nbsp;Select a lawyer based on language preference<br/>
+          </p>
+         </li>
+
+
+         <li>
+          <div class=\'header\'>
+            <h4>
+              <img src=\'../../../assets/evie/images/undraw_designer.svg\' class=\'step__image\' width=\'15%\'>
+              4 Pay for the package
+            </h4>
+          </div>
+          <p>
+            Next, you pay for the lawyer to setup an appointment <br/>
+            Paying online allows us to secure discounted prices with local lawyers. <br/>
+            Pay via credit card or Paypal
+          </p>
+         </li>
+
+         <li>
+          <div class=\'header\'>
+            <h4><img src=\'../../../assets/evie/images/undraw_creation.svg\' class=\'step__image\' width=\'12%\'>
+              5 Have a session with lawyer.
+            </h4>
+            </div>
+            <p> Lawyer will provide detailed strategy info, and everything else included in the package
+            </p>
+         </li>
+
+
+</ul>
+'
+              )
+            "
+            class="button large"
+            >Details</a
+          >
+        </li>
+        <li>
+          <button
+            (click)="getStartedViaPlan(2)"
+            class="button primary large"
+          >
+            Get Started
+          </button>
+        </li>
+      </ul>
+      <!--
+        <ul class="feature-icons">
+          <li class="icon fa-laptop">Consequat tempus</li>
+          <li class="icon fa-bolt">Etiam adipiscing</li>
+          <li class="icon fa-signal">Libero nullam</li>
+          <li class="icon fa-gear">Blandit condimentum</li>
+          <li class="icon fa-map-marker">Lorem ipsum dolor</li>
+          <li class="icon fa-code">Nibh amet venenatis</li>
+        </ul>
+        <p>Vehicula ultrices sed ultricies condimentum. Magna sed etiam consequat, et lorem adipiscing sed nulla. Volutpat nisl et tempus et dolor libero, feugiat magna tempus, sed et lorem adipiscing.</p>
+      -->
+    </div>
+  </section>
+  <!-- Section -->
+  <!-- section - Plan 3 -->
+  <section>
+    <header>
+      <h2>The Somewhat (Tense) Talking so We Need Help Plan</h2>
+      <h3>Price: $550</h3>
+      <h3>For couples who have</h3>
+      <div class="data-collect">
+        <div class="data-collect__item">
+          <span class="data-collect__item-icon"></span>
+          <p>
+            <img src="assets/afford/paradigm-shift/icons/parents-white.png" alt="No children" width="25px" />&nbsp;Children<br />
+            <img src="assets/afford/paradigm-shift/icons/jointly-white.png" alt="Device Content Image" width="25px" />&nbsp;Conflict on child custody or child support<br />
+            <img src="assets/afford/paradigm-shift/icons/agreement-white.png" alt="Assets Agreement" width="25px" />&nbsp;Conflict around financial assets or debt
+          </p>
+        </div>
+        <!--<div class="rating-box">&#11088;&#11088;&#11088;&#11088;&#11088;</div>-->
+        <div class="data-collect__item">
+          <span class="data-collect__item-icon"> </span>
+          <div>
+            <h3></h3>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <span class="image main"
+        ><img src="assets/afford/img/plan3.png" alt=""
+      /></span>
+      <p>
+        Lawyer provides you with case strategy, reviews your documents, and
+        prepares you for pre-mediation meeting
+      </p>
+      <ul class="actions">
+        <li>
+          <a
+            (click)="
+              openModal(
+                '<h1>The Somewhat (Tense) Talking so We Need Help Plan</h1>
+
+
+
+
+ <h2>Price: $550</h2>
+
+    
+
+                <h2>Works for</h2>
+<p>Couples who want to avoid conflict, but may need outside help reaching an agreement to achieve a financial settlement because the finances are a little complicated and/or help resolving a custody and child support plan.</p>
+
+<h2>What you get…</h2>
+
+<ol>
+<li> <strong>Diagnostics:</strong>  Answer a series of diagnostic questions to determine whether this package is the appropriate approach for ending your marriage, and/or resolving the custody of your children, and sorting out child support and/or figuring out your financial situation.
+ </li>
+
+ <li> <strong>The Process:</strong>  JDivorce provides an easy to understand view of the divorce process in an infographic. The process is outlined step-by-step so you understand your options and what to expect at each stage.
+ </li>
+
+
+<li>
+  <strong>Strategy Consultation:</strong>
+Lawyer reviews the details of your case and provides legal advice on how to approach each step. Lawyer identifies factors for you to consider in order to ensure your financial interests are addressed post-dissolution, and/or develop a temporary and permanent parenting plan makes sense, and you understand how child support will work. Pre-mediation preparation meeting so you know what to anticipate, what documents are needed, how to select a mediator, and are clear about what you can realistically expect from the process.
+</li>
+
+<li>
+  <strong>Mediation Meeting:</strong>
+For an additional fee, Lawyer can attend mediation session with you, provide consultation during the meeting, and help craft a strategy for responding to your partner’s demands.</li>
+
+
+
+<li> <strong>Document Review:</strong>
+After a client completes diagnostics on JDivorce, meets with lawyer on strategy, and attends mediation sessions, an lawyer will review and update the paperwork after discussing the final proposed settlement and temporary and permanent parenting plan with you. Clients have the option of filing the final set of documents themselves or for an additional fee, lawyer can file on behalf of the client.
+</li>
+</ol>
+
+<h2>How it works</h2>
+
+<ul class=\'feature-icons\'>
+
+        <li>
+           <div class=\'header\'>
+            <h4>
+               <img src=\'../../../assets/evie/images/undraw_designer.svg\' class=\'step__image\'  width=\'15%\'>
+                1 Select your plan (Free to begin)
+            </h4>
+           </div>
+           <p>You can begin and take diagnostics for free<br/>
+            Pay when you make an appointment with lawyer<br/>
+            &#10004;&nbsp;No credit card needed to begin<br />
+          </p>
+        </li>
+
+
+        <li>
+          <div class=\'header\'>
+            <h4>
+               <img src=\'../../../assets/evie/images/undraw_responsive.svg\' class=\'step__image\' width=\'15%\'>
+               2 Complete the Diagnostic survey
+            </h4>
+          </div>
+          <p>View the complete divorce process broken into simple steps. For each step:<br />
+            &#10004;&nbsp;Who is responsible for what<br/>
+            &#10004;&nbsp;Important dates and $fees<br/>
+            &#10004;&nbsp;Government forms required
+          </p>
+        </li>
+        <li>
+          <div class=\'header\'>
+            <h4>
+              <img src=\'../../../assets/evie/images/undraw_browser.svg\' class=\'step__image\' width=\'10%\'>
+              3 Select your lawyer and appointment time
+            </h4>
+          </div>
+          <p>
+            Select from the lawyers who have partnered with us <br/>
+            &#10004;&nbsp;Licensed to practice in Washington <br/>
+            &#10004;&nbsp;Select a lawyer based on language preference<br/>
+          </p>
+         </li>
+
+
+         <li>
+          <div class=\'header\'>
+            <h4>
+              <img src=\'../../../assets/evie/images/undraw_designer.svg\' class=\'step__image\' width=\'15%\'>
+              4 Pay for the package
+            </h4>
+          </div>
+          <p>
+            Pay for the lawyer to setup an appointment <br/>
+            Paying online allows us to secure discounted prices with local lawyers. <br/>
+            Pay via credit card or Paypal
+          </p>
+         </li>
+
+         <li>
+          <div class=\'header\'>
+            <h4><img src=\'../../../assets/evie/images/undraw_creation.svg\' class=\'step__image\' width=\'12%\'>
+              5 Have a session with lawyer.
+            </h4>
+            </div>
+            <p> Lawyer will provide detailed strategy info, and everything else included in the package
+            </p>
+         </li>
+
+
+</ul>
+'
+              )
+            "
+            class="button large"
+            >Details</a
+          >
+        </li>
+        <li>
+          <button
+            (click)="getStartedViaPlan(3)"
+            class="button primary large"
+          >
+            Get Started
+          </button>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- section - End Plan 3 -->
+  <!-- Section  - Plan 4 -->
+  <section>
+    <header>
+      <h2>
+        There’s a Reason that We’re Getting A Divorce: We Don’t Agree Plan
+      </h2>
+      <h3>Price: $850</h3>
+      <h3>For couples who have</h3>
+      <div class="data-collect">
+        <div class="data-collect__item">
+          <span class="data-collect__item-icon"></span>
+          <p>
+            <img src="assets/afford/paradigm-shift/icons/parents-white.png" alt="No children" width="25px" />&nbsp;Children<br />
+            <img src="assets/afford/paradigm-shift/icons/jointly-white.png" alt="Device Content Image" width="25px" />&nbsp;Conflict around child support or custody <br />
+            <img src="assets/afford/paradigm-shift/icons/jointly-white.png" alt="Device Content Image" width="25px" />&nbsp;Conflict around division of assets <br />
+          </p>
+        </div>
+        <!--<div class="rating-box">&#11088;&#11088;&#11088;&#11088;&#11088;</div>-->
+        <div class="data-collect__item">
+          <span class="data-collect__item-icon"> </span>
+          <div>
+            <h3></h3>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <div class="content">
+        <span class="image main"
+          ><img src="assets/afford/img/plan4.png" alt=""
+        /></span>
+        <p>
+          Lawyer provides you with case strategy and reviews your documents, but
+          also prepares you for pre-mediation meeting
+        </p>
+        <ul class="actions">
+          <li>
+            <a
+              (click)="
+                openModal(
+                  '<h1>The Somewhat (Tense) Talking so We Need Help Plan</h1>
+
+
+ <h2>Starting from $850</h2>
+
+    
+
+                <h2>Works for…</h2>
+<p>Couples who know that an agreement without individual legal representation is highly unlikely because of conflict around financial assets or debt and/or conflict surrounding an acceptable parenting plan and child support arrangement.</p>
+
+<h2>What you get…</h2>
+
+<ol>
+<li> <strong>Diagnostics:</strong> JDivorce provides an easy to understand view of the divorce process in an infographic. The process is outlined step-by-step so you understand your options and what to expect at each stage.
+ </li>
+ <li> <strong>The Process:</strong>  JDivorce provides an easy to understand view of the divorce process in an infographic. The process is outlined step-by-step so you understand your options and what to expect at each stage.
+ </li>
+
+
+<li>
+  <strong>Strategy Consultation:</strong>
+Lawyer reviews the details of your case and provides legal advice on how to approach each step. Lawyer identifies factors for you to consider in order to ensure your financial interests are addressed post-dissolution, and/or develop a temporary and permanent parenting plan makes sense, and you understand how child support will work. Drafts dissolution and temporary custody and support documents, files, serves and confers with opposing counsel. Can also file protection orders as needed.
+</li>
+
+<li>
+  <strong>Pre-Mediation Preparation:</strong>
+Pre-mediation preparation meeting so you know what to anticipate. Pre-mediation document preparation and exchange with opposing counsel. Mediator selection and scheduling in consultation with opposing counsel. Determine the likely number of mediation sessions needed. Additional fees for each mediation session beyond the first one.
+</li>
+
+
+<li>
+  <strong>Mediation Meeting:</strong>
+Lawyer attends mediation session with you, provide consultation during the meeting, helps craft a strategy for responding to your partner’s demands and considering reasonable compromise to diffuse conflict where possible. Assess whether mediation is productive and additional sessions required or whether litigated resolution is the best option.
+</li>
+
+<li>
+  <strong>Litigation Package*</strong>
+If mediation is not successful, lawyer will prepare case for a hearing on any of the following issues as needed: temporary custody and support; financial settlement of assets and debts, and permanent custody and support.
+
+</li>
+
+
+
+<li> <strong>Document Review:</strong>
+After a client completes diagnostics on JDivorce, meets with lawyer on strategy, and attends mediation sessions, an lawyer will review and update the paperwork after discussing the final proposed settlement and temporary and permanent parenting plan with you. Clients have the option of filing the final set of documents themselves or for an additional fee, lawyer can file on behalf of the client.
+</li>
+</ol>
+
+<p>*If a divorce resolution does not succeed via mediation, client may choose arbitration or litigation through the court system. Depending on the nature of the issues that need resolution, different conflict resolution litigation packages are available. </p>
+
+
+<h2>How it works</h2>
+
+<ul class=\'feature-icons\'>
+
+        <li>
+           <div class=\'header\'>
+            <h4>
+               <img src=\'../../../assets/evie/images/undraw_designer.svg\' class=\'step__image\'  width=\'15%\'>
+                1 Select your plan (Free to begin)
+            </h4>
+           </div>
+           <p>You can begin and take diagnostics for free<br/>
+            Pay when you make an appointment with lawyer<br/>
+            &#10004;&nbsp;No credit card needed to begin<br />
+          </p>
+        </li>
+
+
+        <li>
+          <div class=\'header\'>
+            <h4>
+               <img src=\'../../../assets/evie/images/undraw_responsive.svg\' class=\'step__image\' width=\'15%\'>
+               2 Complete the Diagnostic survey
+            </h4>
+          </div>
+          <p>View the complete divorce process broken into simple steps. For each step:<br />
+            &#10004;&nbsp;Who is responsible for what<br/>
+            &#10004;&nbsp;Important dates and $fees<br/>
+            &#10004;&nbsp;Government forms required
+          </p>
+        </li>
+        <li>
+          <div class=\'header\'>
+            <h4>
+              <img src=\'../../../assets/evie/images/undraw_browser.svg\' class=\'step__image\' width=\'10%\'>
+              3 Select your lawyer and appointment time
+            </h4>
+          </div>
+          <p>
+            Select from the lawyers who have partnered with us <br/>
+            &#10004;&nbsp;Licensed to practice in Washington <br/>
+            &#10004;&nbsp;Select a lawyer based on language preference<br/>
+          </p>
+         </li>
+
+
+         <li>
+          <div class=\'header\'>
+            <h4>
+              <img src=\'../../../assets/evie/images/undraw_designer.svg\' class=\'step__image\' width=\'15%\'>
+              4 Pay for the package
+            </h4>
+          </div>
+          <p>
+            At this point you have to pay for the lawyer to setup an appointment <br/>
+            Paying online allows us to secure discounted prices with local lawyers. <br/>
+            The lawyers may not offer this price if you contact them directly.  <br/>
+            Pay via credit card or Paypal or pay directly to the lawyer\'s office
+          </p>
+         </li>
+
+         <li>
+          <div class=\'header\'>
+            <h4><img src=\'../../../assets/evie/images/undraw_creation.svg\' class=\'step__image\' width=\'12%\'>
+              5 Have a session with lawyer.
+            </h4>
+            </div>
+            <p> Lawyer will provide detailed strategy info and outline the rest of the steps
+            </p>
+         </li>
+
+
+</ul>
+
+'
+                )
+              "
+              class="button large"
+              >Details</a
+            >
+          </li>
+          <li>
+            <button
+              (click)="getStartedViaPlan(4)"
+              class="button primary large"
+            >
+              Get Started
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- End Section - Plan 4 -->
+
+   <section>
+    <!-- Section : Features -->
+    <header>
+      <h2>Our Lawyers</h2>
+      <h3>Some of our excellent lawyers who have partnered with us.</h3>
+    </header>
+    <div class="content">
+      <div class="lawyer-wrapper">
+      <div *ngFor="let profile of profiles" class="lawyer m-b-30">
+        <div class="card" *ngIf="profile && profile.info">
+          <div>
+            <img src="{{profileUrl(profile.info.picture_url)}}" class="card-img-top img-responsive" alt="Card image cap">
+          </div>
+          <div class="lawyer-card-content text-center">
+            <h3>{{profile.info.name}}</h3>
+            <small>{{profile.info.city}}, {{profile.info.state}}</small>
+            <br>
+            <a routerLink="/lawyer/{{profile.slug}}" class="button primary small m-t-5" [attr.lawyer-id]="profile.id" id="more-details">{{'lawyers.more_details' | translate}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="actions">
+      <li><a routerLink="/lawyers" class="button primary large">View More</a></li>
+    </ul>
+    
+    </div>
+  </section>
+
+
+
+
+
+
+  <section>
+    <!-- Section : Testimonial -->
+
+    <header>
+      <h2>User Review</h2>
+      <h3>Our users are highly satisfied with the entire process</h3>
+    </header>
+    <div class="content">
+      <div class="video-wrapper">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/UnIFhUZCuE0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+  <!-- Section : Advisory Board -->
+  <section>
+    <header>
+      <h2>Lawyers on our Board</h2>
+    </header>
+    <div class="content">
+      <p>
+        Our advisory board has Seattle's notable law professors and lawyers with
+        deep experience in technology and/or needs of average citizens
+      </p>
+      <!-- Sub Section 1 1 -->
+      <section>
+        <header>
+          <h3>Dan Lear</h3>
+          <p>
+            Lawyer, and CEO at Right Brain Law, former Director of Industry
+            Relations for Avvo
+          </p>
+        </header>
+        <div class="content">
+          <div class="gallery">
+            <img
+              src="/assets/evie/images/dan_round.png"
+              height="150"
+              alt="Dan"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Sub Section 1  2-->
+      <section>
+        <header>
+          <h3>Deirdre Bowen</h3>
+          <p>
+            Lawyer and Associate Professor, Seattle University School of Law,
+            Director & Founder of the Madrid Study Abroad Program in Law &
+            Policy.
+          </p>
+        </header>
+        <div class="content">
+          <div class="gallery">
+            <img
+              src="/assets/evie/images/deirdre_round_2.png"
+              height="150"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Sub Section 1  3-->
+      <section>
+        <header>
+          <h3>Aurora Martin</h3>
+          <p>
+            Lawyer, Instructor at UW School of Law, former Executive Director at
+            Columbia Legal Services, Founder of
+            <a href="https://popupjustice.org/"> popUPjustice</a>
+          </p>
+        </header>
+        <div class="content">
+          <div class="gallery">
+            <img
+              src="/assets/evie/images/aurora_round.png"
+              height="150"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Sub Section 1  4-->
+      <section>
+        <header>
+          <h3>Jody Cloutier</h3>
+          <p>
+            Managing Attorney at Family Law Solutions, PLLC, member of the
+            Washington State Bar Association Court Rules Committee
+          </p>
+        </header>
+        <div class="content">
+          <div class="gallery">
+            <img src="/assets/evie/images/jody_round.png" height="150" alt="" />
+          </div>
+        </div>
+      </section>
+      <!-- Sub Section 1  5-->
+      <section>
+        <header>
+          <h3>Jennifer Ortega</h3>
+          <p>Co-founder and partner at Legal Technician Division, PLLC</p>
+        </header>
+        <div class="content">
+          <div class="gallery">
+            <img
+              src="/assets/evie/images/jennifer_round.png"
+              height="150"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  <!-- Section -->
+
+  <!--
+  <section>
+    <header>
+      <h2>Quick Question</h2>
+    </header>
+    <div class="content">
+      <p>Ask a quick question from a <strong>lawyer or legal technician</strong> licensed in Washington. We will forward this to 3 lawyers and you can receive up to three responses with lawyer name and contact info</p>
+      <form>
+        <div class="fields">
+          <div class="field half">
+            <input type="text" name="name" id="name" placeholder="Name" />
+          </div>
+          <div class="field half">
+            <input type="email" name="email" id="email" placeholder="Email" />
+          </div>
+          <div class="field half">
+            <p>Check the circumstances that apply to you: </p>
+            <input type="checkbox" id="demo-human" name="demo-human">
+            <label for="demo-human">Military family</label>
+            <input type="checkbox" id="demo-human1" name="demo-human1">
+            <label for="demo-human1">Spouse cheating</label>
+            <input type="checkbox" id="demo-human2" name="demo-human2">
+            <label for="demo-human2">Domestic Violence</label>
+            <input type="checkbox" id="demo-human3" name="demo-human3">
+            <label for="demo-human3">Child Custody</label>
+            <input type="checkbox" id="demo-human4" name="demo-human4">
+            <label for="demo-human4">Alimony (Spousal Support)</label>
+          </div>
+          <div class="field">
+            <textarea name="message" id="message" placeholder="Message" rows="7"></textarea>
+          </div>
+        </div>
+        <ul class="actions">
+          <li><input type="submit" value="Send Message" class="button primary" /></li>
+        </ul>
+      </form>
+    </div>
+    <footer>
+      <ul class="items">
+        <li>
+          <h3>Email</h3>
+          <a href="#">help@jdivorce.com</a>
+        </li>
+        <li>
+          <h3>Phone</h3>
+          <a href="#">(206) 569-8669</a>
+        </li>
+        <li>
+          <h3>Address</h3>
+          <span>2500 Western Avenue, Suite 722, Seattle WA 98121</span>
+        </li>
+        <li>
+          <h3>Elsewhere</h3>
+          <ul class="icons">
+            <li><a href="https://www.facebook.com/jdivorcepage/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+          </ul>
+        </li>c
+      </ul>
+    </footer>
+  </section> -->
+
+<!--
+  <section>
+
+    <header>
+      <h2>More info</h2>
+      <h3></h3>
+    </header>
+    <div class="content">
+      <p>
+        More information around JDivorce, and legal information can be found on
+        these pages
+      </p>
+
+      <ul class="feature-icons">
+        <li><a href="privacy"> Privacy & Terms</a></li>
+        <li><a href="about"> About Us</a></li>
+        <li><a href="lawyers"> Lawyers on JDivorce</a></li>
+        <li><a href="lawyers-home">Lawyers Home</a></li>
+        <li><a href="lawyers"> Lawyers on JDivorce</a></li>
+        <li><a href="faq">FAQ</a></li>
+        <li><a href="http://blog.jdivorce.com/">Detailed Q&A</a></li>
+      </ul>
+    </div>
+  </section> -->
+  <!-- Section : Features -->
+
+<!--
+  <section>
+
+    <header>
+      <h2>Helpul Links</h2>
+      <h3></h3>
+    </header>
+    <div class="content">
+      <p>
+        More information around JDivorce, and legal information can be found on
+        these pages
+      </p>
+
+      <ul class="feature-icons">
+        <li><a href="https://www.washingtonlawhelp.org/">WA Courts</a></li>
+        <li><a href="https://www.kcba.org/">King County Bar Association</a></li>
+        <li><a href="https://nwjustice.org/">NW Justice Project</a></li>
+        <li>
+          <a href="http://www.allianceforequaljustice.org/"
+            >Alliance for Equal Justice</a
+          >
+        </li>
+        <li><a href="http://ocla.wa.gov/">Office of Civic and Legal Aid</a></li>
+        <li>
+          <a href="https://www.wsba.org/">Washington State Bar Association</a>
+        </li>
+        <li>
+          <a href="https://www.mckinleyirvin.com/"
+            >McKinley Irvin Family Law Firm</a
+          >
+        </li>
+      </ul>
+    </div>
+  </section> -->
+  <!-- Section : Helpful links -->
+</div>
+
+<footer class="footer public-footer">
+  <div
+    [ngClass]="{ 'fix-width': changeHeader, 'footer-container': !changeHeader }"
+  >
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <ul class="footer-link list-icons">
+          <li>
+            <a routerLink="/">{{ "footer.jdivorce" | translate }}</a>
+          </li>
+          <li>
+            <a routerLink="/privacy">{{
+              "footer.privacy_and_terms" | translate
+            }}</a>
+          </li>
+          <li>
+            <a routerLink="/about">{{ "footer.about_us" | translate }}</a>
+          </li>
+          <li>
+            <a routerLink="/lawyers">{{ "footer.lawyers" | translate }}</a>
+          </li>
+          <li>
+            <a routerLink="/lawyers-home">{{
+              "footer.for_lawyers" | translate
+            }}</a>
+          </li>
+          <li>
+            <a routerLink="/white-label">{{
+              "footer.white_label" | translate
+            }}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <ul class="footer-link list-icons">
+          <li>
+            <a class="color-focus">{{
+              "footer.info_family_law" | translate
+            }}</a>
+          </li>
+          <li>
+            <a routerLink="/faqs">{{ "footer.faq" | translate }}</a>
+          </li>
+          <li>
+            <a href="http://blog.jdivorce.com/">{{
+              "footer.detailed_topics" | translate
+            }}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <ul class="footer-link list-icons">
+          <li>
+            <a class="color-focus">{{ "footer.resources" | translate }}</a>
+          </li>
+          <li>
+            <a
+              href="https://www.courts.wa.gov/forms/?fa=forms.contribute&formID=13"
+              target="_blank"
+              >{{ "footer.wa_courtes" | translate }}</a
+            >
+          </li>
+          <li>
+            <a href="https://www.washingtonlawhelp.org/">{{
+              "footer.wa_law_help" | translate
+            }}</a>
+          </li>
+          <li>
+            <a href="https://www.kcba.org/">King County Bar Association</a>
+          </li>
+          <li><a href="https://nwjustice.org/">NW Justice Project</a></li>
+          <li>
+            <a href="http://www.allianceforequaljustice.org/"
+              >Alliance for Equal Justice</a
+            >
+          </li>
+          <li>
+            <a href="http://ocla.wa.gov/">Office of Civic and Legal Aid</a>
+          </li>
+          <li>
+            <a href="https://www.wsba.org/">Washington State Bar Association</a>
+          </li>
+          <li>
+            <a href="https://www.mckinleyirvin.com/"
+              >McKinley Irvin Family Law Firm</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-md-12 sub-footer">
+        <span
+          >{{ "footer.copyright" | translate
+          }}<a class="text-white" href="/" target="_blank">{{
+            "footer.jdivorce_inc" | translate
+          }}</a></span
+        >
+      </div>
+    </div>
+  </div>
+</footer>

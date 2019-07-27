@@ -1,0 +1,46 @@
+.dashboard-sidebar.right-side-toggle {
+  position: fixed;
+  top: 55%;
+  right: 0px;
+  padding: 25px;
+  z-index: 1101;
+  width: 35px;
+  height: 35px;
+  font-size: 14px;
+
+  i {
+    -webkit-animation-name: none;
+    animation-name: none;
+    font-size: 20px;
+    top: 16px;
+    left: 16px;
+  }
+}
+
+.row.page-titles {
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.register-banner {
+  cursor: pointer;
+}
+
+.tooltip-content5 {
+  top: 140%;
+}
+.tooltip-text3 {
+  border-top: 10px solid #1976d2;
+  border-bottom: 0px;
+}
+.tooltip-content5::after {
+  bottom: 0px;
+  border-bottom-color: #1976d2;
+  z-index: 1;
+  border-top-color: transparent;
+}
+.tooltip-inner2 {
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+}

@@ -1,0 +1,51 @@
+.jd-questionnaire{
+    &__input{
+      margin-top:15px;
+      transition: all 0.4s ease-in-out;
+      width: 100%;
+      border:0;
+      border-bottom: 1px solid #cccccc;
+      outline: none;
+      font-size: 1.8em;
+      font-weight: 100;
+      @media (max-width:768px){
+        font-size: 1em;
+      }
+      &-error{
+        padding: 5px 8px;
+        border-radius: 2px;
+        background-color: #990000;
+        margin-top: 20px;
+        color:#fff;
+        display: inline-block;
+        position: relative;
+        font-size: 14px;
+        &:before{
+          content:'';
+          width: 0;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-bottom: 5px solid #990000;
+          position: absolute;
+          top: -5px;
+          left: 10px;
+        }
+      }
+      &:focus{
+        border-color: transparent;
+      }
+      &.table-cell {
+        border: none;
+        margin-top: 0;
+        font-size: 14px;
+        text-align: center;
+        background: none;
+        color: #646363;
+        
+        @media (max-width:768px){
+          text-align: left;
+        }
+      }
+    }
+  }

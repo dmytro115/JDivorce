@@ -1,0 +1,53 @@
+header {
+  &.topbar {
+    position: relative;
+    z-index: 50;
+  }
+
+  .logo-long {
+    width: 120px;
+  }
+
+  .logo-short {
+    width: 30px;
+    margin-right: 3px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .register-span {
+      display: none;
+    }
+  }
+
+  .billing-order {
+    cursor: pointer;
+    a {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.register-span {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.icon-button-min-width {
+  min-width: 44px;
+}
+
+mat-toolbar {
+  @media (max-width: 768px) {
+    .mat-button {
+      width: auto;
+      padding-left: 8px !important;
+      padding-right: 8px !important;
+      min-width: auto;
+    }
+  }
+}

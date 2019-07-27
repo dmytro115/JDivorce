@@ -1,0 +1,14 @@
+<div class="close-container">
+  <span (click)="close()">X</span>
+</div>
+<app-register
+  (triggerSignin)="onTriggerSignin()"
+  (triggerForgetPassword)="onTriggerForgetPassword()"
+  (registerSuccess)="onRegisterSuccess()"
+  [isDialog]="true"
+  [hideLogin]="data.hideLogin"
+  [infoMessage]="data.infoMessage"
+  [email]="data.email"
+  [hideLawyerSignup]="data.hideLawyerSignup"
+  [registeredFrom]="data.registeredFrom"
+></app-register>

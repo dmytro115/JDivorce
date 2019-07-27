@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Add your practice areas</h1>
+<div mat-dialog-content>
+  <form [formGroup]="addPracticeAreaForm" fxLayout="column" fxLayoutGap="15px" class="p-t-10">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="15px" fxLayoutGap.lt-md="15px">
+      <mat-form-field fxFlex>
+        <mat-label>Practice area</mat-label>
+        <mat-select formControlName="title" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let practiceArea of practiceAreas" [value]="practiceArea">
+            {{practiceArea}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="isFieldError('title')">Please select a practice area.</mat-error>
+      </mat-form-field>
+    </div>
+    <mat-divider class="m-t-20"></mat-divider>
+    <div fxLayout="column" fxLayout.lt-md="column" fxLayoutGap="15px" fxLayoutGap.lt-md="15px">
+      <h3>Your relative expertise</h3>
+      <h4>How experienced are you at this practice area? If you're a family lawyer who also practices a bit of personal injury law, you might want to select 100 for 'Family' and 75 for 'Personal Injury'. We'll show a nice pie chart detailing your expertise.</h4>
+      <mat-slider
+        required
+        formControlName="relative_percentage"
+        thumbLabel>
+      </mat-slider>
+      <mat-error *ngIf="isFieldError('relative_percentage')">Please evaluate your expertise.</mat-error>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="5px">
+  <button fxFlex mat-flat-button (click)="onNoClick()">Cancel</button>
+  <button *ngIf="!data.isEdit" fxFlex mat-flat-button color="primary" [mat-dialog-close]="{ isEdit: false, element: form().value, index: -1 }" [disabled]="!addPracticeAreaForm.valid">Add</button>
+  <button  *ngIf="data.isEdit" fxFlex mat-flat-button color="primary" [mat-dialog-close]="{ isEdit: true, element: form().value, index: data.index }" [disabled]="!addPracticeAreaForm.valid">Save</button>
+</div>

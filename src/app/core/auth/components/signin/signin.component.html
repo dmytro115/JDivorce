@@ -1,0 +1,48 @@
+<mat-card [style.box-shadow]="'none'">
+  <form [formGroup]="signInForm" id="signin" class="form-material">
+    <mat-card-header [style.justify-content]="'center'" class="mb-4 text-center">
+      <mat-card-title class="uppercase">Sign in to continue</mat-card-title>
+      <mat-card-subtitle>
+        <div *ngIf="alertText" class="text-warn text-center">{{ alertText }}</div>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content fxLayout="column" fxLayoutGap="16px">
+      <mat-form-field>
+        <input matInput autocomplete="off" id="loginEmail" placeholder="Email" type="email" name="email" formControlName="email" />
+        <mat-error *ngIf="form.email.hasError('email') && !form.email.hasError('required')">
+          Please enter a valid email address.
+        </mat-error>
+        <mat-error *ngIf="form.email.hasError('required')">
+          Email is required.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput id="password" placeholder="Password" type="password" name="password" formControlName="password" />
+        <mat-error *ngIf="form.password.hasError('required')">
+          Password is required.
+        </mat-error>
+      </mat-form-field>
+
+      <div fxLayout fxLayoutAlign="space-between start" fxLayoutGap="8px">
+        <mat-checkbox formControlName="rememberMe">Remember me</mat-checkbox>
+        <a routerLink="/auth/password-recovery" id="to-recover" class="pull-right">
+          <span (click)="forgetPassword($event)"><strong>Forgot your password?</strong></span>
+        </a>
+      </div>
+
+      <div fxLayout fxLayoutAlign="center" class="mt-5">
+        <button type="submit" [disabled]="!signInForm.valid" mat-flat-button color="accent" class="uppercase btn-soft" (click)="signIn()">Sign In</button>
+      </div>
+
+      <div class="mb-0" fxLayout fxLayoutAlign="center">
+        <div fxLayoutGap="8px">
+          <span>Don't have an account?</span>
+          <a routerLink="/auth/register">
+            <span (click)="signUp($event)"><strong>Register</strong></span>
+          </a>
+        </div>
+      </div>
+    </mat-card-content>
+  </form>
+</mat-card>

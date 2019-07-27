@@ -1,0 +1,19 @@
+<div *ngIf="loadingPosts" class="d-flex justify-content-center pt-4">
+  <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+</div>
+<div *ngIf="!loadingPosts">
+  <p class="blogs-heading pt-4">Results:</p>
+  <div *ngIf="blogPosts.length > 0">
+    <div *ngFor="let post of blogPosts" class="blog-container">
+      <a [href]="post.link" target="_blank">
+        <h3 [innerHTML]="post.title"></h3>
+      </a> 
+       <!--<p> # removing author name as it's unimportant right now until we have different authors
+        Author:
+        <a [href]="post.author.href" target="_blank">{{ post.author.name }}</a>
+      </p> -->
+      <div [innerHTML]="post.excerpt"></div>
+    </div>
+  </div>
+  <p *ngIf="blogPosts.length === 0">No Blogs Available</p>
+</div>

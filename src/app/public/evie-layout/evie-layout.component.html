@@ -1,0 +1,106 @@
+<div id="main-wrapper">
+  <!-- Hero(extended) navbar -->
+  <div class="evie-header">
+    <div class="navbar navbar--extended">
+      <nav class="nav__mobile"></nav>
+      <div class="container">
+        <div class="navbar__inner">
+
+          <a routerLink="/" class="navbar__logo">JDivorce</a>
+          <nav class="navbar__menu">
+          <ul>
+            <li><a href="/">Divorce</a></li>
+            <li><a href="/">Domestic Violence</a></li>
+            <li><a href="/lawyers-home">Are you a lawyer?</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <ng-container *showAuthed="false">
+              <li class="auth-style"><a (click)="triggerSignin()">{{"home.menu.sign_in" | translate}}</a></li>
+              <li class="auth-style"><a (click)="triggerSignup()">{{"home.menu.register" | translate}}</a></li>
+            </ng-container>
+          </ul>
+        </nav>
+          <div class="navbar__menu-mob"><a href="" id='toggle'><svg role="img" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512">
+                <path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+                  class=""></path>
+              </svg></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+  <!-- Call To Action -->
+  <div class="cta cta--reverse">
+    <div class="container">
+      <div class="cta__inner">
+        <!--<a href="javascript:void(0)" (click)="beginApplication()" class="button button__accent">Start <b>My</b>
+          Divorce Process</a>-->
+          <p>Please note: JDivorce is not a law firm or a substitute for one. JDivorce does not provide legal advice. Everything on JDivorce website, emails or on any communciation is legal information. We keep everything private as detailed in our privacy policy. Communication between you and JDivorce does not enjoy the attorney-client privilege. Using our website means you agree to our Terms of Use.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <div class="footer footer--dark">
+    <div class="container">
+      <div class="footer__inner">
+        <a routerLink="/" class="footer__textLogo">JDivorce Corporation</a>
+        <p> 2500 Western Avenue, Suite 722, Seattle Washington 98121 <br/>
+        (206) 569-8669‬    
+        </p>
+        <div class="footer__data">
+          <div class="footer__data__item">
+            <div class="footer__row">
+              <a routerLink="/privacy" class="footer__link">Privacy Policy</a>
+            </div>
+            <div class="footer__row">
+              <a routerLink="/privacy" class="footer__link">Security</a>
+            </div>
+            <div class="footer__row">
+              <a routerLink="/about" class="footer__link">About Us</a>
+            </div>
+            <div class="footer__row">
+              <a routerLink="/lawyers" class="footer__link">Lawyers, LLLTs on our Network</a>
+            </div>
+            <div class="footer__row">
+              <a routerLink="/lawyers-home" class="footer__link">Home page for Lawyers, LLLTs</a>
+            </div>
+          </div>
+          <div class="footer__data__item">
+            <div class="footer__row">
+              <a routerLink="/faqs" class="footer__link">FAQ</a>
+            </div>
+            <div class="footer__row">
+              <a href="http://blog.jdivorce.com/" class="footer__link">Detailed Topics</a>
+            </div>
+          </div>
+          <div class="footer__data__item">
+            <div class="footer__row">
+              <a href="https://www.washingtonlawhelp.org/" class="footer__link">WA Courts</a>
+            </div>
+            <div class="footer__row">
+              <a href="https://www.kcba.org/" class="footer__link">King County Bar Association</a>
+            </div>
+            <div class="footer__row">
+              <a href="https://nwjustice.org/" class="footer__link">NW Justice Project</a>
+            </div>
+            <div class="footer__row">
+              <a href="http://www.allianceforequaljustice.org/" class="footer__link">Alliance for Equal Justice</a>
+            </div>
+            <div class="footer__row">
+              <a href="http://ocla.wa.gov/" class="footer__link">Office of Civic and Legal Aid</a>
+            </div>
+            <div class="footer__row">
+              <a href="https://www.wsba.org/" class="footer__link">Washington State Bar Association</a>
+            </div>
+            <div class="footer__row">
+              <a href="https://www.mckinleyirvin.com/" class="footer__link">McKinley Irvin Family Law Firm</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-spinner bdOpacity="0.3" size="default" color="#fff" type="ball-spin"></ngx-spinner>

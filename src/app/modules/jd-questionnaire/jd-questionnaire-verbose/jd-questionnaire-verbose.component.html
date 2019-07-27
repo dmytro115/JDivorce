@@ -1,0 +1,157 @@
+<div class="jd-questionnaire-wrapper">
+  <form (submit)="_onSubmit($event)" class="jd-questionnaire">
+    <div *ngIf="isCompleted" class="jd-questionnaire__success">
+      <p>{{ successMessage }}</p>
+      <a *ngIf="continueButtonUrl" [routerLink]="continueButtonUrl"
+        class="jd-questionnaire__continue">{{ continueButtonText }}</a>
+    </div>
+    <div *ngIf="isFailed" class="jd-questionnaire__fail">
+      <p>{{ failMessage }}</p>
+      <button type="button" (click)="tryAgain()" class="jd-questionnaire__try-again">{{ tryAgainButtonText }}</button>
+    </div>
+    <div *ngIf="!isCompleted && !isFailed" class="jd-questionnaire__questions" [formGroup]="formGroup">
+      <ng-container *ngFor="let question of questions; let index = index">
+        <div *ngIf="!question.hide" class="jd-questionnaire__question"
+          [ngClass]="{ hidden: !visibleIf(question.visibleIf) }">
+          <h2 class="jd-questionnaire__question-heading" *ngIf="question.type !== 'statement'">
+            <span class="jd-questionnaire__question-index">{{ index + 1 }}.</span>
+            <span class="jd-questionnaire__question-title">
+              <span [innerHTML]="question.title | fill: answers"></span>
+              <span class="text-danger" *ngIf="question.id | isRequired: question.validation">
+                <strong>*</strong>
+              </span>
+            </span>
+            <a *ngIf="question.description || (question.categories && question.categories.length > 0)" class="m-l-10"
+              (click)="showHelpContentPanel(question, index)"><i class="fa fa-info-circle"></i></a>
+          </h2>
+          <div class="jd-questionnaire__question-info mb-6" *ngIf="question.type != 'statement'">
+            <div class="jd-questionnaire__question-info-expandable">
+              <div *ngIf="question.shortText" class="jd-questionnaire__question-description"
+                [innerHTML]="question.evaluatedShortText"></div>
+            </div>
+            <div class="jd-questionnaire__question-info-toggle">
+              <button type="button" (click)="toggleShowMore($event)" class="toggle-btn more">View more <i
+                  class="fa fa-angle-down"></i></button>
+              <button type="button" (click)="toggleShowMore($event)" class="toggle-btn less">View less <i
+                  class="fa fa-angle-up"></i></button>
+            </div>
+          </div>
+          <!-- Input component -->
+          <app-jd-questionnaire-input [error]="getError(question.id)" [hasError]="hasError(question.id)"
+            *ngIf="question.type === 'input'" [value]="getValue(question.id)"
+            (answerChange)="onAnswerChange($event, question.id)" [maxLength]="question.maxLength">
+          </app-jd-questionnaire-input>
+          <!-- Height component -->
+          <app-jd-questionnaire-height-input [error]="getError(question.id)" [hasError]="hasError(question.id)"
+            *ngIf="question.type === 'height'" [value]="getValue(question.id)"
+            (answerChange)="onAnswerChange($event, question.id)">
+          </app-jd-questionnaire-height-input>
+          <!---Weight component -->
+          <app-jd-questionnaire-weight [error]="getError(question.id)" [hasError]="hasError(question.id)"
+            *ngIf="question.type === 'weight'" [value]="getValue(question.id)"
+            (answerChange)="onAnswerChange($event, question.id)">
+          </app-jd-questionnaire-weight>
+          <!--Signature Pad Component-->
+          <app-jd-questionnaire-signature-pad [error]="getError(question.id)" [hasError]="hasError(question.id)"
+            *ngIf="question.type === 'signature'" [value]="getValue(question.id)"
+            (answerChange)="onAnswerChange($event, question.id)"></app-jd-questionnaire-signature-pad>
+          <!-- Telephone component -->
+          <app-jd-questionnaire-telephone [error]="getError(question.id)" [hasError]="hasError(question.id)"
+            *ngIf="question.type === 'telephone'" [value]="getValue(question.id, question.type)"
+            (answerChange)="onAnswerChange($event, question.id)"></app-jd-questionnaire-telephone>
+          <!-- Address component -->
+          <jd-questionnaire-address [error]="getError(question.id)" [hasError]="hasError(question.id)"
+            *ngIf="question.type === 'address'" [value]="getValue(question.id)"
+            (onAnswer)="onAnswerChange($event, question.id)"></jd-questionnaire-address>
+          <!-- Radio component
+          <jd-questionnaire-radio
+            [isBoolean]="question.type === 'boolean'"
+            [enableOther]="question.enableOther"
+            [hasImage]="question.hasImage"
+            [error]="getError(question.id)"
+            [hasError]="hasError(question.id)"
+            *ngIf="question.type === 'radio' || question.type === 'boolean'"
+            [value]="getValue(question.id)"
+            (onAnswer)="onAnswerChange($event, question.id)"
+            [options]="question.options"
+            [question]="question"
+          ></jd-questionnaire-radio>
+          -->
+          <div *ngIf="question.type === 'radio' || question.type === 'boolean'">
+            <mat-radio-group [id]="question.id" [formControlName]="question.id"
+              (change)="onRadioChange($event, question.id)">
+              <div *ngFor="let opt of question.options">
+                <mat-radio-button [value]="opt.value">{{ opt.label }}</mat-radio-button>
+              </div>
+            </mat-radio-group>
+            <mat-error *ngIf="hasError(question.id)">{{ getError(question.id) }}</mat-error>
+          </div>
+          <!-- Checkbox component
+          <jd-questionnaire-checkbox
+            [enableNoneOfTheAbove]="question.enableNoneOfTheAbove"
+            [enableOther]="question.enableOther"
+            [error]="getError(question.id)"
+            [hasError]="hasError(question.id)"
+            *ngIf="question.type === 'checkbox'"
+            [value]="getValue(question.id) || []"
+            (onAnswer)="onAnswerChange($event, question.id)"
+            [options]="question.options"
+          ></jd-questionnaire-checkbox>
+          -->
+
+          <div *ngIf="question.type === 'checkbox'" class="checkbox-container" [id]="question.id"
+            [formArrayName]="question.id">
+            <div *ngFor="let opt of formGroup.controls[question.id].controls; let i = index">
+              <mat-checkbox [formControlName]="i"
+                (change)="onCheckboxChange($event, question.id, question.options[i].value)">{{
+                question.options[i].value
+              }}</mat-checkbox>
+            </div>
+            <mat-error *ngIf="hasError(question.id)">{{ getError(question.id) }}</mat-error>
+          </div>
+          <!-- Dropdown component -->
+          <jd-questionnaire-dropdown [error]="getError(question.id)" [hasError]="hasError(question.id)"
+            *ngIf="question.type === 'dropdown'" [value]="getValue(question.id) || []"
+            (onAnswer)="onAnswerChange($event, question.id)" [options]="question.options"></jd-questionnaire-dropdown>
+          <!-- LongText component
+          <jd-questionnaire-long-text
+            [error]="getError(question.id)"
+            [hasError]="hasError(question.id)"
+            *ngIf="question.type === 'long_text'"
+            [value]="getValue(question.id)"
+            (onAnswer)="onAnswerChange($event, question.id)"
+            (onEnter)="_onSubmit($event)"
+          ></jd-questionnaire-long-text>
+          -->
+
+          <div *ngIf="question.type === 'long_text'">
+            <mat-form-field>
+              <mat-label>Your response</mat-label>
+              <textarea [formControlName]="question.id" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1" cdkAutosizeMaxRows="20" placeholder="Type your answer here"></textarea>
+              <mat-hint><strong>"ENTER"</strong> to make a line break</mat-hint>
+            </mat-form-field>
+            <mat-error *ngIf="hasError(question.id)">{{ getError(question.id) }}</mat-error>
+          </div>
+
+          <!-- Date component -->
+          <jd-questionnaire-date [error]="getError(question.id)" [hasError]="hasError(question.id)"
+            *ngIf="question.type === 'date'" [value]="getValue(question.id)"
+            (onAnswer)="onAnswerChange($event, question.id)"></jd-questionnaire-date>
+          <!-- Statement component -->
+          <jd-questionnaire-statement *ngIf="question.type === 'statement'" [value]="getValue(question.id)">
+          </jd-questionnaire-statement>
+          <!-- Matrix component -->
+          <jd-questionnaire-matrix *ngIf="question.type === 'matrix'" [errors]="getTableErrors(question.id)"
+            [hasError]="hasError(question.id)" [errorPos]="getErrorPos(question.id)"
+            (onAnswer)="onAnswerChange($event, question.id)" [options]="question.options"
+            [value]="getValue(question.id)"></jd-questionnaire-matrix>
+
+          <app-jd-questionnaire-upload *ngIf="question.upload || question.type === 'upload'" [tag]="question.tag">
+          </app-jd-questionnaire-upload>
+        </div>
+      </ng-container>
+      <button [disabled]="isLoading" class="jd-questionnaire__submit">{{ submitText }}</button>
+    </div>
+  </form>
+</div>

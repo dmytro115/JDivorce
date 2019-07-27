@@ -1,0 +1,10 @@
+<div class="compact-questionnaire-container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="questionnaireForm">
+    <div *ngFor="let question of questions">
+      <app-question [question]="question" [form]="questionnaireForm"></app-question>
+    </div>
+    <div>
+      <button type="submit" [disabled]="!questionnaireForm.valid" mat-raised-button color="primary">Submit</button>
+    </div>
+  </form>
+</div>

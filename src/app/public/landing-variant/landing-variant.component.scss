@@ -1,0 +1,464 @@
+@font-face {
+  font-family: "cheltenham";
+  src: url("/assets/new-variant/fonts/nyt-cheltenham-200-normal.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "franklin";
+  src: url("/assets/new-variant/fonts/nyt-franklin-300-normal.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("/assets/new-variant/fonts/LibreFranklin-Regular.woff")
+    format("woff");
+}
+
+.section {
+  &--one {
+    background: #fff;
+    padding-bottom: 15px;
+  }
+  &--two {
+    background-color: #f5f5f5;
+    padding-top: 70px;
+    padding-bottom: 80px;
+    @media (max-width: 768px) {
+      padding-bottom: 50px;
+      padding-top: 50px;
+    }
+  }
+  &--three {
+    background: #fff;
+    padding-bottom: 15px;
+  }
+  &--four {
+    background-color: #f5f5f5;
+    padding-top: 50px;
+    padding-bottom: 150px;
+  }
+}
+
+.hero {
+  padding-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @media (max-width: 768px) {
+    padding-top: 150px;
+  }
+  &__heading {
+    font-size: 36px;
+    margin-bottom: 16px;
+    line-height: 1;
+    text-align: center;
+    font-weight: 300;
+    color: #2b2b2b;
+    font-family: "cheltenham", georgia, "times new roman", times, serif;
+    @media (max-width: 768px) {
+      font-size: 28px;
+      margin: 0 15px;
+    }
+  }
+  &__text {
+    font-size: 20px;
+    max-width: 497px;
+    margin: 0 auto;
+    font-weight: 200;
+    line-height: 1.3;
+    color: #2b2b2b;
+    font-family: "cheltenham", georgia, "times new roman", times, serif;
+    text-align: center;
+    @media (max-width: 768px) {
+      font-size: 18px;
+      margin: 0 15px;
+    }
+  }
+}
+
+.plans {
+  display: flex;
+  justify-content: center;
+  margin-top: 66px;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__button {
+    transition: all 0.4s ease-in-out;
+    text-transform: uppercase;
+    display: inline-block;
+    color: #2e84ed;
+    border: solid 1px #2e84ed;
+    font-weight: bold;
+    border-radius: 4px;
+    max-width: 203px;
+    width: 100%;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 13px 0;
+    outline: none;
+    cursor: pointer;
+    font-family: "Libre Franklin", sans-serif;
+    margin: 10px 0;
+    text-align: center;
+    &--active,
+    &:hover {
+      background-color: #2e84ed;
+      border: solid 1px #2e84ed;
+      color: #fff;
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 310px;
+    margin: 25px;
+    @media (max-width: 768px) {
+      max-width: 90%;
+      margin: 20px auto;
+    }
+    &-icon {
+      margin-bottom: 20px;
+      svg {
+        width: 106px;
+        height: 65px;
+      }
+    }
+    &-heading {
+      font-size: 24px;
+      font-weight: 900;
+      font-family: "franklin", "Helvetica Neue", Arial, sans-serif;
+      margin-bottom: 16px;
+      color: #000000;
+      text-align: center;
+      @media (max-width: 980px) {
+        font-size: 21px;
+      }
+    }
+  }
+  .plan-list {
+    padding: 0;
+    &__item {
+      font-family: "franklin", "Helvetica Neue", Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.25;
+      color: #666666;
+      min-height: 25px;
+      svg {
+        width: 10px;
+        height: 11px;
+        margin-top: 2px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.benefits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__heading {
+    text-transform: uppercase;
+    color: #b8b8b8;
+    font-size: 14px;
+    font-family: "Libre Franklin", sans-serif;
+    letter-spacing: 0.6px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    @media (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
+  &__text {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.24;
+    padding: 0 25px;
+    color: #2b2b2b;
+    text-align: center;
+    font-family: "franklin", "Helvetica Neue", Arial, sans-serif;
+    @media (max-width: 980px) {
+      font-size: 31px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+    max-width: 1140px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 50px auto auto auto;
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
+    &-item {
+      width: 100%;
+      margin: 0 0.8% 0 0.8%;
+      background: #78818c;
+      color: #fff;
+      box-sizing: border-box;
+      padding: 30px 20px;
+      border-radius: 6px;
+      @media (max-width: 980px) {
+        padding: 20px;
+      }
+      @media (max-width: 768px) {
+        max-width: 90%;
+        margin: 10px auto;
+      }
+      h3 {
+        font-family: "franklin", "Helvetica Neue", Arial, sans-serif;
+        color: #fff;
+        font-size: 30px;
+        font-weight: normal;
+        margin: 0 auto 20px auto;
+        width: 100%;
+        padding: 0 0 3px;
+        line-height: 30px;
+        white-space: nowrap;
+        @media (max-width: 980px) {
+          font-size: 26px;
+          margin: 0 auto 10px auto;
+        }
+      }
+      p {
+        font-size: 19px;
+        font-weight: 300;
+        line-height: 1;
+        font-family: "franklin", "Helvetica Neue", Arial, sans-serif;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        line-height: 1.4;
+        font-weight: normal;
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+  }
+}
+
+.support {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 67px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 97px;
+  @media (max-width: 980px) {
+    margin: 0 25px;
+  }
+  @media (max-width: 768px) {
+    padding-bottom: 20px;
+    padding-top: 30px;
+  }
+  &__heading {
+    text-transform: uppercase;
+    color: #b8b8b8;
+    font-size: 14px;
+    font-family: "Libre Franklin", sans-serif;
+    letter-spacing: 0.6px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.24;
+    color: #2b2b2b;
+    font-family: "franklin", "Helvetica Neue", Arial, sans-serif;
+    text-align: center;
+  }
+
+  &__chat {
+    max-width: 749px;
+    width: 100%;
+    border-radius: 2px;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.14);
+    margin: 75px auto 50px auto;
+    padding: 37px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @media (max-width: 768px) {
+      margin-bottom: 20px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    h4 {
+      font-size: 36px;
+      font-weight: 300;
+      font-family: "franklin", "Helvetica Neue", Arial, sans-serif;
+      color: #000;
+      text-align: center;
+      @media (max-width: 768px) {
+        font-size: 30px;
+      }
+    }
+    p {
+      font-size: 21px;
+      font-weight: 300;
+      margin-bottom: 43px;
+      font-family: "franklin", "Helvetica Neue", Arial, sans-serif;
+      color: #000;
+      opacity: 0.9;
+      text-align: center;
+      @media (max-width: 768px) {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+    }
+    &-button {
+      transition: all 0.4s ease-in-out;
+      text-transform: uppercase;
+      display: inline-block;
+      border: solid 1px #2e84ed;
+      font-weight: 600;
+      border-radius: 4px;
+      max-width: 203px;
+      width: 100%;
+      font-size: 12px;
+      text-decoration: none;
+      padding: 15px 0;
+      outline: none;
+      line-height: 1;
+      cursor: pointer;
+      font-family: "Libre Franklin", sans-serif;
+      background-color: #2e84ed;
+      color: #fff;
+      @media (max-width: 768px) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  &__contact {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    max-width: 749px;
+    width: 100%;
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+    }
+    &-item {
+      margin: 15px;
+      @media (max-width: 768px) {
+        margin: 15px 0;
+        width: 100%;
+      }
+      a {
+        font-family: "Libre Franklin", sans-serif;
+        transition: all 0.4s ease-in-out;
+        width: 100%;
+        // max-width: 300px;
+        font-size: 15px;
+        color: #393939;
+        padding: 16px 45px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: solid 1px rgba(204, 204, 204, 0.5);
+        display: inline-block;
+        margin-bottom: 11px;
+        text-align: center;
+        &:hover {
+          background-color: rgba(204, 204, 204, 0.5);
+        }
+        @media (max-width: 768px) {
+          padding: 16px 35px;
+          width: 100%;
+        }
+      }
+      p {
+        font-family: "franklin", "Helvetica Neue", Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        color: #666666;
+        line-height: 1.25;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.recent-users {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__heading {
+    text-transform: uppercase;
+    color: #b8b8b8;
+    font-size: 14px;
+    font-family: "Libre Franklin", sans-serif;
+    letter-spacing: 0.6px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  &__list {
+    display: flex;
+    padding: 0;
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    overflow: hidden;
+    list-style-type: none;
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+    }
+    &-item {
+      margin: 20px;
+      max-width: 350px;
+      width: 100%;
+      @media (max-width: 768px) {
+        max-width: 90%;
+        margin: 10px auto;
+      }
+      h4 {
+        font-family: "Libre Franklin", sans-serif;
+        color: #000;
+        font-weight: bold;
+        text-align: center;
+      }
+      p {
+        font-family: "franklin", "Helvetica Neue", Arial, sans-serif;
+        color: #000;
+        font-style: italic;
+        text-align: center;
+        font-weight: normal;
+        font-size: 16px;
+      }
+    }
+  }
+}

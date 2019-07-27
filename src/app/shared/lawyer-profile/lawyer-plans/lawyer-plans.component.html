@@ -1,0 +1,163 @@
+<nav *ngIf="(qParams | async)?.fromCheckout || (qParams | async)?.fromAnalysis || (qParams | async)?.fromDHome" class="navbar fixed-top frozen-pane">
+  <div class="col" align="center">
+    <a *ngIf="(qParams | async)?.fromCheckout" routerLink="/a/c/checkout/lawyers" class="btn btn-secondary waves-effect waves-light">
+      <span class="fa fa-long-arrow-left"></span>{{backToListText('lawyers.checkout')}}
+    </a>
+    <a *ngIf="(qParams | async)?.fromAnalysis" routerLink="/a/c/dashboard/analysis" class="btn btn-secondary waves-effect waves-light">
+      <span class="fa fa-long-arrow-left"></span>{{backToListText('lawyers.back_to_analysis')}}
+    </a>
+    <a *ngIf="(qParams | async)?.fromDHome" routerLink="/d" class="btn btn-secondary waves-effect waves-light">
+      <span class="fa fa-long-arrow-left"></span>{{backToListText('lawyers.back_to_home')}}
+    </a>
+  </div>
+</nav>
+
+<div id="samuel" [ngClass]="{'boxed':true, 'm-t-60': ((qParams | async)?.fromCheckout || (qParams | async)?.fromAnalysis || (qParams | async)?.fromDHome)}">
+  <header>
+    <section id="top-navigation" class="container-fluid nopadding">
+      <div class="row nopadding ident ui-bg-color01">
+        <!-- Photo -->
+        <a href="javascript:void(0)" class="col-lg-4 nopadding">
+          <div class="vc-photo photo-01" [ngStyle]="{'background-image': 'url(' + lawyer.info.featured_image + ')'}">&nbsp;</div>
+        </a>
+        <!-- /Photo -->
+        <div class="col-lg-8 vc-name nopadding">
+          <!-- Name-Position -->
+          <div class="row nopadding name">
+            <div class="col-lg-12 name-title">
+              <h1 class="text-white font-accident-two-extralight">{{lawyer.name}}</h1>
+            </div>
+          </div>
+          <div class="row nopadding position">
+            <div class="col-lg-12 position-title">
+              <section class="cd-intro">
+                <h2 class="text-white cd-headline clip is-full-width font-accident-two-light">
+                  <span>My practice areas include:&nbsp;</span>
+                  <span *ngIf="lawyer.info.practice_areas" class="cd-words-wrapper">
+                    <b *ngFor="let practiceArea of lawyer.info.practice_areas; first as isFirst" [ngClass]="{ 'is-visible': isFirst }">{{practiceArea.title}}</b>
+                  </span>
+                </h2>
+              </section>
+            </div>
+          </div>
+          <!-- /Name-Position -->
+          <!-- Main Navigation -->
+          <ul id="nav" class="row nopadding cd-side-navigation">
+            <li *ngFor="let practiceArea of lawyer.info.practice_areas" class="col-xs-4 col-sm-2 nopadding menuitem" [ngClass]="practiceArea.colorClass"
+              data-animation-duration="1000" [attr.data-animation-delay]="practiceArea.animationDelay">
+              <a href="javascript:void(0)" class="hvr-sweep-to-bottom"><i class="flaticon-book-bag2"></i><span>{{practiceArea.title}}</span></a>
+            </li>
+          </ul>
+          <!-- /Main Navigation -->
+        </div>
+      </div>
+    </section>
+  </header>
+  <!-- Container -->
+  <div class="content-wrap">
+    <div id="feedback" class="inner-content">
+      <section id="page-title" class="inner-section ui-menu-color05">
+         <div class="container-fluid nopadding">
+            <h2 class="font-accident-two-light color01 uppercase heading-title"
+                data-animation-origin="right"
+                data-animation-duration="400"
+                data-animation-delay="100"
+                data-animation-distance="50px">Services</h2>
+            <p class="small color01"
+               data-animation-origin="right"
+               data-animation-duration="400"
+               data-animation-delay="300"
+               data-animation-distance="50px">
+            </p>
+         </div>
+      </section>
+
+      <section class="inner-section price-section feedback feedback-light" data-section="feedback">
+        <div class="container-fluid nopadding">
+          <div class="row">
+             <div class="col-md-12"
+                  data-animation-origin="top"
+                  data-animation-duration="500"
+                  data-animation-delay="400"
+                  data-animation-distance="25px">
+                <div class="dividewhite2"></div>
+                <h3 class="font-accident-two-normal uppercase text-center heading">Prices</h3>
+                <div class="dividewhite1"></div>
+                <p class="text-center description">
+                </p>
+             </div>
+          </div>
+        </div>
+        <div class="dividewhite3"></div>
+        <div class="list-grid" *ngIf="lawyerPackages.length">
+          <div class="row">
+
+            <div class="layers-masonry-column prices content col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 flex-items-xs-top text-center" *ngFor="let package of lawyerPackages | orderBy: 'price':false">
+              <div class="media image-top medium">
+                <div class="media-body text-center">
+                  <h5 class="heading">{{package.title}}</h5>
+                  <div class="excerpt">
+                    <p class="price-value"><small>$</small>{{package.price}}</p>
+                    <p>{{package.description}}</p>
+                    <ul>
+                      <li *ngFor="let offering of package.packageOfferings">{{offering}}</li>
+                    </ul>
+                  </div>
+                  <a (click)="goToReviewPage(lawyer, package.type, package.package_id)" class="button">Buy Now</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <footer class="padding-50 dark ui-bg-color01" data-animation-origin="top" data-animation-duration="500" data-animation-delay="800"
+    data-animation-distance="50px">
+    <div class="container-fluid nopadding">
+      <div class="row">
+        <div class="col-sm-3">
+          <h5 class="font-accident-two-bold uppercase">JDivorce</h5>
+          <p class="inline-block">
+            JDivorce's mission is to increase the access to justice for folks everywhere. Our first goal is simplifying the divorce process
+            in Washington state for both clients and lawyers.
+          </p>
+          <div class="divider-dynamic"></div>
+        </div>
+        <div class="col-sm-3">
+          <h5 class="font-accident-two-bold uppercase">JDivorce Newsletter</h5>
+          <div class="dividewhite1"></div>
+          <input class="newsletter-email" type="email" required="" name="ne" placeholder="Your Email">
+          <a href="javascript:void(0)" class="newsletter-button btn btn-wh-trans btn-xs">OK</a>
+          <div class="divider-dynamic"></div>
+        </div>
+        <div class="col-sm-3 cv-link">
+          <h5 class="font-accident-two-bold uppercase">{{lawyer.name}}</h5>
+          <p class="inline-block">
+            {{lawyer.info.blurb}}
+          </p>
+          <div class="divider-dynamic"></div>
+        </div>
+        <div class="col-sm-3">
+          <h5 class="font-accident-two-bold uppercase">Find {{lawyer.name}}</h5>
+          <div class="follow">
+            <ul class="list-inline social">
+              <li><a href="mailto:{{lawyer.email}}" class="rst-icon-youtube"><i class="fa fa-envelope"></i></a></li>
+              <li><a target="_blank" href="javascript:void(0)" class="rst-icon-youtube"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+          <div class="divider-dynamic"></div>
+        </div>
+      </div>
+      <div class="dividewhite1"></div>
+      <div class="row">
+        <div class="col-md-12 copyrights">
+          <p>© 2018 JDivorce.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Back to Top -->
+  <div id="back-top"></div>
+</div>

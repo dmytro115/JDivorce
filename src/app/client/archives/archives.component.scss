@@ -1,0 +1,27 @@
+.similar-cases {
+  .card-body {
+    padding: 0;
+  }
+
+  .card {
+    @media screen and (max-width: 991px) {
+      margin-top: 20px;
+    }
+  }
+
+  .stickyside {
+    &.fixed {
+      position: fixed;
+      top: 10px;
+    }
+
+    @media screen and (max-width: 991px) {
+      width: 100% !important;
+
+      &.fixed {
+        position: inherit;
+        top: inherit;
+      }
+    }
+  }
+}

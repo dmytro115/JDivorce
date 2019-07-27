@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>Add your work experience</h1>
+<div mat-dialog-content>
+  <form [formGroup]="addExperienceForm" fxLayout="column" fxLayoutGap="15px" class="p-t-10">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="15px" fxLayoutGap.lt-md="15px">
+      <mat-form-field fxFlex>
+        <input matInput placeholder="Title" formControlName="title" required (keyup)="onFieldChange($event)">
+        <mat-error *ngIf="isFieldError('title')">The title is required.</mat-error>
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <input matInput placeholder="Organization" formControlName="subtitle" required (keyup)="onFieldChange($event)">
+        <mat-error *ngIf="isFieldError('subtitle')">Your last name is required.</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="15px" fxLayoutGap.lt-md="15px">
+      <mat-form-field fxFlex>
+        <input matInput [matDatepicker]="startDate" placeholder="Choose a start date" formControlName="from_timestamp">
+        <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+        <mat-datepicker #startDate></mat-datepicker>
+        <mat-error *ngIf="isFieldError('from_timestamp')">The start date is required.</mat-error>
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <input matInput [matDatepicker]="endDate" placeholder="Choose an end date" formControlName="to_timestamp">
+        <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+        <mat-datepicker #endDate></mat-datepicker>
+        <mat-error *ngIf="isFieldError('to_timestamp')">The end date is required.</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center">
+      <mat-checkbox formControlName="current_work" [labelPosition]="'before'">I currently work here</mat-checkbox>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="5px">
+  <button fxFlex mat-flat-button (click)="onNoClick()">Cancel</button>
+  <button *ngIf="!data.isEdit" fxFlex mat-flat-button color="primary" [mat-dialog-close]="{ isEdit: false, element: form().value, index: -1 }" [disabled]="!addExperienceForm.valid">Add</button>
+  <button  *ngIf="data.isEdit" fxFlex mat-flat-button color="primary" [mat-dialog-close]="{ isEdit: true, element: form().value, index: data.index }" [disabled]="!addExperienceForm.valid">Save</button>
+</div>

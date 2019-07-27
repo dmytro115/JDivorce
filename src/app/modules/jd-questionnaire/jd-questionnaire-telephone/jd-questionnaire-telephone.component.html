@@ -1,0 +1,10 @@
+<input
+  type="text"
+  mask="(000) 000-0000"
+  (blur)="initTelephone($event.target.value)"
+  class="jd-questionnaire__input"
+  [placeholder]="placeholder"
+  [value]="handleUndefined(value)"
+  [ngClass]="style"
+/>
+<p class="jd-questionnaire__input-error" *ngIf="hasError">{{ error }}</p>

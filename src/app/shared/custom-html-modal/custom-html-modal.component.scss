@@ -1,0 +1,73 @@
+:host {
+z-index: 99999999;
+    background: white;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.close-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='64px' height='64px' viewBox='0 0 64 64' zoomAndPan='disable'%3E%3Cstyle%3Eline %7Bstroke: %23000000%3Bstroke-width: 2px%3B%7D%3C/style%3E%3Cline x1='20' y1='20' x2='44' y2='44' /%3E%3Cline x1='20' y1='44' x2='44' y2='20' /%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 3rem;
+  content: '';
+  cursor: pointer;
+  display: block;
+  height: 4rem;
+  position: absolute;
+  right: 0rem;
+  width: 4rem;
+      top: 0;
+    z-index: 99;
+}
+
+.wrapper {
+ display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    top: 2rem;
+    position: relative;
+}
+
+.content {
+  background: white;
+  max-width: 90vw;
+  max-height: 90vh;
+  min-width: 50vw;
+  min-height: 50vh;
+  margin: 0 auto;
+  padding: 1rem;
+  box-shadow: 0 1rem 3rem 0 rgba(0, 0, 0, 0.35);
+  overflow: scroll;
+}
+
+@media screen and (max-width: 480px) {
+  
+    
+  .close-icon {
+    top: 0;
+    height: 2rem;
+    width: 3rem;
+    right: 0;
+  }
+  
+  .content {
+    margin-top: -1rem;
+    max-width: 100vw;
+  max-height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+    box-shadow: none;
+    padding-top: 3rem;
+  }
+  .wrapper {
+    top:0;
+  } 
+  
+}
+
+

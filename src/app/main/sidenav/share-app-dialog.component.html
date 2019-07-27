@@ -1,0 +1,9 @@
+<h1 mat-dialog-title class="text-center">Share My Application</h1>
+<div mat-dialog-content>
+  <p class="text-center">Please put in your lawyer's email.</p>
+  <input type="text" class="form-control form-control-line" [(ngModel)]="email" />
+</div>
+<div mat-dialog-actions class="mt-3" [style.justify-content]="'flex-end'">
+  <button mat-raised-button (click)="shareApp()" color="primary">Share</button>
+  <button mat-raised-button (click)="onNoClick()">Cancel</button>
+</div>

@@ -1,0 +1,24 @@
+<nav class="nav">
+  <div class="nav__container">
+    <a href="#" class="nav__brand">
+      <img src="/assets/logo-text.png" alt="">
+    </a>
+    <ul class="nav__buttons">
+      <li>
+        <a href="javascript:void(0)" (click)="goToSignIn()">{{"home.menu.sign_in" | translate}}</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+
+<footer class="footer">
+  <a routerLink="/" translate="footer.jdivorce"></a>
+  <a routerLink="/about" translate="footer.about_us"></a>
+  <a routerLink="/privacy" translate="footer.privacy_and_terms"></a>
+  <a routerLink="/faqs" translate="footer.faq"></a>
+  <a routerLink="/lawyers-home" translate="footer.for_lawyers"></a>
+  <a href="http://blog.jdivorce.com/" translate="footer.detailed_topics"></a>
+  <a routerLink="/contact" target="_self">{{"home.menu.support" | translate}}</a>
+</footer>

@@ -1,0 +1,73 @@
+<div class="vertical-timeline">
+  <div fxLayout="column" fxLayoutGap="16px" class="timeline-chart-container" *ngIf="chartData.length" [ngClass]="{ hide: isSummaryChecked }">
+    <div *ngFor="let rowData of chartData; index as ii">
+      <div class="timeframe" [ngClass]="{ even: true }">
+        <div class="wrap" fxLayout="row" fxLayoutGap="16px">
+          <div fxLayout="column" fxLayoutGap="8px">
+            <span class="date {{ rowData.dateColorClass }}">{{ rowData.date | date }}</span>
+            <div class="date-color {{ rowData.blockColorClass }}" [ngStyle]="{ height: rowData.duration }"></div>
+          </div>
+
+          <div fxLayout="column" fxLayoutGap="8px" fxFlex="100">
+            <span class="line {{ rowData.blockColorClass }} {{ rowData.blockColorClass }} mt-2" [style.height]="'8px'"></span>
+            <mat-accordion>
+              <mat-expansion-panel *ngFor="let step of [timelineSteps[ii + 1]]; index as i" >
+                <mat-expansion-panel-header collapsedHeight="*" expandedHeight="*">
+                  <mat-panel-title>
+                    <div fxLayout="column" class="mx-6 mt-6">
+                      <h2 class="text-primary uppercase strong-icon">Step {{ ii + 1 }}. {{ step.stepTitle }}</h2>
+                      <h4 *ngIf="step.summary">{{ step.summary }}</h4>
+                      <mat-divider></mat-divider>
+                      <div class="my-5" fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column">
+                        <div>
+                          <mat-icon inline="true" class="mr-1 strong-icon">access_time</mat-icon>
+                          <span>{{ step.duration }}</span>
+                        </div>
+                        <div>
+                          <mat-icon inline="true" class="mr-1 strong-icon">attach_money</mat-icon>
+                          <span>{{ cost(step.cost) }}</span>
+                        </div>
+                        <div>
+                          <span class="text-primary mr-2"><strong>Owner:</strong></span>
+                          <span>{{ step.owner }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-panel-title>
+                  <mat-panel-description> </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div fxLayout="column" class="mx-6">
+                  <mat-list class="step-list">
+                    <mat-list-item class="mb-4">
+                      <h2 class="text-accent" matLine>Owner</h2>
+                      <h4 mat-line>
+                        {{ owner(step.owner) }}
+                      </h4>
+                    </mat-list-item>
+                    <mat-list-item *ngIf="showCost(step.cost)" class="mb-4">
+                      <h2 class="text-accent" matLine>Cost</h2>
+                      <h4 mat-line>${{ step.cost }}</h4>
+                    </mat-list-item>
+                    <mat-list-item *ngIf="step.instructions && step.instructions.length > 0" class="mb-4">
+                      <h2 class="text-accent" matLine>Instructions</h2>
+                      <h4 mat-line *ngFor="let instruction of step.instructions; index as j">
+                        <strong>{{ j + 1 }}.</strong> {{ instruction }}
+                      </h4>
+                    </mat-list-item>
+                    <mat-list-item *ngIf="step.documents && step.documents.length > 0" class="mb-4">
+                      <h2 class="text-accent" matLine>Forms</h2>
+                      <h4 mat-line *ngFor="let document of step.documents; index as j">
+                        <strong>{{ j + 1 }}.</strong> {{ document.title }}
+                      </h4>
+                    </mat-list-item>
+                  </mat-list>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+.jd-questionnaire {
+  &__statement {
+    position: relative;
+    transition: all 0.4s ease 0s;
+    font-size: 1.3em;
+    color: #455a64;
+
+    &-blockquote {
+      position: absolute;
+      right: 100%;
+      padding-right: 8px;
+      height: 32px;
+
+      &-content {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        line-height: 20px;
+        height: 100%;
+
+        &-item {
+          font-family: Karla, sans-serif;
+          line-height: 32px;
+          quotes: "“" "”";
+          height: 32px;
+
+          &:before {
+            content: open-quote;
+            font-size: 40px;
+          }
+        }
+      }
+    }
+
+    &-content {
+      font-weight: 400;
+      display: flex;
+      position: relative;
+      margin-bottom: 15px;
+      line-height: 1.5;
+
+      &-item {
+        color: #455a64;
+      }
+    }
+  }
+}

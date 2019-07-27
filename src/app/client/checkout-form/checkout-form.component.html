@@ -1,0 +1,26 @@
+<div class="stripe-form">
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit($event)" fxLayout="column" fxLayoutGap="24px">
+    <div class="group">
+      <label>
+        <span>Name</span>
+        <input formControlName="name" name="name" class="field" placeholder="Jane Doe" />
+      </label>
+    </div>
+    <div class="group">
+      <label>
+        <span>Card</span>
+        <div id="card-element" class="field"></div>
+      </label>
+    </div>
+    <div class="outcome" *ngIf="formErrorMessage">
+      <div class="error" role="alert">{{formErrorMessage}}</div>
+    </div>
+    <div class="stripe-btn">
+      <i class="fa fa-lock"></i> secure payments
+      <img src="assets/images/stripe/powered_by_stripe.png" class="img-responsive radius">
+    </div>
+    <div class="text-center">
+      <button mat-flat-button color="primary" [disabled]="paymentButtonDisabled || !checkoutForm?.valid" class="btn-soft" type="submit">Pay ${{plan?.cost}}</button>
+    </div>
+  </form>
+</div>

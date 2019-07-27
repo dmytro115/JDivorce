@@ -1,0 +1,24 @@
+.file-drop-zone {
+  border: dotted 3px lightgray;
+  padding: 48px;
+  text-align: center;
+}
+
+/* Default class applied to drop zones on over */
+.invalid-drag {
+  border: dotted 3px var(--warn);
+}
+.valid-drag {
+  border: dotted 3px var(--accent);
+}
+
+.preview-icon {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.file-row {
+  border-bottom: 1px solid #646363;
+}

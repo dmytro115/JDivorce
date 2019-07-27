@@ -1,0 +1,20 @@
+<div class="questionnaires">
+  <mat-card>
+    <mat-card-content>
+      <notification-card *ngIf="miniDiagnosticsResponse">
+        <p>Just a few more questions!</p>
+        <p>{{ getMiniDiagnosticsInfo() }}</p>
+      </notification-card>
+      <app-jd-questionnaire
+        *ngIf="questions.length && qid"
+        (questionnaireSubmit)="onSubmit($event)"
+        [questionnaireType]="questionnaireView"
+        [isFailed]="isFailed"
+        [isCompleted]="isCompleted"
+        [isLoading]="isLoading"
+        [questions]="questions"
+      ></app-jd-questionnaire>
+      <iframe *ngIf="formId" scrolling="auto" frameborder="0" class="iframe-full-height iframe-full-height-mobile" [src]="url" (load)="iframeLoaded()"></iframe>
+    </mat-card-content>
+  </mat-card>
+</div>

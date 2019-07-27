@@ -1,0 +1,45 @@
+<mat-accordion *ngIf="opened" (mouseleave)="onMouseLeave()">
+  <div
+    *ngFor="let parent of menuItems"
+    class="sidenav-item"
+    [ngClass]="{ 'menu-active': isActive(parent?.url) || activeSource == parent?.url, 'py-3': parent?.children?.length <= 0 }"
+  >
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+      [ngClass]="{ 'menu-active': isActive(parent?.url) || activeSource == parent?.url }"
+      class="sidenav-expansion-panel"
+    >
+      <mat-expansion-panel-header *ngIf="parent?.children?.length > 0">
+        <mat-panel-title routerLink="{{ parent?.url }}" (click)="closeSideBar()">
+          <div>
+            <img class="img-menu-control mr-3" [ngClass]="{ active: isActive(parent?.url) || activeSource == parent?.url }" src="{{ parent.img_src }}" />
+            <span class="mat-body">{{ parent.name }}</span>
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p *ngFor="let child of parent?.children">
+        <img class="img-menu-control mr-3" [ngClass]="{ active: isActive(parent?.url) || activeSource == parent?.url }" src="{{ child?.img_src }}" />
+        <a routerLink="{{ child?.url }}" class="px-2" (click)="closeSideBar()">{{ child?.name }}</a>
+      </p>
+    </mat-expansion-panel>
+    <img
+      class="img-menu-control margin-expansion-panel-img mr-3"
+      *ngIf="parent?.children == undefined && parent?.name != 'Share My Application'"
+      [ngClass]="{ active: isActive(parent?.url) || activeSource == parent?.url }"
+      src="{{ parent?.img_src }}"
+    />
+    <img class="img-menu-control margin-expansion-panel-img mr-3" *ngIf="parent?.name == 'Share My Application'" src="{{ parent?.img_src }}" />
+    <button mat-button (click)="openShareAppDialog()" class="px-2" *ngIf="parent?.name == 'Share My Application'" aria-expanded="false">{{ parent?.name }}</button>
+    <a routerLink="{{ parent?.url }}" class="px-2" (click)="closeSideBar()" *ngIf="parent?.children == undefined && parent?.name != 'Share My Application'">
+      {{ parent?.name }}
+    </a>
+  </div>
+</mat-accordion>
+
+<!-- for closed sidebar -- not opened -->
+<mat-tree class="closed-sidebar" [dataSource]="dataSource" *ngIf="!opened" [treeControl]="treeControl" (mouseenter)="onMiniMouseEnter()">
+  <mat-tree-node *matTreeNodeDef="let node" [ngClass]="{ active: isActive(node?.url) || activeSource == node?.url }">
+    <img class="img-menu-control" src="{{ node?.img_src }}" />
+  </mat-tree-node>
+</mat-tree>

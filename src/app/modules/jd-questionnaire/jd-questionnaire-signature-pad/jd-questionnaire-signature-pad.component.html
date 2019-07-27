@@ -1,0 +1,7 @@
+<mat-card>
+  <signature-pad *ngIf="mode == 'edit'" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+  <button type="button" mat-raised-button color="primary" (click)="clearSignature()">Clear</button>
+  <button type="button" mat-raised-button color="primary" (click)="editSignature()" *ngIf="mode == 'default'">Edit</button>
+  <img *ngIf="mode == 'default'" [src]="value" alt="" /><!-- signature image will be loaded here from backend -->
+</mat-card>
+<p class="jd-questionnaire__radio-error" *ngIf="hasError">{{ error }}</p>

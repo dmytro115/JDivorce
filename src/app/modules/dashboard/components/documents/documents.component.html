@@ -1,0 +1,52 @@
+<div class="m-t-20" fxLayout="column" fxLayoutGap="16px">
+  <notification-card *ngIf="inProgress">
+    <h2 class="text-primary-contrast">
+      <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+      <span translate="DASHBOARD.questionnaires.generating_documents"></span>
+    </h2>
+    <p class="text-primary-contrast">
+      Please wait for documents to be ready which takes few minutes. You will also receive an automated e-mail once the
+      document generation is complete.
+    </p>
+  </notification-card>
+
+  <div fxLayout="row" fxLayout.lt-md='column' fxLayoutGap="16px">
+    <button mat-flat-button color="primary" (click)="generateDocuments()" [disabled]="inProgress"
+      [@tada]="genBtnAnimate" [style.max-width]="'180px'">
+      Generate Documents
+    </button>
+    <a [disabled]="!zipUrl || inProgressZip" href="{{ zipUrl }}" mat-raised-button color="accent" target="_blank">
+      <span class="mr-2">Download All Documents</span>
+      <mat-progress-spinner class="inline mr-2" *ngIf="inProgressZip" mode="indeterminate" diameter="15">
+      </mat-progress-spinner>
+      <mat-icon *ngIf="!inProgressZip && zipUrl">cloud_downloaded</mat-icon>
+    </a>
+  </div>
+
+  <table mat-table [@tableTransition] [dataSource]="documents" class="mat-elevation-z8 bg-light" [style.width]="'100%'">
+    <ng-container matColumnDef="form">
+      <th mat-header-cell *matHeaderCellDef><span>Form</span></th>
+      <td mat-cell *matCellDef="let doc">{{ doc.form }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef><span>Title</span></th>
+      <td mat-cell *matCellDef="let doc">{{ doc.title }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="download">
+      <th mat-header-cell *matHeaderCellDef><span>Download</span></th>
+      <td mat-cell *matCellDef="let doc">
+        <a href="javascript:void(0)" (click)="retrieveDocument(doc.id, 'pdf')" title="PDF" target="_blank"><i
+            class="fa fa-file-pdf-o text-danger"></i></a><a target="_blank" href="{{ documentUrl(doc.id, 'pdf') }}"
+          [hidden] id="{{ retrieveDocumentId(doc.id, 'pdf') }}"></a>&nbsp;
+        <a href="javascript:void(0)" (click)="retrieveDocument(doc.id, 'docx')" title="Word" targe="_blank"><i
+            class="fa fa-file-word-o text-info"></i></a><a target="_blank" href="{{ documentUrl(doc.id, 'docx') }}"
+          [hidden] id="{{ retrieveDocumentId(doc.id, 'docx') }}"></a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="headerColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: headerColumns"></tr>
+  </table>
+</div>

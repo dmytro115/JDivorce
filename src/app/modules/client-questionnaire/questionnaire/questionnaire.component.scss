@@ -1,0 +1,18 @@
+.questionnaires iframe {
+  border: none;
+  width: 100%;
+}
+
+.iframe-full-height {
+  height: 75vh !important;
+}
+
+@media (max-width: 640px) {
+  .iframe-full-height-mobile {
+    height: 75vh !important;
+  }
+}
+
+.card {
+  margin-bottom: 0;
+}

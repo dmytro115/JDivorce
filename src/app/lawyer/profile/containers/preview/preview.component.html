@@ -1,0 +1,5 @@
+<app-progress-spinner [condition]="!profileId"></app-progress-spinner>
+<div *ngIf="profileId" fxLayout="column" fxLayoutGap="15px" >
+  <notification-card fxFlex [style]="notificationStyle"><p>{{ description }}</p></notification-card>
+  <app-lawyer-profile fxFlex [profileId]="profileId" [isNavigable]="false"></app-lawyer-profile>
+</div>

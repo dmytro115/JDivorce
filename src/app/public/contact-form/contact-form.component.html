@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="m-b-0 card-title">Get in touch</h3>
+          <p *ngIf="isSuccess">
+            <ngb-alert [dismissible]="false">
+              <span [innerHTML]="'contact.success_message' | translate"></span>
+            </ngb-alert>
+          </p>
+          <form [formGroup]="contactForm" validate (ngSubmit)="contact()" class="floating-labels m-t-20">
+            <div *ngIf="alertText" class="alert alert-danger">
+              <i class="fa fa-user"></i> {{alertText}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+            </div>
+            <div class="form-group" ngClass="{ 'has-danger': contactForm.email.invalid }">
+              <input required id="email" class="form-control" autocomplete="on" type="email" name="email" email formControlName="email">
+              <span class="bar"></span>
+              <label for="input1" translate="contact.email"></label>
+              <div class="form-control-feedback text-danger"><span *ngIf="contactForm.controls['email'].errors?.required && !contactForm.controls['email'].pristine">Email is required.</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <input required id="name" class="form-control" autocomplete="on" type="text" name="name" name formControlName="name">
+              <span class="bar"></span>
+              <label for="input2" translate="contact.name"></label>
+              <div class="form-control-feedback text-danger"><span *ngIf="contactForm.controls['name'].errors?.required && !contactForm.controls['name'].pristine">Name is required.</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="phone" name="phone" phone formControlName="phone">
+              <span class="tel"></span>
+              <label for="input3" translate="contact.phone"></label>
+            </div>
+            <div class="form-group" ngClass="{ 'has-danger': contactForm.email.invalid }">
+              <textarea class="form-control" rows="4" id="feedback" required name="feedback" feedback formControlName="feedback"></textarea>
+              <span class="bar"></span>
+              <label for="input7" translate="contact.feedback"></label>
+              <div class="form-control-feedback text-danger"><span *ngIf="contactForm.controls['feedback'].errors?.required && !contactForm.controls['feedback'].pristine">Feedback is required.</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-9">
+                    <button type="submit" class="btn btn-info" [disabled]="!contactForm?.valid || isRequestInProgress"><i class="fa fa-check"></i>{{ 'contact.submit' | translate}} </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-md-8">
+    <input
+      #search
+      class="jd-questionnaire__address"
+      [placeholder]="placeholder"
+      (input)="onInput($event)"
+      (focus)="onFocus($event)"
+      (blur)="onBlur($event)"
+      (keydown)="onKeyDown($event)"
+    />
+  </div>
+  <div class="col-md-4">
+    <input
+      class="jd-questionnaire__address"
+      [(ngModel)]="apartmentNumber"
+      [placeholder]="apartmentNumberPlaceholder"
+      (focusout)="onFocusOutFlatNo($event)"
+      (keydown)="onKeyDownFlatNo($event)"
+    />
+  </div>
+</div>
+<div class="jd-questionnaire__address-suggestions">
+  <div
+    class="jd-questionnaire__address-suggestions-item"
+    *ngFor="let prediction of predictions; let index = index"
+    [ngClass]="{ active: index + 1 == activeIndex }"
+    (click)="onClickItem($event, prediction.place_id)"
+  >
+    {{ prediction.description }}
+  </div>
+</div>
+<div id="map" style="display: hidden;"></div>
+<p class="jd-questionnaire__address-error" *ngIf="hasError">{{ error }}</p>

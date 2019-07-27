@@ -1,0 +1,35 @@
+<div fxLayout="column" fxLayoutGap="20px">
+  <mat-card fxFlex>
+    <mat-card-header>
+      <div mat-card-avatar [style.background-image]="'url(assets/images/icons/blue-wallet.svg)'"></div>
+      <mat-card-title>JDivorce's pricing philosophy & our standard flat rate plans</mat-card-title>
+      <mat-card-subtitle
+        >At JDivorce, we let folks hire lawyers at affordable and flat rate plans, and we help our customers figure out the most appropriate plan for them. We
+        also encourage you to provide your own pricing for the standard plans that we provide. In addition, you can also setup your own custom
+        plans.</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content class="m-t-20">
+      <app-pricing-block [plansFilter]="[1, 2, 3, 4]"></app-pricing-block>
+    </mat-card-content>
+  </mat-card>
+  <mat-card fxFlex>
+    <mat-card-header>
+      <mat-card-title
+        >You can use this short questionnaire to configure the standard plans that we offer, in addition to configuring your own custom plans.</mat-card-title
+      >
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content class="m-t-20">
+      <app-jd-questionnaire
+        *ngIf="questions.length && qid"
+        (questionnaireSubmit)="onSubmit($event)"
+        [questionnaireType]="questionnaireView"
+        [isFailed]="isFailed"
+        [isLoading]="isLoading"
+        [questions]="questions"
+      ></app-jd-questionnaire>
+    </mat-card-content>
+  </mat-card>
+</div>

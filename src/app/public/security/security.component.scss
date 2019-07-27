@@ -1,0 +1,59 @@
+#ppBody {
+  font-size: 11pt;
+  width: 100%;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+#ppHeader {
+  font-size: 21pt;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ppConsistencies {
+  display: none;
+}
+
+.container-fluid {
+  padding: 25px 0 0 0;
+}
+
+.privacy-box {
+  background: #ebf3f5;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.privacy-box h1 {
+  font-size: 46px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.grayText strong,
+.blueText strong {
+  font-size: 18px;
+}
+
+h4,
+h3 {
+  display: block;
+  width: 100%;
+
+  &+& {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .privacy-statment .row {
+    margin: 0;
+    display: block;
+    word-break: break-word;
+  }
+
+  .privacy-statment .innerText {
+    word-wrap: break-word;
+  }
+}

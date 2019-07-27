@@ -1,0 +1,596 @@
+{
+  "QUESTIONNAIRES": {
+    "NAMES": {
+      "PRECHECK": "Diagnósticos",
+      "DOMESTIC_VIOLENCE_DIAGNOSTICS": "Diagnósticos",
+      "PROTECTION_ORDER": "Orden de protección",
+      "ABOUT_YOU": "Acerca de ti",
+      "ABOUT_THE_RESPONDENT": "Sobre el demandado",
+      "CHILDREN": "Sobre los niños",
+      "ABOUT_THE_PETS": "Sobre las mascotas",
+      "TEMPORARY_ORDER": "Orden temporal"
+    }
+  },
+  "authentication": {
+    "signup": {
+      "title": "REGÍSTRATE PRAR OBTENER ACCESO INSTANTÁNEO",
+      "lawyer_or_legal_service_provider": "¿Eres un abogado o un proveedor de servicios legales?",
+      "first_name": "Nombre",
+      "first_name_is_required": "Nombre es obligatorio.",
+      "last_name": "Apellido",
+      "last_name_is_required": "Apellido es obligatorio.",
+      "email": "Email",
+      "email_is_required": "Email es obligatorio.",
+      "password": "Contraseña",
+      "password_is_required": "Contraseña es obligatoria.",
+      "confirm_password": "Confirmar contraseña",
+      "lawyer_or_legal_service_provider": "¿Eres un abogado o un proveedor de servicios legales?",
+      "i_agree_to_all": "Estoy de acuerdo con todo",
+      "sign_in": "Registrarse",
+      "already_have_account": "¿Ya tienes una cuenta?",
+      "terms": "Términos",
+      "sign_up_btn": "Registrarse",
+      "cnfrm_pwd_is_required": "Confirmar la contraseña es obligatorio.",
+      "email_is_invalid": "Email no es válido.",
+      "password_not_match": "Las contraseñas no coinciden"
+    }
+  },
+  "MENU": {
+    "DASHBOARD": "Tablero",
+    "TAXES": "Import Tax Data",
+    "TIMELINE": "Cronología",
+    "SHARE_MY_APPLICATION": "Compartir mi Aplicación",
+    "HIRE_ATTORNEY": "Contratar Abogado",
+    "SUPPORTING_DOCS": "Documentos de Soporte",
+    "ENGLISH": "Inglés",
+    "SPANISH": "Español",
+    "CONVERSATIONS": "Conversations",
+    "PROFILE": "Profile"
+  },
+  "TABS": {
+    "DIAGNOSTICS": "Diagnósticos",
+    "PROCESS": "Proceso",
+    "FILING SURVEY": "Encuestas de Tramitación",
+    "FILING_DOCUMENTS": "Filing Documents",
+    "FINALIZATION_SURVEYS": "Finalization Surveys",
+    "ANALYSIS": "Analysis",
+    "FINALIZATION_DOCUMENTS": "Finalization Documents"
+  },
+  "DASHBOARD": {
+    "INDEX": {
+      "TITLE": "Título",
+      "STATUS": "Estado",
+      "ACTION": "Acción",
+      "TITLE_HEADER": "Tablero",
+      "INFORMATION": "Información",
+      "PRECHECK_INFORMATION_CONTENT_1": "Comienza por responder la primera encuesta llamada 'Comprobaciones para Solicitud de Divorcio'.  Utilizando tus respuestas y las últimas guías de tu país, JDivorce te presentará entonces el proceso completo de divorcio bajo la pestaña de 'Proceso.' Tus respuestas también son utilizadas para presentarte con las encuestas necesarias para preparar tu solicitud de divorcio. Estas aparecerían bajo la pestaña llamada 'Encuestas de Tramitación'.",
+      "PRECHECK_INFORMATION_CONTENT_2": "Después de que respondas las encuestas bajo 'Encuestas de Tramitación', puedes descargar tu aplicación gratis de la pestaña llamada 'Documentos de Tramitación'.",
+      "TIME_LINE_INFORMATION_CONTENT": "Esta página proporciona la lista completa de pasos para el proceso de divorcio. Los pasos son determinados utilizando tus respuestas al cuestionario de 'Comprobación', y la documentación oficial y actualizada proporcionada por tu país. NOTA: Todas las tarifas enlistadas más abajo son tarifas gubernamentales que pagas en la corte.",
+      "questionnaires_information_content_1": "Responde a los cuestionarios en la secuencia en los que están enlistados.",
+      "questionnaires_information_content_2": "Después ed que completes todos los cuestionarios, el botón llamado",
+      "questionnaires_information_content_3": "¡Generar documentos de divorcio!",
+      "questionnaires_information_content_4": "se tornará",
+      "questionnaires_information_content_5": "verde",
+      "questionnaires_information_content_6": "y se le podrá hacer clic."
+    },
+    "questionnaires": {
+      "title": "Cuestionarios"
+    },
+    "steps": {
+      "step": "Paso",
+      "owner": "Dueño",
+      "duration": "Duración",
+      "cost": "Costo",
+      "instructions": "Instrucciones",
+      "forms": "Formularios",
+      "no_form_required": "No se necesitan formularios."
+    },
+    "questionnaires": {
+      "title": "Questionnaires",
+      "info": " Info",
+      "generating_documents": "Your documents are generating!",
+      "generating_documents_content": "You need to fill out this questionnaire after your spouse has responded to your petition."
+    },
+    "documents": {
+      "title": "Documents",
+      "download": "Download ",
+      "info": " Info",
+      "litral_title": "Title",
+      "info_documents_generate": "Your documents are generating!",
+      "info_documents_place_question": "Where are my documents?",
+      "info_documents_content_1": " You will see your list of documents here after you have completed your questionnaires and clicked on the",
+      "info_documents_content_2": "Where are your documents?",
+      "info_documents_content_3": " Generate Divorce Documents! ",
+      "info_documents_content_4": "Remember, it will take a couple of minutes to process all your questionnaires, but we will email you and update this page automatically when we are done. You can also refresh the page after a couple of minutes if you are feeling anxious.",
+      "tooltip": {
+        "tooltip_content_1": "Download the document by clicking on the icon below."
+      },
+      "file_pdf": {
+        "info_1": "Clicking on this icon will down the PDF version of the file. This is suitable if you do not plan to further edit the file on your computer. You will need the Adobe Acrobat Reader which can be downloaded for free from",
+        "info_2": "Clicking on this icon will download the Microsoft Word version of the file. You will need Microsoft Word to view or edit these files (version 2007 or later). This format is recommened if you already have Microsoft Word or if you plan to share your files with an attorney, as it provides the flexibility to edit the file directly.",
+        "here": "here",
+        "view": "View"
+      }
+    },
+    "second_documents": {
+      "title": "Spouse Response Documents"
+    },
+    "pleadingPaper": {
+      "title": "Do you want to print on pleading paper?"
+    }
+  },
+  "personalinfo": {
+    "title": "Personal Info",
+    "profile": "Profile",
+    "name": "Name",
+    "address": "Address",
+    "phone": "Phone",
+    "cell": "Cell",
+    "email": "Email",
+    "street_number": "Street Number",
+    "street_name": "Street Name",
+    "suite": "Suite",
+    "city": "City",
+    "state": "State",
+    "select_state": "Select State",
+    "zip": "ZIP"
+  },
+  "CHECKOUT": {
+    "step_1": "Planes",
+    "step_2": "Abogados",
+    "step_3": "Revisión",
+    "step_4": "Confirmación",
+    "next_step": "Siguiente Paso",
+    "choose_attorney": "Siguiente paso: Elige un abogado",
+    "title_header": "Contrata un Abogado",
+    "plans": "Planes",
+    "select": "Seleccionar",
+    "attorney": "Abogado",
+    "select_lawyer": "Seleccionar Abogado",
+    "not_accepting_clients": "No está aceptando clientes nuevos",
+    "order_review": "Revisión de la Orden",
+    "filter_title": "Filter lawyers by distance",
+    "zip": "Enter your zip or address",
+    "apply_filter_button": "Apply Filter",
+    "messages": {
+      "payment_exception_title": "Oops! Something went wrong, please try again!",
+      "payment_exception_text": "Don't worry, you haven't been charged yet.",
+      "paypal_title": "PayPal integration will be here soon!",
+      "payment_card_exception_title": "Oops! Your payment information seems to be incorrect."
+    },
+    "deluxe": {
+      "title": "Deluxe",
+      "info": "Información",
+      "text": "Plan Gratis Básico de JDivorce no cubre tu situación relacionada con bienes inmobiliarios. Necesitarás comprar el JDivorce Deluxe por $9.99 antes de descargar tu aplicación"
+    },
+    "howJDWorks": {
+      "title": "How does JDivorce work?",
+      "text": "JDivorce offers flat-rate and extremely low priced attorney options by cutting having attorneys focus on the case alone.<br>In case you want to take advantage of this offer, the process is as follows:<br><br>&nbsp&nbsp&nbsp1. You purchase a lawyer plan, and select a lawyer of your choice. You can pay now or pay directly to the lawyer<br><br>&nbsp&nbsp&nbsp2. (Optional) Free consultation with the lawyer for 20 minutes.<br><br>&nbsp&nbsp&nbsp3. At this point you have two options.<br>&nbsp&nbsp&nbsp&nbspOption 1) You don't want to proceed. You can cancel your purchase. In case you have already paid, you get a full refund.<br>&nbsp&nbsp&nbsp&nbspOption 2) You proceed further by completing a series of questionnaires online.<br><br>&nbsp&nbsp&nbsp4. After you complete the questionnaires, the lawyer will give highly specific legal advice to you"
+    },
+    "basic": {
+      "title": "Básico",
+      "free": "Gratis",
+      "service_1": "Prepara la solicitud completa de divorcio",
+      "service_2": "Descarge en PDF o Microsoft Word",
+      "service_3": "Guía paso a paso",
+      "service_4": "Detección de error",
+      "service_5": "Comparte tu solicitud a través del email"
+    },
+    "recommended": {
+      "title": "Consulta Recomendada de Abogado",
+      "attorney_review": "Revisión de Abogado",
+      "service_1": "Abogado revisa tu solicitud",
+      "service_2": "Un abogado altamente calificado revisará tu solicitud dentro de 3 días y proporcionará retroalimentación",
+      "service_3": "Un abogado propociona precaución agregada",
+      "service_4": "El abogado será local, en caso de que necesites en algún momento encontrarte en persona",
+      "refund": "100% reembolsable",
+      "refund_description": "Cancela antes de que el abogado comience y obtén un reembolso completo",
+      "basic_include": "100% básicos incluidos"
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "more": "MÁS PREGUNTAS Y RESPUESTAS",
+      "q1": {
+        "title": "¿Cuándo se establece la relación abogado/cliente?",
+        "content": "Después de que el abogado te contacta y confirma explícitamente que la relación está establecida."
+      },
+      "q2": {
+        "title": "¿Cuándo me contactará el abogado?",
+        "content": "El abogado te contactará dentro de 2 días laborales. El abogado allí confirmará que está revisando tu solicitud, y te proporcionará una fecha de entrega de la retroalimentación por escrito. La revisión se hace dentro de los 3 días laborales después de que el abogado te contacta."
+      },
+      "q3": {
+        "title": "¿Cómo me contactará el abogado?",
+        "content": "El abogado te contactará por tu dirección de email registrada o tu celular."
+      },
+      "q4": {
+        "title": "¿Qué pasará después de que el abogado me contacte?",
+        "content": "El abogado revisará tu solicitud y proporcionará la retroalimentación por escrito. Si el abogado lo encuentra necesario, se arreglará una reunión en persona o por teléfono. Tratamos de minimizar las reuniones para ofrecer precios más competitivos de abogados."
+      },
+      "q5": {
+        "title": "¿Qué pasa si cambio de opinión acerca de contratar a un abogado?",
+        "content": "Tienes dos opciones para cambiar tu plan: reembolso total, o contratar a otro abogado a través de JDivorce. Simplemente llama a nuestro servicio de atención al cliente. Por favor llama para hacer este cambio antes de que el abogado comience a trabajar en tu caso. El abogado te notificará por email cuando comience a trabajar en tu caso. En caso de que el abogado haya comenzado a trabajar en tu caso, entonces no podemos cambiar el abogado o emitir un reembolso porque ya se ha utilizado el tiempo del abogado."
+      },
+      "q6": {
+        "title": "¿Qué pasa si no estoy satisfecho con el desempeño del abogado?",
+        "content": "Si no estás satisfecho con el desempeño del abogado, por favor llámanos. Haremos lo mejor que podamos para llegar a un acuerdo justo."
+      }
+    }
+  },
+  "timeline": {
+    "step_1": {
+      "title": "Paso 1. Prepara tu Solicitud de Divorcio",
+      "description": "Prepara tu solicitud de divorcio aquí en JDivorce. Por favor ten en cuenta que preparar tu solicitud no comienza el proceso oficial del divorcio. Debes visitar una corte del condado para comenzar con el proceso del divorcio."
+    },
+    "instructions": {
+      "title": "Instrucciones",
+      "info_1": "Usando JDivorce, puedes preparar tu solicitud de divorcio al resonder un juego de cuestionarios en línea.",
+      "info_2": "Descarga tu solicitud e imprímela.",
+      "info_3": "Nota: Tu proceso de divorcio comienza cuando tramitas la solicitud en una corte del condado. Tu divorcio no comienza al preparar tu solicitud aquí en JDivorce.com"
+    },
+    "step_2": {
+      "title": "Paso 2. Envía tu Solicitud de Divorcio",
+      "description": "Visita tu corte del condado para tramitar tu solicitud, y comenzar tu divorcio oficialmente."
+    },
+    "instructions": {
+      "title": "Instrucciones",
+      "info_1": "El proceso de divorcio se comienza al tramitar tu solicitud completa de divorcio en una Corte Superior en Washington.",
+      "info_2": "Visita la Oficina del Secretario en la Corte Superior e infórmales que estás tramitando una \"Disolución\" "
+    },
+    "step_3": {
+      "title": "Paso 3. Audiencia de la Corte para Finalizar la Disolución",
+      "description": "La ley requiere un período de espera de 90 días. Después del período de espera, puedes finalizar el divorcio con una audiencia en la corte. El precio varía enormemente dependiendo de tu situación como ser un acuerdo con el cónyuge y teniendo hijos dependientes."
+    },
+    "instructions": {
+      "title": "Istrucciones",
+      "info_1": "En la audiencia final, lleva tu archivo al tribunal del comisionado.",
+      "info_2": "Cuando se llama a tu caso, presenta el papeleo final para que el comisionado firme.",
+      "info_3": "Tu divorcio está finalizado ahora."
+    }
+  },
+
+  "FORMS": {
+    "PRECHECK": {
+      "NAME": "Comprobaciones para Solicitud de Divorcio"
+    },
+    "YOU_AND_YOUR_SPOUSE": {
+      "NAME": "Tú y tu cónyuge"
+    },
+    "SPOUSAL_SUPPORT": {
+      "SPOUSAL_SUPPORT": "Manutención conyugal, Orden de protección, Orden de restricción, Costos del Caso"
+    },
+    "FILING SURVEY FORM 3": {
+      "FINANCIALS": "Finanzas: Propiedades y Deudas"
+    },
+    "FILING SURVEY FORM 4": {
+      "VITAL_STATISTICS": "Estadísiticas Vitales"
+    }
+  },
+  "forms_status": {
+    "complete": "Completo",
+    "in_progress": "En Progreso",
+    "not_started": "Sin Comenzar"
+  },
+  "forms_action": {
+    "edit": "Editar",
+    "begin": "Comenzar",
+    "view": "Ver"
+  },
+
+  "general": {
+    "jdivorce": "JDivorce"
+  },
+
+  "faqs": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Divorcio en el Estado de Washington",
+    "software": {
+      "title": "Preguntas Comunes Acerca del Software de JDivorce",
+      "q_1": "¿Cómo se protege mi información personal?",
+      "q_2": "¿Necesito registrarme para crear mi solicitud de divorcio?",
+      "q_3": "¿Por cuánto tiempo se almacena mi información?",
+      "q_4": "¿Cómo se adapta tu software a mi situación única?",
+      "q_5": "¿Puedo purgar (o sea eliminar) mi información personal después de completar mi solicitud?",
+      "q_6": "¿La solicitud de divorcio se imprime en formularios oficiales del estado de Washington?",
+      "q_7": "¿Qué países son cubiertos?",
+      "q_8": "¿Qué formularios del estado de Washington son generados como parte de mi solicitud de divorcio?",
+      "q_9": "¿Cómo genera JDivorce preguntas que no aplican para mí?",
+      "a_1": "<p>JDivorce cumple con uno de los estándares de seguridad más completos, el Payment Card Industry Data Security Standard (PCI DSS), para proteger tu información. PCI DSS es un estándar de seguridad para los software que manejen información del cliente. Originalmente dirigido para las empresas de tarjetas de crédito, el estándar ahora es utilizado por todas las más grandes empresas de tecnología que manejen información del cliente. </p> <p>JDivorce usa protocolos de seguridad HTTPS para transferir tu información con seguridad. HTTPS es el estándar global de cómo los sistemas informáticos transfieren la información de manera segura a través del internet. HTTPS previene que cualquier tercero pueda ver o modificar tu información.</p> <p>Nuestros centros de información están ubicados físicamente en Virginia y California y cumplen con todas las leyes de privacidad de EUA.</p>",
+      "a_2": "No, no es necesario. Puedes usar JDivorce como un usuario invitado. Sin embargo, crear una cuenta te permite guardar tu solicitud al final de cada sección individual. Considerando que una solicitud de divorcio puede ser bastante detallada para situaciones que involucren niños, guardar tu solicitud te permite exponencialmente las conveniencias de completar tu solicitud en sesiones múltiples, o realizar cambios después.",
+      "a_3": "La información se almacena de manera indefinida.",
+      "a_4": "El software de JDivorce consiste en una serie de preguntas. Después de cada sección, nuestro software procesa tus respuestas para determinar qué secciones aplican para ti y cuáles puedes saltearte libremente. Por ejemplo, tu respuesta a la pregunta&nbsp; ¿Tienes hijos? Determina si debes responder a secciones que cubran la custodia infantil.&nbsp; Tus respuestas además determinan el juego final de formularios del estado de Washington necesario.&nbsp;",
+      "a_5": "Sí, puedes enviarnos una solicitud para purgar a través de nuestro formulario seguro de contacto. Purgaremos tu información dentro de dos días laborables.",
+      "a_6": "<p>Sí, JDivorce usa los formularios oficiales del estado de Washington. Para poder mantener el formato exacto como ser los márgenes, fuentes, y espacios, usamos los documentos originales de Microsoft Word proporcionados por las Cortes de Washington. El software de JDivorce entonces ingresa la información que has proporcionado. Nuestro software solo llena los espacios en blanco o las casillas sin modificar el contenido original. </p> <p> Al usar formularios originales del estado de Washington, además evitamos el riesgo de romper cualquiera de las reglas de conformidad mencionadas en las guías para formularios desarrollados a medida: <a href=\"https://www.courts.wa.gov/forms/documents/Dep%20Format%20and%20Style%20Rules.doc\"> Reglas de Formato y Estilo para Formularios Obligatorios Desarrollados de Acuerdo con RCW 13.34.035. </a> </p>",
+      "a_7": "<p>JDivorce soporta la tramitación para divorcios en el estado completo de Washington. El juego final de documentos que descargues cumple con los requerimientos de la Corte Superior del Condado de King, como se describe aquí: </p> <ul> <li><a href=\"http://www.kingcounty.gov/%7E/media/courts/superior-court/docs/family/family-law-instructions/01-01-how-to-ask-for-a-divorce-pdf.ashx?la=en\"> Cómo Solicitar un Divorcio para Cónyuges/compañeros domésticos registrados que no están de acuerdo </a> </li> <li><a href=\"http://www.kingcounty.gov/%7E/media/courts/superior-court/docs/family/family-law-instructions/01-02-how-to-ask-for-a-divorce-agreed-pdf.ashx?la=en\"> Cómo Solicitar un Divorcio para Cónyuges/compañeros domésticos registrados que están de acuerdo </a> </li></ul>JDivorce soportará la tramitación en todas las cortes del condado dentro del estado de Washington para el octubre del 2017.",
+      "a_8": "<p>JDivorce genera el juego completo de <strong>todos</strong> los formularios del gobierno necesarios. Dependiendo de tu situación, estos pueden ser algunos o todos los formularios siguientes: </p> <ul> <li>Formulario de Área de Asignación del Caso y Hoja de Cobertura de la Información del Caso (CICS) </li> <li> FL Familia Entera 001 Información Confidencial </li> <li>Certificado de Disolución-Formulario de Estadísticas Vitales</li> <li>FL Familia Entera 013 Reporte Sellado Confidencial</li> <li>FL Divorcio 201 Solicitud de Divorcio (Disolución)</li> <li>FL Divorcio 200 Convocatorias: Notificación Acerca de un Matrimonio o Asociación Doméstica</li> <li>FL Familia Entera 140 Plan de Paternidad 5 copias</li> <li>FL Familia Entera 132 Declaración acerca de Asistencia Pública 5 copias</li> <li>FL Divorcio 223 Moción para Orden Legal Familiar Temporal [ ] y Orden de Restricción</li> <li>FL Familia Entera 011 Documentos Sellados de Fuente Financiera </li> <li>FL Familia Entera 131 Declaraciones Financieras</li> <li>FL Familia Entera 135 Declaración </li> <li>WSCSS – Hojas de Trabajo de Itinerario de Manutención Infantil del Estado de Washington</li> <li>FL Familia Entera 112 Prueba de Envío o Entrega Manual (para documentos después de Citaciones y Pedidos) 5 copias</li> <li>FL Familia Entera 130 Orden de Manutención Infantil 5 copias</li> <li>FL Divorcio 224 Orden Legal Familiar Temporal</li> <li>FL Familia Entera 185 Notificación de Audiencia</li></ul>'",
+      "a_9": "JDivorce sigue las guías oficiales del estado de Washington. Estas guías requieren que las preguntas que no son relevantes a tu situación sean marcadas explícitamente como \"No Aplica\"; o que se dejen en blanco si no hay una opción de marcar como \"No Aplica.\"'"
+    },
+    "common": {
+      "title": "Preguntas comunes acerca de divorcios",
+      "q_1": "¿Qué es una separación legal?",
+      "q_2": "¿Cuál es el propósito de una separación legal?",
+      "q_3": "¿Qué hacemos si decidimos después que queremos un divorcio en el Estado de Washington?",
+      "q_4": "¿Qué hacemos si decidimos después que queremos reconciliarnos y dejar de estar legalmente separados?",
+      "q_5": "¿Qué es un divorcio “sin culpa”?",
+      "q_6": "¿Cómo determinan las cortes la custodia infantil?",
+      "q_7": "¿Cuánto tiempo toma conseguir un divorcio?",
+      "q_8": "¿Cuál es la diferencia entre un divorcio, una anulación, y una separación legal?",
+      "q_9": "¿Qué hago si se me dan los papeles del divorcio?",
+      "q_10": "¿Puedes retractarte de un divorcio si ya lo has tramitado?",
+      "q_11": "¿Cómo funciona la custodia infantil?",
+      "q_12": "¿Necesito un Plan de Paternidad?",
+      "q_13": "¿Qué pasa si no sigo el Plan de Paternidad?",
+      "q_14": "¿Cuáles son las razones por las cuales las cortes de Washington podrían limitar mi tiempo con los niños?",
+      "q_15": "Divorcio en el Estado de Washington",
+      "q_16": "Información breve en línea acerca del Divorcio en el Estado de Washington",
+      "q_17": "¿Cuáles son los motivos de divorcio en Washington?",
+      "q_18": "¿Quién puede tramitar un divorcio en Washington?",
+      "q_19": "¿Dónde hago el trámite?",
+      "q_20": "¿Cuánto dura el proceso de divorcio?",
+      "q_21": "¿Qué es un divorcio sin contestar?",
+      "q_22": "¿Qué es la mediación en el divorcio?",
+      "q_23": "¿Qué hará la corte al otorgar un divorcio en Washington?",
+      "q_24": "¿Qué no hará la corte al otorgar un divorcio en Washington?",
+      "a_1": "<p>La ley del Estado de Washington permite que las parejas casadas comiencen una separación legalmente vinculante en lugar de una completa Disolución del Matrimonio (divorcio), la separación legal en el Estado de Washington te permite a ti y a tu cónyuge que obtengan un Decreto de Separación Legal aprobado por la corte. Sin embargo, la separación legal no es necesaria antes de tramitar u obtener un divorcio en Washington.</p>",
+      "a_2": "<p>Hay muchas razones por las cuales los cónyuges eligen obtener un Decreto de Separación Legal en lugar de un divorcio (o Decreto de Disolución del Matrimonio). En algunas circunstancias, puede ser por razones religiosas o que uno o ambos cónyuges se opongan al divorcio. En dichas circunstancias, la pareja puede preferir la separación legal. En otros casos, la pareja no puede estar segura de querer terminar su matrimonio.</p> <p>La razón más común por la cual las parejas que se separan eligen la separación legal es para hacer arreglos financieros o infantiles formales como lo harían en un divorcio real. La separación legal le permite a la pareja dividir legalmente sus propiedades y deudas. Adicionalmente, si la pareja tiene hijos, la separación legal, como el divorcio, permite que la pareja obtenga órdenes de la corte para la custodia, manutención y visitas infantiles.</p>",
+      "a_3": "<p>Un Decreto de Separación Legal se puede convertir en un Decreto de Disolución de Matrimonio (divorcio). Si la corte ya ha otorgado el Decreto y uno de los cónyuges desea convertir la Separación Legal en un divorcio, se puede realizar una moción con la corte para convertir la separación legal en un divorcio. Sin embargo, esta moción para convertir solo se puede tramitar después de que hayan pasado seis meses. Cualquiera de los cónyuges puede llevar la moción a la corte. Ambos cónyuges no necesitan estar de acuerdo para convertir una separación legal en un divorcio. Sin embargo, el cónyuge tramitando la moción debe proveerle una notificación legal al otro cónyuge. (Después de un año, la notificación legal técnicamente no es necesaria, pero muchos jueces en varios condados igual requerirán que se le proporcione la notificación legal al otro cónyuge.)</p>",
+      "a_4": "<p>Suponiendo que ambos cónyuges estén de acuerdo, una separación legal puede deshacerse. Si la separación legal ya ha sido aprobada por la corte, y ambos cónyuges desean reconciliarse y revivir el matrimonio sin tener que volver a casarse formalmente, entonces se puede tramitar una Moción de Invalidar el Decreto de Separación Legal. Cuando la corte lo apruebe, será como si la separación legal nunca hubiese ocurrido.</p> <p>Si el caso de separación legal solo está pendiente en la corte, y la corte aún no ha aprobado la separación legal, los cónyuges pueden solicitar que el caso sea descartado. Dado que la corte nunca otorgó la separación legal en el Estado de Washington, sería como si el trámite legal nunca hubiese ocurrido. </p>",
+      "a_5": "<p>Si bien hay muchas razones por las cuales un matrimonio se puede terminar, se puede usar un divorcio sin culpas cuando tú y tu pareja simplemente han acordado seguir adelante. En otras palabras, en un divorcio sin culpas, ninguna de las dos partes ha acusado a la otra de ningún daño necesita probarlo; como resultado, el proceso de divorcio puede ser más fácil.</p>",
+      "a_6": "<p>La custodia infantil es quizás el tema más delicado en un divorcio. En la mayoría de los casos, la custodia es acordada entre ambos padres durante la mediación. Sin embargo, si no se puede llegar a un acuerdo, un juez decidirá los derechos de custodia basándose en los intereses del niño. Esta decisión toma consideraciones importantes, como ser la habilidad de cada padre de proveer económicamente y emocionalmente. Si la custodia no se puede acordar, es muy probable que sea conveniente que consultes con un abogado.</p>",
+      "a_7": "<p>Puedes estar listo para seguir adelante, pero las cortes deben estar listas también. Antes de que obtengas tus papeles del divorcio, la mayoría de los estados requieren de un período de espera después de tramitarlo. En la mayoría de las jurisdicciones, este período es de alrededor de 90 días, sin embargo, puede llegar a ser de un año. Además del período de espera obligatorio, cualquier complicación con las custodias, divisiones de activos o pagos de manutención pueden enlentecer el proceso.</p><p> Se puede encontrar más información acerca del proceso de divorcio aquí </p> <ul> <li><a href=\"http://www.kingcounty.gov/~/media/courts/superior-court/docs/family/family-law-instructions/01-01-how-to-ask-for-a-divorce-pdf.ashx?la=en\"> Cómo Solicitar un Divorcio para Cónyuges/compañeros domésticos registrados que no están de acuerdo</a></li> <li><a href=\"http://www.kingcounty.gov/~/media/courts/superior-court/docs/family/family-law-instructions/01-02-how-to-ask-for-a-divorce-agreed-pdf.ashx?la=en\"> Cómo Solicitar un Divorcio para Cónyuges/compañeros domésticos registrados que están de acuerdo</a></li> </ul>",
+      "a_8": "<p>Si bien los tres esencialmente llegan al mismo fin, cada uno tiene ramificaciones legales distintas. Una anulación, como un divorcio, termina legalmente el matrimonio, pero lo hace tratando al matrimonio como si nunca hubiese ocurrido. Estos son bastante raros. Un divorcio significa que ambos cónyuges atraviesan un proceso legal en el cual ya no siguen casados y dividen los activos, como ser las propiedades y responsabilidades, como ser el cuidado infantil. La separación legal, por el otro lado, deja el matrimonio legalmente intacto, a pesar de atravesar los mismos procedimientos como ser la división de activos y custodia.</p><p>Aquí está la <a href=\"http://apps.leg.wa.gov/RCW/default.aspx?cite=26.09\">definición Legal de Washington</a></p>",
+      "a_9": "<p>La discusión que sigue es del punto de vista del cónyuge que está tramitando la disolución del matrimonio en Washington, asignado en los documentos de la corte como el ‘demandante’. Si eres el cónyuge que recibe los papeles del divorcio, el proceso es el mismo que se detalla a continuación, pero eres asignado como el ‘demandado’. Si recibes una convocatoria a divorcio y petición de disolución tramitadas por tu cónyuge, debes hablar con un abogado de ley familiar calificado de Washington de inmediato acerca de la protección de tus derechos. La manera en la que respondas a la petición puede afectar el resto de tu caso. Debes asegurar que eres aconsejado y entiendes tus opciones con respecto a tu propiedad, activos, e hijos. Revisa la convocatoria y petición con cuidado, y discute tus preocupaciones con tu abogado de divorcios. Generalmente tienes 20 días para responder a la petición. No lo aplaces. Considera el tiempo que te tomará contratar a un abogado, revisar la petición, ubicar los papeleos y registros, y completar cualquier otra tarea involucrada en preparar tu respuesta al pedido y tramitarlo en la corte de Washington. Es importante que cumplas con los tiempos límite de la corte.</p>",
+      "a_10": "<p>Si has tramitado una solicitud de divorcio y ahora te arrepientes, puedes hacer una media vuelta sin demasiados problemas, dependiendo de en qué etapa del proceso te das cuenta de tu error.</p> <h3>Desestimación Antes de la Respuesta</h3> <p>Después de que tramitas una solicitud de divorcio, tu siguiente paso en el proceso es arreglar que los papeles del divorcio le sean enviados a tu cónyuge, que tiene 30 días para responder. Si cambias de opinión acerca del divorcio en cualquier momento antes de que tu cónyuge tramite los papeles en respuesta con la corte, en la mayoría de las jurisdicciones, puedes desestimar el caso.</p> <h3>Desestimación con Consentimiento del Cónyuge</h3> <p>Después de que tu cónyuge ha tramitado los papeles en respuesta, el demandante ya no tiene un derecho automático a desestimar el divorcio. Pero ganar una desestimación no es difícil, si tu cónyuge también quiere darle otra oportunidad al matrimonio. En general, una corte otorga una desestimación cuando ambos cónyuges acuerdan terminar el caso.</p>",
+      "a_11": "<p>En los divorcios en el Estado de Washington, si los cónyuges tienen un hijo o hijos menores o dependientes, la corte ingresará un Plan de Paternidad que asigna dónde estarán los niños cada día en el tiempo desde la finalización del divorcio y cuando el niño cumpla 18. La corte asignará a un padre como el padre residencial primario. En la mayoría de las circunstancias, la toma de decisiones para los niños se hace en conjunto con ambos padres. El Plan de Paternidad puede ser preparado para ajustarse a las necesidades únicas de tu familia y nadie conoce esas necesidades mejor que tú y tu cónyuge. Tú y tu cónyuge están mejor calificados para crear un Plan de Paternidad que se ajuste a las necesidades de tus hijos.</p>",
+      "a_12": "<p>Si tú y tu cónyuge tienen un hijo o hijos que tienen menos de 18 años de edad o son de otra manera dependientes, entonces la corte requerirá que se ingrese un Plan de Paternidad a la corte para finalizar tu divorcio. Si se te han enviado los papeles de divorcio que incluyen un Plan de Paternidad Propuesto con el cual no estés de acuerdo en alguna manera, entonces debes preparar tu propio Plan de Paternidad Propuesto para tramitar en la cote. Se debe ingresar un Plan de Paternidad Final en la corte para finalizar tu divorcio. Si tú y tu cónyuge no pueden acordar un Plan de Paternidad Final por su cuenta, con la asistencia de abogados o a través de mediaciones, entonces tendrán que ir a juicio, y el juez tomará la decisión por ustedes.</p>",
+      "a_13": "<p>Un Plan de Paternidad firmado por un oficial judicial e ingresado en la corte es una orden de la corte. Si tú y tu ex cónyuge acuerdan hacer un cambio, por ejemplo, si intercambian emails y acuerdan que en lugar de devolver a los niños al mediodía, está bien hacerlo a las 3:00 p.m., entonces está bien. Sin embargo, es mejor tener estos acuerdos por escrito. Si no hay un acuerdo para cambiar, entonces el Plan de Paternidad debe ser seguido. Si intencionalmente ignoras provisiones del Plan de Paternidad, entonces se te puede considerar en desacato al tribunal. Esto es algo muy serio. Si quieres hacerle cambios al Plan de Paternidad y tu ex cónyuge no está de acuerdo, entonces tendrás que ir a la corte a que cambien el Plan de Paternidad. Esto no es algo fácil de hacer. Esta posibilidad futura es otra razón por la cual trabajar duro para resolver los problemas destacados de tu divorcio de manera amigable es tan importante.</p>",
+      "a_14": "<p>La corte puede limitar tu tiempo residencial con tus hijos y puede denegarte la toma de decisiones en conjunto o resolución alternativa de disputas si la corte encuentra cualquiera de los siguientes:</p> <ul> <li>Denegación a cuidar de los niños y desempeñar tareas y responsabilidades paternas</li> <li>Abuso físico, sexual o emocional del niño</li> <li> Historial de violencia doméstica o agresión física o sexual</li> <li> Historial de crímenes sexuales, incluyendo violación infantil, abuso infantil, incesto o cualquier otra conducta indebida que involucre niños</li> <li> Problemas emocionales o físicos duraderos que interrumpirán la habilidad del padre de cuidar del niño</li> <li> Abuso duradero de drogas y alcohol</li> <li> Falta o ausencia de vínculo emocional entre el padre y el niño</li> <li> Denegación a darle al otro padre contacto con el niño sin razones</li> <li> Otras razones que puedan ser una amenaza al bienestar y los intereses del niño</li> </ul> <p>Si estas razones no existen, entonces una corte seguramente se les otorgue la toma de decisiones conjunta a ti y a tu cónyuge. Adicionalmente, la corte proporcionará a ambos padres para que tengan tiempo de calidad con los niños. Es también importante saber que si se encuentra que un padre falsamente alegó cualquiera de los factores de más arriba acerca del otro padre, entonces ese padre puede terminar teniendo su tiempo limitado con los niños.</p>",
+      "a_15": "<p>El divorcio se llama formalmente “disolución del matrimonio” en el Estado de Washington. En el Estado de Washington, el matrimonio de ley común no es reconocido. Tienes que estar legalmente casado para que la corte ingrese un Decreto de Disolución. El Estado de Washington reconoce las asociaciones domésticas, y si ambas personas están registradas como compañeros domésticos en el estado, entonces deben disolver su asociación doméstica a través de las cortes. Ese proceso es similar al proceso de una disolución de matrimonio.</p>",
+      "a_16": "<p>Los matrimonios legales en otros estados y países son reconocidos como válidos en Washington. Sin embargo, las siguientes situaciones no son reconocidas como matrimonios válidos:</p> <ul> <li>Cuando una persona se casa cuando ya tiene otro cónyuge, entonces el segundo matrimonio no se considerará como válido.</li> <li>Cuando dos personas que son parientes cercanos se casan, ese matrimonio puede no ser reconocido en el Estado de Washington.</li> </ul>",
+      "a_17": "<p>Washington es un estado de “divorcio sin culpa”, lo cual significa que no es necesario asignar culpa o probar que el otro cónyuge tiene la culpa del fracaso del matrimonio. De acuerdo a las leyes estatales de Washington, solo un cónyuge en el matrimonio debe creer y declarar que el matrimonio está irreparablemente roto para que se otorgue el decreto de divorcio. “Irreparablemente roto” significa que no se puede salvar el matrimonio y que no hay oportunidad de reconciliación.</p>",
+      "a_18": "<p>Puedes tramitar un divorcio en Washington si tú o tu cónyuge residen actualmente en el estado de Washington.</p>",
+      "a_19": "<p>Puede tramitar en el condado donde tú o tu cónyuge viven. De manera alternativa, puedes tramitar en el Condado de Lincoln aunque ninguno de los dos viva allí. Ambos cónyuges deben estar de acuerdo para que el caso sea tramitado en el Condado de Lincoln.</p>",
+      "a_20": "<p>El período mínimo de espera para un divorcio en Washington es de noventa (90) días. Este es el período mínimo requerido antes de que la corte finalice tu divorcio. El reloj de “noventa días” comienza a correr después de que la Petición de Disolución de Matrimonio es tramitada y después enviada al cónyuge que no lo ha tramitado. Si ambos cónyuges firman la Petición, entonces el reloj comienza a correr cuando la Petición es tramitada.</p> <p>Noventa días es el tiempo mínimo que tomará para que se ingrese un Decreto de Disolución. Sin embargo, seguramente tome más si hay asuntos en disputa que existan cuando se comienza el proceso de disolución. Estos asuntos en disputa pueden estar relacionados a la división de propiedades y/o deudas, aspectos del divorcio relacionados con niños, manutención/pensiones, o cualquier otro asunto. Muchos otros problemas pueden demorar el proceso también.</p> <p>Durante el proceso de espera de tres meses, se pueden ingresar órdenes temporales para abordar asuntos interines incluyendo una agenda residencial para niños, apoyo financiero, o el uso de propiedades.</p>",
+      "a_21": "<p>Si tú y tu cónyuge acuerdan todos los aspectos del divorcio, calificarán para un divorcio sin contestar. Los asuntos básicos que conforman un divorcio son: <a href=\"#\">1)división de propiedades y responsabilidades;</a> <a href=\"#\">2) mantenimiento, también conocido como pensiones; y si hay niños,</a><a href=\"#\"> 3) la agenda residencial para cualquier niño dependiente, y</a><a href=\"#\"> 4) manutención infantil</a></p> <p>Si tú y tu cónyuge pueden acordar todos los asuntos, entonces estarán haciendo lo mejor de una situación mala. Al estar de acuerdo con todos los asuntos, es más probable que se lleven mejor después del divorcio – algo que es muy importante, en especial si tienen hijos juntos. Adicionalmente, ahorras dinero. El costo de un divorcio sin contestar es significativamente menor al costo de uno contestado.</p> <p>Si han acordado algunos asuntos – pero no todos – pero quieren trabajar en conjunto para intentar lograr una resolución de manera eficiente y sin peleas, entonces la mediación puede ser una opción para tú y tu cónyuge.</p>'",
+      "a_22": "<p>La mediación en un divorcio requiere de un mediador o una persona neutral entrenada, a menudo un abogado o profesional de la salud mental, para ayudar a los cónyuges que se están divorciando a que lleguen a un acuerdo. Si bien los cónyuges que se están divorciando participan rutinariamente en mediaciones cuando están representados por abogados, no es poco común que los cónyuges participen en mediaciones con un mediador entrenado y sin sus propios abogados. Esta es una buena opción para los cónyuges que quieren trabajar en conjunto para crear una resolución que sea la mejor para ellos.</p>",
+      "a_23": "<p>La corte dividirá todos los activos y las responsabilidades de manera “justa y equitativa” (lo cual no necesariamente igualitariamente); la corte determinará si uno de los cónyuges deberá pagar una manutención (pensión) al otro, si lo solicita un cónyuge. Esta determinación se hace basada en muchos asuntos, incluyendo si uno de los cónyuges tiene la necesidad de la manutención, y si el otro tiene la posibilidad de pagarla. La corte establecerá un itinerario residencial para los hijos dependientes, y también establecerá un monto de manutención infantil.</p>",
+      "a_24": "<p>La corte no resolverá la frustración o enojo que puedas sentir hacia tu cónyuge; La corte no podrá aumentar los activos que tú y tu cónyuge tengan, así hay más dinero para repartir. De hecho,  el litigar un caso con abogados seguramente causará que gastes una gran cantidad de dinero y reducirá el monto total que queda para ser dividido. La corte no removerá al otro padre de la vida de sus hijos (excepto en cirucnstancias muy extremas), así que aprender cómo trabajar con tu cónyuge para tomar decisiones para tus hijos es lo mejor para tus hijos. </p>"
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "callus": "Llámanos",
+    "call_no": "(206) 569-8669",
+    "have_our_email": "Envíanos un email",
+    "help_email": "help@jdivorce.com",
+    "contact_form": "Formulario de Contacto",
+    "name": "Nombre",
+    "email": "Email",
+    "phone": "Teléfono",
+    "feedback": "Retroalimentación",
+    "submit": "Enviar",
+    "success_message": "<strong>¡Gracias!</strong> Tu mensaje se ha enviado con éxito. ¡Te contactaremos muy pronto!"
+  },
+  "lawyers": {
+    "title_heading": "Se ha unido con estos abogados y paralegales profesionales para poder ofrecerte los mejores servicios posibles.",
+    "more_details": "Más Detalles",
+    "ask_questions": "Haz Preguntas",
+    "show_alert": "Este abogado no existe.",
+    "select_lawyer": "Seleccionar",
+    "not_accepting_clients": "Not Accepting Clients",
+    "ask": {
+      "email": "Email del Abogado",
+      "question": "Tu Pregunta",
+      "question_required": "¡Pregunta es obligatoria!",
+      "ask_questions": "Haz Preguntas"
+    },
+    "back_to_list": "Back To Lawyers",
+    "back_to_profile": "Back To Profile",
+    "checkout": "Back To Checkout"
+  },
+  "general": {
+    "send": "Enviar",
+    "close": "Cerrar",
+    "jdivorce": "JDivorce"
+  },
+  "filling_survey": {
+    "forms": {
+      "PRECHECK": "Comprobaciones para Solicitud de Divorcio",
+      "YOU_AND_YOUR_SPOUSE": "Tú y tu Cónyuge",
+      "FINANCIALS": "Finanzas: Propiedades y Deudas",
+      "SPOUSAL_SUPPORT": "Manutención conyugal, Orden de protección, Orden de restricción, Costos del Caso",
+      "VITAL_STATISTICS": "Estadísiticas Vitales",
+      "CHILDREN": "Hijos",
+      "CHILDREN_FROM_RELATIONSHIPS": "Hijos de Otras Relaciones",
+      "CHILDREN_RIGHTS_CASES": "Hijos – Derechos Legales de Otros y Casos de la Corte",
+      "CHILD_SUPPORT": "Manutención Infantil y Jurisdicción",
+      "PP_LIMITATIONS": "Plan de Paternidad – Limitaciones, Tomas de Decisiones, Resoluciones de Conflictos",
+      "PP_SCHEDULE": " Plan de Paternidad – Itinerario de Tiempo Parental",
+      "PP_HOLIDAYS": " Plan de Paternidad – Festividades",
+      "WSCSS_YOUR": "WSCSS - Hojas de Trabajo de Itinerario de Manutención Infantil del Estado de Washington – Tus Finanzas",
+      "WSCSS_SPOUSE": "WSCSS - Hojas de Trabajo de Itinerario de Manutención Infantil del Estado de Washington – Finanzas del Cónyuge",
+      "SPOUSE_RESPONSE": "Respuesta del Cónyuge",
+      "TEMPORARY_ORDERS": "Pedidos Temporales",
+      "PROTECTION_ORDER": "Orden de protección"
+    }
+  },
+  "forms_status": {
+    "complete": "Completo",
+    "in_progress": "En Progreso",
+    "not_started": "Sin Comenzar"
+  },
+  "forms_action": {
+    "edit": "Editar",
+    "begin": "Comenzar",
+    "view": "Ver"
+  },
+  "home": {
+    "menu": {
+      "faq": "Preguntas Frecuentes",
+      "support": "Soporte",
+      "sign_in": "Iniciar Sesión",
+      "register": "Registrarse",
+      "lawyer_and_home": "Nuestros Abogados",
+      "begin_application": "Comenzar Solicitud",
+      "begin": "Comenzar"
+    },
+    "banner": {
+      "header_1": "El divorcio nunca es fácil.",
+      "header_2": "Nosotros podemos hacerlo sencillo.",
+      "info_1": "Entendemos; aún estás explorando en esta etapa.",
+      "info_2": "Nada de lo que hagas en JDivorce irá al gobierno.",
+      "info_3": "✓ Completa tu solicitud de divorcio entera en línea",
+      "info_4": "✓ SIN tarjeta de crédito – descargar tu solicitud es gratis",
+      "info_5": "✓ SIN jerga legal – español sin frustraciones",
+      "info_6_html": "✓ Personalizado para <strong>tu</strong> situación específica",
+      "button_text": "Comenzar Solicitud"
+    },
+    "divorce_process": {
+      "title": "Proceso de Divorcio",
+      "description": "Obtener un divorcio en el estado de Washington involucra los 3 pasos principales de la lista de más abajo. Cada paso, en cambio, tiene varios sub-pasos, los cuales dependen de tu situación(como ser si se tienen hijos o no) y el condado en el cual estás tramitando. Para poder ver el proceso detallado, haz clic en el botón de ‘Comenzar Solicitud’ y completa el primer cuestionario."
+    },
+    "advisors": {
+      "title": "Advisors",
+      "description": "JDivorce is advised by industry lawyers & professors who are passionate about bringing access to justice for everybody"
+    },
+    "how_it_works": {
+      "title": "How it works"
+    },
+    "help": {
+      "header": "¿Cómo te podemos ayudar?",
+      "title_1": "Lánzate a comenzar",
+      "title_2": "Consulta con un abogado",
+      "title_3": "¿Tienes preguntas?",
+      "info_1": "Comienza a preparar tu solicitud de divorcio, con instrucciones paso a paso. Te guiaremos a través de las logísticas del proceso completo. Nuestra aplicación cubre todas las situaciones comunes, como tener hijos, acuerdos entre cónyuges, y más. De todas formas puedes consultar con un abogado después.",
+      "info_2": "Si prefieres tener la paz mental de trabajar con un abogado, ¡encontraremos uno para ti! Nos asociamos con varios abogados y técnicos legales altamente calificados que te guiarán a través de este proceso complicado. Garantizamos que un abogado revisará tu solicitud legal dentro de 3 días.",
+      "info_3": "Divorciarse puede ser extremadamente complicado y frustrante. No te preocupes, estamos aquí para ayudarte en el meollo. Revisa entre nuestras Preguntas Frecuentes, publicaciones del blog, y videos informativos de 30 segundos para comenzar.",
+      "free": "Comenzar (Gratis)",
+      "lawyers": "Revisa entre nuestros abogados ($150+)",
+      "keep_reading": "Seguir Leyendo"
+    },
+    "what_can_we_do": {
+      "title": "¿QUÉ PODEMOS HACER?"
+    },
+    "accurate": {
+      "title": "Preciso",
+      "description": "Cada detalle mínimo prescrito por tu país está incorporado."
+    },
+    "upload_forms": {
+      "title": "Formularios Actualizados",
+      "description": "La solicitud de divorcio creada usa formularios oficiales actualizados publicados por las Cortes de Washkington."
+    },
+    "smart": {
+      "title": "Inteligente",
+      "description": "Los cuestionarios que se te presentan se ajustan según tus respuestas. Las secciones que no aplican para ti se saltean."
+    },
+    "comprehensive": {
+      "title": "Exhaustivo",
+      "description": "JDiovrce ayuda con todas las etapas, desde la tramitación inicial, hasta la finalización."
+    },
+    "secure": {
+      "title": "Seguro",
+      "description": "Tu información se conserva de manera segura y encriptada comenzando por tu dispositivo, a través del tránsito a nuestros servidores en Virginia, USA."
+    },
+    "privacy": {
+      "title": "Privacidad",
+      "description": "Tu información se usa de manera exclusiva para crear tu solicitud. Tienes la opción de eliminar tu información de nuestros servidores después de que completas tu solicitud."
+    },
+    "review": {
+      "bremerton": "Bremerton",
+      "seattle": "Seattle",
+      "burien": "Burien",
+      "redmond": "Redmond",
+      "bremerton_review": "JDivorce crea de manera precisa la solicitud de divorcio. Tramité en el Condado de King y todo salió bien. Me gustó que pude descargar la solicitud en formato de WORD, así podía hacer los cambios fácilmente después.",
+      "seattle_review": "Pudimos tramitar la solicitud de nuestro divorcio en dos horas. Ahorramos aproximadamente $150 en comparación con otros software similares en línea.",
+      "burien_review": "JDivorce hizo que el papeleo fuese más fácil en un período muy difícil en mi vida.",
+      "redmond_review": "Me gustó que JDivorce hizo que este proceso difícil fuese más fácil para que mi ex y yo pudiéramos tramitarlo sin discutir nuestras vidas privadas con otros.",
+      "jdivorce_client": "Cliente de JDivorce",
+      "client_testimonials": "Client Testimonials"
+    },
+    "faq_home": {
+      "q_1": "¿Cómo se protege mi información personal?",
+      "q_2": "¿Necesito registrarme para crear mi solicitud de divorcio?",
+      "q_3": "¿Qué formularios del estado de Washington se generan como parte de mi solicitud de divorcio?",
+      "a_1_html": "<p>JDivorce protege tu información al cumplir con uno de los estándares de seguridad más completos, el Payment Card Industry Data Security Standard (PCI DSS). El PCI DSS es un estándar de seguridad para los software que manejen información del cliente. Originalmente dirigido para las empresas de tarjetas de crédito, el PCI DSS ahora es utilizado por todas las más grandes empresas de tecnología que manejen información del cliente. </p> <p>JDivorce usa protocolos de seguridad HTTPS para transferir tu información con seguridad. HTTPS es el estándar global de cómo los sistemas informáticos transfieren la información de manera segura a través del internet. HTTPS previene que cualquier tercero pueda ver o modificar tu información.</p> <p>Nuestros centros de información están ubicados físicamente en Virginia y California y cumplen con todas las leyes de privacidad de EUA.</p>",
+      "a_2_html": "No, no es necesario. Puedes usar JDivorce como un usuario invitado. Sin embargo, crear una cuenta te permite guardar tu solicitud a medida que progresas. Considerando que la solicitud de divorcio puede ser bastante detallada para situaciones que involucren niños, guardar tu solicitud te permite exponencialmente las conveniencias de completar tu solicitud en sesiones múltiples, o realizar cambios después.",
+      "a_3_html": "<p>JDivorce genera el juego completo de <strong>todos</strong> los formularios del gobierno necesarios. Dependiendo de tu situación, estos pueden ser algunos o todos los formularios siguientes: </p> <ul> <li>Formulario de Área de Asignación del Caso y Hoja de Cobertura de la Información del Caso (CICS) </li> <li> FL Familia Entera 001 Información Confidencial </li> <li>Certificado de Disolución-Formulario de Estadísticas Vitales</li> <li>FL Familia Entera 013 Reporte Sellado Confidencial</li> <li>FL Divorcio 201 Solicitud de Divorcio (Disolución)</li> <li>FL Divorcio 200 Convocatorias: Notificación Acerca de un Matrimonio o Asociación Doméstica</li> <li>FL Familia Entera 140 Plan de Paternidad 5 copias</li> <li>FL Familia Entera 132 Declaración acerca de Asistencia Pública 5 copias</li> <li>FL Divorcio 223 Moción para Orden Legal Familiar Temporal [ ] y Orden de Restricción</li> <li>FL Familia Entera 011 Documentos Sellados de Fuente Financiera </li> <li>FL Familia Entera 131 Declaraciones Financieras</li> <li>FL Familia Entera 135 Declaración </li> <li>WSCSS – Hojas de Trabajo de Itinerario de Manutención Infantil del Estado de Washington</li> <li>FL Familia Entera 112 Prueba de Envío o Entrega Manual (para documentos después de Citaciones y Pedidos) 5 copias</li> <li>FL Familia Entera 130 Orden de Manutención Infantil 5 copias</li> <li>FL Divorcio 224 Orden Legal Familiar Temporal</li> <li>FL Familia Entera 185 Notificación de Audiencia</li></ul>",
+      "more_faqs": "Más preguntas frecuentes"
+    },
+    "adwards_accreditations": {
+      "title": "Premios y Acreditaciones"
+    },
+    "security_privacy": {
+      "title": "Seguridad y Privacidad"
+    }
+  },
+  "footer": {
+    "jdivorce": "JDivorce",
+    "privacy_and_terms": "Provacidad y Términos",
+    "about_us": "Conócenos",
+    "lawyers": "Abogados",
+    "info_family_law": "INFORMACIÓN ACERCA DEL DERECHO FAMILIAR DE WA",
+    "faq": "Preguntas Frecuentes",
+    "detailed_topics": "Temas detallados",
+    "resources": "RECURSOS",
+    "wa_courtes": "Cortes de WA",
+    "wa_law_help": "Ayuda Legislativa de WA",
+    "copyright": "Copyright 2017. Todos los Derechos Reservados por ",
+    "jdivorce_inc": "JDivorce, Inc."
+  },
+  "PROFILE": {
+    "WELCOME": {
+      "TITLE": "Welcome",
+      "HEADING": "Hi, welcome to the JDivorce attorney profile setup!",
+      "HEADING_2": "You can click on the steps above to directly edit any information.",
+      "HEADING_3": "We will save all your info as you go so that you're ready to pick up right where we left off."
+    },
+    "DISPLAY_PICTURE": "Display Picture",
+    "PROFESSION": "Profession",
+    "CONTACT": {
+      "TITLE": "Contact",
+      "HEADING": "Contact Info",
+      "DETAILS": "Details",
+      "FORMAT": "Format"
+    },
+    "EXPERIENCES": "Experiences",
+    "PRACTICE_AREA": "Practice Area",
+    "RECENT_CASES": {
+      "TITLE": "Recent Cases",
+      "CONTENT_1": "Add a description of your recent cases to showcase your experience. Potential clients are more likely to hire you if they see overlap in their case with your experience. You can change the client names for privacy or generalize facts. Here's an example of a ",
+      "CONTENT_2": "real attorney website",
+      "CONTENT_3": "that lists experiences to make the profile more useful to potential readers."
+    },
+    "PRICING": "Pricing",
+    "CALENDAR": "Calendar",
+    "SETTING": {
+      "TITLE": "Setting",
+      "SUBTITLE": "Please adjust your public profile setting.",
+      "PROFILE_COMPLETED": "Profile completed?",
+      "PUBLIC_PROFILE": "Show profile to the public?",
+      "ACCEPT_NEW_CLIENT": "Accept new clients?",
+      "WARNING": "Looks like you have not completed your profile yet."
+    },
+    "VIDEO_Q_A": "Video Q & A",
+    "PREVIEW": "Preview"
+  },
+  "COMMON": {
+    "ADD_NEW": "Add New",
+    "TITLE": "Title",
+    "ORGANIZATION": "Organization",
+    "START_AT": "Start At",
+    "END_AT": "End At",
+    "CURRENTLY_WORK_HERE": "I Currently Work here.",
+    "DELETE": "Delete",
+    "RELATIVE_PERCENTAGE": "Relative Percentage",
+    "BETWEEN": "Between",
+    "AND": "And",
+    "INFORMATION": "Information",
+    "ADD_LANGUAGE": "Add Language",
+    "LANGUAGE": "Language",
+    "LINK_TO_VIDEO": "Link to Video",
+    "VIDEO_TRANSCRIPT": "Video Transcript",
+    "DELETE_LANGUAGE": "Delete Language",
+    "QUESTION": "Question",
+    "CURRENT_PICTURE": "Current Picture",
+    "IMAGE_UPLOAD": "Image Upload"
+  }
+}

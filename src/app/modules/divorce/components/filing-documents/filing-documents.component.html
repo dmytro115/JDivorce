@@ -1,0 +1,12 @@
+<div fxLayout="column" fxLayoutGap="15px" class="m-t-15">
+  <app-lime-survey-gdocs-documents [docsParams]="docsParams"></app-lime-survey-gdocs-documents>
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="15px" class="m-t-15">
+    <mat-card fxFlex *ngFor="let offer of offers">
+      <mat-card-header>
+        <div mat-card-avatar><button mat-mini-fab color="primary" (click)="buyNow(offer.instance)">Buy</button></div>
+        <mat-card-title>{{offer.title}}</mat-card-title>
+        <mat-card-subtitle>{{offer.description}}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>

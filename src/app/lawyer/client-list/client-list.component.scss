@@ -1,0 +1,21 @@
+.contact-page-aside {
+  padding-bottom: 30px;
+}
+
+.clients-list {
+  &__item {
+    &.active {
+      a {
+        color: #1976d2;
+      }
+    }
+  }
+  &__actions {
+    .btn {
+      margin: 0 5px;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}

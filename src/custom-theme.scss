@@ -1,0 +1,83 @@
+@import '~@angular/material/theming';
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: 'Lato, Helvetica'
+);
+@include mat-core($custom-typography);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$app-primary: mat-palette($mat-indigo);
+$app-accent: mat-palette($mat-cyan);
+$app-warn: mat-palette($mat-red);
+
+$app-accent-dark: mat-palette($mat-teal);
+$app-success: mat-palette($mat-light-green);
+$app-base: mat-palette($mat-blue-grey, 800, 500, 900);
+$app-background: mat-palette($mat-grey, 50, 50, 300);
+$app-background-dark: mat-palette($mat-blue-grey, 50, 50, 400);
+
+$app-primary-contrast: mat-palette($mat-light-blue, 50, 100, 200);
+$app-primary-melt: mat-palette($mat-indigo, 200, 100, 300);
+
+// Changing the main text color: https://stackoverflow.com/a/46157803/961609
+@function app-mat-light-theme-foreground($color) {
+  @return (
+    base: $color,
+    divider: $dark-dividers,
+    dividers: $dark-dividers,
+    disabled: $dark-disabled-text,
+    disabled-button: rgba($color, 0.26),
+    disabled-text: $dark-disabled-text,
+    elevation: $color,
+    hint-text: $dark-disabled-text,
+    secondary-text: $dark-secondary-text,
+    icon: rgba($color, 0.54),
+    icons: rgba($color, 0.54),
+    text: rgba($color, 0.87),
+    slider-min: rgba($color, 0.87),
+    slider-off: rgba($color, 0.26),
+    slider-off-active: rgba($color, 0.38)
+  );
+}
+$app-foreground: app-mat-light-theme-foreground(mat-color($app-base));
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+$app-theme: map-merge(
+  $app-theme,
+  (
+    foreground: $app-foreground
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($app-theme);
+
+$primary: map-get($app-theme, primary);
+$accent: map-get($app-theme, accent);
+$warn: map-get($app-theme, warn);
+
+:root {
+  --primary: #{mat-color($app-primary)} !important;
+  --accent: #{mat-color($app-accent)};
+  --accent-dark: #{mat-color($app-accent-dark)};
+  --warn: #{mat-color($app-warn)};
+  --success: #{mat-color($app-success)} !important;
+  --base: #{mat-color($app-base)};
+  --background: #{mat-color($app-background)};
+  --background-dark: rgb(245, 245, 245);
+
+  --primary-contrast: #{mat-color($app-primary-contrast)};
+  --primary-melt: #{mat-color($app-primary-melt)};
+}
+
+// Custom styles using theme functions.
+mat-card.mat-card.blurry-elevation {
+  @include mat-elevation(24, rgba(137, 173, 255, 0.35), 1);
+}

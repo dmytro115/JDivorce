@@ -1,0 +1,34 @@
+<mat-card [style.box-shadow]="'none'">
+  <mat-card-header [style.justify-content]="'center'" class="mb-4 text-center">
+    <mat-card-title class="uppercase">Forgot your password?</mat-card-title>
+    <mat-card-subtitle>
+      <div *ngIf="alertText" class="alert alert-danger"><i class="fa fa-user"></i> {{ alertText }}</div>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content fxLayout="column" fxLayoutGap="8px">
+    <form [formGroup]="forgotPasswordForm" validate id="forgotPassword" (ngSubmit)="submit()" class="form-material">
+      <mat-form-field>
+        <input matInput autocomplete="off" id="user_email" placeholder="Email" type="email" formControlName="user_email" (input)="onChangeEmailOrPass()" />
+        <mat-error *ngIf="form.user_email.hasError('email') && !form.user_email.hasError('required')">
+          Please enter a valid email address.
+        </mat-error>
+        <mat-error *ngIf="form.user_email.hasError('required')">
+          Email is required.
+        </mat-error>
+      </mat-form-field>
+
+      <div class="mt-4 mb-2" fxLayout fxLayoutAlign="center">
+        <button mat-flat-button class="uppercase btn-soft" color="accent" [disabled]="!forgotPasswordForm?.valid">Submit</button>
+      </div>
+
+      <div fxLayout fxLayoutAlign="center start">
+        <div fxLayoutGap="8px">
+          <span>Know your password?</span>
+          <a routerLink="/auth/login">
+            <span (click)="signIn($event)"><strong>Login</strong></span>
+          </a>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,187 @@
+<nav>
+  <div class="col" align="center">
+    <a (click)="navigateBack()" class="btn btn-secondary waves-effect waves-light">
+      <span class="fa fa-long-arrow-left"></span> Go Back
+    </a>
+  </div>
+</nav>
+<div id="samuel m-t-60" *ngIf="profile" [ngClass]="{'boxed': true}">
+  <header>
+    <section id="top-navigation" class="container-fluid nopadding">
+      <div class="row nopadding ident ui-bg-color01">
+        <!-- Photo -->
+        <a href="javascript:void(0)" class="col-lg-4 nopadding">
+          <div class="vc-photo photo-01" [ngStyle]="{'background-image': 'url(' + profileImgPipe.transform(profile.info.picture_url, 'lawyer') + ')'}">&nbsp;</div>
+        </a>
+        <!-- /Photo -->
+        <div class="col-lg-8 vc-name nopadding">
+          <!-- Name-Position -->
+          <div class="row nopadding name">
+            <div class="col-lg-12 name-title">
+              <h1 class="text-white font-accident-two-extralight">{{profile.info.name}}</h1>
+            </div>
+          </div>
+          <div class="row nopadding position">
+            <div class="col-lg-12 position-title">
+              <section class="cd-intro">
+                <h2 class="text-white cd-headline clip is-full-width font-accident-two-light">
+                  <span>My practice areas include:&nbsp;</span>
+                  <span *ngIf="profile.info.practice_areas" class="cd-words-wrapper">
+                    <b *ngFor="let practiceArea of profile.info.practice_areas; first as isFirst" [ngClass]="{ 'is-visible': isFirst }">{{practiceArea.title}}</b>
+                  </span>
+                </h2>
+              </section>
+            </div>
+          </div>
+          <!-- /Name-Position -->
+          <!-- Main Navigation -->
+          <ul id="nav" class="row nopadding cd-side-navigation">
+            <li *ngFor="let practiceArea of profile.info.practice_areas" class="col-xs-4 col-sm-2 nopadding menuitem" [ngClass]="practiceArea.colorClass"
+              data-animation-duration="1000" [attr.data-animation-delay]="practiceArea.animationDelay">
+              <a href="javascript:void(0)" class="hvr-sweep-to-bottom"><i class="flaticon-book-bag2"></i><span>{{practiceArea.title}}</span></a>
+            </li>
+          </ul>
+          <!-- /Main Navigation -->
+        </div>
+      </div>
+    </section>
+  </header>
+  <!-- Container -->
+  <div class="content-wrap">
+    <div id="feedback" class="inner-content">
+      <section id="page-title" class="inner-section ui-menu-color05">
+         <div class="container-fluid nopadding">
+            <h2 class="font-accident-two-light color01 uppercase"
+                data-animation-origin="right"
+                data-animation-duration="400"
+                data-animation-delay="100"
+                data-animation-distance="50px">Feedback</h2>
+            <h4 class="font-accident-two-normal color01 uppercase subtitle"
+                data-animation-origin="right"
+                data-animation-duration="400"
+                data-animation-delay="200"
+                data-animation-distance="50px">Questions? Send them my way!</h4>
+            <p class="small color01"
+               data-animation-origin="right"
+               data-animation-duration="400"
+               data-animation-delay="300"
+               data-animation-distance="50px">
+            </p>
+         </div>
+      </section>
+
+      <!-- Feedback Block -->
+      <section class="inner-section feedback feedback-light" data-section="feedback">
+         <div class="container-fluid nopadding">
+            <div class="row">
+               <div class="col-md-8"
+                    data-animation-origin="top"
+                    data-animation-duration="500"
+                    data-animation-delay="400"
+                    data-animation-distance="25px">
+                  <div class="dividewhite2"></div>
+                  <h3 class="font-accident-two-normal uppercase text-center">Contact the attorney directly</h3>
+                  <!-- <h5 class="font-accident-two-normal uppercase text-center subtitle">Working hard and making the success</h5> -->
+                  <div class="dividewhite1"></div>
+                  <p class="small fontcolor-medium text-center">
+                     Please do not send confidential information using these forms. Communications using this form is protected by our <a routerLink="/privacy">privacy policy</a> but not by the attorney-client privilege.
+                  </p>
+               </div>
+
+               <div class="col-md-8"
+                    data-animation-origin="top"
+                    data-animation-duration="500"
+                    data-animation-delay="600"
+                    data-animation-distance="25px">
+                  <div class="dividewhite4"></div>
+
+                  <div id="form-messages"></div>
+
+                  <form *ngIf="contactForm" #myform="ngForm" id="ajax-contact" [formGroup]="contactForm" (ngSubmit)="sendContactMessage()" class="wpcf7-form contact-message-form">
+                     <div class="field">
+                        <input formControlName="name" type="text" id="name" name="name" placeholder="Name" required />
+                        <div class="validation-error" *ngIf="myform.submitted && name.errors?.required">
+                          Name is required.
+                        </div>
+                     </div>
+
+                     <div class="field">
+                        <input formControlName="email" type="email" id="email" name="email" placeholder="Email" required />
+                        <div class="validation-error" *ngIf="myform.submitted && email.errors?.required">
+                          Email is required.
+                        </div>
+                        <div class="validation-error" *ngIf="myform.submitted && email.errors?.email">
+                          Not a valid Email.
+                        </div>
+                     </div>
+
+                     <div class="field">
+                        <textarea formControlName="feedback" id="message" name="message" placeholder="Message" rows="7" cols="30" required></textarea>
+                        <div class="validation-error" *ngIf="myform.submitted && feedback.errors?.required">
+                          Message is required.
+                        </div>
+                     </div>
+
+                     <div class="dividewhite2"></div>
+
+                     <div class="text-center">
+                        <button type="submit" class="btn btn-lg btn-darker">Send Message</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <div class="dividewhite6"></div>
+      </section>
+      <!-- /Feedback Block -->
+    </div>
+  </div>
+  <footer class="padding-50 dark ui-bg-color01" data-animation-origin="top" data-animation-duration="500" data-animation-delay="800"
+    data-animation-distance="50px">
+    <div class="container-fluid nopadding">
+      <div class="row">
+        <div class="col-sm-3">
+          <h5 class="font-accident-two-bold uppercase">JDivorce</h5>
+          <p class="inline-block">
+            JDivorce's mission is to increase the access to justice for folks everywhere. Our first goal is simplifying the divorce process
+            in Washington state for both clients and lawyers.
+          </p>
+          <div class="divider-dynamic"></div>
+        </div>
+        <div class="col-sm-3">
+          <h5 class="font-accident-two-bold uppercase">JDivorce Newsletter</h5>
+          <div class="dividewhite1"></div>
+          <input class="newsletter-email" type="email" required="" name="ne" placeholder="Your Email">
+          <a href="javascript:void(0)" class="newsletter-button btn btn-wh-trans btn-xs">OK</a>
+          <div class="divider-dynamic"></div>
+        </div>
+        <div class="col-sm-3 cv-link">
+          <h5 class="font-accident-two-bold uppercase">{{profile.info.name}}</h5>
+          <p class="inline-block">
+            {{profile.info.blurb}}
+          </p>
+          <div class="divider-dynamic"></div>
+        </div>
+        <div class="col-sm-3">
+          <h5 class="font-accident-two-bold uppercase">Find {{profile.info.name}}</h5>
+          <div class="follow">
+            <ul class="list-inline social">
+              <li><a href="mailto:{{profile.info.email}}" class="rst-icon-youtube"><i class="fa fa-envelope"></i></a></li>
+              <li><a target="_blank" href="javascript:void(0)" class="rst-icon-youtube"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+          <div class="divider-dynamic"></div>
+        </div>
+      </div>
+      <div class="dividewhite1"></div>
+      <div class="row">
+        <div class="col-md-12 copyrights">
+          <p>© 2018 JDivorce.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Back to Top -->
+  <div id="back-top"></div>
+  <!-- /Back to Top -->
+</div>

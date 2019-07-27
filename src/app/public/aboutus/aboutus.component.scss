@@ -1,0 +1,304 @@
+section {
+  &.aboutus {
+    &.module {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      position: relative;
+
+      &.legalservice {
+        &:before {
+          background: url(/assets/images/background-img.png);
+          background-repeat: no-repeat;
+          width: 138px;
+          height: 170px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: '';
+        }
+      }
+
+      h1 {
+        color: #31485f;
+        margin: 30px 0 20px;
+      }
+      h2 {
+        color: #31485f;
+        margin: 30px 0;
+      }
+      p {
+		color: #31485f;
+        span {
+          display: block;
+          color: #1870c8;
+        }
+        &.benefits-for-lawyers {
+          width: 80%;
+          margin: 15px auto;
+        }
+      }
+      img {
+        max-width: 100%;
+        object-fit: cover;
+      }
+      .benefit-client {
+        margin-top: 10%;
+      }
+      .list-style {
+        margin-top: 40px;
+        &.list-left {
+          padding-right: 5%;
+        }
+        &.list-right {
+          padding-left: 5%;
+        }
+
+        ul.list {
+          margin: 0;
+          padding: 0;
+
+          li {
+            list-style: none;
+            color: #31485f;
+            margin-bottom: 40px;
+            strong {
+              color: #1870c8;
+            }
+          }
+        }
+      }
+      .teaminfo {
+        .member {
+          img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 50%;
+          }
+        }
+        h4 {
+          text-align: center;
+          color: #1870c8;
+          margin: 16px 0 5px;
+        }
+      }
+      &.aboutjdivorce-mission {
+        position: relative;
+        &:after {
+          background: url(/assets/images/right-img.png);
+          background-repeat: no-repeat;
+          width: 138px;
+          height: 170px;
+          position: absolute;
+          top: 40%;
+          right: 0;
+          content: '';
+        }
+      }
+      &.benefits-lawyers {
+        &:after {
+          background: url(/assets/images/right-img.png);
+          background-repeat: no-repeat;
+          width: 138px;
+          height: 170px;
+          position: absolute;
+          top: 20%;
+          right: 0;
+          content: '';
+        }
+	  }
+	  .team-informations {
+		align-items: center;
+			.information {
+        h4 {
+					color: #1870c8;
+          margin: 9px 0;
+				}
+				.members img {
+          margin-bottom: 10px;
+          height: 250px;
+          max-height: 100%;
+          width: 250px;
+          object-fit: cover;
+          border-radius: 6px;
+        }
+			}
+			.info-des a {
+        cursor: pointer;
+        text-decoration: underline;
+        color: #31485f;
+      } 
+		}
+    &.newsletter {
+        margin: 40px 0;
+        &:before {
+          background: url(/assets/images/background-img.png);
+          background-repeat: no-repeat;
+          width: 138px;
+          height: 170px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: '';
+        }
+        &:after {
+          background: url(/assets/images/right-img.png);
+          background-repeat: no-repeat;
+          width: 138px;
+          height: 170px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          content: '';
+        }
+        a {
+          &.sign-up {
+            width: 178.5px;
+            height: 38.4px;
+            border-radius: 6.8px;
+            background-color: #1870c8;
+            color: #fff;
+            margin: 20px 0;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+h1 {
+  font-size: 36px;
+  color: #31485f;
+  margin: 30px 0 20px;
+}
+h2 {
+  font-size: 30px;
+  color: #31485f;
+  margin: 30px 0;
+}
+p {
+  font-size: 16px;
+  color: #31485f;
+  span {
+    display: block;
+    color: #1870c8;
+  }
+  &.benefits-for-lawyers {
+    width: 80%;
+    margin: 15px auto;
+  }
+}
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+.benefit-client {
+  margin-top: 10%;
+}
+.list-style {
+  margin-top: 40px;
+  &.list-left {
+    padding-right: 5%;
+  }
+  &.list-right {
+    padding-left: 5%;
+  }
+}
+
+@media (max-width: 991px) {
+  section.aboutus.module {
+    h1 {
+    }
+    h2 {
+      margin: 0 0 20px 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  section.aboutus.module {
+    padding: 0;
+    .Benefits-girl-img,
+    .legalservice-hub {
+      order: 2;
+      text-align: center;
+    }
+    h2 {
+      margin: 0 0 20px 0;
+    }
+    &.aboutjdivorce-mission {
+      &:after {
+        content: none;
+      }
+    }
+    &.benefits-lawyers {
+      &:after {
+        content: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+
+  section {
+    &.aboutus {
+      &.module {
+        h1 {
+          margin: 20px 0;
+          line-height: normal;
+        }
+        h2 {
+          margin: 0 0 15px;
+          line-height: normal;
+        }
+        .networking {
+          width: 200px;
+          object-fit: cover;
+          margin-top: 50px;
+        }
+        .benfit-client {
+          width: 290px;
+          margin: 0 auto;
+        }
+        img.m-t-5p.growth-img {
+          width: 130px;
+          margin-top: 20px;
+        }
+        
+        ul.list {
+          li {
+            margin-bottom: 20px;
+          }
+        }
+      .team-informations{
+          width: 50%;
+      }
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+
+  section {
+    &.aboutus {
+      &.module {
+      &.advisory-board {
+          margin-top: 60px;
+      }
+      .team-informations{
+          width: 100%;
+         .information{
+          .members img {
+            max-width: 100%;
+            width: 100%;
+          }
+         }
+      }
+      }
+    }
+  }
+}

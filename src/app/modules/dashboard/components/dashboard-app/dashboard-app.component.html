@@ -1,0 +1,13 @@
+<app-router-tab>
+  <app-router-tab-item
+    *ngFor="let tab of tabs; let i = index"
+    [disabled]="!tab.isEnabled"
+    [routerLink]="tab.id"
+    routerLinkActive
+    #rla="routerLinkActive"
+    [isCompleted]="tab.isCompleted"
+    label="{{ tab.title | translate }}"
+  >
+  </app-router-tab-item>
+</app-router-tab>
+<router-outlet></router-outlet>

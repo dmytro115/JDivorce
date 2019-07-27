@@ -1,0 +1,37 @@
+<div class="row" [formGroup]="form">
+  <div class="col-md-6">
+    <h3 [attr.for]="question.key" [innerHtml]="question.label"></h3>
+    <mat-error *ngIf="!isValid">{{ question.label }} is required</mat-error>
+  </div>
+  <div class="col-md-6" [ngSwitch]="question.controlType">
+    <mat-form-field *ngSwitchCase="'textbox'">
+      <input matInput [formControlName]="question.key" [id]="question.key" [type]="question.type" />
+    </mat-form-field>
+
+    <mat-form-field *ngSwitchCase="'long_text'">
+      <textarea matInput cdkAutosizeMinRows="3" [formControlName]="question.key" [id]="question.key"></textarea>
+    </mat-form-field>
+
+    <mat-form-field *ngSwitchCase="'dropdown'">
+      <mat-select [id]="question.key" [formControlName]="question.key">
+        <mat-option *ngFor="let opt of question.options" [value]="opt.value">
+          {{ opt.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-radio-group [id]="question.key" *ngSwitchCase="'radio'" [formControlName]="question.key">
+      <div *ngFor="let opt of question.options">
+        <mat-radio-button [value]="opt.value"></mat-radio-button>
+        <span>{{ opt.value }}</span>
+      </div>
+    </mat-radio-group>
+
+    <div class="checkbox-container" [id]="question.key" *ngSwitchCase="'checkbox'" [formArrayName]="question.key">
+      <div *ngFor="let opt of form.controls[question.key].controls; let i = index">
+        <mat-checkbox [formControlName]="i"></mat-checkbox>
+        <span>{{ question.options[i].value }}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>{{'DASHBOARD.lawyer_dashboard.invite_client' | translate}}</h2>
+<mat-dialog-content>
+  <div *ngIf="alertText" class="alert alert-danger">
+    <i class="fa fa-user"></i> {{alertText}}
+  </div>
+  <form [formGroup]="form()" fxLayout="column" fxLayoutGap="15px" class="p-t-10">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="15px" fxLayoutGap.lt-md="15px">
+      <mat-form-field fxFlex>
+        <textarea matInput placeholder="{{'DASHBOARD.lawyer_dashboard.client_name' | translate}}" formControlName="invite_name" required [readonly]="notify"></textarea>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="15px" fxLayoutGap.lt-md="15px">
+      <mat-form-field fxFlex>
+        <input matInput placeholder="{{'DASHBOARD.lawyer_dashboard.client_email' | translate}}" formControlName="invite_email" required [readonly]="notify">
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="15px" fxLayoutGap.lt-md="15px">
+      <mat-form-field fxFlex>
+        <textarea 
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="10"
+          matInput placeholder="{{'general_settings.index.email_content' | translate}}"
+          formControlName="invite_email_content"
+          required></textarea>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="5px">
+    <button mat-flat-button mat-dialog-close>{{'general.close' | translate}}</button>
+    <button mat-flat-button color="primary" (click)="inviteClient()" [disabled]="!this.form().valid"><i *ngIf="inviteIsProcessing" class="fa fa-spinner fa-spin"></i> {{'DASHBOARD.lawyer_dashboard.invite_client' | translate}}</button>
+  </div>
+</mat-dialog-actions>

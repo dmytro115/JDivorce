@@ -1,0 +1,172 @@
+<div id="main-wrapper">
+  <!-- Hero(extended) navbar -->
+  <div class="evie-header">
+    <div class="navbar navbar--extended">
+      <nav class="nav__mobile"></nav>
+      <div class="container">
+        <div class="navbar__inner">
+          <a routerLink="/" class="navbar__logo">JDivorce</a>
+          <div class="navbar__menu-mob"><a href="" id='toggle'><svg role="img" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512">
+                <path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+                  class=""></path>
+              </svg></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+  <!-- Call To Action -->
+  <div class="cta cta--reverse">
+    <div class="container">
+      <div class="cta__inner">
+        <h2 class="cta__title">Begin: View Divorce Process</h2>
+        <p class="cta__sub cta__sub--center">Begin by learning about the divorce process as it applies to you.</p>
+        <a href="javascript:void(0)" (click)="beginApplication()" class="button button__accent">Begin: View <b>My</b>
+          Divorce Process</a>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <div class="footer footer--dark">
+    <div class="container">
+      <div class="footer__inner">
+        <a routerLink="/" class="footer__textLogo">JDivorce</a>
+        <div class="footer__data">
+          <div class="footer__data__item">
+            <div class="footer__row">
+              <a routerLink="/privacy" class="footer__link">Privacy & Terms</a>
+            </div>
+            <div class="footer__row">
+              <a routerLink="/about" class="footer__link">About Us</a>
+            </div>
+            <div class="footer__row">
+              <a routerLink="/lawyers" class="footer__link">Professionals</a>
+            </div>
+            <div class="footer__row">
+              <a routerLink="/lawyers-home" class="footer__link">For Professionals</a>
+            </div>
+          </div>
+          <div class="footer__data__item">
+            <div class="footer__row">
+              <a routerLink="/faqs" class="footer__link">FAQ</a>
+            </div>
+            <div class="footer__row">
+              <a href="http://blog.jdivorce.com/" class="footer__link">Detailed Topics</a>
+            </div>
+          </div>
+          <div class="footer__data__item">
+            <div class="footer__row">
+              <a href="https://www.washingtonlawhelp.org/" class="footer__link">WA Courts</a>
+            </div>
+            <div class="footer__row">
+              <a href="https://www.kcba.org/" class="footer__link">King County Bar Association</a>
+            </div>
+            <div class="footer__row">
+              <a href="https://nwjustice.org/" class="footer__link">NW Justice Project</a>
+            </div>
+            <div class="footer__row">
+              <a href="http://www.allianceforequaljustice.org/" class="footer__link">Alliance for Equal Justice</a>
+            </div>
+            <div class="footer__row">
+              <a href="http://ocla.wa.gov/" class="footer__link">Office of Civic and Legal Aid</a>
+            </div>
+            <div class="footer__row">
+              <a href="https://www.wsba.org/" class="footer__link">Washington State Bar Association</a>
+            </div>
+            <div class="footer__row">
+              <a href="https://www.mckinleyirvin.com/" class="footer__link">McKinley Irvin Family Law Firm</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie notification -->
+
+<div class="cookie-notification" [ngClass]="{'show':showCookieNotification}">
+  <div class="cookie-notification__content">
+    <div class="cookie-notification__text">
+      <h4>Your choice regarding cookies on this site</h4>
+      <p>We use cookies to optimize site functionality and give you the best possible experience.
+        <a href="#">Learn more</a>.
+      </p>
+    </div>
+    <div class="cookie-notification__actions">
+      <button (click)="onCookieAccept()" class="button button__accent button--no-margin">Accept</button>
+      <button (click)="showCookiePreferences()" class="button button--transparent button--no-margin">Cookie Preferences</button>
+    </div>
+  </div>
+</div>
+
+<button *ngIf="showCookieNotification" class="cookie-notification-button" (click)="toggleCookiePreferences()">
+  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 72.5 72.5" enable-background="new 0 0 72.5 72.5"
+    xml:space="preserve">
+    <g id="triangle">
+      <path d="M0,0l72.5,72.5H0V0z"></path>
+    </g>
+    <g id="star">
+      <path d="M33.2,51.9l-3.9-2.6l1.6-4.4l-4.7,0.2L25,40.6l-3.7,2.9l-3.7-2.9l-1.2,4.5l-4.7-0.2l1.6,4.4l-3.9,2.6l3.9,2.6l-1.6,4.4l4.7-0.2l1.2,4.5l3.7-2.9l3.7,2.9l1.2-4.5l4.7,0.2l-1.6-4.4L33.2,51.9z M24.6,55.3c-0.3,0.4-0.8,0.8-1.3,1s-1.1,0.3-1.9,0.3c-0.9,0-1.7-0.1-2.3-0.4s-1.1-0.7-1.5-1.4c-0.4-0.7-0.6-1.6-0.6-2.6c0-1.4,0.4-2.5,1.1-3.3c0.8-0.8,1.8-1.1,3.2-1.1c1.1,0,1.9,0.2,2.6,0.7s1.1,1.1,1.4,2L23,50.9c-0.1-0.3-0.2-0.5-0.3-0.6c-0.1-0.2-0.3-0.4-0.5-0.5s-0.5-0.2-0.7-0.2c-0.6,0-1.1,0.2-1.4,0.7c-0.2,0.4-0.4,0.9-0.4,1.7c0,1,0.1,1.6,0.4,2c0.3,0.4,0.7,0.5,1.2,0.5c0.5,0,0.9-0.1,1.2-0.4s0.4-0.7,0.6-1.2l2.3,0.7C25.2,54.3,25,54.8,24.6,55.3z"></path>
+    </g>
+  </svg>
+</button>
+
+<div class="cookie-notification-sidebar-overly" [ngClass]="{'show':showCookieNotificationSidebar}"></div>
+<div class="cookie-notification-sidebar" [ngClass]="{'show':showCookieNotificationSidebar}">
+  <h5>This website uses cookies to remember users and understand ways to enhance their experience.</h5>
+  <p>
+    Some cookies are essential, others help us improve your experience by providing insights into how the site is used.
+    For more information, please visit our <a href="#" target="_blank" rel="noopener noreferrer">Cookie Notice</a>.
+  </p>
+  <button (click)="onCookieAccept()" class="button button--sm button__accent button--no-margin button--margin-top">Accept
+    Cookies</button>
+  <hr class="light" />
+  <h5>Manage Cookie Preferences</h5>
+  <p><strong>Essential Cookies</strong> are necessary for this site to function properly, authenticating logins, for
+    instance. You can only disable essential cookies via browser settings.</p>
+  <hr />
+  <div class="text-with-switch">
+    <p>
+      <strong>Analytical Cookies</strong> provide information about how this site is being used so we can improve the
+      user experience. Data captured is aggregated and anonymized.
+    </p>
+    <div>
+      <label class="switch switch-green">
+        <input type="checkbox" class="switch-input">
+        <span class="switch-label" data-on="On" data-off="Off"></span>
+        <span class="switch-handle"></span>
+      </label>
+    </div>
+  </div>
+  <hr />
+  <div class="text-with-switch">
+    <p>
+      <strong>Marketing Cookies</strong> provide information about user interaction with IAPP content to help us better
+      understand the effectiveness of our email and website content.
+    </p>
+    <div>
+      <label class="switch switch-green">
+        <input type="checkbox" class="switch-input">
+        <span class="switch-label" data-on="On" data-off="Off"></span>
+        <span class="switch-handle"></span>
+      </label>
+    </div>
+  </div>
+  <button (click)="onSavePreferences()" class="button button--sm button__primary button--no-margin button--margin-top">Save
+    My
+    Preferences</button>
+  <hr class="light" />
+  <p>
+    <strong>Advertising Cookies:</strong> The IAPP uses third-party software to handle event registration. This
+    software includes a social media sharing plugin called AddThis, which cannot be disabled through this tool. You may
+    opt out of AddThis by clicking this link:
+  </p>
+  <a href="#" class="blank-link">
+    <span>AddThis Opt-out</span>
+    <img src="/assets/evie/images/external-link-symbol.svg" width="17" alt="">
+  </a>
+</div>

@@ -1,0 +1,276 @@
+/****************
+ * Installation *
+ ****************/
+// https://material.angular.io/guide/schematics
+
+// html {
+// Comment the `height: 100%;` out because it messes with the footer of AdminPress.
+// height: 100%;
+// }
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+/*****************
+ * Color Helpers *
+ *****************/
+
+html body {
+  .text-primary {
+    color: var(--primary) !important;
+  }
+
+  .text-accent {
+    color: var(--accent) !important;
+  }
+
+  .text-accent-dark {
+    color: var(--accent-dark);
+  }
+
+  .text-warn {
+    color: var(--warn);
+  }
+
+  .text-primary-contrast {
+    color: var(--primary-contrast) !important;
+  }
+
+  .text-primary-melt {
+    color: var(--primary-melt) !important;
+  }
+}
+
+.top-accent-primary {
+  border-top-color: var(--primary);
+  border-top-style: solid;
+  border-top-width: 0.375rem;
+}
+
+.bg-accent,
+.background-accent {
+  background-color: var(--accent);
+}
+
+.background-white {
+  background-color: var(--white);
+}
+
+.background-primary {
+  background-color: var(--primary);
+}
+
+.background-basic {
+  background-color: var(--background);
+}
+
+.background-primary-contrast {
+  background-color: var(--primary-contrast);
+}
+
+/***********
+ * PNotify *
+ ***********/
+
+[ui-pnotify].ui-pnotify {
+  .brighttheme-success {
+    background-color: var(--accent) !important;
+    border: none !important;
+
+    .ui-pnotify-title,
+    .ui-pnotify-text {
+      color: white;
+    }
+  }
+}
+
+[ui-pnotify].ui-pnotify .brighttheme .ui-pnotify-title {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/*********
+ * Forms *
+ *********/
+
+// Set form fields to 100% by default.
+mat-form-field {
+  width: 100%;
+}
+
+/***********
+ * Buttons *
+ ***********/
+
+.mat-flat-button.btn-soft {
+  text-transform: uppercase;
+  border-radius: 3em;
+  letter-spacing: 0.125em;
+}
+
+/*********
+ * Cards *
+ *********/
+
+.mat-card-avatar {
+  background-size: cover;
+}
+
+mat-card.mat-card.soft {
+  border-radius: 2em;
+  padding: 0;
+  background-color: var(--white);
+
+  mat-card-header.mat-card-header,
+  mat-card-content.mat-card-content {
+    padding: 16px;
+  }
+
+  mat-card-actions.mat-card-actions {
+    padding: 24px;
+  }
+
+  mat-card-header.mat-card-header {
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+    background-color: var(--primary-contrast);
+  }
+}
+
+/********
+ * Tabs *
+ ********/
+
+html body {
+  .mat-tab-label {
+    opacity: 1;
+  }
+}
+
+/********
+ * List *
+*********/
+
+.mat-list {
+  &.justify-space-between .mat-list-item-content {
+    justify-content: space-between;
+  }
+}
+
+/************
+ * Tooltips *
+ ************/
+
+.mat-tooltip.analysis-tooltip {
+  border: 1px solid var(--accent);
+  background-color: var(--background-dark);
+  color: var(--primary);
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+/******************
+ * Helper classes *
+ ******************/
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.m-20 {
+  margin: 20px;
+}
+
+.m-t-30 {
+  margin-top: 30px;
+}
+
+.m-t-40 {
+  margin-top: 40px;
+}
+
+.m-b-30 {
+  margin-bottom: 30px;
+}
+
+.m-b-40 {
+  margin-bottom: 40px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.m-b-0 {
+  margin-bottom: 0;
+}
+
+.bs-transparent {
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.1);
+}
+
+.bs-inset {
+  box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+/***********
+ * Styling *
+ ***********/
+
+button.mat-flat-button.light-blue-elevated-button {
+  color: #fff;
+  transition: box-shadow 0.35s cubic-bezier(0.02, 0.54, 0.58, 1);
+  text-transform: uppercase;
+  background-color: rgb(123, 185, 255);
+  border-radius: 3em;
+  font-weight: 500;
+  box-shadow: none;
+  letter-spacing: 0.125em;
+
+  &:hover {
+    box-shadow: rgba(123, 185, 255, 0.5) 0px 10px 25px 0px;
+  }
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  background-color: transparent;
+
+  &:hover {
+    color: var(--accent-dark);
+  }
+}
+
+.ellipsis {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+/**************
+ * Dimensions *
+ **************/
+
+.max-width-400 {
+  max-width: 400px !important;
+}
+
+/******************************************
+ * Overrides for Bootstrap and AdminPress *
+ ******************************************/
+
+button:focus {
+  outline: none;
+}
+
+.dashboard-table-width {
+  min-width: 100px;
+  justify-content: center;
+}

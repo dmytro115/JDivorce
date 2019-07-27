@@ -1,0 +1,36 @@
+$scales: [0, 0.25, 0.5, 0.75, 1, 1.5, 2, 3, 4, 6, 8, 12, 16, 24, 32, 40, 48];
+$base: 16;
+
+@mixin margin-classes {
+  @for $i from 1 through length($scales) {
+    $margin: $base * nth($scales, $i) + px !important;
+    $idx: $i - 1;
+    .m-#{$idx}  { margin: $margin; }
+    .ml-#{$idx} { margin-left: $margin; }
+    .mr-#{$idx} { margin-right: $margin; }
+    .mt-#{$idx} { margin-top: $margin; }
+    .mb-#{$idx} { margin-bottom: $margin; }
+    .mx-#{$idx} { margin-left: $margin; margin-right: $margin; }
+    .my-#{$idx} { margin-top: $margin; margin-bottom: $margin; }
+  }
+}
+@include margin-classes;
+
+@mixin padding-classes {
+  @for $i from 1 through length($scales) {
+    $padding: $base * nth($scales, $i) + px !important;
+    $idx: $i - 1;
+    .p-#{$idx}  { padding: $padding; }
+    .pl-#{$idx} { padding-left: $padding; }
+    .pr-#{$idx} { padding-right: $padding; }
+    .pt-#{$idx} { padding-top: $padding; }
+    .pb-#{$idx} { padding-bottom: $padding; }
+    .px-#{$idx} { padding-left: $padding; padding-right: $padding; }
+    .py-#{$idx} { padding-top: $padding; padding-bottom: $padding; }
+  }
+}
+@include padding-classes;
+
+mat-card.mat-card.bdr-1 {
+  border-radius: 1em;
+}

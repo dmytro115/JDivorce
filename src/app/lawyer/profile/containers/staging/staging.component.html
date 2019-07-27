@@ -1,0 +1,25 @@
+<div class="m-4">
+  <mat-card>
+    <mat-card-content>
+      <app-router-tab>
+        <app-router-tab-item
+          *ngFor="let tab of tabs; let i = index"
+          [routerLink]="tab.path"
+          routerLinkActive
+          #rla="routerLinkActive"
+          [hideIcons]="true"
+          label="{{ tab.title | translate }}"
+        >
+        </app-router-tab-item>
+      </app-router-tab>
+      <div class="m-t-20">
+        <router-outlet></router-outlet>
+      </div>
+      <form *ngIf="showSaveButton" (submit)="onSubmit($event)">
+        <div fxLayout="row" fxLayoutAlign="end center">
+          <button [disabled]="!profileService.isValid" mat-flat-button color="primary" class="m-t-20">Save</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

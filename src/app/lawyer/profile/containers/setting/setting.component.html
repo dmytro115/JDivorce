@@ -1,0 +1,30 @@
+<section>
+  <mat-card [ngClass]="{ 'top-accent-primary' : true }">
+    <mat-card-header>
+      <div mat-card-avatar [style.background-image]="'url(assets/images/icons/settings.svg)'"></div>
+      <mat-card-title>Settings</mat-card-title>
+      <mat-card-subtitle>Privacy configurations for your profile.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-divider></mat-divider>
+      <form [formGroup]="settingsForm" fxLayout="column" fxLayoutGap="15px" class="p-t-10">
+        <mat-card>
+          <mat-card-header class="bg-light m-b-10">
+            <mat-card-title><h2>Privacy</h2></mat-card-title>
+          </mat-card-header>
+          <mat-card-content fxLayout="column" fxLayoutGap="15px">
+            <app-progress-spinner [condition]="!isProfileCompleted()"></app-progress-spinner>
+            <notification-card *ngIf="!isProfileCompleted() && messages.length > 0" fxFlex [style]="notificationStyle">
+                <p class="text-secondary">{{ completedProfileText }}</p>
+                <ol>
+                  <li *ngFor="let message of messages">{{message}}</li>
+                </ol>
+              </notification-card>
+            <mat-slide-toggle fxFlex formControlName="public_profile" color="primary" (change)="onChange('public_profile', $event)">Should we show your profile to potential clients?</mat-slide-toggle>
+            <mat-slide-toggle fxFlex formControlName="accepting_clients" color="primary" (change)="onChange('accepting_clients', $event)">Are you accepting clients?</mat-slide-toggle>
+          </mat-card-content>
+        </mat-card>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>

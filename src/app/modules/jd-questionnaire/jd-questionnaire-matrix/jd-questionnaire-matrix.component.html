@@ -1,0 +1,45 @@
+<div class="jd-questionnaire__matrix-responsive-wrapper">
+  <div class="jd-questionnaire__matrix">
+    <div class="jd-questionnaire__matrix-caption">
+      <div class="jd-questionnaire__matrix-caption-cell" *ngFor="let field of options">{{ field.name }}</div>
+    </div>
+
+    <div class="jd-questionnaire__matrix-row" *ngFor="let row of value; let index1 = index">
+      <div class="jd-questionnaire__matrix-row-cell" *ngFor="let field of options; let index2 = index" [ngClass]="{ error: getError(index1, field.name) }">
+        <!-- Input component -->
+        <app-jd-questionnaire-input
+          *ngIf="field.type === 'input'"
+          [style]="'table-cell'"
+          [placeholder]="''"
+          [value]="getValue(index1, field.name)"
+          (answerChange)="onAnswerChange($event, index1, field.name)"
+        ></app-jd-questionnaire-input>
+        <!-- Date component -->
+        <jd-questionnaire-date
+          *ngIf="field.type === 'date'"
+          [style]="'table-cell'"
+          [value]="getValue(index1, field.name)"
+          (onAnswer)="onAnswerChange($event, index1, field.name)"
+        ></jd-questionnaire-date>
+        <!-- Dropdown component -->
+        <jd-questionnaire-dropdown
+          *ngIf="field.type === 'dropdown'"
+          [style]="'table-cell'"
+          [placeholder]="''"
+          [value]="getValue(index1, field.name) || []"
+          [options]="field.options"
+          [isActive]="getActive(index1, index2)"
+          (onActive)="setActive(index1, index2)"
+          (onAnswer)="onAnswerChange($event, index1, field.name)"
+        ></jd-questionnaire-dropdown>
+      </div>
+      <a class="jd-questionnaire__matrix-row-button" href="javascript:void(0)" (click)="onDelete($event, index1)"
+        ><i class="fa fa-trash" aria-hidden="true"></i
+      ></a>
+    </div>
+  </div>
+</div>
+<button class="jd-questionnaire__matrix-add-button" (click)="onAdd($event)">Add new row</button>
+<p class="jd-questionnaire__matrix-error" *ngIf="hasError">
+  <span *ngFor="let error of errors">{{ error }} </span>
+</p>

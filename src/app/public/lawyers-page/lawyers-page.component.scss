@@ -1,0 +1,37 @@
+.lawyers {
+  padding-top: 75px;
+
+  .lawyer-card-content {
+    	text-align: center;
+    	margin-bottom: 15px;
+    	margin-top: 15px;
+	}
+
+  h2.lawyers-heading {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.light-blue {
+  background: #ebf3f5;
+  padding: 80px 0;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 576px) {
+  #lawyerDetails > div {
+    max-width: 70% !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #lawyerDetails > div{
+    max-width: 100%;
+  }
+
+  #lawyerDetails > div .embed-responsive{
+    height: 70vh;
+  }
+}

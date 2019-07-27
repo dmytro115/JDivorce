@@ -1,0 +1,372 @@
+<div class="case-view-wrapper">
+  <header role="banner" id="qbootstrap-header">
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <a class="logo" routerLink="/">JDivorce</a>
+          <div class="nav-items">
+            <a class="active" href="#" data-nav-section="home"><span>Home</span></a>
+            <a href="#" data-nav-section="groom-bride"><span>Groom Bride</span></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="qbootstrap-hero" data-section="home">
+    <div class="qbootstrap-overlay"></div>
+    <div class="qbootstrap-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url('assets/cases/images/cover_bg_3.jpg');">
+      <div class="display-t">
+        <h1 class="holder"><span>The Divorce of</span></h1>
+        <h1 class="holder">
+          {{ caseInfo.petitioner_name }} &amp; {{ caseInfo.respondent_name }}
+        </h1>
+        <p>
+          {{ caseInfo.divorce_finalization_date }}, {{ caseInfo.petitioner_city }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div id="qbootstrap-groom-bride" data-section="groom-bride">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="couple groom text-center animate-box marrige-date">
+            <img src="assets/cases/icons/woman.png" class="img-responsive">
+            <div class="desc">
+              <h2 class="holder">
+                {{ caseInfo.petitioner_name }}
+              </h2>
+              <p>
+                Date of Birth: {{ caseInfo.petitioner_dob }}
+              </p>
+              <p>
+                Age at Marriage: {{ petitionerMarrigeAge }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="couple bride text-center animate-box marrige-date">
+            <img src="assets/cases/icons/man.png" class="img-responsive" alt="Free HTML5 Bootstrap Template by QBootstrap.com">
+            <div class="desc">
+              <h2>
+                {{ caseInfo.respondent_name }}
+              </h2>
+              <p>
+                Date of Birth: {{ caseInfo.respondent_dob }}
+              </p>
+              <p>
+                Age at Marriage: {{ respondentMarrigeAge }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row animate-box">
+          <div class="col-md-12 text-center section-heading svg-sm-2 colored">
+            <h2>Special Conditions</h2>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="couple groom text-center animate-box">
+            <div class="desc">
+              <div class="icon-lists">
+                <div *ngIf="caseInfo.is_pregnant_petitioner">
+                  <img class="img-responsive" width="80" src="assets/cases/icons/pregnant.png" alt="Pregnant">
+                  <p>Pregnant</p>
+                </div>
+                <div *ngIf="caseInfo.is_petitioner_have_child_other_relationships">
+                  <img class="img-responsive" width="80" src="assets/cases/icons/children.png" alt="More children">
+                  <p>More children</p>
+                </div>
+                <div *ngIf="caseInfo.is_petitioner_armed_forces_stationed_WA">
+                  <img class="img-responsive" width="80" src="assets/cases/icons/armedforces.png" alt="Military">
+                  <p>Military</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="couple bride text-center animate-box">
+            <div class="desc">
+              <div class="icon-lists">
+                <div *ngIf="caseInfo.is_pregnant_respondent">
+                  <img class="img-responsive" width="80" src="assets/cases/icons/pregnant.png" alt="Pregnant">
+                  <p>Pregnant</p>
+                </div>
+                <div *ngIf="caseInfo.is_respondent_have_child_other_relationships">
+                  <img class="img-responsive" width="80" src="assets/cases/icons/children.png" alt="More children">
+                  <p>More children</p>
+                </div>
+                <div *ngIf="caseInfo.is_respondent_armed_forces_stationed_WA">
+                  <img class="img-responsive" width="80" src="assets/cases/icons/armedforces.png" alt="Military">
+                  <p>Military</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row animate-box">
+          <div class="col-md-12 text-center section-heading svg-sm-2 colored">
+            <h2>Lawyer</h2>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="couple groom text-center animate-box lawyer-info">
+            <div class="desc">
+              <div *ngIf="caseInfo.is_lawyer_representating_you">
+                <img class="img-responsive" width="80px" src="assets/cases/icons/lawyer.png"  alt="Lawyer representing">
+                <p>
+                  {{ caseInfo.lawyer_name }} <br/>
+                  WSBA #: {{ caseInfo.wsba }}<br/>
+                  {{ caseInfo.lawyer_address }}
+                </p>
+              </div>
+              <div *ngIf="!caseInfo.is_lawyer_representating_you">
+                <img class="img-responsive" width="80px" src="assets/cases/icons/prose.png"  alt="Pro Se">
+                <p>
+                  No Lawyer. <br/>
+                  Self representing
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="couple bride text-center animate-box lawyer-info">
+            <div class="desc">
+              <div *ngIf="caseInfo.is_lawyer_representating_respondent">
+                <img class="img-responsive" width="80px" src="assets/cases/icons/lawyer.png"  alt="Lawyer representing">
+                <p>
+                  {{ caseInfo.respondent_lawyer_name }} <br/>
+                  WSBA #: {{ caseInfo.respondent_wsba }}<br/>
+                  {{ caseInfo.respondent_lawyer_address }}
+                </p>
+              </div>
+              <div *ngIf="!caseInfo.is_lawyer_representating_respondent">
+                <img class="img-responsive" width="80px" src="assets/cases/icons/prose.png"  alt="Pro Se">
+                <p>
+                  No Lawyer. <br/>
+                  Self representing
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row animate-box">
+          <div class="col-md-12 text-center section-heading svg-sm-2 colored">
+            <h2>Child Custody</h2>
+            <img class="img-responsive"  src="assets/cases/images/calendar.png"  alt="ParentingPlan">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="couple groom text-center animate-box child-lists">
+            <div class="birth-day" *ngFor="let i of [1, 2, 3, 4, 5, 6]">
+              <div *ngIf="caseInfo.is_mutual_child_ + 'i' + _liveswith_petitioner">
+                <img *ngIf="caseInfo['is_mutual_child_' + i + '_male']" src="assets/cases/icons/son.png" class="img-responsive" alt="Son">
+                <img *ngIf="caseInfo['is_mutual_child_' + i + '_female']" src="assets/cases/icons/daughter.png" class="img-responsive" alt="Daughter">
+                <p>Date of birth: {{caseInfo['mutual_child_' + i + '_dob']}}</p>
+              </div>
+            </div>
+            <div class="desc">
+              <p>Visitation rights</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="couple bride text-center animate-box child-lists">
+            <div class="birth-day" *ngFor="let i of [1, 2, 3, 4, 5, 6]">
+              <div *ngIf="caseInfo.is_mutual_child_ + 'i' + _liveswith_respondent">
+                <img *ngIf="caseInfo['is_mutual_child_' + i + '_male']" src="assets/cases/icons/son.png" class="img-responsive" alt="Son">
+                <img *ngIf="caseInfo['is_mutual_child_' + i + '_female']" src="assets/cases/icons/daughter.png" class="img-responsive" alt="Daughter">
+                <p>Date of birth: {{caseInfo['mutual_child_' + i + '_dob']}}</p>
+              </div>
+            </div>
+            <div class="desc">
+              <p>Custody / Health decision / Educaiton decisions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row animate-box">
+        <div class="col-md-12 text-center section-heading svg-sm-2 colored">
+          <h2>Assets</h2>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="couple groom text-center animate-box">
+          <div class="desc">
+            <div class="icon-lists">
+              <div>
+                <img class="img-responsive" width="80px" src="assets/cases/icons/car.png"  alt="Car">
+                <p>Car : 2014 Toyota Corolla</p>
+              </div>
+              <div>
+                <img class="img-responsive" width="80px" src="assets/cases/icons/bank.png"  alt="Bank">
+                <p>Bank: $20,000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="couple bride text-center animate-box">
+          <div class="desc">
+            <div class="icon-lists">
+              <div>
+                <img class="img-responsive" width="80px" src="assets/cases/icons/houses.png"  alt="House, Kent WA">
+                <p>House, Kent WA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="qbootstrap-story" data-section="story">
+    <div class="container">
+      <div class="row animate-box">
+        <div class="col-md-12 col-md-offset-2">
+          <div class="col-md-12 text-center section-heading svg-sm-2">
+            <h2>Key events</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="timeline animate-box">
+            <li class="animate-box">
+              <div class="timeline-badge" style="background-image:url('assets/cases/images/couple-1.jpg');"></div>
+              <div class="timeline-panel">
+                <div class="overlay"></div>
+                <div class="timeline-heading">
+                  <h3 class="timeline-title">Marriage</h3>
+                  <span class="date">
+                    {{ caseInfo.marriage_date }}
+                  </span>
+                  <p>
+                    {{ caseInfo.marriage_city }}, {{ caseInfo.marriage_state }}
+                  </p>
+                </div>
+                <div class="timeline-body">
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted animate-box">
+              <div class="timeline-badge" style="background-image:url('assets/cases/images/couple-2.jpg');"></div>
+              <div class="timeline-panel">
+                <div class="overlay overlay-2"></div>
+                <div class="timeline-heading">
+                  <h3 class="timeline-title">Child Birth</h3>
+                  <span class="date">
+                    {{ caseInfo.mutual_child_1_dob }}
+                  </span>
+                </div>
+                <div class="timeline-body">
+                  <p></p>
+                </div>
+              </div>
+            </li>
+            <li class="animate-box">
+              <div class="timeline-badge" style="background-image:url('assets/cases/images/couple-3.jpg');"></div>
+              <div class="timeline-panel">
+                <div class="overlay"></div>
+                <div class="timeline-heading">
+                  <h3 class="timeline-title">Child Birth</h3>
+                  <span class="date">
+                    {{ caseInfo.mutual_child_2_dob }}
+                  </span>
+                </div>
+                <div class="timeline-body">
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted animate-box">
+              <div class="timeline-badge" style="background-image:url('assets/cases/images/couple-4.jpg');"></div>
+              <div class="timeline-panel">
+                <div class="overlay overlay-2"></div>
+                <div class="timeline-heading">
+                  <h3 class="timeline-title">Separation</h3>
+                  <span class="date">
+                    {{ caseInfo.separation_date }}
+                  </span>
+                </div>
+                <div class="timeline-body">
+                </div>
+              </div>
+            </li>
+            <li class="animate-box">
+              <div class="timeline-badge" style="background-image:url('assets/cases/images/couple-4.jpg');"></div>
+              <div class="timeline-panel">
+                <div class="overlay overlay-2"></div>
+                <div class="timeline-heading">
+                  <h3 class="timeline-title">Divorce Filed</h3>
+                  <span class="date">
+                    {{ caseInfo.petition_file_date }}
+                  </span>
+                </div>
+                <div class="timeline-body">
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted animate-box">
+              <div class="timeline-badge" style="background-image:url('assets/cases/images/couple-4.jpg');"></div>
+              <div class="timeline-panel">
+                <div class="overlay overlay-2"></div>
+                <div class="timeline-heading">
+                  <h3 class="timeline-title">Hearing Date</h3>
+                  <span class="date">
+                    {{ caseInfo.hearing_date }}
+                  </span>
+                </div>
+                <div class="timeline-body">
+                </div>
+              </div>
+            </li>
+            <li class="animate-box">
+              <div class="timeline-badge" style="background-image:url('assets/cases/images/couple-4.jpg');"></div>
+              <div class="timeline-panel">
+                <div class="overlay overlay-2"></div>
+                <div class="timeline-heading">
+                  <h3 class="timeline-title">Divorce Finalization Date</h3>
+                  <span class="date">
+                    {{ caseInfo.divorce_finalization_date }}
+                  </span>
+                </div>
+                <div class="timeline-body">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="row row-bottom-padded-sm">
+        <div class="col-md-12">
+          <p class="copyright text-center">&copy; 2017 <a routerLink="/">JDivorce</a>. All Rights Reserved. Images by <a href="https://jdivorce.com/" target="_blank">JDivorce.com</a></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <ul class="social social-circle">
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/jdivorcepage"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCh6KEujE5TckK40MNrg89AQ?view_as=subscriber"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

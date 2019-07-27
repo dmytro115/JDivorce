@@ -1,0 +1,22 @@
+<mat-tab-group
+  #matTabGroup
+  class="hide-tab-wrapper"
+  #tabGroup
+  (selectedTabChange)="tabChanged($event)">
+  <mat-tab
+    *ngFor="let tab of routerTabItems; let i = index;"
+    [routerLink]="tab.routerLink"
+    [disabled]="tab.disabled"
+    [routerLinkActiveOptions]="tab.routerLinkActiveOptions">
+    <ng-template mat-tab-label class="mat-elevation-z8">
+      <a *ngIf="!tab.disabled" class="router-tab-link" [routerLink]="tab.routerLink"></a>
+      <div *ngIf="!tab.hideIcons">
+        <mat-icon *ngIf="!tab.disabled && tab.isCompleted && i !== activeIndex" color="primary">check_circle_outline</mat-icon>
+        <mat-icon *ngIf="!tab.disabled && tab.isCompleted && i === activeIndex" color="primary">check_circle_filled</mat-icon>
+        <mat-icon *ngIf="!tab.disabled && !tab.isCompleted" color="primary">assignment</mat-icon>
+        <mat-icon *ngIf="tab.disabled" color="primary">add_circle_outline</mat-icon>
+      </div>
+      &nbsp;<span>{{ tab.label }}</span>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

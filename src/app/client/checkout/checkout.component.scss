@@ -1,0 +1,74 @@
+/****************
+ * confirmation *
+ ****************/
+
+.fa-icon-color {
+  font-size: 112px;
+  color: lightgreen;
+}
+
+// Wizard Styles
+:host ::ng-deep .wizardDone {
+  li.navigable {
+    * {
+      cursor: default !important;
+    }
+  }
+}
+
+:host ::ng-deep .checkout-wizard-steps {
+  $wizard-border-color: #e6e6e6;
+
+  aw-wizard-navigation-bar.horizontal
+    ul.steps-indicator.steps-3
+    li:not(.navigable) {
+    &:after {
+      border: 3px solid #b7b7b7 !important;
+      background-color: #b7b7b7 !important;
+      color: #fff !important;
+    }
+    & + li {
+      &:after {
+        background-color: #fff !important;
+        color: #b7b7b7 !important;
+      }
+    }
+  }
+
+  aw-wizard-navigation-bar.horizontal.large-filled-symbols
+    ul.steps-indicator
+    li.done:after {
+    border: 3px solid #b7b7b7;
+    background-color: #fff;
+    color: #b7b7b7;
+  }
+  aw-wizard-navigation-bar.horizontal.large-filled-symbols
+    ul.steps-indicator
+    li.current:after,
+  aw-wizard-navigation-bar.horizontal.large-filled-symbols
+    ul.steps-indicator
+    li.editing:after {
+    border: 3px solid #b7b7b7;
+    background-color: #b7b7b7;
+    color: #fff;
+  }
+  aw-wizard-navigation-bar.horizontal.large-filled-symbols
+    ul.steps-indicator
+    li.default:after {
+    border: 3px solid $wizard-border-color;
+    background-color: #fff;
+    color: #67757c;
+  }
+  aw-wizard-navigation-bar li.current {
+    color: #455a64;
+  }
+  aw-wizard-navigation-bar.horizontal.large-filled-symbols
+    ul.steps-indicator
+    li:not(:last-child):before {
+    height: 3px;
+  }
+  aw-wizard-navigation-bar.horizontal.large-filled-symbols {
+    border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+    margin-bottom: 20px;
+  }
+}

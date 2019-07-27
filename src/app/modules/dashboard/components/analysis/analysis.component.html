@@ -1,0 +1,39 @@
+<div *ngIf="!isLoadingPlan && !isLoadingRecommendations" fxLayout="column" fxLayoutGap="16px">
+  <mat-card class="background-primary">
+    <mat-card-header>
+      <div mat-card-avatar [style.background-image]="'url(assets/images/icons/recommendation-book.svg)'"></div>
+      <mat-card-title class="uppercase">Analysis</mat-card-title>
+      <mat-card-subtitle class="text-primary-contrast">
+        Your Diagnostic has been analyzed. Based on your responses, there are a few suggestions for you to consider.
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- <p class="text-primary-contrast mb-0" *ngIf="!recommendedPlan">We suggest that you work with a lawyer due to the complexities of your case.</p> -->
+      <p class="text-primary-contrast mb-0" *ngIf="recommendedPlan">
+        We suggest
+        <span class="mat-h3">
+          <strong>"{{ recommendedPlan.name }}"</strong>
+        </span>
+        for
+        <span class="mat-h3">
+          <strong>${{ recommendedPlan.cost }}</strong>
+        </span>
+        due to the complexities of your case.
+      </p>
+      <mat-list *ngIf="recommendations.length > 0">
+        <mat-list-item *ngFor="let recommendation of recommendations">
+          <mat-icon class="icon-contrast">chevron_right</mat-icon>
+          <h4 class="text-primary-contrast mb-0">{{ recommendation.fact }}</h4>
+          <button matTooltipClass="analysis-tooltip" mat-icon-button matTooltip="{{ recommendation.justification }}"
+            matTooltipPosition="right" color="accent">
+            <mat-icon>info</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+      <app-domestic-violence-analysis *ngIf="!isDivorce" [dvRecommendations]="dvRecommendations">
+      </app-domestic-violence-analysis>
+    </mat-card-content>
+  </mat-card>
+  <app-pricing-block *ngIf="isDivorce" (ctaClick)="onCtaClick($event)" [ctaButtonOptions]="pricingBlockCtaButtonOptions"
+    [highlightPlanIds]="highlightPlanIds" [inputPlans]="inputPlans"></app-pricing-block>
+</div>

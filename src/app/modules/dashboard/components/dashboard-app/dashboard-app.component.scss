@@ -1,0 +1,38 @@
+@import './../../../../../assets/ap/main/scss/variable.scss';
+
+.tab-number-check {
+  border-radius: 50%;
+  border: solid 1px $info;
+  background-color: white;
+  color: $info;
+  vertical-align: middle;
+  padding: 3px;
+  font-size: 9px;
+  margin-bottom: 16px;
+}
+
+.tab-number-check.active {
+  background-color: $info;
+  border: solid 1px $info;
+  color: white !important;
+}
+
+.tab-number {
+  border-radius: 100%;
+  border: solid 1px $info;
+  background-color: white;
+  color: $info;
+  vertical-align: middle;
+  padding: 5px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.tab-number.active {
+  background-color: $info;
+  border: solid 1px $info;
+  color: white;
+}
+

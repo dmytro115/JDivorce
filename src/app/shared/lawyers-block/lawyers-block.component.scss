@@ -1,0 +1,48 @@
+.adjust-margin {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.calendar-info-icon.mat-icon-button {
+  height: 20px;
+  line-height: 20px;
+  opacity: 0.5;
+
+  mat-icon.mat-icon {
+    line-height: 20px;
+  }
+}
+.mat-card-image {
+  width: 100%;
+  margin: auto;
+}
+.mat-card.mat-card.soft {
+  border-radius: 2em;
+  padding: 0;
+  background-color: var(--white);
+}
+
+.lawyer-profiles {
+  column-count: 4;
+  column-gap: 24px;
+
+  @media screen and (max-width: 1919px) {
+    column-count: 3;
+  }
+
+  @media screen and (max-width: 1279px) {
+    column-count: 2;
+  }
+
+  @media screen and (max-width: 599px) {
+    column-count: 1;
+  }
+}
+
+.lawyer-profile-card {
+  > div {
+    padding-bottom: 24px;
+    display: inline-block;
+    width: 100%;
+  }
+}

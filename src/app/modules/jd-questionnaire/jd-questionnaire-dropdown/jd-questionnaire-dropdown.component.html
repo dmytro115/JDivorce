@@ -1,0 +1,21 @@
+<div class="selected-dropdown-label" (click)="toggleDropdown($event)" [ngClass]="style">
+  <input #search type="text" id="selected-label" [placeholder]="placeholder" autocomplete="off" (blur)="onBlur($event)" (input)="onSearchChange($event.target.value)" value="{{ value }}">
+  <span *ngIf="!optionSelected">
+    <svg class="SVGInline-svg" width="14" height="9" xmlns="http://www.w3.org/2000/svg"><path fillrule="nonzero" d="M12.293.293l1.414 1.414L7 8.414.293 1.707 1.707.293 7 5.586z"></path></svg>
+  </span>
+  <span *ngIf="optionSelected" (click)="clearSelectedOption($event)">
+    <svg class="SVGInline-svg" width="14" height="14" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><title>Combined Shape</title><path d="M8 6.586l6-6L15.414 2l-6 6 6 6L14 15.414l-6-6-6 6L.586 14l6-6-6-6L2 .586l6 6z" fillrule="nonzero"></path></svg>
+  </span>
+</div>
+<div class="dropdown-options {{style}}" [ngClass]="{ active: isActive }">
+  <ul class="jd-questionnaire__dropdown">
+    <li [ngClass]="{ selected: value.includes(option.value) }" (click)="onSelect($event, option.value)" *ngFor="let option of filteredOptions;" class="jd-questionnaire__dropdown-item">
+      <span class="jd-questionnaire__dropdown-item-label">{{ option.label ? option.label : option.value }}</span>
+      <span *ngIf="value.includes(option.value)" class="checker">
+        <svg class="SVGInline-svg" width="14" height="12" xmlns="http://www.w3.org/2000/svg"><path fillrule="nonzero" d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg>
+      </span>
+    </li>
+  </ul>
+  <div class="line"></div>
+</div>
+<p class="jd-questionnaire__dropdown-error" *ngIf="hasError">{{error}}</p>

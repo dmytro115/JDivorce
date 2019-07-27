@@ -1,0 +1,43 @@
+<section class="module faqs">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 order-2 order-md-1">
+          <h2 class="m-t-10p">Frequently Asked Questions</h2>
+          <h3 class="m-t-5p text-center">Divorce in Washington State</h3>
+          <p class="m-t-10p subtext text-center text-md-left">Have a question? Search here:</p>
+          <input type="text" placeholder="Search…" [(ngModel)]="search" class="search" (keypress)="showDropBox=true" />
+          <ul class="list">  
+          <div *ngIf="showDropBox">
+            <div  *ngFor="let questionStat of questionStats" >
+              <div  *ngFor="let faq of qas[questionStat.type]; let i= index" >
+                  <div class="searchDropdown" *ngIf="faq.question_key.search(search) > 0 ">
+                      <a class="dropdown-item" (click)="getSearchData(faq,questionStat,i)">{{faq.question_key}}</a>
+                  </div>
+              </div>
+            </div>
+           </div>
+          </ul>
+        </div>
+        <div class="col-md-6 order-1 order-md-2 d-flex justify-content-center">
+          <img src="assets/images/faq/faq.png" class="help">
+        </div>
+      </div>
+      <div class="row questions m-t-12p">
+        <div class="col-md-12">
+          <ngb-tabset>
+            <ngb-tab title="{{getTitle(questionStat)}}" *ngFor="let questionStat of questionStats">
+              <ng-template ngbTabContent>
+                <ngb-accordion #acc="ngbAccordion" *ngFor="let faq of qas[questionStat.type]; let i= index" [activeIds]="activeIds"   >
+                  <ngb-panel [title]="faq.question_key"  id="panel-{{i}}" *ngIf="faq.question_key.search(search) != -1 " >
+                    <ng-template ngbPanelContent>
+                      <div [innerHTML]="faq.answer_key"></div>
+                    </ng-template>
+                  </ngb-panel>
+                </ngb-accordion>
+              </ng-template>
+            </ngb-tab>
+          </ngb-tabset>
+        </div>
+      </div>
+  </div>
+</section>

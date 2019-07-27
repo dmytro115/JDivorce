@@ -1,0 +1,36 @@
+<ng-sidebar-container class="sidebar-container">
+  <!-- A sidebar -->
+  <ng-sidebar
+    [sidebarClass]="'questionnaire-sidebar'"
+    [(opened)]="opened"
+    [position]="position"
+    [mode]="mode"
+    [dock]="dock"
+    [showBackdrop]="false"
+    [closeOnClickBackdrop]="closeOnClickBackdrop"
+    [closeOnClickOutside]="closeOnClickOutside"
+    (openedChange)="onSidebarOpenedChange($event)"
+  >
+    <app-help-sidebar [question]="sidebarQuestion"></app-help-sidebar>
+  </ng-sidebar>
+
+  <div ng-sidebar-content>
+    <app-jd-questionnaire-verbose
+      *ngIf="questionnaireType === 'verbose'"
+      [continueButtonUrl]="continueButtonUrl"
+      [continueButtonText]="continueButtonText"
+      [submitText]="submitText"
+      [successMessage]="successMessage"
+      [questions]="questions"
+      [isLoading]="isLoading"
+      [isCompleted]="isCompleted"
+      [isFailed]="isFailed"
+      (questionnaireSubmit)="onSubmit($event)"
+    ></app-jd-questionnaire-verbose>
+    <app-jd-questionnaire-compact
+      *ngIf="questionnaireType === 'compact'"
+      [questions]="questions"
+      (saveQuestionnaire)="submit($event)"
+    ></app-jd-questionnaire-compact>
+  </div>
+</ng-sidebar-container>

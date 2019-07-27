@@ -1,0 +1,165 @@
+.faqs:before {
+  content: "";
+  background: url("/assets/images/background-img.png");
+  background-repeat: no-repeat;
+  width: 138px;
+  height: 170px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.faqs {
+  position: relative;
+  margin: 80px 0px 30px 0px;
+
+  .title {
+    justify-content: center;
+  }
+
+  h2 {
+    font-size: 36px;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  .help {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    opacity: 0.85;
+  }
+
+  .subtitle {
+    text-align: center;
+  }
+
+  .search {
+    height: 40px;
+    background: url(/assets/images/faq/search.png) no-repeat;
+    opacity: 0.3;
+    border-radius: 6px 6px 6px 6px;
+    border: solid 1px #31485f;
+    background-size: 25px;
+    background-position: 97%;
+    padding: 0 40px 0 15px;
+    width: 116%;
+  }
+}
+
+.questions ::ng-deep {
+  .nav.nav-tabs {
+    border-bottom: 1px solid rgba(24, 112, 200, 0.3);
+  }
+
+  .nav.nav-tabs.justify-content-start {
+    justify-content: center !important;
+  }
+
+  .nav-tabs .nav-link {
+    font-size: 20px;
+    border-width: 2px;
+  }
+
+  .nav-tabs .nav-item.show .nav-link,
+  .nav-tabs .nav-link.active {
+    border-color: #fff #fff #1870c8 !important;
+    color: #1870c8 !important;
+  }
+
+  .card-header {
+    border: 0 !important;
+    background-color: transparent !important;
+    padding-left: 0;
+  }
+
+  .btn.btn-link {
+    color: #567585;
+    background: url(/assets/images/faq/down-arrow.png) no-repeat;
+    background-position: right;
+    width: 100%;
+    text-align: left;
+    background-size: 20px;
+    text-decoration: none;
+    padding-left: 0;
+    white-space: initial;
+    padding-right: 25px;
+  }
+
+  .btn.btn-link.collapsed {
+    color: #1870c8;
+    background: url(/assets/images/faq/up-arrow.png) no-repeat;
+    background-position: right;
+    width: 100%;
+    text-align: left;
+    background-size: 20px;
+  }
+
+  .nav-tabs .nav-link:hover {
+    border-color: #fff #fff #1870c8 !important;
+  }
+
+  .nav-tabs .nav-link.active:hover {
+    border-color: #fff #fff #1870c8 !important;
+  }
+
+  .card {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(24, 112, 200, 0.15);
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    .card-body {
+      &.collapse {
+        &.show {
+          display: block;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+.searchDropdown {
+  width: 625px;
+    height: 40px;
+    font-size: 14px;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #3d7b9b;
+    border-radius: 2px;
+    margin-left: -40px;
+    font-weight: bold;
+}
+.searchDropdown:hover{
+  color: white;
+}
+.dropdown-item:hover{
+  background: #1870c8; 
+    color: white;
+}
+.dropdown-item {
+    padding: 11px 1rem;
+    height: 40px;
+    border-bottom: 1px solid #1870c817;
+    }
+    .list{
+    border: 0.5px solid rgba(49, 72, 95, 0.3);
+    width: 116%;
+    border-radius: 0px 0px 6px 6px;
+    border-top: none;
+     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.28);
+    }
+@media (max-width: 767px) {
+  .faqs .help {
+    width: 130px;
+    height: 130px;
+  }
+
+  ::ng-deep .nav-tabs .nav-item {
+    width: 50%;
+    text-align: center;
+  }
+}

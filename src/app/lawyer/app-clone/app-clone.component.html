@@ -1,0 +1,50 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="inviteModalLabel">
+    <span *ngIf="client" translate="DASHBOARD.lawyer_dashboard.clone_application.title"></span>
+    <span *ngIf="!client" translate="DASHBOARD.lawyer_dashboard.create_application.title"></span>
+  </h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-lg-12">
+      <span *ngIf="!client" translate="DASHBOARD.lawyer_dashboard.create_application.modal_summary"></span>
+      <span *ngIf="client" translate="DASHBOARD.lawyer_dashboard.clone_application.modal_summary"></span>
+    </div>
+  </div>
+  <hr *ngIf="client">
+  <form class="floating-labels m-t-20" name="appCloneForm" #appCloneForm="ngForm">
+    <div class="form-group source-email focused" *ngIf="client">
+      <input type="text" class="form-control" id="clone-source-email" name="clone_source_email" [(ngModel)]="client.client_email" #clone_source_email="ngModel" readonly>
+      <span class="bar"></span>
+      <label for="clone-source-email"> {{'DASHBOARD.lawyer_dashboard.clone_application.source_email' | translate}}</label>
+    </div>
+    <h3 *ngIf="client">New Client Details</h3>
+    <hr class="m-b-25">
+    <div class="form-group" [ngClass]="{'focused': inviteFirstNameFocus || data.first_name}">
+      <input type="text" class="form-control" id="invite-first-name" name="invite_first_name" [(ngModel)]="data.first_name" (focus)="inviteFirstNameFocus=true" (focusout)="inviteFirstNameFocus=false">
+      <span class="bar"></span>
+      <label for="invite-first-name">{{'DASHBOARD.lawyer_dashboard.create_application.client_first_name' | translate}}</label>
+    </div>
+    <div class="form-group" [ngClass]="{'focused': inviteLastNameFocus || data.last_name}">
+      <input type="text" class="form-control" id="invite-last-name" name="invite_last_name" [(ngModel)]="data.last_name" (focus)="inviteLastNameFocus=true" (focusout)="inviteLastNameFocus=false">
+      <span class="bar"></span>
+      <label for="invite-last-name">{{'DASHBOARD.lawyer_dashboard.create_application.client_last_name' | translate}}</label>
+    </div>
+    <div class="form-group" [ngClass]="{'focused': inviteEmailFocus || data.email}">
+      <input type="email" class="form-control" id="invite-email" name="invite_email" [(ngModel)]="data.email" (focus)="inviteEmailFocus=true" (focusout)="inviteEmailFocus=false">
+      <span class="bar"></span>
+      <label for="invite-email">{{'DASHBOARD.lawyer_dashboard.create_application.client_email' | translate}}</label>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="activeModal.close('Close click')"><span translate="general.close"></span></button>
+  <button type="button" class="btn btn-primary" (click)="cloneApplication()" [disabled]="cloneApplicationinProgress">
+   <i class="fa fa-spinner fa-spin" *ngIf="cloneApplicationinProgress"></i> 
+   <span *ngIf="!client" translate="general.create"></span>
+   <span *ngIf="client" translate="DASHBOARD.lawyer_dashboard.clone_application.button"></span>!
+  </button>
+</div>

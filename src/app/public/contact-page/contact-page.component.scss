@@ -1,0 +1,39 @@
+section.contact-us {
+  position: relative;
+  &:after {
+    content: "";
+    background: url(/assets/images/help.png);
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 80px;
+    position: absolute;
+    bottom: 162px;
+    left: 0;
+  }
+}
+
+section.contact-us:before {
+  content: "";
+  background: url(/assets/images/background-img.png);
+  background-repeat: no-repeat;
+  width: 138px;
+  height: 170px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.have-a-question {
+  position: absolute;
+  bottom: 130px;
+}
+
+@media(max-width: 767px) {
+  section.contact-us:after {
+    bottom: 110px;
+  }
+
+  section.contact-us {
+    margin-top: 15% !important;
+  }
+}

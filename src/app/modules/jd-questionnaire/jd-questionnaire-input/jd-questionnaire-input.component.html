@@ -1,0 +1,10 @@
+<input
+  type="text"
+  (input)="answerChange.emit($event.target.value)"
+  class="jd-questionnaire__input"
+  [placeholder]="placeholder"
+  [value]="handleUndefined(value)"
+  [ngClass]="style"
+  [attr.maxlength]="maxLength"
+/>
+<p class="jd-questionnaire__input-error" *ngIf="hasError">{{ error }}</p>

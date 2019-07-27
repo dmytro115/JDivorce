@@ -1,0 +1,35 @@
+<div
+  class="file-drop-zone mt-6"
+  ngfDrop
+  selectable="1"
+  multiple="1"
+  [maxSize]="maxSize"
+  [(files)]="files"
+  [(validDrag)]="validComboDrag"
+  [(invalidDrag)]="invalidComboDrag"
+  (fileChange)="onFileChange($event)"
+  (filesChange)="onFilesChange($event)"
+  [ngClass]="{ 'valid-drag': validComboDrag, 'invalid-drag': invalidComboDrag }"
+>
+  Drop your files here (you can also click here to select from your browser)
+</div>
+<div class="mt-4">
+  <div *ngFor="let item of documents; let i = index" fxLayout="column" fxLayoutGap="8px" class="file-row">
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="4px" class="my-2">
+      <div>
+        <h3 class="mb-0">
+          <strong>{{ item.name }}</strong>
+        </h3>
+        <p *ngIf="item.size">{{ item.size / 1024 | number: '.2' }} KB</p>
+      </div>
+      <div>
+        <button mat-icon-button (click)="deleteFile($event, i, item.document_key)">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <ngfUploadStatus [(percent)]="progress" [httpEvent]="httpEvent"></ngfUploadStatus>
+  <mat-progress-bar mode="determinate" value="progress"></mat-progress-bar>
+</div>

@@ -1,0 +1,203 @@
+.page__header {
+    position: relative;
+    color: #ffffff;
+    box-shadow: 0 4px 11px rgba(124, 146, 169, 0.5);
+    width: 100%;
+}
+
+.hero__overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.96;
+    z-index: 1;
+    background-color: #6C63FF;
+}
+
+.hero__overlay--gradient {
+    background: linear-gradient(to right, #6C63FF, #4641FF);
+}
+
+.hero__mask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><linearGradient id="06714b97-aec8-4b7e-bf3d-1e20f95f612e" y1="809.5" x2="958" y2="809.5" gradientTransform="matrix(1, 0, 0, -1, 0, 1082)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="0.05"/></linearGradient></defs><title>hero</title><rect id="0567095b-2cf7-4407-b8ab-ec2abe52d830" data-name="&lt;Path&gt;" y="545" width="1920" height="535" fill="#fff" opacity="0.05" style="isolation:isolate"/><polygon id="82ca9a61-a0a1-49cc-9805-a3533c693bad" data-name="&lt;Path&gt;" points="958 545 0 545 0 0 770.96 0 958 545" fill="url(#06714b97-aec8-4b7e-bf3d-1e20f95f612e)"/></svg>');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.66;
+    z-index: 2;
+}
+
+.page__header__inner {
+    padding: 66px 0 0 0;
+    position: relative;
+    z-index: 3;
+}
+
+.container {
+    width: 88%;
+    max-width: 1080px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.page__header__content {
+    -js-display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32pt 0;
+    overflow: auto;
+}
+
+.page__header__content__inner {
+    width: 100%;
+    max-width: 66ch;
+    text-align: center;
+}
+
+.page__header__title {
+    color: inherit;
+    margin-bottom: 1.25em;
+}
+
+.page__header__text {
+    opacity: 0.85;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.page {
+    padding: 24pt 0;
+}
+
+@media (min-width: 992px) {
+    .page__inner {
+        -js-display: flex;
+        display: flex;
+    }
+}
+
+.page__menu {
+    width: 100%;
+    position: relative;
+}
+
+@media (min-width: 992px) {
+    .page__menu {
+        display: block;
+        width: 300px;
+        flex-shrink: 0;
+    }
+}
+
+
+/* Vertical menu */
+
+.vMenu {
+    padding: 0;
+    list-style-type: none;
+    -js-display: flex;
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+@media (min-width: 992px) {
+    .vMenu {
+        display: inline-block;
+        border-bottom: none;
+    }
+}
+
+.vMenu li {
+    display: inline-block;
+    margin-bottom: 1em;
+    width: 48%;
+    padding-left: 16pt;
+}
+
+@media (min-width: 992px) {
+    .vMenu li {
+        padding-left: 0;
+        display: block;
+        width: auto;
+    }
+}
+
+.vMenu a {
+    display: block;
+}
+
+@media (min-width: 992px) {
+    .vMenu a {
+        display: inline-block;
+        opacity: 0.85;
+    }
+    .vMenu a:hover {
+        opacity: 1;
+        color: #6C63FF;
+    }
+    .vMenu a:after {
+        display: block;
+        content: '';
+        border-bottom: 1px solid #6C63FF;
+        transform: scaleX(0);
+        transition: transform 250ms ease-in-out;
+    }
+    .vMenu a:hover:after {
+        transform: scaleX(1);
+    }
+}
+
+.vMenu>ul {
+    margin-top: -0.65em;
+    padding-left: 1.5em;
+    margin-bottom: 0.75em;
+}
+
+.vMenu>ul li {
+    opacity: 0.85;
+    font-size: 0.95em;
+    margin-bottom: 0.25em;
+}
+
+.vMenu>ul li:before {
+    content: "-";
+    margin-right: 0.5em;
+}
+
+.vMenu--active {
+    color: #6C63FF;
+}
+
+.vMenu--active:before {
+    content: "\2014";
+    margin-right: 0.333em;
+}
+
+@media (min-width: 992px) {
+    .vMenu--active {
+        opacity: 1;
+        color: #6C63FF;
+    }
+    .vMenu--active:after {
+        display: block;
+        content: '';
+        border-bottom: 1px solid #6C63FF;
+        transform: none;
+        transition: none;
+    }
+}
+
+.page__main {
+    flex-grow: 1;
+}
+
+.text-container {
+    max-width: 1300px;
+}

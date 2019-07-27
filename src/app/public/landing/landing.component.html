@@ -1,0 +1,325 @@
+<section class="evie-section--container">
+  <!-- Hero unit -->
+  <div class="hero">
+    <div class="hero__overlay hero__overlay--gradient"></div>
+    <div class="hero__mask"></div>
+    <div class="hero__inner">
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__content__inner" id="navConverter">
+            <div class="item-wrapper">
+              <h1 class="hero__title">Prepare your Washington Divorce Application for Free </h1>
+              <h2 class="hero__text" style="color:white;">
+                JDivorce provides a guided online experience to create your divorce application.  Answer every question after viewing precise notes from different lawyers. Safeguard your interests while saving thousands in legal fees
+              </h2>
+            </div>
+          </div>
+          <mini-diagnostic
+            [style.margin-top]="'30px'"
+            [style.max-width]="'400px'"
+            [style.width]="'100%'"
+            [landingPage]="'true'"
+            (diagnosticData)="onDiagnosticData($event)"
+          ></mini-diagnostic>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__sub">
+    <span id="scrollToNext" class="scroll">
+      <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        class="hero__sub__down"
+        fill="currentColor"
+        width="512px"
+        height="512px"
+        viewBox="0 0 512 512"
+        style="enable-background:new 0 0 512 512;"
+        xml:space="preserve"
+      >
+        <path
+          d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3z"
+        />
+      </svg>
+    </span>
+  </div>
+
+  <div class="video-section">
+    <div class="container">
+      <div class="video-section__popup" *ngIf="isVideoVisible">
+        <button class="video-section__close-btn fa fa-times" (click)="onVideoClose()"></button>
+        <div class="video-section__iframe">
+          <iframe src="https://www.youtube.com/embed/UnIFhUZCuE0?ecver=1&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="video-section__columns">
+        <div class="video-section__column">
+          <div class="video-section__screenshot" (click)="onVideoOpen()">
+            <button class="video-section__play-btn fa fa-play"></button>
+            <img src="assets/evie/images/testimonial.jpg" width="100%" />
+          </div>
+        </div>
+        <div class="video-section__column video-section__text">
+          <h2>Ariel Anderson</h2>
+          <ul>
+            <li>Lakewood, Washington</li>
+            <li>JDivorce Client</li>
+
+            <li><b>Filing Location:</b> Pierce County Superior Court</li>
+            <li><b>Filing Status:</b> Divorce is finalized. Filed around May 2018.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <div class="steps landing__section">
+    <h2 class="heading">Our Plans</h2>
+    <div class="lawyers-block-wrap">
+      <div class="col-sm-12 service-overview" [style.padding]="'0'" [style.margin-bottom]="'20px'" [style.margin-right]="'20px'">
+        <app-pricing-block (ctaClick)="onCtaClick($event)" [ctaButtonOptions]="pricingBlockCtaButtonOptions" [plansFilter]="plansFilter"></app-pricing-block>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 class="heading">How It Works</h2>
+      <p>From the moment you decided to file for divorce, it takes anywhere between 3.5 to 12 months to finalize a divorce.</p>
+    </div>
+
+    <div class="container">
+      <div class="steps__inner">
+        <div class="step">
+          <div class="step__media"></div>
+          <h4 class="step-heading"><span class="step-sub-title"> 1 </span>Take Diagnostic<span style="color:#3ca876;">&nbsp;&nbsp;Free</span></h4>
+          <p class="step__text process-desc">
+            Answer a few questions to let our software understand your situation<br />
+            &#10004;&nbsp;Questions are in simple language. No confusing legal terms.<br />
+            &#10004;&nbsp;Broad coverage: child custody, military families, domestic violence, foreign citizenship<br />
+            &#10004;&nbsp;View legal articles and video clips from lawyers and law professors in Seattle<br />
+          </p>
+        </div>
+
+        <div class="step">
+          <!--<div class="step__media">
+            <img src="../../../assets/evie/images/undraw_responsive.svg" class="step__image" />
+          </div>-->
+          <h4 class="step-heading"><span class="step-sub-title"> 2 </span>View Crucial Knowledge<span style="color:#3ca876;">&nbsp;&nbsp;Free</span></h4>
+          <p class="step__text process-desc">
+            View legal info very relevant to your situation to see how to get a general idea of the divorce process ahead<br />
+            &#10004;&nbsp;Divorce process in your situation<br />
+            &#10004;&nbsp;Child support calculations<br />
+            &#10004;&nbsp;Articles on current Family Law in Washington state<br />
+            &#10004;&nbsp;Brief Video clips from lawyers<br />
+            <!-- &#10004;&nbsp;Child support calculator<br />
+              &#10004;&nbsp;Assets and debts division calculator<br /> -->
+          </p>
+        </div>
+      </div>
+
+      <div class="steps__inner">
+        <div class="step">
+          <!--<div class="step__media">
+            <img src="../../../assets/evie/images/undraw_creation.svg" class="step__image" />
+          </div> -->
+          <h4 class="step-heading"><span class="step-sub-title"> 3 </span>Download Complete Application<span style="color:#3ca876;">&nbsp;&nbsp;Free</span></h4>
+          <p class="step__text process-desc">
+            Complete questionnaires to download your application <br/>
+            &#10004;&nbsp;Accurate forms for your county in Washington state <br />
+            &#10004;&nbsp;Download documents as WORD or PDF File<br />
+            
+          </p>
+        </div>
+
+      <div class="step">
+          <!-- <div class="step__media">
+           <img src="../../../assets/evie/images/undraw_creation.svg" class="step__image" />
+          </div> -->
+          <h4 class="step-heading"><span class="step-sub-title"> 4 </span>Hire lawyer<span style="color:#3ca876;">&nbsp;&nbsp;$250-$900</span></h4>
+          <p class="step__text process-desc">
+            JDivorce streamlines hiring a lawyer<br />
+            &#10004;&nbsp;Make appointments now<br />
+            &#10004;&nbsp;Transparent and competitive pricing<br />
+            &#10004;&nbsp;Meet in person, or on the phone<br />
+            &#10004;&nbsp;Lawyer will be ready to discuss the key issues based on your JDivorce application<br />
+          </p>
+        </div> <!-- end step -->
+      </div> <!-- end steps__inner -->
+    </div>  <!-- end continer-->
+   
+
+
+  </div>
+
+  <!-- End Steps -->
+
+
+  <div class="steps landing__section">
+    <div class="container">
+      <h2 class="heading">Advisory Board</h2>
+      <p>JDivorce is advised by industry lawyers & professors who are passionate about bringing access to justice for everybody</p>
+    </div>
+    <div class="container advisory">
+      <div class="steps__inner">
+        <div class="step">
+          <div class="step__media">
+            <img src="../../../assets/evie/images/dan_round.png" class="step__image" />
+          </div>
+          <h4>Dan Lear</h4>
+          <p class="step__text text-center">
+            Lawyer, and CEO at Right Brain Law, former Director of Industry Relations for Avvo
+          </p>
+        </div>
+        <div class="step">
+          <div class="step__media">
+            <img src="../../../assets/evie/images/deirdre_round.png" class="step__image" />
+          </div>
+          <h4>Deirdre Bowen</h4>
+          <p class="step__text text-center">
+            Lawyer and Associate Professor, Seattle University School of Law, Director & Founder of the Madrid Study Abroad Program in Law & Policy
+          </p>
+        </div>
+        <div class="step">
+          <div class="step__media">
+            <img src="../../../assets/evie/images/aurora_round.png" class="step__image" />
+          </div>
+          <h4>Aurora Martin</h4>
+          <p class="step__text text-center">
+            Lawyer, Instructor at UW School of Law, former Executive Director at Columbia Legal Services, Founder of
+            <a href="https://popupjustice.org">popUPjustice</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- row 2 -->
+      <div class="steps__inner">
+        <div class="step">
+          <div class="step__media">
+            <img src="../../../assets/evie/images/jody_round.png" class="step__image" />
+          </div>
+          <h4>Jody Cloutier</h4>
+          <p class="step__text text-center">
+            Managing Attorney at Family Law Solutions, PLLC, member of the Washington State Bar Association Court Rules Committee
+          </p>
+        </div>
+        <div class="step">
+          <div class="step__media">
+            <img src="../../../assets/evie/images/jennifer_round.png" class="step__image" />
+          </div>
+          <h4>Jennifer Ortega</h4>
+          <p class="step__text text-center">
+            Co-founder and partner at Legal Technician Division, PLLC
+          </p>
+        </div>
+      </div>
+      <!-- End row 2 -->
+    </div>
+  </div>
+
+  <!-- Clients -->
+  <!-- Steps -->
+  <div class="steps landing__section client-testimonials">
+    <div class="container">
+      <h2 class="heading">Our Users</h2>
+      <p>We are seeing great response owing to our unique offering</p>
+    </div>
+    <div class="container">
+      <div class="steps__inner">
+        <div class="step">
+          <h2 style="font-size: 500%">200</h2>
+          <p class="step__text">Unique Visitors Daily</p>
+        </div>
+        <div class="step">
+          <h2 style="font-size: 500%">20</h2>
+          <p class="step__text">Fresh Applications Daily</p>
+        </div>
+        <div class="step">
+          <h2 style="font-size: 500%">4.5</h2>
+          <p class="step__text">Average rating out of 5</p>
+        </div>
+      </div>
+
+      <!-- row 2 -->
+      <div class="steps__inner">
+        <div class="step">
+          <div class="step__media">
+            <img src="../../../assets/evie/images/manbust.png" class="step__image" />
+          </div>
+          <h4>Bremerton, Mark C, Aug 2018</h4>
+          <p class="step__text">
+            &#11088;&#11088;&#11088;&#11088;&#11088;<br />
+            <i
+              >"JDivorce accurately creates the divorce application. I filed at Spokane County and everything went fine. I could download the application and
+              easily make changes later"</i
+            >
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step__media">
+            <img src="../../../assets/evie/images/womanBlueProfile.jpg" class="step__image" />
+          </div>
+          <h4>Seattle, WA: Jennifer H, Sept 2018</h4>
+          <p class="step__text">
+            &#11088;&#11088;&#11088;&#11088;&#11088;<br /><i
+              >"We were able to get very helpful insights"
+            </i>
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step__media">
+            <img src="../../../assets/evie/images/womanBlueProfile.jpg" class="step__image" />
+          </div>
+          <h4>Burien, WA: Michelle A Sept 2018</h4>
+          <p class="step__text">
+            &#11088;&#11088;&#11088;&#11088;<br /><i>"JDivorce really helped me get the law. I was a lot more informed as I took my time to really read the information presented. I Googled alongside as well. JDivorce works excellently. "</i>
+          </p>
+        </div>
+      </div>
+
+      <!-- row 2 -->
+      <div class="steps__inner">
+        <div class="step">
+          <div class="step__media">
+            <img src="../../../assets/evie/images/womanBlueProfile.jpg" class="step__image" />
+          </div>
+          <h4>Spokane, Sherryl A, July 2018</h4>
+          <p class="step__text">
+            &#11088;&#11088;&#11088;&#11088;<br /><i
+              >"It made the legal paperwork simpler during a very difficult period in my life."</i>
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step__media">
+            <img src="../../../assets/evie/images/manbust.png" class="step__image" />
+          </div>
+          <h4>Everett, WA: Tyrone H, June 2018</h4>
+          <p class="step__text">
+            &#11088;&#11088;&#11088;&#11088;&#11088;<br /><i
+              >"Made it very easy to work with a lawyer. We also prepared for our mediation with step by step how-tos from the website. JDivorce info is highly reliable"</i
+            >
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step__media">
+            <img src="../../../assets/evie/images/manbust.png" class="step__image" />
+          </div>
+          <h4>Tacoma, WA: Harris H June 2018</h4>
+          <p class="step__text">
+            &#11088;&#11088;&#11088;&#11088;<br /><i
+              >"I really liked the video clips from different lawyers"
+            </i>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

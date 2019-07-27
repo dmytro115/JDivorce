@@ -1,0 +1,137 @@
+<section class="banner" id="banner">
+  <section class="module aboutus aboutjdivorce-mission m-t-5p">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <h2>Mission</h2>
+          <p>JDivorce's mission is increase access to the justice system using artificial intelligence. Our first
+            accomplishment (2017) is to simplify the divorce process for Washington state both for clients and lawyers.</p>
+          <p>JDivorce is based in Seattle, and was launched by Microsoft and Amazon alumni."</p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+            <img src="assets/images/networking.png" class="networking">
+        </div>
+        <div class="col-lg-12 col-md-12 row benefit-client">
+          <div class="col-lg-6 col-md-6 col-sm-12 Benefits-girl-img ">
+            <img src="assets/images/img-girl.png" class="benfit-client">
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <h2>Benefits for users</h2>
+            <p>JDivorce helps folks seeking a divorce by:</p>
+            <p><span>Simplifying: </span>Providing a free do-it-yourself (DIY) website for divorce papers</p>
+             <p><span>Transparency: </span>Offering flat rate packages so folks know what they will get and what total price</p>
+            <p><span>Convenience: </span>Cutting the difficulty in working with attorneys </p>
+            <p><span>Cost-cutting:</span>Offering low prices for hiring quality lawyers (which we do by cutting overheads for lawyers)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--  Benefits for clients (End) -->
+  <section class="module aboutus benefits-lawyers m-t-5p">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 text-center">
+          <h2>Benefits for Professionals</h2>
+          <img src="assets/images/growth.png" class="m-t-5p growth-img">
+        </div>
+        <div class="col-lg-12 col-md-12  m-t-5p">
+          <p class="benefits-for-lawyers text-center">JDivorce cuts expenses for professionals like lawyers, LLLTs, mediators by providing:</p>
+        </div>
+        <div class="clear"></div>
+        <div class="col-lg-6 col-md-6 col-sm-12 list-style list-left">
+          <ul class="list">
+            <li><strong>Website:</strong> JDivorce allows legal professionals to setup their website for free on
+              premium .com domains.</li>
+            <li><strong>Marketing:</strong> JDivorce is better than a regular "leadgen" because it brings in paying clients. JDivorce brings in real paying clients not by ads but by providing genuinely helpful free online tools such as the divorce document assembly. In
+              addition we do digital marketing on Google Search and Facebook using advanced algorithms to reach the
+              most relevant audience. These are folks who are in more advanced stages of their overall process to hire a professional. You will receive leads for clients in your city.</li>
+          </ul>
+        </div>
+        <div class="col-lg-6 col-md-6  col-sm-12 list-style list-right">
+          <ul class="list">
+            <li><strong>Making Onboarding Easier</strong> JDivorce provides initial process and related legal information. So by
+              the time the client reaches you the client has already seen the basic info. </li>
+            <li><strong>Getting Client Information:</strong>&nbsp; When the clients first reaches you, you will also receive
+              their completed online questionnaires that cover all the question on the divorce application. So you can
+              quickly receive all the relevant info.</li>
+            <li><strong>Payments</strong>:&nbsp; When a client hires you, all the payment is paid upfront.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- our team  -->
+  <section class="module aboutus">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg-12 text-center">
+          <h2>Our Team</h2>
+        </div>
+        <div class="offset-lg-2 col-lg-4 col-md-6 col-sm-12 m-t-5p text-center">
+          <div class="teaminfo">
+            <div class="member">
+              <img src="assets/images/mir.jpg" alt="team-member">
+            </div>
+            <h4>Mir Tariq</h4>
+            <h5>CEO, Co-founder</h5>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 m-t-5p text-center">
+          <div class="teaminfo">
+            <div class="member">
+              <img src="assets/images/raymond.jpg" alt="team-member">
+            </div>
+            <h4>Raymond Huang</h4>
+            <h5>CTO, Co-founder</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- our team-info  -->
+
+  <!-- Start Board of Advisors -->
+  <section class="module aboutus advisory-board">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg-12 text-center">
+          <h2>Board of Advisors</h2>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6  m-t-5p team-informations" *ngFor="let advisor of BoardOfAdvisors">
+          <div class="information">
+            <div class="members"><img [src]="advisor.image" alt="team-member"></div>
+            <h4>{{advisor.name}}</h4>
+          </div>
+          <div class="info-des">
+            <a (click)="toggleBio(advisor.id)">{{showBio[advisor.id] ? 'Hide' : 'Show'}} bio</a>
+            <div class="member-description" *ngIf="showBio[advisor.id]">
+              <p> ❝ {{advisor.bio}}❞</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Board of Advisors -->
+
+  <section class="m-t-40">
+    <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=2500%20Western%20Ave%2C%20Suite%20722%2C%20Seattle%20WA%2098121&key=AIzaSyDevTVznWJqBKvV4XQXvZMcsdlUCmftQWk"
+      allowfullscreen></iframe>
+  </section>
+  <section class="module aboutus newsletter ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg-12 text-center">
+          <h2>
+            Begin now
+          </h2>
+          <p>Get setup and begin receiving cases to begin your practice.
+          </p>
+          <button class="btn sign-up">SIGN UP
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>

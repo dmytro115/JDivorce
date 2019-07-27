@@ -1,0 +1,22 @@
+<div class="row page-titles d-flex justify-content-between">
+  <div class="align-self-center">
+    <h3 class="text-themecolor mytooltip">
+      {{ pageTitle }}
+      <span class="tooltip-content5">
+        <span class="tooltip-text3">
+          <span class="tooltip-inner2">
+            <span>You can change the plan selection when you are selecting the lawyer.</span>
+          </span>
+        </span>
+      </span>
+    </h3>
+  </div>
+  <div class="align-self-center">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" [ngClass]="{ active: i == breadCrumbs.length - 1 }" *ngFor="let breadCrumb of breadCrumbs; let i = index">
+        <a routerLink="{{ breadCrumb?.url }}" *ngIf="i !== breadCrumbs.length - 1">{{ breadCrumb?.title }}</a>
+        <span *ngIf="i == breadCrumbs.length - 1">{{ breadCrumb?.title | translate: breadCrumb.params }}</span>
+      </li>
+    </ol>
+  </div>
+</div>

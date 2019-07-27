@@ -1,0 +1,23 @@
+<section>
+  <mat-card [ngClass]="{ 'top-accent-primary' : true }">
+    <mat-card-header>
+      <div mat-card-avatar [style.background-image]="'url(assets/images/icons/lawyers.svg)'"></div>
+      <mat-card-title translate="PROFILE.PROFESSION"></mat-card-title>
+      <mat-card-subtitle>What did you get your degree in?</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-divider></mat-divider>
+      <form [formGroup]="professionForm" fxLayout="column" fxLayoutGap="15px" class="p-t-10">
+        <div fxLayout="column" fxLayoutGap="15px">
+          <label id="profession-group-label">These are all the type of professionals that we support.</label>
+          <mat-radio-group aria-labelledby="profession-group-label" formControlName="profession">
+            <mat-radio-button *ngFor="let profession of professions" [value]="profession.value" [checked]="selectedValue === profession.value" fxLayout (change)="onRadioChange($event)">
+              {{profession.label}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>
+

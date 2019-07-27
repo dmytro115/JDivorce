@@ -1,0 +1,70 @@
+.jd-questionnaire{
+  &__address{
+    margin-top:15px;
+    transition: all 0.4s ease-in-out;
+    width: 100%;
+    border:0;
+    border-bottom: 1px solid #cccccc;
+    outline: none;
+    font-size: 1.8em;
+    font-weight: 100;
+    @media (max-width:768px){
+      font-size: 1em;
+    }
+    &-suggestions {
+      position: absolute;
+      width: 100%;
+      margin-top: 5px;
+      z-index: 1;
+      background-color: white;
+
+      &-item {
+        position: relative;
+        min-height: 40px;
+        color: #4fb0ae;
+        background-color: #edf7f7;
+        box-shadow: rgba(79, 176, 174, 0.6) 0px 0px 0px 1px inset;
+        cursor: pointer;
+        opacity: 1;
+        height: auto;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        padding: 4px 12px;
+        margin-bottom: 4px;
+
+        &.active {
+          background-color: #cae7e7;
+        }
+
+        &:hover {
+         background-color: #cae7e7; 
+        }
+      }
+    }
+    &-error{
+      padding: 5px 8px;
+      border-radius: 2px;
+      background-color: #990000;
+      margin-top: 20px;
+      color:#fff;
+      display: inline-block;
+      position: relative;
+      font-size: 14px;
+      &:before{
+        content:'';
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid #990000;
+        position: absolute;
+        top: -5px;
+        left: 10px;
+      }
+    }
+    &:focus{
+      border-color: transparent;
+    }
+  }
+}

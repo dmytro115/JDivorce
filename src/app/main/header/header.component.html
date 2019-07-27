@@ -1,0 +1,120 @@
+<mat-toolbar color="primary" class="px-0 toolbar-container">
+  <header class="topbar d-none d-md-block">
+    <nav class="navbar top-navbar navbar-expand-md navbar-light px-0">
+      <div class="navbar-header">
+        <a class="p-l-10 p-r-10 navbar-brand" href="/">
+          <!-- Logo icon -->
+          <b>
+            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+            <!-- Dark Logo icon -->
+            <img src="assets/logo.png" alt="homepage" class="dark-logo logo-short" />
+            <!-- Light Logo icon -->
+            <!-- <img src="assets/logo-white.png?v=1" alt="homepage" class="light-logo logo-short" /> -->
+          </b>
+          <!--End Logo icon -->
+          <!-- Logo text -->
+          <span>
+            <!-- dark Logo text -->
+            <img src="assets/logo-just-text.png" alt="homepage" class="dark-logo logo-long" />
+            <!-- Light Logo text -->
+            <img src="assets/logo-just-text-white.png" class="light-logo logo-long" alt="homepage" />
+          </span>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <button mat-icon-button (click)="handleFixToggler()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <div fxFlex fxLayout fxLayoutAlign="flex-end">
+    <button mat-button (click)="triggerSignup()" *ngIf="!(currentUser$ | async)?.user?.email">
+      <ng-container>
+        <i class="fa fa-user-plus"></i> <span class="register-span">Register</span>
+        <div class="notify"><span class="heartbit"></span> <span class="point"></span></div>
+      </ng-container>
+    </button>
+
+    <button class="px-0 icon-button-min-width" mat-button [matMenuTriggerFor]="beforeUserMenu">
+      <ng-container *ngIf="(currentUser$ | async)?.user?.email; else guestNavTemplate">
+        <mat-icon>person_pin</mat-icon>
+        <!--<span>{{ (currentUser$ | async)?.user.email }}</span>-->
+      </ng-container>
+      <ng-template #guestNavTemplate>
+        <mat-icon>person_pin</mat-icon>
+      </ng-template>
+    </button>
+    <mat-menu #beforeUserMenu="matMenu" xPosition="before">
+      <button mat-menu-item>
+        <ng-container *ngIf="(currentUser$ | async)?.user?.email; else guestTemplate">
+          <p>{{ (currentUser$ | async)?.user.email }}</p>
+        </ng-container>
+        <ng-template #guestTemplate>
+          <h4>Guest</h4>
+        </ng-template>
+      </button>
+      <button mat-menu-item (click)="goToOrdersPage()">
+        <mat-icon>attach_money</mat-icon>
+        <span>Orders</span>
+      </button>
+      <button mat-menu-item (click)="logout()" data-method="delete" rel="nofollow" style="cursor:pointer">
+        <mat-icon>power_settings_new</mat-icon>
+        Logout
+      </button>
+    </mat-menu>
+
+    <button mat-button class="px-0 icon-button-min-width" [matMenuTriggerFor]="beforeFlagMenu">
+      <i class="flag-icon flag-icon-{{ flagName }}"></i>
+    </button>
+
+    <mat-menu #beforeFlagMenu="matMenu" xPosition="before" #menu1="matMenu">
+      <app-translation></app-translation>
+    </mat-menu>
+
+    <button mat-button class="px-0 icon-button-min-width" [matMenuTriggerFor]="beforeNotificationMenu">
+      <mat-icon>
+        notification_important
+      </mat-icon>
+      <div class="notify" *ngIf="hasUnreadNotifications">
+        <span class="heartbit"></span>
+        <span class="point"></span>
+      </div>
+    </button>
+    <mat-menu #beforeNotificationMenu="matMenu" [matMenuTriggerFor]="beforeNotificationMenu" xPosition="before"
+      (mouseenter)="openMyMenu()">
+      <div class="dropdown-header text-dark py-3">
+        Notifications
+      </div>
+      <mat-divider></mat-divider>
+      <app-notification [notifications]="notifications" (notificationChangeEvent)="loadNotifications()">
+      </app-notification>
+    </mat-menu>
+
+    <button mat-button class="px-0 mr-3 icon-button-min-width" [matMenuTriggerFor]="beforeContactMenu">
+      <mat-icon>
+        contact_support
+      </mat-icon>
+    </button>
+    <mat-menu #beforeContactMenu="matMenu" xPosition="before">
+      <button mat-menu-item routerLink="/faqs">
+        <mat-icon>help_outline</mat-icon>
+        FAQ
+      </button>
+      <button mat-menu-item routerLink="/contact">
+        <mat-icon>mail_outline</mat-icon>Contact
+      </button>
+    </mat-menu>
+
+    <a mat-raised-button color="warn" class="mr-3 icon-button-min-width" href="https://www.google.com">
+      <span fxHide.lt-sm>SAFETY EXIT</span>
+      <span fxHide fxShow.lt-sm>EXIT</span>
+      <mat-icon>
+        close
+      </mat-icon>
+    </a>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- Profile -->
+  <!-- ============================================================== -->
+</mat-toolbar>

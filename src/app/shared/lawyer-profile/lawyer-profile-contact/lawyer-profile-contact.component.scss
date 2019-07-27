@@ -1,0 +1,23 @@
+:host(.profileBg) {
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  position: relative;
+  background-image: url(../../../../assets/neuethemes/samuel/assets/custom/2.2.0/images/backgrounds/old_moon.png);
+}
+
+#page-title {
+  h4 {
+    margin: 10px 0;
+  }
+}
+
+.feedback {
+  .row {
+    justify-content: center;
+  }
+}
+
+.validation-error {
+  color: red;
+  margin-bottom: 15px;
+}

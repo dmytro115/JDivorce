@@ -1,0 +1,89 @@
+<div class="mini-diagnostic" [class.landing-style]="landingPage">
+  <div class="mini-diagnostic-head" *ngIf="showQuestionsTab">
+    <button (click)="changeTab(1)" class="tab-btn" [ngClass]="{ active: activeTab == 1 }">Diagnostic</button>
+    <button *ngIf="showQuestionsTab" (click)="changeTab(2)" class="tab-btn" [ngClass]="{ active: activeTab == 2 }">Quick Question</button>
+  </div>
+  <div class="mini-diagnostic-content">
+    <div *ngIf="activeTab == 1">
+      <h4 [style.text-align]="'left'" *ngIf="showQuestionsTab">
+        Diagnostics to figure out the ideal plan for your situation.
+        <a *ngIf="false" class="mytooltip" href="javascript:void(0)">
+          <span class="fa fa-question-circle-o"></span>
+          <span class="tooltip-content5">
+            <span class="tooltip-text3">
+              <span class="tooltip-inner2">
+                <div>
+                  <span>The divorce process depends on:</span>
+                  <ul>
+                    <li>Your situation</li>
+                    <li>Your county</li>
+                  </ul>
+                  <span>JDivorce relies on the most recent:</span>
+                  <ul>
+                    <li>Court handbooks from your county</li>
+                    <li>WA laws</li>
+                    <li>WA court rules</li>
+                  </ul>
+                </div>
+              </span>
+            </span>
+          </span>
+        </a>
+      </h4>
+      <form [formGroup]="diagnosticForm" (ngSubmit)="onDiagnosticsDataSubmit()" class="form-material">
+        <div [style.text-align]="'left'" class="form-group" [ngClass]="{ 'has-danger': isFormError(diagnosticForm, 'zip') }">
+          <input required type="number" placeholder="Zip" maxlength="5" formControlName="zip" class="form-control form-control-line" />
+          <div *ngIf="isFormError(diagnosticForm, 'zip')" class="form-control-feedback">Your zip is required.</div>
+        </div>
+        <div [style.text-align]="'left'" class="form-group">
+          <input type="checkbox" formControlName="isChildren" class="form-control" id="is-children" />
+          <label for="is-children">We have children under 18</label>
+        </div>
+        <div [style.text-align]="'left'" class="form-group">
+          <input type="checkbox" formControlName="isAgreeOnSplit" class="form-control" id="is-agree-on-split" />
+          <label for="is-agree-on-split">We agree on how to split what we own</label>
+        </div>
+        <div [style.text-align]="'left'" class="form-group">
+          <input type="checkbox" formControlName="isAgreeOnCustody" class="form-control" id="is-agree-on-custody" />
+          <label for="is-agree-on-custody">We agree on child custody</label>
+        </div>
+        <button [style.margin-top]="'20px'" type="submit" mat-raised-button [disabled]="!diagnosticForm.valid" class="btn-style">Submit</button>
+      </form>
+    </div>
+    <div *ngIf="activeTab == 2">
+      <p>
+        Ask a quick question for a lawyer.
+        <a class="mytooltip" href="javascript:void(0)">
+          <span class="fa fa-question-circle-o"></span>
+          <span class="tooltip-content5">
+            <span class="tooltip-text3">
+              <span class="tooltip-inner2">
+                <div>
+                  <span>We will forward your questions to a couple of lawyers and you will receive their response in your email!</span>
+                </div>
+              </span>
+            </span>
+          </span>
+        </a>
+      </p>
+      <form [formGroup]="questionsForm" (ngSubmit)="onQuestionsDataSubmit()" class="form-material">
+        <div class="form-group" [ngClass]="{ 'has-danger': isFormError(questionsForm, 'email') }">
+          <input required type="email" placeholder="Email" formControlName="email" class="form-control form-control-line" />
+          <div *ngIf="isFormError(questionsForm, 'email')" class="form-control-feedback">Your email is required.</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-danger': isFormError(questionsForm, 'name') }">
+          <input type="input" placeholder="Name" formControlName="name" class="form-control form-control-line" />
+          <div *ngIf="isFormError(questionsForm, 'name')" class="form-control-feedback">Your name is required.</div>
+        </div>
+        <div class="form-group">
+          <input type="input" placeholder="Phone number" formControlName="phone" class="form-control form-control-line" />
+        </div>
+        <div class="form-group" formControlName="content">
+          <label>Question</label>
+          <textarea class="form-control" rows="4"></textarea>
+        </div>
+        <button type="submit" mat-raised-button [disabled]="!questionsForm.valid" class="btn-style">Ask</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+export enum AuthDialogActions {
+  TRIGGER_SIGN_IN         = 'TRIGGER_SIGN_IN',
+  TRIGGER_SIGN_UP         = 'TRIGGER_SIGN_UP',
+  TRIGGER_FORGET_PASSWORD = 'TRIGGER_FORGET_PASSWORD'
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1203px" height="463px" viewBox="0 0 1203 463" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Path 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="55.9631176%" cy="83.6258694%" fx="55.9631176%" fy="83.6258694%" r="83.8815829%" gradientTransform="translate(0.559631,0.836259),scale(0.335417,1.000000),rotate(-76.866216),scale(1.000000,1.771276),translate(-0.559631,-0.836259)" id="radialGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0.386435688" offset="0%"></stop>
+            <stop stop-color="#8E99C7" stop-opacity="0.439877717" offset="17.5043846%"></stop>
+            <stop stop-color="#000000" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.478600543">
+        <g id="Luna---7" transform="translate(-84.000000, -3366.000000)" fill="url(#radialGradient-1)">
+            <path d="M1440,3445.89323 C1161.88494,3612.65556 880.145001,3717.35039 594.780198,3759.97771 C309.415394,3802.60504 111.155328,3832.35473 0,3849.22678 L0,3366.22678 L1440,3366.22678 L1440,3445.89323 Z" id="Path-4"></path>
+        </g>
+    </g>
+</svg>

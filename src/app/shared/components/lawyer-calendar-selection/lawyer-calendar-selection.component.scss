@@ -1,0 +1,13 @@
+:host ::ng-deep .slick-prev, :host ::ng-deep .slick-next {
+  &:before {
+    color: var(--primary);
+  }
+}
+
+.navigate {
+  cursor: pointer;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  opacity: 0.4;
+}

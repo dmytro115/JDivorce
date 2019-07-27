@@ -1,0 +1,14 @@
+<div class="row my-5">
+  <div class="col-12 d-flex align-items-center">
+    <input
+      type="number"
+      (input)="answerChange.emit($event.target.value)"
+      class="jd-questionnaire__input mt-0 mr-2"
+      [placeholder]="placeholder"
+      [value]="handleUndefined(value)"
+      [ngClass]="style"
+    />
+    <strong>LBS</strong>
+    <p class="jd-questionnaire__input-error" *ngIf="hasError">{{ error }}</p>
+  </div>
+</div>

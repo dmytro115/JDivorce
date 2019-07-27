@@ -1,0 +1,31 @@
+<button
+  mat-flat-button
+  color="primary"
+  (click)="generateDocuments()"
+  [disabled]="inProgress"
+  [@tada]="genBtnAnimate">Generate Documents</button>
+
+<table mat-table [@tableTransition] [dataSource]="documents" class="mat-elevation-z8 m-t-20 bg-light" [style.width]="'100%'">
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> <span class="mat-h3">Form</span> </th>
+    <td mat-cell *matCellDef="let doc"> {{doc.title}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="download">
+    <th mat-header-cell *matHeaderCellDef> <span class="mat-h3">Download</span> </th>
+    <td mat-cell *matCellDef="let doc">
+      <a
+        href="{{doc.url.replace('/edit?usp=drivesdk', '/export?format=pdf')}}"
+        target="_blank"><i class="fa fa-file-pdf-o text-danger"></i></a> |
+      <a
+        href="{{doc.url.replace('/edit?usp=drivesdk', '/export?format=doc')}}"
+        target="_blank"><i class="fa fa-file-word-o text-info"></i></a> |
+      <a
+        href="{{doc.url}}"
+        target="_blank">View</a>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="headerColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: headerColumns;"></tr>
+</table>

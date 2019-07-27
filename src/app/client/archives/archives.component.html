@@ -1,0 +1,33 @@
+<div class="similar-cases" *ngIf="similarCases.length">
+  <div class="row">
+    <div class="col-lg-3 col-xlg-2 col-md-12">
+      <div class="stickyside">
+        <div class="list-group" id="top-menu">
+          <a
+            href="javascript:;"
+            *ngFor="let case of similarCases; first as isFirst; let index = index"
+            [attr.data-section]="index"
+            class="list-group-item"
+            [ngClass]="{ active: isFirst }"
+            (click)="switchCaseView($event)"
+            >{{ case.case_number }}</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 col-xlg-10 col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div
+            id="index-{{ index }}"
+            class="case-details-section"
+            *ngFor="let case of similarCases; first as isFirst; let index = index"
+            [ngClass]="{ hide: !isFirst }"
+          >
+            <app-case-view [caseInfo]="case"></app-case-view>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

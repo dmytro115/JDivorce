@@ -1,0 +1,48 @@
+<div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="16px" class="p-4">
+  <mat-card fxFlex="50%" fxFlex.lt-md="100%">
+    <mat-card-header>
+      <div mat-card-avatar [style.background-image]="'url(assets/images/icons/form.svg)'"></div>
+      <mat-card-title>Questionnaires</mat-card-title>
+      <mat-card-subtitle>All the client's questionnaires are listed here.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list [@listStaggerAnimation]="questionnaires.length" role="list" class="justify-space-between">
+        <mat-list-item *ngFor="let questionnaire of questionnaires">
+          <span class="ellipsis mr-4">
+            <p class="mat-body-strong ellipsis align-left m-0 p-0">{{ questionnaire.title }}</p>
+            <p class="mat-small text-primary-melt m-0 p-0">{{ formStatusText(questionnaire) }}</p>
+          </span>
+          <button mat-flat-button color="primary" (click)="goToQuestionnaire(questionnaire)" class="soft align-right">
+            Edit
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+  <mat-card fxFlex="50%" fxFlex.lt-md="100%">
+    <mat-card-header>
+      <div mat-card-avatar [style.background-image]="'url(assets/images/icons/business-doc.svg)'"></div>
+      <mat-card-title>Court Documents</mat-card-title>
+      <mat-card-subtitle>All the client's generated court documents are listed here.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list [@listStaggerAnimation]="documents.length" role="list" class="justify-space-between">
+        <mat-list-item *ngFor="let document of documents">
+          <span class="ellipsis mr-4">
+            <p class="mat-body-strong ellipsis align-left m-0 p-0">{{ document.title }}</p>
+            <p class="mat-small text-primary-melt m-0 p-0">{{ document.form }}</p>
+          </span>
+          <span>
+            <a href="javascript:void(0)" (click)="retrieveDocument(document.id, 'pdf')" title="PDF" target="_blank"
+              ><i class="fa fa-file-pdf-o text-danger"></i></a
+            >&nbsp;
+            <a href="javascript:void(0)" (click)="retrieveDocument(document.id, 'docx')" title="Word" targe="_blank"
+              ><i class="fa fa-file-word-o text-info"></i
+            ></a>
+          </span>
+        </mat-list-item>
+      </mat-list>
+      <h3 *ngIf="!documents.length">This client hasn't generated any court documents yet.</h3>
+    </mat-card-content>
+  </mat-card>
+</div>

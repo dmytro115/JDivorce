@@ -1,0 +1,12 @@
+<textarea
+  cdkTextareaAutosize
+  #autosize="cdkTextareaAutosize"
+  cdkAutosizeMinRows="2"
+  (input)="onAnswer.emit($event.target.value)"
+  class="jd-questionnaire__longtext mt-0"
+  [placeholder]="placeholder"
+  [value]="handleUndefined(value)"
+>
+</textarea>
+<p><strong>ENTER</strong> to make a line break</p>
+<p class="jd-questionnaire__longtext-error" *ngIf="hasError">{{ error }}</p>

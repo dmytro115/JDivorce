@@ -1,0 +1,704 @@
+{
+  "QUESTIONNAIRES": {
+    "NAMES": {
+      "PRECHECK": "Diagnostics",
+      "DOMESTIC_VIOLENCE_DIAGNOSTICS": "Diagnostics",
+      "PROTECTION_ORDER": "Protection Order",
+      "ABOUT_YOU": "About You",
+      "ABOUT_THE_RESPONDENT": "About The Respondent",
+      "CHILDREN": "About The Children",
+      "ABOUT_THE_PETS": "About The Pets",
+      "TEMPORARY_ORDER": "Temporary Order"
+    }
+  },
+  "authentication": {
+    "signup": {
+      "title": "SIGN UP TO GET INSTANT ACCESS",
+      "lawyer_or_legal_service_provider": "Are you a lawyer or a legal service provider?",
+      "first_name": "First Name",
+      "first_name_is_required": "First name is required.",
+      "last_name": "Last Name",
+      "last_name_is_required": "Last name is required.",
+      "email": "Email",
+      "email_is_required": "Email is required.",
+      "password": "Password",
+      "password_is_required": "Password is required.",
+      "confirm_password": "Confirm Password",
+      "lawyer_or_legal_service_provider": "Are you a lawyer or a legal service provider?",
+      "i_agree_to_all": "I agree to all ",
+      "sign_in": "Sign In",
+      "already_have_account": "Already have an account?",
+      "terms": "Terms",
+      "sign_up_btn": "Sign Up",
+      "cnfrm_pwd_is_required": "Confirming the password is required.",
+      "email_is_invalid": "Email is invalid.",
+      "password_not_match": "Passwords don't match."
+    }
+  },
+  "MENU": {
+    "DASHBOARD": "Dashboard",
+    "TAXES": "Import Tax Data",
+    "TIMELINE": "Divorce Process",
+    "SHARE_MY_APPLICATION": "Share My Application",
+    "HIRE_ATTORNEY": "Hire Attorney",
+    "SUPPORTING_DOCS": "My Files",
+    "ENGLISH": "English",
+    "SPANISH": "Spanish",
+    "CONVERSATIONS": "Conversations",
+    "PROFILE": "Profile"
+  },
+  "TABS": {
+    "DIAGNOSTICS": "Diagnostics",
+    "IMPORT_TAX": "Import Data",
+    "PROCESS": "Process",
+    "FILING_SURVEY": "Case Info",
+    "ANALYSIS": "Analysis",
+    "FILING_DOCUMENTS": "Download Filing Documents",
+    "FINALIZATION_SURVEYS": "Finalization Surveys",
+    "FINALIZATION_DOCUMENTS": "Download Finalization Documents",
+    "DOCUMENTS": "Documents"
+  },
+  "DASHBOARD": {
+    "INDEX": {
+      "TITLE": "Title",
+      "STATUS": "Status",
+      "ACTION": "Action",
+      "TITLE_HEADER": "Dashboard",
+      "INFORMATION": " Information",
+      "PRECHECK_INFORMATION_CONTENT_1": "Step 1: Complete 'Diagnostics'. It's anonymous. It provides basic info about your case to our software and any lawyers you decided to share your info with",
+      "PRECHECK_INFORMATION_CONTENT_2": "Answer these questions to see your divorce process. Then you can proceed to complete your application.",
+      "TIME_LINE_INFORMATION_CONTENT": "Here's the divorce process. This is generated using the information you provided in the \"Precheck\" questionnaire. Updated laws and court rules have been applied. [01/01/17 - 07/30/18]",
+      "questionnaires_information_content_1": "Answer the questionnaires in the sequence they are listed.",
+      "questionnaires_information_content_2": "After you complete all questionnaires, the button labeled ",
+      "questionnaires_information_content_3": " Generate Divorce Documents! ",
+      "questionnaires_information_content_4": " will turn ",
+      "questionnaires_information_content_5": "green",
+      "questionnaires_information_content_6": " and will be clickable."
+    },
+    "questionnaires": {
+      "title": "Questionnaires"
+    },
+    "steps": {
+      "step": "Step",
+      "owner": "Owner",
+      "duration": "Duration",
+      "cost": "Cost",
+      "instructions": "Instructions",
+      "forms": "Forms",
+      "no_form_required": "No forms required."
+    },
+    "questionnaires": {
+      "title": "Questionnaires",
+      "info": " Info",
+      "generating_documents": " Your documents are generating!",
+      "generating_documents_content": "You need to fill out this questionnaire after your spouse has responded to your petition."
+    },
+    "documents": {
+      "title": "Documents",
+      "download": "Download ",
+      "info": " Info",
+      "table_title": "Title",
+      "form": "Form",
+      "info_documents_generate": " Your documents are generating!",
+      "info_documents_place_question": "Where are my documents?",
+      "info_documents_content_1": " You will see your court documents in a couple of minutes!",
+      "info_documents_content_2": " Where are your documents?",
+      "info_documents_content_3": " Generate Divorce Documents! ",
+      "info_documents_content_4": "Remember, it will take a couple of minutes to process all the info you've given us, but we will email you and update this page automatically when we are done. You can also keep refreshing this page if you are feeling anxious.",
+      "tooltip": {
+        "tooltip_content_1": "Download the document by clicking on the icon below."
+      },
+      "file_pdf": {
+        "info_1": "Clicking on this icon will down the PDF version of the file. This is suitable if you do not plan to further edit the file on your computer. You will need the Adobe Acrobat Reader which can be downloaded for free from",
+        "info_2": "Clicking on this icon will download the Microsoft Word version of the file. You will need Microsoft Word to view or edit these files (version 2007 or later). This format is recommened if you already have Microsoft Word or if you plan to share your files with an attorney, as it provides the flexibility to edit the file directly.",
+        "here": "here",
+        "view": "View"
+      }
+    },
+    "second_documents": {
+      "title": "Spouse Response Documents"
+    },
+    "lawyer_dashboard": {
+      "clone_application": {
+        "title": "Clone Application",
+        "button": "Clone",
+        "modal_summary": "You can clone an application and start to update some questionnaires for a new client. When you're satisfied with the application, you will have the option to email and notify the client. We won't notify the client unless you tell us to",
+        "source_email": "Source Email"
+      },
+      "create_application": {
+        "button_text": "Create Application",
+        "title": "Create an Application for a Client",
+        "modal_summary": "You can create an application and start to fill out some questionnaires for a new client. When you're satisfied with the application, you will have the option to email and notify the client. We won't notify the client unless you tell us to.",
+        "client_first_name": "Client First Name",
+        "client_last_name": "Client Last Name",
+        "client_email": "Client Email"
+      },
+      "invite_client": "Invite Client",
+      "save_default": "Save Default Text",
+      "notify_invite_client": "Notify & Invite Client",
+      "your_client": "Your Clients",
+      "summary_note": "You can see a summary of all the clients you are working with here.",
+      "status": "Status",
+      "paid": "Paid",
+      "action": "Action",
+      "view_client": "View Client",
+      "client_email": "Client Email",
+      "client_name": "Client Name"
+    },
+    "pleadingPaper": {
+      "title": "Do you want to print on pleading paper?"
+    }
+  },
+  "personalinfo": {
+    "title": "Personal Info",
+    "profile": "Profile",
+    "name": "Name",
+    "address": "Address",
+    "phone": "Phone",
+    "cell": "Cell",
+    "email": "Email",
+    "street_number": "Street Number",
+    "street_name": "Street Name",
+    "suite": "Suite",
+    "city": "City",
+    "state": "State",
+    "select_state": "Select State",
+    "zip": "ZIP"
+  },
+  "CHECKOUT": {
+    "step_1": "Plans",
+    "step_2": "Lawyers",
+    "step_3": "Review",
+    "step_4": "Confirmation",
+    "next_step": "Next Step",
+    "choose_attorney": "Next step: Choose an attorney",
+    "title_header": "Hire An Attorney",
+    "plans": "Plans",
+    "select": "SELECT",
+    "attorney": "Attorney",
+    "select_lawyer": "Select Lawyer",
+    "not_accepting_clients": "Not accepting new clients",
+    "order_review": "Order Review",
+    "filter_title": "Filter lawyers by distance",
+    "zip": "Enter your zip or address",
+    "apply_filter_button": "Apply Filter",
+    "messages": {
+      "payment_exception_title": "Oops! Something went wrong, please try again!",
+      "payment_exception_text": "Don't worry, you haven't been charged yet.",
+      "paypal_title": "PayPal integration will be here soon!",
+      "payment_card_exception_title": "Oops! Your payment information seems to be incorrect."
+    },
+    "deluxe": {
+      "title": "Deluxe",
+      "info": "Information",
+      "text": "JDivorce Free Basic plan does not cover your situation involving real estate. You will be required to purchase the JDivorce Deluxe for $9.99 before you download your application"
+    },
+    "howJDWorks": {
+      "title": "How does JDivorce work?",
+      "text": "JDivorce offers flat-rate and extremely low priced attorney options by cutting having attorneys focus on the case alone.<br>In case you want to take advantage of this offer, the process is as follows:<br><br>1. You purchase a lawyer plan, and select a lawyer of your choice. You can pay now or pay directly to the lawyer.<br><br>2. (Optional) Free consultation with the lawyer for 20 minutes.<br><br>3. At this point you have two options.<br>Option 1) You don't want to proceed. You can cancel your purchase. In case you have already paid, you get a full refund.<br>Option 2) You proceed further by completing a series of questionnaires online.<br><br>4. After you complete the questionnaires, the lawyer will give highly specific legal advice to you."
+    },
+    "basic": {
+      "title": "Basic",
+      "free": "Free",
+      "service_1": "Prepare the complete divorce application",
+      "service_2": "Download in PDF or Microsoft Word",
+      "service_3": "Step by step guidance",
+      "service_4": "Error detection",
+      "service_5": "Share your application via email"
+    },
+    "recommended": {
+      "title": "Recommended Attorney Consultation",
+      "attorney_review": "Attorney Review",
+      "service_1": "Attorney reviews your application",
+      "service_2": "A highly qualified attorney will review your application within 3 days and provide feedback",
+      "service_3": "An attorney provides added precaution",
+      "service_4": "The attorney will be local, in case you ever need to meet in person",
+      "refund": "100% refundable",
+      "refund_description": "Cancel before the attorney begins and get a full refund",
+      "basic_include": "100% basics included"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "more": "MORE QUESTIONS & ANSWERS",
+      "q1": {
+        "title": "When is attorney/client relationship established?",
+        "content": "After the attorney contacts you and explicitly confirms that the relationship is established."
+      },
+      "q2": {
+        "title": "When will the attorney contact me?",
+        "content": "The attorney will conact you within 2 business days. The attorney will then cofirm that he/she is reviewing your application, and provide you with a delivery date of the written feedback. The review is done within 3 business days after the attorney contacts you."
+      },
+      "q3": {
+        "title": "How will the attorney contact me?",
+        "content": "The attorney will contact you via your registered e-mail address or your cell phone."
+      },
+      "q4": {
+        "title": "What will happen after the attorney contacts me?",
+        "content": "The attorney will review your application and then provide written feedback. If the attorney finds it necessary, a meeting in person or over the phone will be arranged. We try to minimize meetings to offer more competitive pricing from attorneys."
+      },
+      "q5": {
+        "title": "What if I change my mind about hiring an attorney?",
+        "content": "You have two options to change your plan: full refund, or hire another attorney via JDivorce. Just call our customer service. Please call for this change before the attorney begins working on your case. Lawywer will notify you via email when they are beginning to work on your case. In case the attorney has begun working on your case then we cannot change the laywer or issue refund because the laywer's time is already used."
+      },
+      "q6": {
+        "title": "What if I am not satified with the attorney's performance?",
+        "content": "If you are not satisfied with the attorney's performance, please call us. We will do our best to reach a fair settlement."
+      }
+    },
+    "review": {
+      "pay_later": "Pay later",
+      "direct_pay": "You will be paying lawyer directly",
+      "cancel_pay": "100% refundable",
+      "pay_later_button": "Confirm: Pay Lawyer Directly"
+    },
+    "confirmation": {
+      "success_text": "You have successfully purchased an attorney consultation!",
+      "confirmation_text": "We will email you the details shortly.",
+      "summary_title": " Summary of Your Consultation",
+      "lawyer_name": "Lawyer Name",
+      "lawyer_email": "Lawyer Email",
+      "total_cost": "Total Cost",
+      "return_to_application": "Return To Dashboard",
+      "appointment_time": "Appointment Time",
+      "continue_to_diagnostics": "Continue To Diagnostics"
+    }
+  },
+  "timeline": {
+    "step_1": {
+      "title": "Step 1. Prepare your Divorce Application",
+      "description": "Prepare your divorce application here on JDivorce. Please note that preparing your application does not begin the official divorce process. You must visit a county court to begin the divorce process."
+    },
+    "instructions": {
+      "title": "Instructions",
+      "info_1": "Using JDivorce, you can prepare your divorce application by answering a set of online questionnaires.",
+      "info_2": "Download your application and print it.",
+      "info_3": "Note: Your divorce process begins when you file the application at a county court. Your divorce does not begin by preparing your application here on JDivorce.com"
+    },
+    "step_2": {
+      "title": "Step 2. Submit your Divorce Application",
+      "description": "Visit your county court to file your application, and begin your divorce."
+    },
+    "instructions": {
+      "title": "Instructions",
+      "info_1": "The divorce process is begun by filing your completed divorce application at a Superior Court in Washington.",
+      "info_2": "Visit the Office of the Clerk at the Superior Court and inform them that you're filing for \"Dissolution\" "
+    },
+    "step_3": {
+      "title": "Step 3. Court Hearing to Finalize Dissolution",
+      "description": "The law requires a waiting period of 90 days. After the waiting period, you can finalize the divorce via a court hearing. The process varies greatly depending on your situation such as agreement with spouse and having dependent children."
+    },
+    "instructions": {
+      "title": "Instructions",
+      "info_1": "At the final hearing, take your file to the commissioner’s courtroom.",
+      "info_2": "When your case is called present the final paperwork for the commissioner to sign.",
+      "info_3": "Your divorce is now final."
+    }
+  },
+  "FORMS": {
+    "PRECHECK": {
+      "NAME": "Pre-Checks for Divorce Application"
+    },
+    "YOU_AND_YOUR_SPOUSE": {
+      "NAME": "You and Your Spouse"
+    },
+    "SPOUSAL_SUPPORT": {
+      "SPOUSAL_SUPPORT": "Spousal Support, Protection Order, Restraining Order, Case Costs"
+    },
+    "FILING SURVEY FORM 3": {
+      "FINANCIALS": "Financials: Properties and Debts"
+    },
+    "FILING SURVEY FORM 4": {
+      "VITAL_STATISTICS": "Vital Statistics"
+    }
+  },
+  "forms_status": {
+    "complete": "Complete",
+    "in_progress": "In Progress",
+    "not_started": "Not Started"
+  },
+  "forms_action": {
+    "edit": "Edit",
+    "begin": "Begin",
+    "view": "View"
+  },
+  "general": {
+    "jdivorce": "JDivorce",
+    "name": "Name",
+    "card": "Card",
+    "pay": "Pay",
+    "payment_information": "Payment Information",
+    "send": "Send",
+    "close": "Close",
+    "update": "Update",
+    "create": "Create"
+  },
+  "faqs": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Divorce in Washington State",
+    "software": {
+      "title": "Common Software Questions",
+      "q_1": "How is my personal information protected?",
+      "q_2": "Do I need to register to create my divorce application?",
+      "q_3": "How long is my data stored?",
+      "q_4": "How does your software adapt to my unique situation?",
+      "q_5": "Can I purge (i.e. delete) my personal information after completing my application?",
+      "q_6": "Is the divorce application printed on official Washington state forms?",
+      "q_7": "Which counties are covered?",
+      "q_8": "Which Washington state forms are generated as part of my divorce application?",
+      "q_9": "How does JDivorce populate questions that don't apply to me?",
+      "a_1": "<p>JDivorce complies with one of the most comprehensive security standards, the Payment Card Industry Data Security Standard (PCI DSS), for protecting your information. PCI DSS is a security standard for software handling customer information. Originally aimed at credit card companies, the standard is now used by all major technology companies handling customer data. </p> <p>JDivorce uses HTTPS security protocol to securely transfer your information. HTTPS is the global standard in how computer systems safely transmit information through the internet. HTTPS prevents any third party from viewing or modifying your information.</p> <p>Our data centers are physically located in the Virginia and California, and are compliant with all US privacy laws.</p>",
+      "a_2": "No, you don't. You can use JDivorce as a guest user. However, creating an account enables you to save your application at the end of every individual section. Considering that the divorce application can be quite detailed for situations involving children, saving your application incrementally allows you the conveniences of completing your application in multiple sessions, or making changes later.",
+      "a_3": "Data is saved indefinitely.",
+      "a_4": "JDivorce software consists of a series of questions. After every section, our software processes your input to determine which sections apply to you and which you can safely skip. For example, your response to the question&nbsp; Do you have children? determines whether you will address sections covering child custody.&nbsp; Your responses also determine the final set of Washington state forms required.&nbsp;",
+      "a_5": "Yes, you can send us a request to purge through our secure contact-us form. We will purge your data within two business days.",
+      "a_6": "<p> Yes, JDivorce uses the official Washington state forms. In order to maintain the exact formatting such as margins, fonts, and spacing we use the original Microsoft Word documents provided by the Washington Courts. JDivorce software then enters the information you provided. Our software only fills in the blanks or check boxes without modifying the original content. </p> <p> By using the original Washington state forms, we also avoid the risk of breaking any of the compliance rules mentioned in the guidelines for custom developed forms: <a href=\"https://www.courts.wa.gov/forms/documents/Dep%20Format%20and%20Style%20Rules.doc\"> Format and Style Rules for Mandatory Forms Developed Pursuant to RCW 13.34.035. </a> </p>",
+      "a_7": "<p>JDivorce supports filing for divorce for the entire Washington state. The final set of of documents you download meet the requirements of King County Superior Court, as described here: </p> <ul> <li><a href=\"http://www.kingcounty.gov/%7E/media/courts/superior-court/docs/family/family-law-instructions/01-01-how-to-ask-for-a-divorce-pdf.ashx?la=en\"> How to Ask for a Divorce For spouses/registered domestic partners who do not agree </a> </li> <li><a href=\"http://www.kingcounty.gov/%7E/media/courts/superior-court/docs/family/family-law-instructions/01-02-how-to-ask-for-a-divorce-agreed-pdf.ashx?la=en\"> How to Ask for a Divorce For spouses/registered domestic partners who agree </a> </li></ul>JDivorce will support filing at all county courts within Washington state by October 2017.",
+      "a_8": "<p>JDivorce generates the complete set of <strong>all</strong> government forms required. Depending on your situation these would be some or all of the forms from below: </p> <ul> <li>Case Assignment Area Form and Case Information Cover Sheet (CICS) </li> <li>FL All Family 001 Confidential Information</li> <li>Certificate of Dissolution-Vital Statistics form</li> <li>FL All Family 013 Sealed Confidential Report</li> <li>FL Divorce 201 Petition for Divorce (Dissolution)</li> <li>FL Divorce 200 Summons: Notice About a Marriage or Domestic Partnership</li> <li>FL All Family 140 Parenting Plan 5 copies</li> <li>FL All Family 132 Declaration about Public Assistance 5 copies</li> <li>FL Divorce 223 Motion for Temporary Family Law Order [ ] and Restraining Order</li> <li>FL All Family 011 Sealed Financial Source Documents </li> <li>FL All Family 131 Financial Declaration</li> <li>FL All Family 135 Declaration </li> <li>WSCSS - Worksheets Washington State Child Support Schedule Worksheets</li> <li>FL All Family 112 Proof of Mailing or Hand Delivery (for documents after Summons and Petition) 5 copies</li> <li>FL All Family 130 Child Support Order 5 copies</li> <li>FL Divorce 224 Temporary Family Law Order </li> <li>FL All Family 185 Notice of Hearing </li></ul>'",
+      "a_9": "JDivorce follows the official Washington state guidelines. These guidelines require questions which are not relevant to your situation to be marked explicity as \"Not Applicable\"; or be left blank if there is no option to mark as \"Not Applicable.\"'"
+    },
+    "common": {
+      "title": "Common Divorce Questions",
+      "q_1": "What is legal separation?",
+      "q_2": "What's the purpose of legal separation?",
+      "q_3": "What do we do if we decide later that we want a divorce in Washington State?",
+      "q_4": "What do we do if we decide later that we want to reconcile and no longer be legally separated?",
+      "q_5": "What is a “no-fault” divorce?",
+      "q_6": "How do the courts determine child custody?",
+      "q_7": "How long does it take to get a divorce?",
+      "q_8": "What’s the difference between divorce, annulment, and legal separation?",
+      "q_9": "What do I do if I'm served with divorce papers?",
+      "q_10": "Can You Back Out of Divorce If You Already Filed?",
+      "q_11": "How does child custody work?",
+      "q_12": "Do I need a Parenting Plan?",
+      "q_13": "What happens if I don’t follow the Parenting Plan?",
+      "q_14": "What are the reasons why Washington courts may limit my time with the children?",
+      "q_15": "Washington State Divorce",
+      "q_16": "Brief info about Washington State Divorce Online",
+      "q_17": "What are the grounds for divorce in Washington?",
+      "q_18": "Who can file for a divorce in Washington?",
+      "q_19": "Where do I file?",
+      "q_20": "How long is the divorce process?",
+      "q_21": "What is an uncontested divorce?",
+      "q_22": "What is divorce mediation?",
+      "q_23": "What will the court do in granting a divorce in Washington?",
+      "q_24": "What won't a court do in granting a divorce in Washington?",
+      "a_1": "<p>Washington State law allows married couples to get a legal separation instead of a divorce. In legal terms, the court issues a Decree of Legal Separation for separation whereby a divorce means a court orders for Dissolution of Marriage.  Legal separation helps couples in certain situations (explained in a separate answer). It’s an optional step that some couples pursue, and is not required for getting a divorce</p>",
+      "a_2": "<p>Legal separation allows couples to make formal financial or child arrangements just as they would in an actual divorce. Legal separation allows a couple to legally split their property and debt. In addition, if a couple has children, legal separation, like a divorce, allows the couple to obtain court orders for child custody, support and visitation</p>",
+      "a_3": "<p>A Decree of Legal Separation can be converted to a Decree of Dissolution of Marriage (divorce). If the court has already granted the Decree and one of the spouses wishes to convert the Legal Separation to a divorce. A motion can be made with the court to convert the legal separation to a divorce. However, this motion to convert can only be filled after six months have passed. Either spouse may make the motion to the court. Both spouses do not have to agree in order to convert a legal separation to divorce. However, the spouse filing the motion must provide legal notice to the other spouse. (After one year, legal notice is not technically required, but many judges in several counties will still require the legal notice be provided to the other spouse.)</p>",
+      "a_4": "<p>Provided both spouses agree, a legal separation can be undone. If the legal separation has already been approved by the court, and both spouses wish to reconcile and revive the marriage without having to formally remarry, then a Motion to Vacate Decree of Legal Separation can be filled. Once the court approves same, it is as if the legal separation never occurred.</p> <p>If the legal separation case is only pending with the court, and the court had not yet approved the legal separation, the spouses can request that the case be dismissed. Since the court never granted the legal separation in Washington State, it would be as if the legal filing never occurred. </p>",
+      "a_5": "<p>While there are many reasons why a marriage can come to an end, a no-fault divorce can be used when you and your partner have simply agreed to move on. In other words, in a no-fault divorce, neither party has accused the other of any wrongdoing or needs to prove any; as a result, the divorce process can be easier.</p>",
+      "a_6": "<p>Child custody is perhaps the most delicate matter in a divorce. In most cases, custody is agreed upon between both parents during mediation. However, if no agreement can be reached, a judge will decide custody rights based on the best interest of the child. This decision factors in important considerations, such as each parent's ability to provide economically and emotionally. If custody cannot be agreed on it is very likely in your best interest to consult an attorney.</p>",
+      "a_7": "<p>You may be ready to move on but the courts need to be ready too. Before you get your divorce papers, most states require a waiting period after filing. In most jurisdictions this period is around 90 days, however, it can be as long as a year. Aside from the mandatory waiting period, any complications with custody, division of assets, or support payments can slow the process.</p><p> More info on the divorce process can be found here </p> <ul> <li><a href=\"http://www.kingcounty.gov/~/media/courts/superior-court/docs/family/family-law-instructions/01-01-how-to-ask-for-a-divorce-pdf.ashx?la=en\"> How to Ask for a Divorce For spouses/registered domestic partners who do not agree</a></li> <li><a href=\"http://www.kingcounty.gov/~/media/courts/superior-court/docs/family/family-law-instructions/01-02-how-to-ask-for-a-divorce-agreed-pdf.ashx?la=en\"> How to Ask for a Divorce For spouses/registered domestic partners who agree</a></li> </ul>",
+      "a_8": "<p>While all three essentially reach the same end, they each have distinct legal ramifications. An annulment, like a divorce, legally ends a marriage but does so by treating the marriage as if it never happened. These are quite rare. A divorce means both spouses go through a legal process where they are no longer married and divide up assets, such as property, and responsibilities, such as child care. Legal separation, on the other hand, leaves the marriage legally intact despite going through many of the same procedures such as asset division and custody.</p><p>Here's how the <a href=\"http://apps.leg.wa.gov/RCW/default.aspx?cite=26.09\">Washington Law definition</a></p>",
+      "a_9": "<p>The discussion that follows is from the standpoint of the spouse filing for dissolution of marriage in Washington, designated in the court documents as the 'petitioner.' If you are the spouse who is served with divorce papers, the process is the same as outlined below, but you are designated as the 'respondent.' If you receive a divorce summons and petition for dissolution filed by your spouse you should speak with a qualified Washington family law attorney immediately about protecting your rights. The way you respond to the petition can affect the rest of your case. You should ensure that you are advised of, and understand, your options regarding your property, assets, and children. Review the summons and petition carefully, and discuss your concerns with your divorce attorney. You usually have 20 days to respond to the petition. Do not procrastinate. Consider the time it will take you to hire an attorney, review the petition, locate paperwork and records, and complete any other tasks involved in preparing your response to the petition and filing it with the Washington court. It is important that you meet court deadlines.</p>",
+      "a_10": "<p> If you filed a divorce petition and now regret it, you may be able to do an about-face without too much trouble, depending upon what stage in the proceedings you realize your mistake.</p> <h3>Dismissal Before Response</h3> <p>After you file a petition for divorce, your next step in the process is to arrange for the divorce papers to be served on your spouse, who has 30 days in which to reply. If you change your mind about the divorce at any point before your spouse files response papers with the court, in most jurisdictions, you are allowed to dismiss the case.</p> <h3>Dismissal With Spouse's Consent</h3> <p>After your spouse has filed response papers, the petitioner no longer has an automatic right to dismiss the divorce. But winning a dismissal is not difficult, if your spouse also wants to give the marriage another try. Generally, a court grants a dismissal when both spouses agree to end the case.</p>",
+      "a_11": "<p>In Washington State divorce, if the spouses have a minor or dependent child or children, the court will enter a Parenting Plan that designates where the children will be every day between the time the divorce is finalized and when the child turns eighteen.The court will designate one parent as the primary residential parent. In most circumstances, decision-making for the children is made jointly between the parents. The Parenting Plan can be prepared to fit the unique needs of your family, and no one knows those needs better than you and your spouse. You and your spouse are best qualified to create a Parenting Plan best suited for your children’s needs.</p>",
+      "a_12": "<p>If you and your spouse have a child or children who are under 18 years old or otherwise dependent, then the court will require that a Parenting Plan be entered with the court in order for you to finalize your divorce. If you have been served divorce papers that include a Proposed Parenting Plan with which you disagree in any way, then you must prepare your your own Proposed Parenting Plan to file with the court. A Final Parenting Plan must be entered with the court in order to finalize your divorce. If you and your spouse cannot agree on a Final Parenting Plan either on your own, with the assistance of attorneys, or through mediation, then you will have to go to trial, and the judge will make the decision for you.</p>",
+      "a_13": "<p>A Parenting Plan signed by a judicial officer and entered in court is a court order. If you and your former spouse agree to make a change, for example, if you exchange emails and agree that instead of returning the kids at noon, it’s okay to return them at 3:00 p.m., then that’s fine. However, it’s best to have these agreements in writing. If there is not agreement to change, then the Parenting Plan must be followed. If you intentionally disregard provisions in the Parenting Plan, then you may be found in contempt of court. This is very serious. If you want to make changes to the Parenting Plan and your former spouse will not agree, then you’ll need to go to court to get the Parenting Plan changed. This is not an easy thing to do. This future possibility is yet another reason why working hard to resolve the outstanding issues in your divorce in an amicable way is so important.</p>",
+      "a_14": "<p>The court may limit your residential time with your children and may deny you joint decision making or alternative dispute resolution if the court finds any one of the following:</p> <ul> <li>Refusal to care for the children and perform parenting duties and responsibilities</li> <li>Physical, sexual or emotional abuse of the child</li> <li> History of domestic violence or physical or sexual assault</li> <li> History of sex crimes including child rape, child molestation, incest or other sexual misconduct involving children</li> <li> Long term emotional or physical problems that will disturb a parent’s ability to care for the child</li> <li> Long term drug, alcohol abuse</li> <li> Lack or absence of emotional bond between parent and child</li> <li> Refusal to give other parent contact with the child for no good reason</li> <li> Other reasons which may pose a threat to the child’s welfare and interests</li> </ul> <p>If these reasons do not exist, then a court will very likely grant joint decision-making to you and your spouse. Additionally, the court will provide for both parents to have quality time with the kids. It is also important to know that if a parent is found to falsely allege any of the above factors about the other parent, then that parent may end up having their time limited with the children.</p>",
+      "a_15": "<p>Divorce is formally called “dissolution of marriage” in Washington State. In Washington State, common law marriage is not recognized. You have to be legally married for the court to enter a Decree of Dissolution. Washington State does recognize domestic partnerships, and if two people are registered as domestic partners with the state, then they must dissolve their domestic partnership through the courts. That process is similar to a dissolution of marriage process.</p>",
+      "a_16": "<p>Legal marriages in other states and countries are recognized as valid in Washington. However, the following situations are not recognized as valid marriages:</p> <ul> <li>When a person gets married when they already have another spouse, then the second marriage will not be considered valid.</li> <li>When two people who are close relatives marry, that marriage may not be recognized in Washington State</li> </ul>",
+      "a_17": "<p>Washington is a “no-fault divorce” state, meaning there is no need to assign blame or prove that the other spouse is at fault for the failure of the marriage. According to Washington state laws, only one spouse in the marriage must believe and declare that the marriage is irretrievably broken in order for the divorce decree to be granted. “Irretrievably broken” means that the marriage cannot be saved, and there is no chance of reconciliation.</p>",
+      "a_18": "<p>You can file for a divorce in Washington if you or your spouse currently reside in Washington state.</p>",
+      "a_19": "<p>You may file in the county where either you or your spouse lives. Alternatively, you may file in Lincoln County even if neither of you lives there. Both spouses have to agree for the case to be filed to file in Lincoln County.</p><br/><iframe width='560' height='315' src='https://www.youtube.com/embed/W3ZBWA7BJiQ' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+      "a_20": "<p>The minimum waiting period for a divorce in Washington is ninety (90) days. This is the minimum period required before the court will finalizes your divorce. The “ninety day” clock begins running after the Petition for Dissolution of Marriage is filed and then served on the non-filing spouse. If both spouses sign the Petition, then the clock begins running once the Petition is filed.</p> <p>Ninety days is the minimum time it will take for a Decree of Dissolution to be entered. However, it will likely take longer if there are disputed issues that exist when the dissolution process begins. These disputed issues could be related to the division of property and/or debts, aspects of the divorce related to children, maintenance/alimony, or any other issues. Many other issues could delay the process as well.</p> <p>During the three month waiting period, temporary orders may be entered to address interim issues including a residential schedule for children, financial support, or use of property.</p>",
+      "a_21": "<p> If you and your spouse agree on all aspects of the divorce, you will qualify for an uncontested divorce. The basic issues that make up a divorce are: <a href=\"#\">1)division of property and liabilities;</a> <a href=\"#\">2) maintenance also called alimony; and if there are children,</a><a href=\"#\"> 3) the residential schedule for any dependent children,, and</a><a href=\"#\"> 4) child support</a></p> <p> If you and your spouse can agree on all issues, then you will be making the best out of a bad situation. By agreeing on all issues, you’re more likely to get along better after the divorce – something that is very important, especially if you are have children together. Additionally, you save money. The cost of an uncontested divorce is significantly less than the cost of a contested one.</p> <p>If you’ve agreed on some issues – but not all – but you want to work together to try to achieve a resolution efficiently and without fighting, then mediation may be an option for you and your spouse.</p>'",
+      "a_22": "<p>Mediation in divorce requires a mediator or a trained neutral, often an attorney or mental health professional, to help divorcing spouses reach agreement. While divorcing spouses routinely participate in mediation when they are represented by attorneys, it is not uncommon for spouses to participate in mediation with a trained mediator and without their own attorneys.. This is a good option for spouses who want to work together to create a resolution that is best for them.</p>",
+      "a_23": "<p>The court will divide all assets and liabilities “fairly and equitably” (which does not necessarily mean equally; The court will determine whether one spouse will pay maintenance (alimony) to the other, if requested by one spouse. This determination is made based on many issues including whether one spouse has the need for maintenance, and whether the other has the ability to pay it. he court will establish a residential schedule for the dependent children, and will also set an amount of child support.</p>",
+      "a_24": "<p>The court will not resolve the frustration or anger you may feel toward your spouse; The court will not be able to increase the assets that you and your spouse have, so that there is more money to go around. In fact, litigating a case with attorneys will most certainly cause you to spend a large amount of money and reducing the total amount that remains to be divided The court will not cut the other parent out of your children’s lives (except in very extreme circumstances), so learning how to work with your spouse to make decisions for your children is best for your children and for you and your spouse. </p><br/><br/><br/><iframe width='560' height='315' src='https://www.youtube.com/embed/W3ZBWA7BJiQ' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "callus": "Call us",
+    "call_no": "(206) 569-8669",
+    "have_our_email": "Email us",
+    "help_email": "help@jdivorce.com",
+    "contact_form": "Contact Form",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "feedback": "Feedback",
+    "submit": "Submit",
+    "success_message": "<strong>Thank you!</strong> Your message has been successfully sent. We will contact you very soon!"
+  },
+  "lawyers": {
+    "title_heading": "has partnered with these professionals in order to bring you the best services possible.",
+    "more_details": "More Details",
+    "ask_questions": "Ask Questions",
+    "show_alert": "This lawyer does not exist.",
+    "select_lawyer": "Select",
+    "not_accepting_clients": "Not Accepting Clients",
+    "ask": {
+      "email": "Lawyer's Email",
+      "question": "Your Question",
+      "question_required": "Question is required!",
+      "ask_questions": "Ask Questions"
+    },
+    "back_to_list": "Back To Lawyers",
+    "back_to_profile": "Back To Profile",
+    "checkout": "Back To Checkout",
+    "back_to_analysis": "Back To Analysis",
+    "back_to_home": "Back To Home"
+  },
+  "filling_survey": {
+    "forms": {
+      "PRECHECK": "Pre-Checks for Divorce Application",
+      "YOU_AND_YOUR_SPOUSE": "You and Your Spouse",
+      "FINANCIALS": "Financials: Properties and Debts",
+      "SPOUSAL_SUPPORT": "Spousal Support, Protection Order, Restraining Order, Case Costs",
+      "VITAL_STATISTICS": "Vital Statistics",
+      "CHILDREN": "Children",
+      "CHILDREN_FROM_RELATIONSHIPS": "Children From Other Relationships",
+      "CHILDREN_RIGHTS_CASES": "Children - Others' Legal Rights and Court Cases",
+      "CHILD_SUPPORT": "Child Support and Jurisdiction",
+      "PP_LIMITATIONS": "Parenting Plan - Limitations, Decision Making, Conflict Resolution",
+      "PP_SCHEDULE": "Parenting Plan - Parenting Time Schedule",
+      "PP_HOLIDAYS": "Parenting Schedule - Holidays",
+      "WSCSS_YOUR": "WSCSS - Washington State Child Support Schedule Worksheets - Your Financials",
+      "WSCSS_SPOUSE": "WSCSS - Washington State Child Support Schedule Worksheets - Spouse's Financials",
+      "SPOUSE_RESPONSE": "Spouse Response",
+      "TEMPORARY_ORDERS": "Temporary Orders",
+      "PROTECTION_ORDER": "Protection Order"
+    }
+  },
+  "forms_status": {
+    "complete": "Complete",
+    "in_progress": "In Progress",
+    "not_started": "Not Started"
+  },
+  "forms_action": {
+    "edit": "Edit",
+    "begin": "Begin",
+    "view": "View"
+  },
+  "home": {
+    "menu": {
+      "faq": "FAQ",
+      "support": "Support",
+      "sign_in": "Sign In",
+      "register": "Register",
+      "lawyer_and_home": "Our Professionals",
+      "begin_application": "Begin: See Divorce Process",
+      "begin": "Begin"
+    },
+    "banner": {
+      "header_1": "Divorce is never easy. ",
+      "header_2": "We can make it simple.",
+      "info_1": "We get it; you're still exploring at this stage.",
+      "info_2": "Nothing you do on JDivorce is going to the government.",
+      "info_3": "Fill out your entire divorce petition online",
+      "info_4": "NO credit card - it's free to download your petition",
+      "info_5": "NO legal jargon - frustration-free English",
+      "info_6_html": "Customized for your specific situation",
+      "button_text": "Begin: See Divorce Process"
+    },
+    "divorce_process": {
+      "title": "Divorce Process",
+      "description": "Getting a divorce in Washington state involves the 3 main steps listed below. Each step, in turn, has several sub-steps, which depends on your situation (e.g. with or without children) and the county where you are filing at. In order to see the detailed process, click on the 'Begin Application' button and complete the first questionnaire."
+    },
+    "help": {
+      "header": "You can begin by",
+      "title_1": "Read about divorce",
+      "title_2": "Prepare divorce papers",
+      "title_3": "Hire a lawyer",
+      "info_1": "Begin preparing your divorce application with step by step instructions. We will guide you through the logistics of the entire process. Our app covers all of the common situations such as having children, spousal agreements, and more. You can still consult a lawyer later.",
+      "info_2": "If you prefer the peace of mind of working with a lawyer, we will find one for you! We partner with several highly qualified lawyers and legal technicians that will guide you through this difficult process. We guarantee that a lawyer will review your initial application within 3 days.",
+      "info_3": "Getting divorced can be mind-numbingly difficult and frustrating. Don't worry though! We're here to help you get through the nitty-gritty. Follow along with our FAQ, blog posts, and informative 30-second videos to get started.",
+      "free": "Begin (Free)",
+      "lawyers": "See Our lawyers ($150+)",
+      "keep_reading": "Keep Reading"
+    },
+    "advisors": {
+      "title": "Advisors",
+      "description": "JDivorce is advised by industry lawyers & professors who are passionate about bringing access to justice for everybody"
+    },
+    "how_it_works": {
+      "title": "How it works"
+    },
+    "what_can_we_do": {
+      "title": "WHAT CAN WE DO?"
+    },
+    "accurate": {
+      "title": "Accurate",
+      "description": "Every minute detail prescribed by your county is incorporated."
+    },
+    "upload_forms": {
+      "title": "Updated Forms",
+      "description": "The divorce application created uses up to date official forms published by the Washington Courts."
+    },
+    "smart": {
+      "title": "Smart",
+      "description": "The questions presented to you can be adjusted based on your responses. You can skip any sections that does not apply to you."
+    },
+    "comprehensive": {
+      "title": "Comprehensive",
+      "description": "JDivorce helps with all stages, from the initial filing to the finalization."
+    },
+    "secure": {
+      "title": "Secure",
+      "description": "Your data is kept secure and encrypted beginning from your device, through transit onto our servers in Virginia, USA."
+    },
+    "privacy": {
+      "title": "Privacy",
+      "description": "Your data is used exclusively for creating your application. You have the option to delete your data from our servers after you complete your application."
+    },
+    "review": {
+      "bremerton": "Bremerton, Mark C",
+      "seattle": "Seattle, Jennifer H",
+      "burien": "Burien, Michelle A",
+      "redmond": "Redmond, Anna S",
+      "bremerton_review": "JDivorce accurately creates the divorce application. I filed at King County and everything went fine. I liked that I could download the application in WORD format so I could easily make changes later.",
+      "seattle_review": "We were able to file application for our divorce in two hours. We saved about $150 compared with similar other online sofware.",
+      "burien_review": "JDivorce made the paperwork simpler during a very difficult period in my life.",
+      "redmond_review": "I liked that JDivorce made this difficult process simpler so my ex and I could file without discussing our private lives with others.",
+      "jdivorce_client": "JDivorce Client",
+      "client_testimonials": "Client \"Testimonials\""
+    },
+    "faq_home": {
+      "q_1": "How is my personal information protected?",
+      "q_2": "Do I need to register to create my divorce application?",
+      "q_3": "Which Washington state forms are generated as part of my divorce application?",
+      "a_1_html": "<p>JDivorce protects your information by complying with one of the most comprehensive security standards, the Payment Card Industry Data Security Standard (PCI DSS). PCI DSS is a security standard for software that handles customer information. Originally aimed at credit card companies, PCI DSS is now used by all major technology companies handling customer data. </p><p>JDivorce uses HTTPS security protocol to securely transfer your information. HTTPS is the global standard in how computer systems safely transmit information through the internet. HTTPS prevents any third party from viewing or modifying your information.</p><p>Our data centers are physically located in the Virginia and California, and are compliant with all US privacy laws.</p>",
+      "a_2_html": "No, you don't. You can use JDivorce as a guest user. However, creating an account enables you to save your application progress as you go. Considering that the divorce application can be quite detailed for situations involving children, saving your application incrementally allows you the conveniences of completing your application in multiple sessions, or making changes later.",
+      "a_3_html": "<p>JDivorce generates the complete set of <strong>all</strong> government forms required. Depending on your situation these would be some or all of the forms from below: </p> <ul> <li>Case Assignment Area Form and Case Information Cover Sheet (CICS) </li> <li>FL All Family 001 Confidential Information</li> <li>Certificate of Dissolution-Vital Statistics form</li> <li>FL All Family 013 Sealed Confidential Report</li> <li>FL Divorce 201 Petition for Divorce (Dissolution)</li> <li>FL Divorce 200 Summons: Notice About a Marriage or Domestic Partnership</li> <li>FL All Family 140 Parenting Plan 5 copies</li> <li>FL All Family 132 Declaration about Public Assistance 5 copies</li> <li>FL Divorce 223 Motion for Temporary Family Law Order [ ] and Restraining Order</li> <li>FL All Family 011 Sealed Financial Source Documents </li> <li>FL All Family 131 Financial Declaration</li> <li>FL All Family 135 Declaration </li> <li>WSCSS - Worksheets Washington State Child Support Schedule Worksheets</li> <li>FL All Family 112 Proof of Mailing or Hand Delivery (for documents after Summons and Petition) 5 copies</li> <li>FL All Family 130 Child Support Order 5 copies</li> <li>FL Divorce 224 Temporary Family Law Order </li> <li>FL All Family 185 Notice of Hearing </li></ul>",
+      "more_faqs": "More FAQs"
+    },
+    "adwards_accreditations": {
+      "title": "Awards and Accreditations"
+    },
+    "security_privacy": {
+      "title": "Security & Privacy"
+    }
+  },
+  "footer": {
+    "jdivorce": "JDivorce",
+    "privacy_and_terms": "Privacy & Terms",
+    "white_label": "White Label",
+    "about_us": "About Us",
+    "lawyers": "Professionals",
+    "for_lawyers": "For Professionals",
+    "info_family_law": "INFO ON WA FAMILY LAW",
+    "faq": "FAQ",
+    "detailed_topics": "Detailed Topics",
+    "resources": "RESOURCES",
+    "wa_courtes": "WA Courts",
+    "wa_law_help": "WA Law Help",
+    "copyright": "Copyright 2017. All Rights Reserved by ",
+    "jdivorce_inc": "JDivorce, Inc."
+  },
+  "swal": {
+    "generate_documents": {
+      "title": "Where are your documents?",
+      "text": "Your documents are now being generated and take a couple of minutes to complete. Now we will show our lawyers to see if you need additional assistance!"
+    },
+    "alert_notification": {
+      "title": "Generating Documents!",
+      "text": "Your documents are still generating."
+    },
+    "generation_fail_notification": {
+      "title": "Generating Failed!",
+      "text": "Something was wrong! Please retry to generate document."
+    },
+    "open_confirm_box_client": {
+      "title": "Are you sure?",
+      "text": "This will send an email and notify your client of the invitation. You will still be able to update your client's questionnaires while waiting for your client to accept the invitation. Do you want to notify your client now?"
+    }
+  },
+  "register_banner": {
+    "register_now": " Register now ",
+    "rest": "to save your changes!"
+  },
+  "INFO_PANEL": "Info Panel",
+  "APP": {
+    "MESSAGES": {
+      "OH_NO": "Unknown error!",
+      "GENERAL_ERROR": "Uknown error occured. Please refresh the page."
+    }
+  },
+  "general_settings": {
+    "index": {
+      "title_header": "General Setting",
+      "email_template": "Email Template",
+      "invite_email_template": "Client E-Mail Invitation Text",
+      "email_content": "Email Content",
+      "add_content": "Add Content here.."
+    }
+  },
+  "UNPAID": "UNPAID",
+  "PAID": "PAID",
+  "REFUNDED": "REFUNDED",
+  "ACCEPTED": "Connected",
+  "REJECTED": "Rejected",
+  "INVITED": "Pending Acceptance",
+  "SHARED": "Pending Acceptance",
+  "SHARE": "Pending Acceptance",
+  "HIRE": "Pending Acceptance",
+  "INVITED": "Pending Acceptance",
+  "CLIENT_ACCEPTED": "Connected",
+  "CLIENT_REJECTED": "Rejected",
+  "LAWYER_ACCEPTED": "Connected",
+  "LAWYER_REJECTED": "Rejected",
+  "SHARED_ACCEPTED": "Connected",
+  "SHARED_REJECTED": "Rejected",
+  "APPLICATION_CREATED": "Application Created",
+  "reject": "Reject",
+  "accept": "Accept",
+  "PROFILE": {
+    "WELCOME": {
+      "TITLE": "Welcome",
+      "HEADING": "Hi, welcome to the JDivorce attorney profile setup!",
+      "HEADING_2": "You can click on the steps above to directly edit any information.",
+      "HEADING_3": "We will save all your info as you go so that you're ready to pick up right where we left off."
+    },
+    "DISPLAY_PICTURE": "Display Picture",
+    "PROFESSION": "Profession",
+    "CONTACT": {
+      "TITLE": "Contact",
+      "HEADING": "Contact Info",
+      "DETAILS": "Details",
+      "FORMAT": "Format"
+    },
+    "EXPERIENCES": "Experiences",
+    "PRACTICE_AREA": "Practice Area",
+    "RECENT_CASES": {
+      "TITLE": "Recent Cases",
+      "CONTENT_1": "Add a description of your recent cases to showcase your experience. Potential clients are more likely to hire you if they see overlap in their case with your experience. You can change the client names for privacy or generalize facts. Here's an example of a ",
+      "CONTENT_2": "real attorney website",
+      "CONTENT_3": "that lists experiences to make the profile more useful to potential readers."
+    },
+    "PRICING": "Pricing",
+    "CALENDAR": "Calendar",
+    "SETTING": {
+      "TITLE": "Settings",
+      "SUBTITLE": "Please adjust your public profile setting.",
+      "PROFILE_COMPLETED": "Profile completed?",
+      "PUBLIC_PROFILE": "Show profile to the public?",
+      "ACCEPT_NEW_CLIENT": "Accept new clients?",
+      "WARNING": "Looks like you have not completed your profile yet. You need to pick your profession first."
+    },
+    "VIDEO_Q_A": "Video Q & A",
+    "PREVIEW": "Preview"
+  },
+  "COMMON": {
+    "ADD_NEW": "Add New",
+    "TITLE": "Title",
+    "ORGANIZATION": "Organization",
+    "START_AT": "Start At",
+    "END_AT": "End At",
+    "CURRENTLY_WORK_HERE": "I Currently Work here.",
+    "DELETE": "Delete",
+    "RELATIVE_PERCENTAGE": "Relative Percentage",
+    "BETWEEN": "Between",
+    "AND": "And",
+    "INFORMATION": "Information",
+    "ADD_LANGUAGE": "Add Language",
+    "LANGUAGE": "Language",
+    "LINK_TO_VIDEO": "Link to Video",
+    "VIDEO_TRANSCRIPT": "Video Transcript",
+    "DELETE_LANGUAGE": "Delete Language",
+    "QUESTION": "Question",
+    "CURRENT_PICTURE": "Current Picture",
+    "IMAGE_UPLOAD": "Image Upload"
+  }
+}

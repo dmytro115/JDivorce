@@ -1,0 +1,352 @@
+<nav class="navbar frozen-pane" *ngIf="isNavigable">
+  <div class="col" align="center">
+    <button (click)="navigateBack()" type="button" class="btn btn-secondary waves-effect waves-light">
+      <span class="fa fa-long-arrow-left"></span> Go Back
+    </button>
+  </div>
+</nav>
+
+<div id="samuel" *ngIf="profile" [ngClass]="{'boxed': true}">
+  <header>
+    <section id="top-navigation" class="container-fluid nopadding">
+      <div class="row nopadding ident ui-bg-color01">
+        <!-- Photo -->
+        <a href="javascript:void(0)" class="col-lg-4 nopadding">
+          <div class="vc-photo photo-01" [ngStyle]="{'background-image': 'url(' + profileImgPipe.transform(profile.info.picture_url, 'lawyer') + ')'}">&nbsp;</div>
+        </a>
+        <!-- /Photo -->
+        <div class="col-lg-8 vc-name nopadding">
+          <!-- Name-Position -->
+          <div class="row nopadding name">
+            <div class="col-lg-12 name-title">
+              <h1 class="text-white font-accident-two-extralight">{{profile.info.name}}</h1>
+            </div>
+          </div>
+          <div class="row nopadding position">
+            <div class="col-lg-12 position-title">
+              <section class="cd-intro">
+                <h2 class="text-white cd-headline clip is-full-width font-accident-two-light">
+                  <span>My practice areas include:&nbsp;</span>
+                  <span *ngIf="profile.info.practice_areas" class="cd-words-wrapper">
+                    <b *ngFor="let practiceArea of profile.info.practice_areas; first as isFirst" [ngClass]="{ 'is-visible': isFirst }">{{practiceArea.title}}</b>
+                  </span>
+                </h2>
+              </section>
+            </div>
+          </div>
+          <!-- /Name-Position -->
+          <!-- Main Navigation -->
+          <ul id="nav" class="row nopadding cd-side-navigation">
+            <li *ngFor="let practiceArea of profile.info.practice_areas" class="col-xs-4 col-sm-2 nopadding menuitem" [ngClass]="practiceArea.colorClass"
+              data-animation-duration="1000" [attr.data-animation-delay]="practiceArea.animationDelay">
+              <a href="javascript:void(0)" class="hvr-sweep-to-bottom"><i class="flaticon-book-bag2"></i><span>{{practiceArea.title}}</span></a>
+            </li>
+          </ul>
+          <!-- /Main Navigation -->
+        </div>
+      </div>
+    </section>
+  </header>
+  <!-- Container -->
+  <div class="content-wrap" *ngIf="!(qParams | async)?.videoId">
+    <section class="container-fluid" data-section="home">
+      <!-- Personal Flexy Section -->
+      <div class="row flex-row">
+        <!-- Personal Details 01 -->
+        <div id="details" class="col-lg-8 flex-column bg-color01 light nopadding" data-animation-origin="left" data-animation-duration="300"
+          data-animation-delay="400" data-animation-distance="200px">
+          <div class="padding-50 flex-panel">
+            <div class="row row-no-padding">
+              <div class="col-md-12 nopadding">
+                <h3 class="font-accident-two-normal uppercase title">{{profile.info.name}}: Licensed Family Attorney</h3>
+                <div class="quote" id="profile">
+                  <div class="fullwidth box" *ngIf="profile.info.address.full_address">
+                    <div class="one">
+                      <p class="uppercase">Address:</p>
+                    </div>
+                    <div class="two">
+                      <p class="">{{profile.info.address.full_address}}</p>
+                    </div>
+                  </div>
+                  <div class="fullwidth box" *ngIf="profile.info.phone">
+                    <div class="one">
+                      <p class="uppercase">Phone:</p>
+                    </div>
+                    <div class="two">
+                      <p class="">{{profile.info.phone}}</p>
+                    </div>
+                  </div>
+                  <div class="fullwidth box" *ngIf="profile.info.cell">
+                    <div class="one">
+                      <p class="uppercase">Cell:</p>
+                    </div>
+                    <div class="two">
+                      <p class="">{{profile.info.cell}}</p>
+                    </div>
+                  </div>
+                  <div class="fullwidth box" *ngIf="profile.info.email">
+                    <div class="one">
+                      <p class="uppercase">Email:</p>
+                    </div>
+                    <div class="two">
+                      <p class=""><a href="mailto:{{profile.info.email}}">{{profile.info.email}}</a></p>
+                    </div>
+                  </div>
+                  <div class="dividewhite3"></div>
+                </div>
+              </div>
+            </div>
+            <div class="divider-dynamic"></div>
+            <div class="row nopadding">
+              <div *ngIf="profile.info.offer_free" class="col-md-6 infoblock nopadding">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-1 col-md-3"><i class="flaticon-clocks18 color-blue"></i>
+                    <div class="dividewhite1"></div>
+                  </div>
+                  <div class="col-xs-12 col-sm-11 col-md-9">
+                    <h4 class="font-accident-two-medium uppercase">Free 30 minute consultation</h4>
+                    <p class="">
+                      I will hear you out free of charge for 30 minutes.
+                    </p>
+                  </div>
+                </div>
+                <div class="divider-dynamic"></div>
+              </div>
+              <div class="col-md-6 infoblock nopadding">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-1 col-md-3"><i class="fa fa-comments color-blue"></i>
+                    <div class="dividewhite1"></div>
+                  </div>
+                  <div class="col-xs-12 col-sm-11 col-md-9">
+                    <h4 class="font-accident-two-medium uppercase">Let's Chat</h4>
+                    <p class="">
+                      Have any questions? Send me a message now!
+                    </p>
+                    <div class="divider-dynamic"></div>
+                    <button [disabled]="!isNavigable" routerLink="/lawyer/{{profile.slug}}/contact" class="btn btn-lg btn-darker">Send Message</button>
+                  </div>
+                </div>
+                <div class="divider-dynamic"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Personal Details 01 -->
+        <!-- Personal Details 02 -->
+        <div id="personal" class="col-lg-4 flex-column light ui-block-color01 personal" data-animation-origin="right" data-animation-duration="500"
+          data-animation-delay="600" data-animation-distance="100px">
+          <div class="flex-panel">
+            <h4 class="title text-center">Purchase Flat Rate Package</h4>
+            <div class="appointment-availability">
+              <div class="wrapper">
+                <div class="calender-slider mobile-slider">
+                  <h2 class="text-center">Appointment Availability</h2>
+                  <div class="navigations">
+                    <a class="next active" (click)="navigateAppointmentAvailability('right')">
+                      <i class="fa fa-angle-right"></i>
+                    </a>
+                    <a class="previous" (click)="navigateAppointmentAvailability('left')">
+                      <i class="fa fa-angle-left"></i>
+                    </a>
+                  </div>
+                  <ul>
+                    <li>
+                      <div class="month">{{appointmentDate.format('dddd MMM D[th]')}}</div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="timer-slider">
+                  <ngx-slick *ngIf="lawyerSlots.length > 0" class="carousel" #slickModal="slick-modal"
+                    [config]="slideConfig" class="timer-slick-slider">
+                    <div [ngClass]="{ 'active': isSlotSelected(slot, profile.id), 'disabled': !slot.availability }" (click)="selectSlot($event, slot, profile.id)"
+                      ngxSlickItem *ngFor="let slot of lawyerSlots" class="slide">
+                      {{ slot.start_time | date: 'shortTime' }}
+                    </div>
+                  </ngx-slick>
+                  <div *ngIf="lawyerSlots.length === 0">
+                    Unfortunately, there are no calendar spots left for this day!
+                  </div>
+                </div>
+                
+                <div class="dividewhite4"></div>
+
+                <div class="select-plan">
+                  <h4 class="text-center">Select Plan</h4>
+                  <label class="plan-item" *ngFor="let package of profile.info.plans | orderBy: 'price':false; let index=index;" [ngClass]="{ 'checked': index == 0 }">
+                    <span>{{ package.name }}</span>
+                    <input *ngIf="index == 0" type="radio" name="radio" checked="checked" (change)="changePackage($event, package)">
+                    <input *ngIf="index != 0" type="radio" name="radio" (change)="changePackage($event, package)">
+                    <span class="checkmark"></span>
+                    <span class="color-blue">${{ package.cost }}</span>
+                  </label>
+                </div>
+
+                <div class="enter-payment-info text-center">
+                  <button [disabled]="!isNavigable" (click)="goToCheckout(profile)" class="select-btn btn waves-effect waves-light btn-outline-info">Enter Payment Info</button>
+                </div>
+              </div>
+            </div>
+            <div class="dividewhite1"></div>
+          </div>
+        </div>
+        <!-- /Personal Details 02 -->
+      </div>
+      <!-- /Personal Flexy Section -->
+    </section>
+
+    <div class="packages-wrap" *ngIf="lawyerPackages.length">
+      <h3 class="uppercase flat-title text-center">Flat Rate Packages</h3>
+      <section class="inner-section ui-menu-color0{{index + 1}}" *ngFor="let package of lawyerPackages | orderBy: 'price':false; let index=index;">
+        <div class="container-fluid nopadding">
+          <h3 class="font-accident-two-bold color01" data-animation-origin="right" data-animation-duration="400" data-animation-delay="100"
+            data-animation-distance="50px">${{package.price}}: {{package.title}}</h3>
+          <p class="small color01" data-animation-origin="right" data-animation-duration="400" data-animation-delay="300" data-animation-distance="50px">{{package.description}}</p>
+          <button class="btn btn-lg btn-cart" (click)="goToCheckout(profile, package)"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></button>
+        </div>
+      </section>
+    </div>
+
+    <section id="professional" class="container-fluid" data-section="home">
+      <div class="row flex-row">
+        <div id="pro-experience" class="col-lg-4 flex-column dark nopadding ui-block-color02 flex-col" data-animation-origin="bottom"
+          data-animation-duration="300" data-animation-delay="800" data-animation-distance="200px">
+          <div class="padding-50 flex-panel">
+            <h3 class="font-accident-two-normal uppercase title">Experience</h3>
+            <div class="dividewhite4"></div>
+            <div class="experience">
+              <ul *ngFor="let experience of profile.info.experiences" class="">
+                <li class="date">{{experience.date}}</li>
+                <li class="company uppercase">
+                  <a>
+                    {{experience.title}}
+                  </a>
+                </li>
+                <li class="position">{{experience.subtitle}}</li>
+              </ul>
+            </div>
+            <div class="dividewhite1"></div>
+          </div>
+        </div>
+        <div id="circle-skills" class="col-lg-8 flex-column dark nopadding ui-block-color03 flex-col" data-section="progress" data-animation-origin="right"
+          data-animation-duration="400" data-animation-delay="1100" data-animation-distance="200px">
+          <div class="padding-50 flex-panel">
+            <h3 class="font-accident-two-normal uppercase title">Recent Cases</h3>
+            <div class="dividewhite4"></div>
+            <div *ngFor="let recentCase of profile.info.recent_cases" class="row">
+              <div class="col-md-1">
+                <i class="flaticon-photo246 text-white"></i>
+              </div>
+              <div class="col-md-11">
+                <h4 class="text-white">{{recentCase.title}}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Block -->
+    <section *ngIf="this.profile.info.videoRows && this.profile.info.videoRows.length > 0" id="testmonials" class="inner-section bg-color02"
+      data-animation-origin="top" data-animation-duration="500" data-animation-delay="500" data-animation-distance="25px">
+      <div class="container-fluid nopadding">
+        <div class="">
+          <h3 class="font-accident-two-normal uppercase text-center">My Video Q&A</h3>
+          <h5 class="font-accident-two-normal uppercase text-center subtitle">Got a few quick questions? Maybe I can help
+            right away!</h5>
+          <div class="dividewhite1"></div>
+          <p class="small fontcolor-medium text-center">
+            Here are some common questions that folks usually have when looking through the divorce application.
+            <br/>If these videos don't answer your questions, please don't hesistate to contact me.
+          </p>
+        </div>
+        <div class="dividewhite4"></div>
+        <div class="container-fluid nopadding">
+          <div *ngFor="let videoCols of this.profile.info.videoRows" class="row video-row">
+            <div *ngFor="let video of videoCols" class="col-md-6">
+              <h4 class="font-accident-two-medium uppercase">{{video.question}}</h4>
+              <div class="video-wrapper">
+                <div class="embed-responsive embed-responsive-16by9 col-md-7">
+                  <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(video.languages[0].link_to_video)" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+                </div>
+                <div class="transcript-content col-md-5">
+                  <p>{{(video.languages[0].video_transcript.length > 50)? (video.languages[0].video_transcript | slice: 0 : 50) + '...' : (video.languages[0].video_transcript)}}</p>
+                  <a routerLink="/lawyer/{{profile.slug}}" [queryParams]="{ videoId: video.languages[0].video_id }" class="btn btn-secondary waves-effect btn-lg">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="content-wrap video-detail-wrapper" *ngIf="(qParams | async)?.videoId">
+    <div *ngFor="let videoCols of this.profile.info.videoRows" class="row video-row">
+      <div *ngFor="let video of videoCols" class="col-md-12">
+        <div class="details-wrapper" *ngIf="video.languages[0].video_id == selectedVideoKey">
+          <div class="question-title">
+            <h4 class="font-accident-two-medium uppercase">{{video.question}}</h4>
+          </div>
+          <div class="video-wrapper">
+            <div class="embed-responsive embed-responsive-16by9 col-md-6">
+              <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(video.languages[0].link_to_video)" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+            </div>
+            <div class="transcript-content col-md-6">
+              <p>{{(video.languages[0].video_transcript)}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="padding-50 dark ui-bg-color01" data-animation-origin="top" data-animation-duration="500" data-animation-delay="800"
+    data-animation-distance="50px">
+    <div class="container-fluid nopadding">
+      <div class="row">
+        <div class="col-sm-3">
+          <h5 class="font-accident-two-bold uppercase">JDivorce</h5>
+          <p class="inline-block">
+            JDivorce's mission is to increase the access to justice for folks everywhere. Our first goal is simplifying the divorce process
+            in Washington state for both clients and lawyers.
+          </p>
+          <div class="divider-dynamic"></div>
+        </div>
+        <div class="col-sm-3">
+          <h5 class="font-accident-two-bold uppercase">JDivorce Newsletter</h5>
+          <div class="dividewhite1"></div>
+          <input class="newsletter-email" type="email" required="" name="ne" placeholder="Your Email">
+          <a href="javascript:void(0)" class="newsletter-button btn btn-wh-trans btn-xs">OK</a>
+          <div class="divider-dynamic"></div>
+        </div>
+        <div class="col-sm-3 cv-link">
+          <h5 class="font-accident-two-bold uppercase">{{profile.info.name}}</h5>
+          <p class="inline-block">
+            {{profile.info.blurb}}
+          </p>
+          <div class="divider-dynamic"></div>
+        </div>
+        <div class="col-sm-3">
+          <h5 class="font-accident-two-bold uppercase">Find {{profile.info.name}}</h5>
+          <div class="follow">
+            <ul class="list-inline social">
+              <li><a href="mailto:{{profile.info.email}}" class="rst-icon-youtube"><i class="fa fa-envelope"></i></a></li>
+              <li><a target="_blank" href="javascript:void(0)" class="rst-icon-youtube"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+          <div class="divider-dynamic"></div>
+        </div>
+      </div>
+      <div class="dividewhite1"></div>
+      <div class="row">
+        <div class="col-md-12 copyrights">
+          <p>© 2018 JDivorce.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Back to Top -->
+  <div id="back-top"></div>
+  <!-- /Back to Top -->
+</div>

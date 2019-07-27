@@ -1,0 +1,16 @@
+<form [formGroup]="addressForm" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="30px">
+  <mat-form-field fxFlex>
+    <input matInput [placeholder]="placeholder" formControlName="full_address" required (input)="onInput($event)" (focus)="onFocus($event)" [matAutocomplete]="auto" (change)="onChange($event)" />
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onOptionSelected($event)">
+      <mat-option *ngFor="let prediction of predictions" [value]="prediction.description" [id]="prediction.place_id">{{ prediction.description }}</mat-option>
+    </mat-autocomplete>
+    <div id="map" style="display: hidden;"></div>
+    <input matInput formControlName="state" hidden="true" />
+    <input matInput formControlName="city" hidden="true" />
+    <input matInput formControlName="street" hidden="true" />
+    <input matInput formControlName="street_number" hidden="true" />
+    <input matInput formControlName="suite" hidden="true" />
+    <input matInput formControlName="zip" hidden="true" />
+    <mat-error *ngIf="isError()">The address is required.</mat-error>
+  </mat-form-field>
+</form>

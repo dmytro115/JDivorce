@@ -1,0 +1,79 @@
+<div class="row order-summary">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="m-b-0">
+          Order Summary
+        </h4>
+      </div>
+      <div class="card-body">
+        <mat-list ngClass.lt-md="mt-4">
+          <mat-list-item class="mb-4">
+            <div fxLayout="row">
+              <div fxFlex="30px" class="summary-icon mr-4" [style.background-image]="'url(assets/images/icons/text-document.svg)'"></div>
+              <span fxFlex class="mat-h4 mb-0">You have selected the <strong>{{ package?.name }}</strong> for <span class="text-primary"><strong>${{package?.cost}}</strong></span>.</span>
+            </div>
+          </mat-list-item>
+          <mat-list-item class="mb-4">
+            <div fxLayout="row">
+              <div fxFlex="30px" class="summary-icon mr-4" [style.background-image]="'url(assets/images/icons/lawyers.svg)'"></div>
+              <span fxFlex class="mat-h4 mb-0">Your lawyer is <strong>{{ profile?.info.name }}</strong>.</span>
+            </div>
+          </mat-list-item>
+          <mat-list-item class="mb-4">
+            <div fxLayout="row">
+              <div fxFlex="30px" class="summary-icon mr-4" [style.background-image]="'url(assets/images/icons/google-calendar.svg)'"></div>
+              <span fxFlex class="mat-h4 mb-0">{{formatAppointmentDateLabel()}}<strong>{{formatAppointmentDate()}}</strong>.</span>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+    <div class="card contact-info">
+      <div class="card-header">
+        <h4 class="m-b-0">
+          Contact Info
+        </h4>
+        <p>Please confirm so the attorney can contact you.</p>
+      </div>
+      <div class="card-body">
+        <app-checkout-contact-form></app-checkout-contact-form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="m-b-0">
+          Payment
+        </h4>
+      </div>
+      <div class="card-body">
+        <mat-tab-group>
+          <mat-tab label="Credit Card">
+            <ng-template matTabContent>
+              <app-checkout-form [slotStartTime]="appointmentDate" [lawyerId]="profile?.id" [plan]="package" (checkoutFormComplete)="onCheckoutFormComplete($event)">
+              </app-checkout-form>
+            </ng-template>
+          </mat-tab>
+          <mat-tab label="PayPal">
+            <ng-template matTabContent>
+              <div class="text-center pt-5">
+                <a href="javascript:void(0)" (click)="paypal()">
+                  <img src="https://checkout.paypal.com/pwpp/1.6.1/images/pay-with-paypal.png" class="paypal img-responsive radius" [style.width]="'120px'">
+                </a>
+              </div>
+            </ng-template>
+          </mat-tab>
+          <mat-tab label="Pay lawyer directly">
+            <ng-template matTabContent>
+              <div class="text-center mt-5">
+                <button mat-flat-button color="primary" (click)="payLawyerDirectly()" class="btn-soft" [disabled]="payDirectlyButtonDisabled">Pay lawyer directly</button>
+              </div>
+            </ng-template>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+  </div>
+</div>
